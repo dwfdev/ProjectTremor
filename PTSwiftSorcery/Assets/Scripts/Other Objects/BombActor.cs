@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>
+///Script Manager: Denver
+///Description:
+///
+///</summary>
 public class BombActor : MonoBehaviour {
 
 	// Use this for initialization

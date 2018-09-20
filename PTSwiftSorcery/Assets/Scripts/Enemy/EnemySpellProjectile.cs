@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>
+///Script Manager: Drake
+///Description:
+///
+///</summary>
 public class EnemySpellProjectile : MonoBehaviour {
 
 	// Use this for initialization

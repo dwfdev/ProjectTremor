@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>
+///Script Manager: Denver
+///Description:
+///
+///</summary>
 public class PlayerActor : MonoBehaviour {
 
 	// Use this for initialization
