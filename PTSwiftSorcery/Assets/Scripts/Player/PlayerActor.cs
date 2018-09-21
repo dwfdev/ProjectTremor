@@ -38,8 +38,8 @@ public class PlayerActor : MonoBehaviour
 		v3MouseMovement = Vector3.Scale(v3MouseMovement, new Vector3(fMouseSensitivity, 0, fMouseSensitivity));
 
 		// create a smoothed movement vector to move the player by
-		v3MouseSmooth.x = Mathf.Lerp(mouseSmooth.x, v3MouseMovement.x, 1 / fMouseSmoothing);
-		v3MouseSmooth.z = Mathf.Lerp(mouseSmooth.z, v3MouseMovement.z, 1 / fMouseSmoothing);
+		v3MouseSmooth.x = Mathf.Lerp(v3MouseSmooth.x, v3MouseMovement.x, 1 / fMouseSmoothing);
+		v3MouseSmooth.z = Mathf.Lerp(v3MouseSmooth.z, v3MouseMovement.z, 1 / fMouseSmoothing);
 
 		// move player
 		transform.Translate(v3MouseSmooth * Time.deltaTime);
