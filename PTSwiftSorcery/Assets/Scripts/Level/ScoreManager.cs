@@ -7,15 +7,17 @@ using UnityEngine;
 ///Description:
 ///
 ///</summary>
-public class ScoreManager : MonoBehaviour {
-
+public class ScoreManager : MonoBehaviour 
+{
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
 	}
 }
