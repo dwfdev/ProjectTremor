@@ -14,18 +14,9 @@ using UnityEngine;
 ///</summary>
 public enum eSpellType
 {
-	BASIC_FIRE,
-	BASIC_ICE,
-	BASIC_LIGHTNING,
-	HOMING_FIRE,
-	HOMING_ICE,
-	HOMING_LIGHTNING,
-	SCATTER_FIRE,
-	SCATTER_ICE,
-	SCATTER_LIGHTNING,
-	HOMING_SCATTER_FIRE,
-	HOMING_SCATTER_ICE,
-	HOMING_SCATTER_LIGHTNING
+	FIRE,
+	ICE,
+	LIGHTNING
 };
 
 public class PlayerSpellManager : MonoBehaviour
@@ -38,6 +29,12 @@ public class PlayerSpellManager : MonoBehaviour
 
 	[Tooltip("What type of spell is being fired")]
 	public eSpellType m_eSpellType;
+
+	[Tooltip("Whether or not the player is firing homing shots")]
+	public bool m_isHoming;
+
+	[Tooltip("Whether or not the player is firing scatter shots")]
+	public bool m_isScatter;
 
 	// Use this for initialization
 	void Start ()
