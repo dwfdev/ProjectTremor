@@ -23,7 +23,7 @@ public class PlayerActor : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
+		gameObject.tag = "Player";
 	}
 
 	// Update is called once per frame
