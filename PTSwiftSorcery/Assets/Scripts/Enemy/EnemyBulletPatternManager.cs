@@ -26,7 +26,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 			EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
 
 			if (m_fTimer < patternChild.GetTimer())
-				Debug.LogWarning("Timer on " + gameObject.name + " is shorter than " + child.name + ", you should fix this immediately!");
+				Debug.LogError("Timer on " + gameObject.name + " is shorter than " + child.name + ", you should fix this immediately!");
 		}
 	}
 

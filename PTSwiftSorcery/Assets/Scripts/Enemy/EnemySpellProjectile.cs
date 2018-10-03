@@ -27,6 +27,39 @@ public class EnemySpellProjectile : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		
+		switch(m_eBulletType)
+		{
+			case eBulletType.BASIC_PROJECTILE:
+				transform.position += transform.forward * m_fMoveSpeed * Time.deltaTime;
+				break;
+			case eBulletType.BEAM:
+				//beam code
+				break;
+			case eBulletType.HOMING_PROJECTILE:
+				//home towards player
+				break;
+			case eBulletType.MELEE_SWING:
+				//melee code
+				break;
+			default:
+				Debug.LogWarning(gameObject.name + " has no bullet type, this should be fixed");
+				break;
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if(other.tag == "Playfield")
+		{
+			Destroy(gameObject);
+		}
 	}
 }

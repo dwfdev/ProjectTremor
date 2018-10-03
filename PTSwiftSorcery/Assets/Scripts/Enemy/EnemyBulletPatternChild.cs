@@ -35,6 +35,9 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	[Tooltip("What type of shot this pattern child shoots")]
 	[SerializeField] private eBulletType m_eBulletType;
 
+	[Tooltip("")]
+	[SerializeField] private GameObject m_bulletPrefab;
+
 	//Whether or not this pattern child is currently active
 	private bool m_bActive;
 
@@ -74,6 +77,9 @@ public class EnemyBulletPatternChild : MonoBehaviour
 
 	private void Fire()
 	{
-		//code for firing shot
+		GameObject newBullet = Instantiate(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
+		newBullet.GetComponent<EnemySpellProjectile>().m_eBulletType = m_eBulletType;
+		newBullet.GetComponent<EnemySpellProjectile>().m_fMoveSpeed = m_fMoveSpeed;
+		//Debug.Log(name + " spawning bullet");
 	}
 }

@@ -35,6 +35,11 @@ public class PlayerSpellProjectile : MonoBehaviour
 	{
 		if(m_isHoming)
 		{
+			if(m_target == null)
+			{
+				//select new target if prev target is dead or nonexistent
+				//also check if there are no enemies, if no enemies, just move forward
+			}
 			//seek towards m_target
 			Vector3 homingVector = m_target.transform.position - transform.position;
 			homingVector.Normalize();
