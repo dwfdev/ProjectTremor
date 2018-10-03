@@ -1,7 +1,8 @@
 ﻿///<summary>
 ///		Script Manager:	Denver
-///		Description:	Handles the movement of the player using the mouse
-///		Date Modified:	28/09/2018
+///		Description:	Handles the movement of the player using the mouse,
+///						the life state of the player and shooting mechancis.
+///		Date Modified:	03/10/2018
 ///</summary>
 
 using System.Collections;
@@ -31,12 +32,18 @@ public class PlayerActor : MonoBehaviour
 	public eLifeState m_lifeState;
 
 	[Tooltip("Scales raw mouse movement.")]
-	[SerializeField] private float fMouseSensitivity;
+	[SerializeField] private float m_fMouseSensitivity;
 
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
-	[SerializeField] private float fMouseSmoothing;
+	[SerializeField] private float m_fMouseSmoothing;
 
-	private Vector3 v3MouseSmooth;
+	[Tooltip("The area in which the player can move.")]
+	public GameObject m_movementArea;
+
+	private Vector3 m_v3MouseSmooth;
+
+	private float m_fMovementBoundsX;
+	private float m_fMovementBoundsZ;
 
 	private float m_fDyingTimer;
 	private bool m_bDyingTimerIsActive;
@@ -44,12 +51,23 @@ public class PlayerActor : MonoBehaviour
 	private float m_fRespawnInvincibilityTimer;
 	private bool m_bRespawnInvincibilityTimerIsActive;
 
+	private PlayerSpellManager m_spellManager;
+
 	// Use this for initialization
 	void Start() {
 
+		// make sure tag is set to 'Player'
 		gameObject.tag = "Player";
 
+		// initialise lifeState as NORMAL
 		m_lifeState = eLifeState.NORMAL;
+
+		// calculate movement boundaries
+		m_fMovementBoundsX = m_movementArea.transform.localScale.x * transform.localScale.x / 2;
+		m_fMovementBoundsZ = m_movementArea.transform.localScale.z * transform.localScale.z / 2;
+
+		// Get spell manager
+		m_spellManager = GetComponent<PlayerSpellManager>();
 
 	}
 
@@ -85,7 +103,6 @@ public class PlayerActor : MonoBehaviour
 				m_bRespawnInvincibilityTimerIsActive = false;
 			}
 		}
-
 		#endregion
 
 		#region Mouse Movement
@@ -93,18 +110,45 @@ public class PlayerActor : MonoBehaviour
 		Vector3 v3MouseMovement = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
 
 		// scale it by sensitivity
-		v3MouseMovement = Vector3.Scale(v3MouseMovement, new Vector3(fMouseSensitivity, 0, fMouseSensitivity));
+		v3MouseMovement = Vector3.Scale(v3MouseMovement, new Vector3(m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.x), 0, m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.z)));
 
 		// create a smoothed movement vector to move the player by
-		v3MouseSmooth.x = Mathf.Lerp(v3MouseSmooth.x, v3MouseMovement.x, 1 / fMouseSmoothing);
-		v3MouseSmooth.z = Mathf.Lerp(v3MouseSmooth.z, v3MouseMovement.z, 1 / fMouseSmoothing);
+		m_v3MouseSmooth.x = Mathf.Lerp(m_v3MouseSmooth.x, v3MouseMovement.x, 1 / m_fMouseSmoothing);
+		m_v3MouseSmooth.z = Mathf.Lerp(m_v3MouseSmooth.z, v3MouseMovement.z, 1 / m_fMouseSmoothing);
 
 		// move player
-		transform.Translate(v3MouseSmooth * Time.deltaTime);
+		transform.localPosition += m_v3MouseSmooth * Time.deltaTime;
 		#endregion
 
+		#region Keeping Player within Boundaries
+		// right side
+		if(transform.localPosition.x > m_fMovementBoundsX) {
+			transform.localPosition = new Vector3(m_fMovementBoundsX, transform.localPosition.y, transform.localPosition.z);
+		}
+
+		// left side
+		if(transform.localPosition.x < -m_fMovementBoundsX) {
+			transform.localPosition = new Vector3(-m_fMovementBoundsX, transform.localPosition.y, transform.localPosition.z);
+		}
+
+		// forward side
+		if(transform.localPosition.z > m_fMovementBoundsZ) {
+			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, m_fMovementBoundsZ);
+		}
+
+		// back side
+		if(transform.localPosition.z < -m_fMovementBoundsZ) {
+			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -m_fMovementBoundsZ);
+		}
+		#endregion
+
+		// shooting
+		if (Input.GetAxisRaw("Fire1") > 0) {
+			m_spellManager.Fire();
+		}
+
 		// if the player is dead
-		if (m_lifeState == eLifeState.DEAD) {
+		if(m_lifeState == eLifeState.DEAD) {
 			// destroy the player
 			Destroy(gameObject);
 		}
