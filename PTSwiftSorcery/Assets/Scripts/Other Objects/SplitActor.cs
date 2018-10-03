@@ -51,7 +51,7 @@ public class SplitActor : MonoBehaviour {
 		// check that other is the player
 		if (other.gameObject.tag == "Player") {
 			// get player movement area
-			GameObject moveArea = other.GetComponent<PlayerActor>().GetPlayerMovementArea();
+			GameObject moveArea = other.GetComponent<PlayerActor>().m_movementArea;
 
 			// find direction to new centre
 			Vector3 v3DesiredDirection = new Vector3(m_fDesiredX, 0f, 0f) - moveArea.transform.position;

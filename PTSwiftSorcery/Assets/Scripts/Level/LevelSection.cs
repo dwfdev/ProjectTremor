@@ -30,11 +30,11 @@ public class LevelSection : MonoBehaviour {
 		// check that other is a player
 		if (other.tag == "Player") {
 			// set player's CurrentSection to this
-			other.gameObject.GetComponent<PlayerActor>().m_CurrentSection = this;
+			other.gameObject.GetComponent<PlayerActor>().m_currentSection = this;
 
 			// activate all enemies of the section and set their target
 			foreach(EnemyActor enemy in m_enemiesList) {
-				enemy.Activate(other.gameObject, other.gameObject.GetComponent<PlayerActor>().GetPlayerMovementArea());
+				enemy.Activate(other.gameObject, other.gameObject.GetComponent<PlayerActor>().m_movementArea);
 			}
 		}
 

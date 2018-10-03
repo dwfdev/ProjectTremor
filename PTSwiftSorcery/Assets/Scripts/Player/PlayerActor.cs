@@ -40,6 +40,9 @@ public class PlayerActor : MonoBehaviour
 	[Tooltip("The area in which the player can move.")]
 	public GameObject m_movementArea;
 
+	[HideInInspector]
+	public LevelSection m_currentSection;
+
 	private Vector3 m_v3MouseSmooth;
 
 	private float m_fMovementBoundsX;
