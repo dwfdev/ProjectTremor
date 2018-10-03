@@ -80,6 +80,6 @@ public class EnemyBulletPatternChild : MonoBehaviour
 		GameObject newBullet = Instantiate(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
 		newBullet.GetComponent<EnemySpellProjectile>().m_eBulletType = m_eBulletType;
 		newBullet.GetComponent<EnemySpellProjectile>().m_fMoveSpeed = m_fMoveSpeed;
-		//Debug.Log(name + " spawning bullet");
+		Debug.Log(name + " spawning bullet");
 	}
 }
