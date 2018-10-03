@@ -8,6 +8,10 @@ TagManager:
   - Playfield
   - PlayerProjectile
   - EnemyBullet
+  - PlayerMovementArea
+  - LevelSplit
+  - LevelSection
+  - LevelManager
   layers:
   - Default
   - TransparentFX

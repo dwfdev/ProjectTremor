@@ -33,8 +33,9 @@ public class LevelManager : MonoBehaviour
 	void Start()
 	{
 
-		// set tag to 'LevelManager'
-		gameObject.tag = "LevelManager";
+		if (gameObject.tag != "LevelManager") {
+			Debug.LogError("Tag must be LevelManager", gameObject);
+		}
 
 		// initialise level difficulty to EASY
 		m_levelDifficulty = eLevelDifficulty.EASY;
