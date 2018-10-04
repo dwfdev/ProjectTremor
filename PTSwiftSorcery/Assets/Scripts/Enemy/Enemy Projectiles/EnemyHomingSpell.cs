@@ -16,6 +16,15 @@ public class EnemyHomingSpell : EnemySpellProjectile
 	[Tooltip("How much of a burst of speed this projectile should get on spawning")]
 	public float m_fSpeedBurst;
 
+	[Tooltip("How long this shot will home for")]
+	public float m_fHomeTimer;
+
+	//internal timer
+	private float m_fTimer;
+
+	//whether or not this shot is currently homing
+	private bool m_bIsHoming;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,6 +34,8 @@ public class EnemyHomingSpell : EnemySpellProjectile
 	override protected void Awake()
 	{
 		m_bActive = true;
+		m_bIsHoming = true;
+		m_fTimer = 0.0f;
 
 		m_target = GameObject.FindWithTag("Player");
 		if(m_target == null)
@@ -38,16 +49,17 @@ public class EnemyHomingSpell : EnemySpellProjectile
 	// Update is called once per frame
 	override protected void Update ()
 	{
-		//Transform lookRotation = transform;
-		//lookRotation.LookAt(m_target.transform);
-		//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(/*lookRotation*/m_target.transform.position, Vector3.up), m_fRotationSpeed * Time.deltaTime);
-		//transform.LookAt(m_target.transform);
+		m_fTimer += Time.deltaTime;
+		if (m_fTimer >= m_fHomeTimer)
+			m_bIsHoming = false;
 
-		Quaternion targetRotation = Quaternion.LookRotation(m_target.transform.position - transform.position);
-		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
+		if(m_bIsHoming)
+		{
+			Quaternion targetRotation = Quaternion.LookRotation(m_target.transform.position - transform.position);
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
+		}
 
 		gameObject.GetComponent<Rigidbody>().AddForce(m_fMaxVelocity * transform.forward);
-		//transform.position += m_fMoveSpeed * transform.forward * Time.deltaTime;
 	}
 
 	private void FixedUpdate()
