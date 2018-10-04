@@ -72,8 +72,11 @@ public class PlayerActor : MonoBehaviour
 		m_lifeState = eLifeState.NORMAL;
 
 		// calculate movement boundaries
-		m_fMovementBoundsX = m_movementArea.transform.localScale.x * transform.localScale.x / 2;
-		m_fMovementBoundsZ = m_movementArea.transform.localScale.z * transform.localScale.z / 2;
+		//m_fMovementBoundsX = m_movementArea.transform.localScale.x * transform.localScale.x / 2;
+		//m_fMovementBoundsZ = m_movementArea.transform.localScale.z * transform.localScale.z / 2;
+
+		m_fMovementBoundsX = m_movementArea.GetComponent<BoxCollider>().size.x * transform.localScale.x / 2;
+		m_fMovementBoundsZ = m_movementArea.GetComponent<BoxCollider>().size.z * transform.localScale.z / 2;
 
 		// Get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
@@ -167,8 +170,9 @@ public class PlayerActor : MonoBehaviour
 
 	void OnTriggerEnter(Collider info) {
 
-		// check that collision was with a bullet
+		// check that collision was with a bullet...
 		if (info.gameObject.tag == "EnemyBullet") {
+			// ...and that the bullet was active
 			if(info.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
 
 				// if player isn't invincible
