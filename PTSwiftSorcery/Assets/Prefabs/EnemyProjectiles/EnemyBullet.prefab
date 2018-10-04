@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33495969033905400}
   - component: {fileID: 135140624109943422}
   - component: {fileID: 23713385253291102}
-  - component: {fileID: 114022227274981594}
   - component: {fileID: 54536564088291700}
+  - component: {fileID: 114438313206298436}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478734474133304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -3.5243526, y: 0.49999988, z: -7.4511843}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,8 +51,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478734474133304}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -100,7 +100,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114022227274981594
+--- !u!114 &114438313206298436
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,14 +108,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1478734474133304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73516917b2185fa4dbf82070af332288, type: 3}
+  m_Script: {fileID: 11500000, guid: 452c13e24db7f584ea6a4558f05b667d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_eBulletType: 0
   m_fMoveSpeed: 0
   m_target: {fileID: 0}
-  m_fBeamActiveTimer: 0
-  m_fBeamTimer: 0
 --- !u!135 &135140624109943422
 SphereCollider:
   m_ObjectHideFlags: 1

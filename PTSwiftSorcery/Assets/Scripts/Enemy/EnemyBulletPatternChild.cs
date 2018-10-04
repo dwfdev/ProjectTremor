@@ -35,8 +35,14 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	[Tooltip("What type of shot this pattern child shoots")]
 	[SerializeField] private eBulletType m_eBulletType;
 
-	[Tooltip("")]
+	[Tooltip("Prefab for the bullet this fires")]
 	[SerializeField] private GameObject m_bulletPrefab;
+
+	[Tooltip("How long until a beam becomes active, only used if this child fires a beam")]
+	[SerializeField] private float m_fBeamActiveTimer;
+
+	[Tooltip("How long until a beam disappears, only used if this child fires a beam")]
+	[SerializeField] private float m_fBeamStayTimer;
 
 	//Whether or not this pattern child is currently active
 	private bool m_bActive;
@@ -79,6 +85,11 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	{
 		GameObject newBullet = Instantiate(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
 		newBullet.GetComponent<EnemySpellProjectile>().m_eBulletType = m_eBulletType;
+		if(m_eBulletType == eBulletType.BEAM)
+		{
+			newBullet.GetComponent<EnemyBeamSpell>().m_fBeamActiveTimer = m_fBeamActiveTimer;
+			newBullet.GetComponent<EnemyBeamSpell>().m_fBeamStayTimer = m_fBeamStayTimer;
+		}
 		newBullet.GetComponent<EnemySpellProjectile>().m_fMoveSpeed = m_fMoveSpeed;
 		Debug.Log(name + " spawning bullet");
 	}
