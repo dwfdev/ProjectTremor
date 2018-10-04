@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿///<summary>
+///		Script Manager:	Denver
+///		Description:	Handles the functionality of the split mechanic
+///						of the game.  moves player down chosen path based
+///						on player's position relative to the split.
+///		Date Modified:	04/10/2018
+/// </summary>
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,7 +49,7 @@ public class SplitActor : MonoBehaviour {
 			}
 
 			// set new difficulty
-			GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>().SetLevelDifficulty(m_desiredDifficulty);
+			FindObjectOfType<LevelManager>().SetLevelDifficulty(m_desiredDifficulty);
 		}
 
 	}

@@ -192,7 +192,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3da24398e9ea3c3489b148ae4f2c23df, type: 2}
+  - {fileID: 2100000, guid: f5f9256ec66f64a468dd9b67ee194ea5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -356,6 +356,31 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 11.884511
       objectReference: {fileID: 0}
+    - target: {fileID: 114618901821148994, guid: 7a3ad47e9d70dc24db071bdc6b55e29f,
+        type: 2}
+      propertyPath: m_fMoveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114618901821148994, guid: 7a3ad47e9d70dc24db071bdc6b55e29f,
+        type: 2}
+      propertyPath: m_fLeftSideX
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114618901821148994, guid: 7a3ad47e9d70dc24db071bdc6b55e29f,
+        type: 2}
+      propertyPath: m_fRightSideX
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114618901821148994, guid: 7a3ad47e9d70dc24db071bdc6b55e29f,
+        type: 2}
+      propertyPath: m_leftDifficulty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114618901821148994, guid: 7a3ad47e9d70dc24db071bdc6b55e29f,
+        type: 2}
+      propertyPath: m_rightDifficulty
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a3ad47e9d70dc24db071bdc6b55e29f, type: 2}
   m_IsPrefabParent: 0
@@ -409,7 +434,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3da24398e9ea3c3489b148ae4f2c23df, type: 2}
+  - {fileID: 2100000, guid: f5f9256ec66f64a468dd9b67ee194ea5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -799,6 +824,10 @@ Prefab:
       propertyPath: m_enemiesList.Array.data[0]
       value: 
       objectReference: {fileID: 402334994}
+    - target: {fileID: 1737908242404150, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
   m_IsPrefabParent: 0
@@ -1070,10 +1099,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fLerpSpeed: 5
   m_fLerpMagnitude: 0.5
-  m_fShakeMagnitude: 3
-  m_fShakeRoughness: 4
-  m_fFadeInTime: 0.15
-  m_fFadeOutTime: 1
+  m_fDefaultShakeMagnitude: 0
+  m_fDefaultShakeRoughness: 0
+  m_fDefaultFadeInTime: 0
+  m_fDefaultFadeOutTime: 0
 --- !u!114 &1391364006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,7 +1166,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3da24398e9ea3c3489b148ae4f2c23df, type: 2}
+  - {fileID: 2100000, guid: f5f9256ec66f64a468dd9b67ee194ea5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1239,7 +1268,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3da24398e9ea3c3489b148ae4f2c23df, type: 2}
+  - {fileID: 2100000, guid: f5f9256ec66f64a468dd9b67ee194ea5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1344,6 +1373,10 @@ Prefab:
       propertyPath: m_enemiesList.Array.data[0]
       value: 
       objectReference: {fileID: 1489028673}
+    - target: {fileID: 1737908242404150, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
   m_IsPrefabParent: 0
@@ -1410,7 +1443,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3da24398e9ea3c3489b148ae4f2c23df, type: 2}
+  - {fileID: 2100000, guid: f5f9256ec66f64a468dd9b67ee194ea5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1490,7 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerMovementArea: {fileID: 914437975}
-  m_fLevelScrollSpeed: 5
+  m_fLevelScrollSpeed: 10
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 1}
 --- !u!1 &2003272075
 GameObject:
@@ -1536,12 +1569,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a2d9804bc5f6a4cbcbc7ae5819aca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fFireRate: 0
-  m_fMoveSpeed: 0
+  m_fFireRate: 0.5
+  m_fMoveSpeed: 5
   m_eSpellType: 0
   m_isHoming: 0
   m_isScatter: 0
-  m_firePrefab: {fileID: 0}
+  m_firePrefab: {fileID: 1478734474133304, guid: c2befeb2f268e0a4e9a351a5374d7fb6,
+    type: 2}
   m_icePrefab: {fileID: 0}
   m_lightningPrefab: {fileID: 0}
 --- !u!23 &2003272078
@@ -1558,7 +1592,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d4cffcea8c7aa6419c5a0c917f2e879, type: 2}
+  - {fileID: 2100000, guid: a1b0dc1402fc7d344a433e9ed254ee42, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

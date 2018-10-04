@@ -8,6 +8,9 @@ using UnityEngine;
 ///		Date Modified:	03/10/2018
 ///</summary>
 
+///<summary>
+///		This enum will handle the difficulty of the level
+/// </summary>
 public enum eLevelDifficulty
 {
 	EASY,
@@ -39,6 +42,9 @@ public class LevelManager : MonoBehaviour
 
 		// initialise level difficulty to EASY
 		m_levelDifficulty = eLevelDifficulty.EASY;
+
+		// hide cursor
+		Cursor.lockState = CursorLockMode.Locked;
 
 	}
 

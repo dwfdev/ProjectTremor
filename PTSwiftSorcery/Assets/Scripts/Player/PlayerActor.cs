@@ -1,14 +1,17 @@
-﻿///<summary>
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+///<summary>
 ///		Script Manager:	Denver
 ///		Description:	Handles the movement of the player using the mouse,
 ///						the life state of the player and shooting mechancis.
 ///		Date Modified:	03/10/2018
 ///</summary>
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+///<summary>
+///		This enum will handle the life state of the player.
+/// </summary>
 public enum eLifeState {
 	DEAD,
 	DYING,
@@ -36,6 +39,9 @@ public class PlayerActor : MonoBehaviour
 
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
 	[SerializeField] private float m_fMouseSmoothing;
+
+	[Tooltip("Position where the player will respawn.")]
+	[SerializeField] private Vector3 m_v3RespawnLocation;
 
 	[Tooltip("The area in which the player can move.")]
 	public GameObject m_movementArea;
@@ -145,8 +151,10 @@ public class PlayerActor : MonoBehaviour
 		}
 		#endregion
 
+		Debug.Log(Input.GetAxis("Fire1"));
+
 		// shooting
-		if (Input.GetAxisRaw("Fire1") > 0) {
+		if (Input.GetAxis("Fire1") > 0) {
 			m_spellManager.Fire();
 		}
 
@@ -161,21 +169,26 @@ public class PlayerActor : MonoBehaviour
 
 		// check that collision was with a bullet
 		if (info.gameObject.tag == "EnemyBullet") {
+			if(info.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
 
-			Debug.Log(name + " has collided with an EnemyBullet");
+				// if player isn't invincible
+				if(m_lifeState != eLifeState.INVINCIBLE) {
+					Debug.Log(name + " has collided with an EnemyBullet");
 
-			// if player is shielded
-			if (m_lifeState == eLifeState.SHIELDED) {
-				// set life state to normal
-				m_lifeState = eLifeState.NORMAL;
-			}
-			else if (m_lifeState == eLifeState.NORMAL) {
-				// set life state to dying
-				m_lifeState = eLifeState.DYING;
+					//if player is shielded
+					if(m_lifeState == eLifeState.SHIELDED) {
+						// set life state to normal
+						m_lifeState = eLifeState.NORMAL;
+					}
+					else if(m_lifeState == eLifeState.NORMAL) {
+						// set life state to dying
+						m_lifeState = eLifeState.DYING;
 
-				// start dying timer
-				m_bDyingTimerIsActive = true;
-				m_fDyingTimer = m_fDyingTimerSeconds;
+						// start dying timer
+						m_bDyingTimerIsActive = true;
+						m_fDyingTimer = m_fDyingTimerSeconds;
+					}
+				}
 			}
 		}
 		
@@ -192,7 +205,8 @@ public class PlayerActor : MonoBehaviour
 			m_lifeState = eLifeState.DEAD;
 		}
 		else {
-			// reset poisition
+			// move the player to the respawn position
+			transform.localPosition = m_v3RespawnLocation;
 
 			// give player invinciblity
 			m_lifeState = eLifeState.INVINCIBLE;

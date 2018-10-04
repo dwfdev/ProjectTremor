@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///<summary>
+///		Script Manager:	Denver
+///		Description:	Handles the movement of the camera
+///		Date Modified:	04/10/2018
+/// </summary>
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
@@ -12,16 +18,16 @@ public class CameraActor : MonoBehaviour {
 	[SerializeField] [Range(0f, 1f)] private float m_fLerpMagnitude;
 
 	[Tooltip("Magnitude of camera shake. The bigger the value, the larger the shake.")]
-	[SerializeField] private float m_fShakeMagnitude;
+	[SerializeField] private float m_fDefaultShakeMagnitude;
 
 	[Tooltip("Severity of camera shake.  The bigger the value, the more intense the shake.")]
-	[SerializeField] private float m_fShakeRoughness;
+	[SerializeField] private float m_fDefaultShakeRoughness;
 
 	[Tooltip("Time taken to ramp up to full shake.")]
-	[SerializeField] private float m_fFadeInTime;
+	[SerializeField] private float m_fDefaultFadeInTime;
 
 	[Tooltip("Time taken to ramp down from full shake.")]
-	[SerializeField] private float m_fFadeOutTime;
+	[SerializeField] private float m_fDefaultFadeOutTime;
 
 	private GameObject m_player;
 	private float m_fOriginX;
@@ -45,9 +51,27 @@ public class CameraActor : MonoBehaviour {
 		
 	}
 
-	public void ShakeCamera() {
+	public void ShakeCamera(float shakeMagnitude = 0, float shakeRougness = 0, float fadeInTime = float.MinValue, float fadeOutTime = float.MinValue) {
 
-		CameraShaker.Instance.ShakeOnce(m_fShakeMagnitude, m_fShakeRoughness, m_fFadeInTime, m_fFadeOutTime);
+		// check to see if no values were inputted
+		if (shakeMagnitude == 0) {
+			shakeMagnitude = m_fDefaultShakeMagnitude;
+		}
+
+		if (shakeRougness == 0) {
+			shakeRougness = m_fDefaultShakeRoughness;
+		}
+
+		if (fadeInTime == float.MinValue) {
+			fadeInTime = m_fDefaultFadeInTime;
+		}
+
+		if (fadeOutTime == float.MinValue) {
+			fadeOutTime = m_fDefaultFadeOutTime;
+		}
+
+		// shake camera
+		CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRougness, fadeInTime, fadeOutTime);
 
 	}
 }
