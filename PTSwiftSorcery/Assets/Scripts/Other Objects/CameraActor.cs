@@ -14,8 +14,8 @@ public class CameraActor : MonoBehaviour {
 	[Tooltip("Speed at which the camera will move to follow the player.")]
 	[SerializeField] private float m_fLerpSpeed;
 
-	[Tooltip("The magnitude of the movement of the camera as it follows the player.")]
-	[SerializeField] [Range(0f, 1f)] private float m_fLerpMagnitude;
+	[Tooltip("How far the camera can move to follow the player.")]
+	[SerializeField] [Range(0f, 1f)] private float m_fLerpRange;
 
 	[Tooltip("Magnitude of camera shake. The bigger the value, the larger the shake.")]
 	[SerializeField] private float m_fDefaultShakeMagnitude;
@@ -44,7 +44,7 @@ public class CameraActor : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		float desiredX = (m_player.transform.localPosition.x + m_fOriginX) * m_fLerpMagnitude;
+		float desiredX = (m_player.transform.localPosition.x + m_fOriginX) * m_fLerpRange;
 
 		// move to desired position
 		transform.parent.transform.localPosition = Vector3.Lerp(transform.parent.transform.localPosition, new Vector3(desiredX, transform.parent.transform.localPosition.y, transform.parent.transform.localPosition.z), m_fLerpSpeed * Time.deltaTime);

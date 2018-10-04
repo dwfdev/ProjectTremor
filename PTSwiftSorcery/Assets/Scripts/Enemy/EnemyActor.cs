@@ -52,7 +52,7 @@ public class EnemyActor : MonoBehaviour {
 			Vector3 desiredPosition = new Vector3(m_target.transform.localPosition.x, transform.localPosition.y, m_target.transform.localPosition.z + m_fOffset * transform.localScale.z);
 
 			// smoothly move to that position
-			transform.localPosition = Vector3.SmoothDamp(transform.localPosition, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed);
+			transform.localPosition = Vector3.SmoothDamp(transform.localPosition, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
 		}
 
 	}

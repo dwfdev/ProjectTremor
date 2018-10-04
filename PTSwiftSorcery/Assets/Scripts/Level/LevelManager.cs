@@ -8,9 +8,6 @@ using UnityEngine;
 ///		Date Modified:	03/10/2018
 ///</summary>
 
-///<summary>
-///		This enum will handle the difficulty of the level
-/// </summary>
 public enum eLevelDifficulty
 {
 	EASY,
@@ -21,9 +18,9 @@ public enum eLevelDifficulty
 public class LevelManager : MonoBehaviour
 {
 
-	[Tooltip("The player movement area of the level.")]
+	[Tooltip("The play field of the level.")]
 	[SerializeField]
-	private GameObject m_playerMovementArea;
+	private GameObject m_playField;
 
 	[Tooltip("The speed at which the level will scroll.")]
 	public float m_fLevelScrollSpeed;
@@ -52,7 +49,7 @@ public class LevelManager : MonoBehaviour
 	{
 
 		// move the player's movement area
-		m_playerMovementArea.transform.Translate(m_v3LevelScrollDirection * m_fLevelScrollSpeed * Time.deltaTime);
+		m_playField.transform.Translate(m_v3LevelScrollDirection * m_fLevelScrollSpeed * Time.deltaTime);
 
 	}
 

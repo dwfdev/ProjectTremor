@@ -9,9 +9,6 @@ using UnityEngine;
 ///		Date Modified:	03/10/2018
 ///</summary>
 
-///<summary>
-///		This enum will handle the life state of the player.
-/// </summary>
 public enum eLifeState {
 	DEAD,
 	DYING,
@@ -24,6 +21,12 @@ public class PlayerActor : MonoBehaviour
 {
 	[Tooltip("Amount of lives the player has.")]
 	public int m_nLives;
+
+	[Tooltip("Initial amount of bombs.")]
+	[SerializeField] private int m_nInitialBombCount;
+
+	[Tooltip("Maximum amount of bombs the player can have.")]
+	[SerializeField] private int m_nMaximumBombCount;
 
 	[Tooltip("Time, in seconds player has to recover from being hit.")]
 	[SerializeField] private float m_fDyingTimerSeconds;
@@ -62,6 +65,11 @@ public class PlayerActor : MonoBehaviour
 
 	private PlayerSpellManager m_spellManager;
 
+	[HideInInspector]
+	public sPickUp m_currentPickUp;
+
+	private int m_nCurrentBombCount;
+
 	// Use this for initialization
 	void Start() {
 
@@ -77,6 +85,9 @@ public class PlayerActor : MonoBehaviour
 
 		// Get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
+
+		// set bomb count
+		m_nCurrentBombCount = m_nInitialBombCount;
 
 	}
 
@@ -114,6 +125,34 @@ public class PlayerActor : MonoBehaviour
 		}
 		#endregion
 
+		#region Other Inputs
+		// activate pickup
+		if (Input.GetAxis("Fire3") > 0) {
+			StartCoroutine(ActivatePickUp());
+		}
+
+		// pick spell type
+		// FIRE
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+			m_spellManager.m_eSpellType = eSpellType.FIRE;
+		}
+
+		// ICE
+		if (Input.GetKeyDown(KeyCode.Alpha2)) {
+			m_spellManager.m_eSpellType = eSpellType.ICE;
+		}
+
+		// LIGHTNING
+		if (Input.GetKeyDown(KeyCode.Alpha3)) {
+			m_spellManager.m_eSpellType = eSpellType.LIGHTNING;
+		}
+
+		// shooting
+		if(Input.GetAxis("Fire1") > 0) {
+			m_spellManager.Fire();
+		}
+		#endregion
+		
 		#region Mouse Movement
 		// get the movement of the mouse
 		Vector3 v3MouseMovement = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
@@ -126,7 +165,7 @@ public class PlayerActor : MonoBehaviour
 		m_v3MouseSmooth.z = Mathf.Lerp(m_v3MouseSmooth.z, v3MouseMovement.z, 1 / m_fMouseSmoothing);
 
 		// move player
-		transform.localPosition += m_v3MouseSmooth * Time.deltaTime;
+		transform.localPosition += m_v3MouseSmooth;
 		#endregion
 
 		#region Keeping Player within Boundaries
@@ -151,16 +190,11 @@ public class PlayerActor : MonoBehaviour
 		}
 		#endregion
 
-		// shooting
-		if (Input.GetAxis("Fire1") > 0) {
-			m_spellManager.Fire();
-		}
-
 		// if the player is dead
 		if(m_lifeState == eLifeState.DEAD) {
-			// destroy the player
-			Destroy(gameObject);
+			Debug.Log("Player is DEAD!");
 		}
+
 	}
 
 	void OnTriggerEnter(Collider info) {
@@ -206,7 +240,7 @@ public class PlayerActor : MonoBehaviour
 
 			// give player invinciblity
 			m_lifeState = eLifeState.INVINCIBLE;
-			StartInvincibilityTimer();
+			StartInvincibilityTimer(m_fRespawnInvincibilityTimerSeconds);
 		}
 
 	}
@@ -220,12 +254,85 @@ public class PlayerActor : MonoBehaviour
 
 	}
 
-	public void StartInvincibilityTimer()
+	public void StartInvincibilityTimer(float duration)
 	{
 
 		// start respawn timer
 		m_bRespawnInvincibilityTimerIsActive = true;
-		m_fRespawnInvincibilityTimer = m_fRespawnInvincibilityTimerSeconds;
+		m_fRespawnInvincibilityTimer = duration;
+
+	}
+
+	public void AddToPlayerBombCount(int adder)
+	{
+
+		// add adder to m_nCurrentBombCount
+		m_nCurrentBombCount += adder;
+
+		// clamp between 0 and maximum bomb count
+		m_nCurrentBombCount = Mathf.Clamp(m_nCurrentBombCount, 0, m_nMaximumBombCount);
+
+	}
+
+	IEnumerator ActivatePickUp()
+	{
+
+		// run pickups code based on its type
+		switch(m_currentPickUp.type) {
+			case ePickUpType.INCREASE_FIRE_RATE:
+				// affect spell manager
+				m_spellManager.m_fFireRate *= m_currentPickUp.magnitude;
+
+				// wait for duration
+				yield return new WaitForSeconds(m_currentPickUp.duration);
+
+				// reset
+				m_spellManager.m_fFireRate /= m_currentPickUp.magnitude;
+				break;
+
+			case ePickUpType.HOMING_SPELLS:
+				// affect spell manager
+				m_spellManager.m_isHoming = true;
+
+				// wait for duration
+				yield return new WaitForSeconds(m_currentPickUp.duration);
+
+				// reset
+				m_spellManager.m_isHoming = false;
+				break;
+
+			case ePickUpType.SCATTER_SPELLS:
+				// affect spell manager
+				m_spellManager.m_isScatter = true;
+
+				// wait for duration
+				yield return new WaitForSeconds(m_currentPickUp.duration);
+
+				// reset
+				m_spellManager.m_isScatter = false;
+				break;
+
+			case ePickUpType.IMMUNITY:
+				// affect player
+				m_lifeState = eLifeState.INVINCIBLE;
+				StartInvincibilityTimer(m_currentPickUp.duration);
+				break;
+
+			case ePickUpType.SLOW_DOWN_TIME:
+				// affect time scale
+				Time.timeScale = m_currentPickUp.magnitude;
+
+				// wait for duration
+				yield return new WaitForSeconds(m_currentPickUp.duration);
+
+				// reset
+				Time.timeScale = 1;
+				break;
+
+			default:
+				Debug.LogError("Could not activate pick up.");
+				break;
+		}
 
 	}
 }

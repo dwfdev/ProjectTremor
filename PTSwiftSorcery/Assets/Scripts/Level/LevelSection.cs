@@ -9,9 +9,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-///		Will handle whether or not the player has completed this section.
-/// </summary>
 public enum eCompletionState
 {
 	NOT_CLEARED,
@@ -52,6 +49,9 @@ public class LevelSection : MonoBehaviour {
 		// check if player has failed the section
 		if (m_nCurrentSectionAttempts > m_nNumberOfAttempts) {
 			m_completionState = eCompletionState.FAILED;
+			foreach(EnemyActor enemy in m_enemiesList) {
+				enemy.gameObject.SetActive(false);
+			}
 		}
 	}
 

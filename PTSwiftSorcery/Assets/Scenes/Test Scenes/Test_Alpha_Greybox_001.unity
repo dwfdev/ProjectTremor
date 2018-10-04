@@ -175,9 +175,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_section: {fileID: 0}
   m_nHealth: 1
-  m_fMaxMovementSpeed: 5
+  m_fMaxMovementSpeed: 100
   m_fOffset: 5
-  m_fMovementSmoothing: 5
+  m_fMovementSmoothing: 10
 --- !u!23 &402334995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_section: {fileID: 0}
   m_nHealth: 1
-  m_fMaxMovementSpeed: 5
+  m_fMaxMovementSpeed: 700
   m_fOffset: 5
-  m_fMovementSmoothing: 5
+  m_fMovementSmoothing: 10
 --- !u!23 &833135847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -544,6 +544,11 @@ Prefab:
       propertyPath: m_enemiesList.Array.data[1]
       value: 
       objectReference: {fileID: 1826814800}
+    - target: {fileID: 114232242149795750, guid: 44a634a5180fa934da86bd4fcb49ac65,
+        type: 2}
+      propertyPath: m_nNumberOfAttempts
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
   m_IsPrefabParent: 0
@@ -596,6 +601,7 @@ Transform:
   m_Children:
   - {fileID: 366349706}
   - {fileID: 2003272076}
+  - {fileID: 1140738787}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -719,6 +725,125 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1140738786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1140738787}
+  - component: {fileID: 1140738791}
+  - component: {fileID: 1140738790}
+  - component: {fileID: 1140738789}
+  - component: {fileID: 1140738788}
+  - component: {fileID: 1140738792}
+  m_Layer: 0
+  m_Name: PickUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1140738787
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140738786}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.44}
+  m_LocalScale: {x: 0.11111112, y: 1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 914437978}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1140738788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140738786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8c515416f1eee45a6a617da651f013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fIncreaseFireRateEffectDuration: 0
+  m_fIncreaseFireRateEffectMagnitude: 0
+  m_fImmunityEffectDuration: 0
+  m_fSlowDownTimeEffectDuration: 0
+  m_fSlowedTimeEffectMagnitude: 0
+  m_fHomingSpellsEffectDuration: 0
+  m_fScatterSpellsEffectDuration: 0
+--- !u!23 &1140738789
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140738786}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a9004303066880c40b6d2b0df30927e4, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1140738790
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140738786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1140738791
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140738786}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1140738792
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140738786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1141589057
 Prefab:
   m_ObjectHideFlags: 0
@@ -772,6 +897,11 @@ Prefab:
       propertyPath: m_enemiesList.Array.data[0]
       value: 
       objectReference: {fileID: 833135846}
+    - target: {fileID: 114232242149795750, guid: 44a634a5180fa934da86bd4fcb49ac65,
+        type: 2}
+      propertyPath: m_nNumberOfAttempts
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
   m_IsPrefabParent: 0
@@ -827,6 +957,11 @@ Prefab:
     - target: {fileID: 1737908242404150, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114232242149795750, guid: 44a634a5180fa934da86bd4fcb49ac65,
+        type: 2}
+      propertyPath: m_nNumberOfAttempts
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
@@ -1098,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fLerpSpeed: 5
-  m_fLerpMagnitude: 0.5
+  m_fLerpRange: 0.25
   m_fDefaultShakeMagnitude: 0
   m_fDefaultShakeRoughness: 0
   m_fDefaultFadeInTime: 0
@@ -1149,9 +1284,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_section: {fileID: 0}
   m_nHealth: 1
-  m_fMaxMovementSpeed: 5
+  m_fMaxMovementSpeed: 700
   m_fOffset: 5
-  m_fMovementSmoothing: 5
+  m_fMovementSmoothing: 10
 --- !u!23 &1420122563
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1251,9 +1386,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_section: {fileID: 0}
   m_nHealth: 1
-  m_fMaxMovementSpeed: 5
+  m_fMaxMovementSpeed: 700
   m_fOffset: 5
-  m_fMovementSmoothing: 5
+  m_fMovementSmoothing: 10
 --- !u!23 &1489028674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1377,6 +1512,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114232242149795750, guid: 44a634a5180fa934da86bd4fcb49ac65,
+        type: 2}
+      propertyPath: m_nNumberOfAttempts
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a634a5180fa934da86bd4fcb49ac65, type: 2}
   m_IsPrefabParent: 0
@@ -1426,9 +1566,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_section: {fileID: 0}
   m_nHealth: 1
-  m_fMaxMovementSpeed: 5
+  m_fMaxMovementSpeed: 700
   m_fOffset: 5
-  m_fMovementSmoothing: 5
+  m_fMovementSmoothing: 10
 --- !u!23 &1826814801
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1522,7 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6171689ab526a2545b58ae2e1b173729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerMovementArea: {fileID: 914437975}
+  m_playField: {fileID: 914437975}
   m_fLevelScrollSpeed: 10
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 1}
 --- !u!1 &2003272075
@@ -1553,7 +1693,7 @@ Transform:
   m_GameObject: {fileID: 2003272075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.1, y: 1, z: 0.1}
+  m_LocalScale: {x: 0.11111112, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 914437978}
   m_RootOrder: 1
@@ -1592,7 +1732,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1b0dc1402fc7d344a433e9ed254ee42, type: 3}
+  - {fileID: 2100000, guid: 4686bf686fcb47f4ea09b94a6c2d5a99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1644,10 +1784,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nLives: 1
+  m_nInitialBombCount: 0
+  m_nMaximumBombCount: 0
   m_fDyingTimerSeconds: 1
   m_fRespawnInvincibilityTimerSeconds: 1
   m_lifeState: 0
-  m_fMouseSensitivity: 10
+  m_fMouseSensitivity: 0.25
   m_fMouseSmoothing: 2
+  m_v3RespawnLocation: {x: 0, y: 1, z: 0}
   m_movementArea: {fileID: 914437975}
   m_currentSection: {fileID: 0}
