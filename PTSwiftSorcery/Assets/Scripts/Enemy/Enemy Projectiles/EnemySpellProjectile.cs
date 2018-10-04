@@ -32,7 +32,7 @@ public class EnemySpellProjectile : MonoBehaviour
 
 	virtual protected void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Player" && m_eBulletType != eBulletType.BEAM && m_eBulletType != eBulletType.MELEE_SWING)
+		if(other.tag == "Player" && m_eBulletType != eBulletType.BEAM)
 		{
 			Destroy(gameObject);
 		}

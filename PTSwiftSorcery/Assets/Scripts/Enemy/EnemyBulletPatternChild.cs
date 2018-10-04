@@ -15,7 +15,6 @@ using UnityEngine;
 public enum eBulletType
 {
 	BASIC_PROJECTILE,
-	MELEE_SWING,
 	BEAM,
 	HOMING_PROJECTILE
 };
@@ -43,6 +42,9 @@ public class EnemyBulletPatternChild : MonoBehaviour
 
 	[Tooltip("How long until a beam disappears, only used if this child fires a beam")]
 	[SerializeField] private float m_fBeamStayTimer;
+
+	[Tooltip("Whether or not the projectile this child shoots should follow the child")]
+	[SerializeField] private bool m_bSpawnChild;
 
 	//Whether or not this pattern child is currently active
 	private bool m_bActive;
@@ -90,7 +92,10 @@ public class EnemyBulletPatternChild : MonoBehaviour
 			newBullet.GetComponent<EnemyBeamSpell>().m_fBeamActiveTimer = m_fBeamActiveTimer;
 			newBullet.GetComponent<EnemyBeamSpell>().m_fBeamStayTimer = m_fBeamStayTimer;
 		}
+
+		if(m_bSpawnChild)
+			newBullet.transform.parent = transform;
+
 		newBullet.GetComponent<EnemySpellProjectile>().m_fMoveSpeed = m_fMoveSpeed;
-		Debug.Log(name + " spawning bullet");
 	}
 }
