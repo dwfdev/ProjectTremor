@@ -72,11 +72,8 @@ public class PlayerActor : MonoBehaviour
 		m_lifeState = eLifeState.NORMAL;
 
 		// calculate movement boundaries
-		//m_fMovementBoundsX = m_movementArea.transform.localScale.x * transform.localScale.x / 2;
-		//m_fMovementBoundsZ = m_movementArea.transform.localScale.z * transform.localScale.z / 2;
-
-		m_fMovementBoundsX = m_movementArea.GetComponent<BoxCollider>().size.x * transform.localScale.x / 2;
-		m_fMovementBoundsZ = m_movementArea.GetComponent<BoxCollider>().size.z * transform.localScale.z / 2;
+		m_fMovementBoundsX = m_movementArea.transform.localScale.x * transform.localScale.x / 2;
+		m_fMovementBoundsZ = m_movementArea.transform.localScale.z * transform.localScale.z / 2;
 
 		// Get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
@@ -154,8 +151,6 @@ public class PlayerActor : MonoBehaviour
 		}
 		#endregion
 
-		Debug.Log(Input.GetAxis("Fire1"));
-
 		// shooting
 		if (Input.GetAxis("Fire1") > 0) {
 			m_spellManager.Fire();
@@ -187,10 +182,7 @@ public class PlayerActor : MonoBehaviour
 					else if(m_lifeState == eLifeState.NORMAL) {
 						// set life state to dying
 						m_lifeState = eLifeState.DYING;
-
-						// start dying timer
-						m_bDyingTimerIsActive = true;
-						m_fDyingTimer = m_fDyingTimerSeconds;
+						StartDyingTimer();
 					}
 				}
 			}
@@ -214,11 +206,26 @@ public class PlayerActor : MonoBehaviour
 
 			// give player invinciblity
 			m_lifeState = eLifeState.INVINCIBLE;
-			
-			// start respawn timer
-			m_bRespawnInvincibilityTimerIsActive = true;
-			m_fRespawnInvincibilityTimer = m_fRespawnInvincibilityTimerSeconds;
+			StartInvincibilityTimer();
 		}
+
+	}
+
+	public void StartDyingTimer()
+	{
+
+		// start dying timer
+		m_bDyingTimerIsActive = true;
+		m_fDyingTimer = m_fDyingTimerSeconds;
+
+	}
+
+	public void StartInvincibilityTimer()
+	{
+
+		// start respawn timer
+		m_bRespawnInvincibilityTimerIsActive = true;
+		m_fRespawnInvincibilityTimer = m_fRespawnInvincibilityTimerSeconds;
 
 	}
 }
