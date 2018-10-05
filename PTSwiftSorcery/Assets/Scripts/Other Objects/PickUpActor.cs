@@ -18,7 +18,7 @@ public enum ePickUpType
 	HOMING_SPELLS,
 	SCATTER_SPELLS,
 	BOMB,
-	ERROR
+	NULL
 }
 
 public struct sPickUp
@@ -74,7 +74,7 @@ public class PickUpActor : MonoBehaviour {
 		m_fSlowedTime = m_fSlowDownTimeEffectDuration * m_fSlowedTimeEffectMagnitude;
 
 		// randomly determine pickup type
-		switch(UnityEngine.Random.Range(0, 6)) {
+		switch(UnityEngine.Random.Range(2, 2)) {
 			case 0:
 				m_pickUp.type = ePickUpType.INCREASE_FIRE_RATE;
 				m_pickUp.duration = m_fIncreaseFireRateEffectDuration;
@@ -111,10 +111,10 @@ public class PickUpActor : MonoBehaviour {
 				break;
 
 			default:
-				m_pickUp.type = ePickUpType.ERROR;
+				m_pickUp.type = ePickUpType.NULL;
 				break;
 		}
-
+		Debug.Log(m_pickUp.type + ", " + m_pickUp.magnitude + ", " + m_pickUp.duration);
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -124,15 +124,7 @@ public class PickUpActor : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			// try to give player pick up
 			try {
-				if (m_pickUp.type == ePickUpType.BOMB) {
-					other.gameObject.GetComponent<PlayerActor>().AddToPlayerBombCount((int)m_pickUp.magnitude);
-				}
-				else if (m_pickUp.type == ePickUpType.SHIELD) {
-					other.gameObject.GetComponent<PlayerActor>().m_lifeState = eLifeState.SHIELDED;
-				}
-				else {
-					other.gameObject.GetComponent<PlayerActor>().m_currentPickUp = m_pickUp;
-				}
+				other.gameObject.GetComponent<PlayerActor>().SetPickUp(m_pickUp);
 			}
 			catch (Exception e) {
 				Debug.LogError(e.Message, gameObject);

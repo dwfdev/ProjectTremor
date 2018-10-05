@@ -49,6 +49,9 @@ public class PlayerActor : MonoBehaviour
 	[Tooltip("The area in which the player can move.")]
 	public GameObject m_movementArea;
 
+	[Tooltip("Bomb asset prefab.")]
+	[SerializeField] private GameObject m_bombPrefab;
+
 	[HideInInspector]
 	public LevelSection m_currentSection;
 
@@ -67,6 +70,8 @@ public class PlayerActor : MonoBehaviour
 
 	[HideInInspector]
 	public sPickUp m_currentPickUp;
+
+	private bool m_bHasPickUp;
 
 	private int m_nCurrentBombCount;
 
@@ -88,6 +93,9 @@ public class PlayerActor : MonoBehaviour
 
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
+
+		// initialise hasPowerUp to false
+		m_bHasPickUp = false;
 
 	}
 
@@ -127,29 +135,35 @@ public class PlayerActor : MonoBehaviour
 
 		#region Other Inputs
 		// activate pickup
-		if (Input.GetAxis("Fire3") > 0) {
+		if (Input.GetAxis("Fire3") > 0 && m_bHasPickUp) {
 			StartCoroutine(ActivatePickUp());
 		}
 
 		// pick spell type
 		// FIRE
-		if (Input.GetKeyDown(KeyCode.Alpha1)) {
+		if (Input.GetAxis("FireSwitch") > 0) {
 			m_spellManager.m_eSpellType = eSpellType.FIRE;
 		}
 
 		// ICE
-		if (Input.GetKeyDown(KeyCode.Alpha2)) {
+		if (Input.GetAxis("IceSwitch") > 0) {
 			m_spellManager.m_eSpellType = eSpellType.ICE;
 		}
 
 		// LIGHTNING
-		if (Input.GetKeyDown(KeyCode.Alpha3)) {
+		if (Input.GetAxis("LightningSwitch") > 0) {
 			m_spellManager.m_eSpellType = eSpellType.LIGHTNING;
 		}
 
 		// shooting
+		// normal spells
 		if(Input.GetAxis("Fire1") > 0) {
 			m_spellManager.Fire();
+		}
+
+		// bomb
+		if (Input.GetKeyDown(KeyCode.Mouse1)) {
+			ShootBomb();
 		}
 		#endregion
 		
@@ -274,8 +288,31 @@ public class PlayerActor : MonoBehaviour
 
 	}
 
+	public void SetPickUp(sPickUp newPickUp) {
+		
+		// if power up takes immediate effect
+		if (newPickUp.type == ePickUpType.BOMB) {
+			AddToPlayerBombCount(1);
+		}
+
+		if (newPickUp.type == ePickUpType.SHIELD) {
+			m_lifeState = eLifeState.SHIELDED;
+		}
+
+		// if it must be activated manually by the player
+		else {
+			m_currentPickUp = newPickUp;
+
+			// set HasPickUp to true
+			m_bHasPickUp = true;
+		}
+
+	}
+
 	IEnumerator ActivatePickUp()
 	{
+
+		Debug.Log(m_currentPickUp.type.ToString() + " was activated.");
 
 		// run pickups code based on its type
 		switch(m_currentPickUp.type) {
@@ -288,6 +325,11 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_fFireRate /= m_currentPickUp.magnitude;
+				Debug.Log("Fire rate reset.");
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+				Debug.Log("pick up cleared.");
 				break;
 
 			case ePickUpType.HOMING_SPELLS:
@@ -299,6 +341,11 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_bIsHoming = false;
+				Debug.Log("spell rate reset.");
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+				Debug.Log("pick up cleared.");
 				break;
 
 			case ePickUpType.SCATTER_SPELLS:
@@ -310,29 +357,65 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_bIsScatter = false;
+				Debug.Log("spell rate reset.");
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+				Debug.Log("pick up cleared.");
 				break;
 
 			case ePickUpType.IMMUNITY:
 				// affect player
 				m_lifeState = eLifeState.INVINCIBLE;
 				StartInvincibilityTimer(m_currentPickUp.duration);
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+				Debug.Log("pick up cleared.");
 				break;
 
 			case ePickUpType.SLOW_DOWN_TIME:
 				// affect time scale
 				Time.timeScale = m_currentPickUp.magnitude;
 
+				// scale fixed delta time
+				Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
 				// reset
 				Time.timeScale = 1;
+				Time.fixedDeltaTime = 0.02f;
+				Debug.Log("time scale rate reset.");
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+				Debug.Log("pick up cleared.");
 				break;
 
 			default:
 				Debug.LogError("Could not activate pick up.");
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+				Debug.Log("pick up cleared.");
 				break;
 		}
+
+	}
+
+	void ShootBomb()
+	{
+
+		// check that player has bombs
+		if(m_nCurrentBombCount > 0) {
+			// instantiate new bomb
+			Instantiate(m_bombPrefab, transform.position, Quaternion.identity);
+		}
+
+		// decrement bomb count
+		--m_nCurrentBombCount;
 
 	}
 }

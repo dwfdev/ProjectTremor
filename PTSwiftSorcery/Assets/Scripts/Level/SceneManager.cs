@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 ///<summary>
-///Script Manager: Denver
-///Description:
-///
+///		Script Manager: Denver
+///		Description:
+///		Date Modified:
 ///</summary>
 public class SceneManager : MonoBehaviour {
 

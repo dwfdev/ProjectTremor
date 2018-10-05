@@ -17,20 +17,19 @@ public class EnemyActor : MonoBehaviour {
 	public LevelSection m_section;
 
 	[Tooltip("An integer amount of health the enemy has.  If this is lower than 0, the enemy will die.")]
-	[SerializeField]
-	private int m_nHealth;
+	[SerializeField] private int m_nHealth;
+
+	[Tooltip("How much score this enemy drops on death.")]
+	[SerializeField] private float m_nWorth;
 
 	[Tooltip("Maximum speed at which the enemy will move.")]
-	[SerializeField]
-	private float m_fMaxMovementSpeed;
+	[SerializeField] private float m_fMaxMovementSpeed;
 
 	[Tooltip("How far infront the enemy will try to be from its target.")]
-	[SerializeField]
-	private float m_fOffset;
+	[SerializeField] private float m_fOffset;
 
 	[Tooltip("How smoothed the enemy's movement will be.")]
-	[SerializeField]
-	private float m_fMovementSmoothing;
+	[SerializeField] private float m_fMovementSmoothing;
 
 	private Vector3 m_v3Velocity = Vector3.zero;
 	private GameObject m_target;
@@ -89,6 +88,7 @@ public class EnemyActor : MonoBehaviour {
 		m_section.m_enemiesList.Remove(this);
 
 		Destroy(gameObject);
+		
 	}
 
 	void CreateChild()

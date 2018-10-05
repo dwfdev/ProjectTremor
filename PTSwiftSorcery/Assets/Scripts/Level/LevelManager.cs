@@ -19,8 +19,7 @@ public class LevelManager : MonoBehaviour
 {
 
 	[Tooltip("The play field of the level.")]
-	[SerializeField]
-	private GameObject m_playField;
+	public GameObject m_playField;
 
 	[Tooltip("The speed at which the level will scroll.")]
 	public float m_fLevelScrollSpeed;
@@ -28,7 +27,8 @@ public class LevelManager : MonoBehaviour
 	[Tooltip("The direction the level will scroll.")]
 	public Vector3 m_v3LevelScrollDirection;
 
-	private eLevelDifficulty m_levelDifficulty;
+	[HideInInspector]
+	public eLevelDifficulty m_levelDifficulty;
 
 	void Start()
 	{
@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
 		m_levelDifficulty = eLevelDifficulty.EASY;
 
 		// hide cursor
-		Cursor.lockState = CursorLockMode.Locked;
+		// Cursor.lockState = CursorLockMode.Locked;
 
 	}
 
