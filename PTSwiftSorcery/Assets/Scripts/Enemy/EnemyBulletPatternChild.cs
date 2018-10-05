@@ -85,7 +85,7 @@ public class EnemyBulletPatternChild : MonoBehaviour
 
 	private void Fire()
 	{
-		GameObject newBullet = Instantiate(m_bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
+		GameObject newBullet = Instantiate(m_bulletPrefab, transform.position, transform.rotation);
 		newBullet.GetComponent<EnemySpellProjectile>().m_eBulletType = m_eBulletType;
 		if(m_eBulletType == eBulletType.BEAM)
 		{

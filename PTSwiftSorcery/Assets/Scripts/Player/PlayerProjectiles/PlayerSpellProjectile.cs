@@ -19,10 +19,13 @@ public class PlayerSpellProjectile : MonoBehaviour
 	public GameObject m_target;
 
 	[Tooltip("Whether or not the player is firing homing shots")]
-	public bool m_isHoming;
+	public bool m_bIsHoming;
 
 	[Tooltip("Whether or not the player is firing scatter shots")]
-	public bool m_isScatter;
+	public bool m_bIsScatter;
+
+	[Tooltip("How much damage this shot does")]
+	public int m_nDamage;
 
 	// Use this for initialization
 	void Start ()
@@ -33,12 +36,15 @@ public class PlayerSpellProjectile : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(m_isHoming)
+		if(m_bIsHoming)
 		{
 			if(m_target == null)
 			{
-				//select new target if prev target is dead or nonexistent
-				//also check if there are no enemies, if no enemies, just move forward
+				m_target = GameObject.FindGameObjectWithTag("Enemy");
+				if(m_target == null)
+				{
+					m_bIsHoming = false;
+				}
 			}
 			//seek towards m_target
 			Vector3 homingVector = m_target.transform.position - transform.position;
@@ -48,7 +54,23 @@ public class PlayerSpellProjectile : MonoBehaviour
 		}
 		else
 		{
-			transform.position += Vector3.forward * m_fMoveSpeed * Time.deltaTime;
+			transform.position += transform.forward * m_fMoveSpeed * Time.deltaTime;
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.tag == "Playfield")
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Enemy")
+		{
+			Destroy(gameObject);
 		}
 	}
 }

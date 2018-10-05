@@ -292,24 +292,24 @@ public class PlayerActor : MonoBehaviour
 
 			case ePickUpType.HOMING_SPELLS:
 				// affect spell manager
-				m_spellManager.m_isHoming = true;
+				m_spellManager.m_bIsHoming = true;
 
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
 				// reset
-				m_spellManager.m_isHoming = false;
+				m_spellManager.m_bIsHoming = false;
 				break;
 
 			case ePickUpType.SCATTER_SPELLS:
 				// affect spell manager
-				m_spellManager.m_isScatter = true;
+				m_spellManager.m_bIsScatter = true;
 
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
 				// reset
-				m_spellManager.m_isScatter = false;
+				m_spellManager.m_bIsScatter = false;
 				break;
 
 			case ePickUpType.IMMUNITY:
