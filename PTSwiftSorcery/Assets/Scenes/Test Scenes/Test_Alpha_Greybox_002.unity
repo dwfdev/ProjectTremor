@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44553018, g: 0.4896549, b: 0.5442289, a: 1}
+  m_IndirectSpecularColor: {r: 0.44552994, g: 0.4896546, b: 0.544228, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   m_playField: {fileID: 441444183}
   m_fLevelScrollSpeed: 0
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 1}
+  m_levelDifficulty: 0
 --- !u!4 &414083739
 Transform:
   m_ObjectHideFlags: 0
@@ -317,7 +318,8 @@ MonoBehaviour:
   m_bIsActive: 0
   m_section: {fileID: 0}
   m_nHealth: 1000
-  m_fMaxMovementSpeed: 0
+  m_nWorth: 10000
+  m_fMaxMovementSpeed: 2
   m_fOffset: 0
   m_fMovementSmoothing: 1
 --- !u!54 &827237423
@@ -524,7 +526,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 4a669333e59fe7b4b9822a4d9f679c2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a669333e59fe7b4b9822a4d9f679c2b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -909,4 +911,5 @@ MonoBehaviour:
   m_fMouseSmoothing: 1
   m_v3RespawnLocation: {x: 0, y: 1, z: 0}
   m_movementArea: {fileID: 58033649}
+  m_bombPrefab: {fileID: 0}
   m_currentSection: {fileID: 0}
