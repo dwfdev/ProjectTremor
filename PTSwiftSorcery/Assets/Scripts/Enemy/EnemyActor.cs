@@ -63,7 +63,10 @@ public class EnemyActor : MonoBehaviour
 	public void Die()
 	{
 		// remove enemy from the section
-		m_section.m_enemiesList.Remove(this);
+		if(m_section != null)
+		{
+			m_section.m_enemiesList.Remove(this);
+		}
 
 		m_bIsAlive = false;
 
