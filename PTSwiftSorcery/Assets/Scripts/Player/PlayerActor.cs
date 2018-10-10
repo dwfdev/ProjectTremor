@@ -4,9 +4,8 @@ using UnityEngine;
 
 ///<summary>
 ///		Script Manager:	Denver
-///		Description:	Handles the movement of the player using the mouse,
-///						the life state of the player and shooting mechancis.
-///		Date Modified:	03/10/2018
+///		Description:	Handles Player inupts and life state.
+///		Date Modified:	11/10/2018
 ///</summary>
 
 public enum eLifeState {
@@ -73,7 +72,11 @@ public class PlayerActor : MonoBehaviour
 
 	private bool m_bHasPickUp;
 
+	private bool m_bFire2Down;
+
 	private bool m_bFire3Down;
+
+	private BombActor m_bomb;
 
 	private int m_nCurrentBombCount;
 
@@ -93,11 +96,16 @@ public class PlayerActor : MonoBehaviour
 		// Get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
 
+		// set up bomb actor
+		m_bomb = GetComponent<BombActor>();
+
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
 
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
+
+		m_bFire2Down = false;
 
 		m_bFire3Down = false;
 
@@ -143,7 +151,8 @@ public class PlayerActor : MonoBehaviour
 			m_bFire3Down = true;
 			StartCoroutine(ActivatePickUp());
 		}
-		else {
+		
+		if (Input.GetAxis("Fire3") == 0) {
 			m_bFire3Down = false;
 		}
 
@@ -170,8 +179,13 @@ public class PlayerActor : MonoBehaviour
 		}
 
 		// bomb
-		if (Input.GetKeyDown(KeyCode.Mouse1)) {
+		if (Input.GetAxis("Fire2") > 0 && !m_bFire2Down) {
+			m_bFire2Down = true;
 			ShootBomb();
+		}
+		
+		if (Input.GetAxis("Fire2") == 0) {
+			m_bFire2Down = false;
 		}
 		#endregion
 		
@@ -322,8 +336,6 @@ public class PlayerActor : MonoBehaviour
 	IEnumerator ActivatePickUp()
 	{
 
-		Debug.Log(m_currentPickUp.type.ToString() + " was activated.");
-
 		// run pickups code based on its type
 		switch(m_currentPickUp.type) {
 			case ePickUpType.INCREASE_FIRE_RATE:
@@ -338,7 +350,6 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_fFireRate *= m_currentPickUp.magnitude;
-				Debug.Log("Fire rate reset.");
 				break;
 
 			case ePickUpType.HOMING_SPELLS:
@@ -353,7 +364,6 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_bIsHoming = false;
-				Debug.Log("spell type reset.");
 				break;
 
 			case ePickUpType.SCATTER_SPELLS:
@@ -368,7 +378,6 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_bIsScatter = false;
-				Debug.Log("spell type reset.");
 				break;
 
 			case ePickUpType.IMMUNITY:
@@ -397,7 +406,6 @@ public class PlayerActor : MonoBehaviour
 				// reset
 				Time.timeScale = 1;
 				Time.fixedDeltaTime = 0.02f;
-				Debug.Log("time scale rate reset.");
 				break;
 
 			default:
@@ -415,12 +423,12 @@ public class PlayerActor : MonoBehaviour
 
 		// check that player has bombs
 		if(m_nCurrentBombCount > 0) {
-			// instantiate new bomb
-			Instantiate(m_bombPrefab, transform.position, Quaternion.identity);
-		}
+			// blow up bomb
+			m_bomb.Boom();
 
-		// decrement bomb count
-		--m_nCurrentBombCount;
+			// decrement bomb count
+			--m_nCurrentBombCount;
+		}
 
 	}
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager: Denver
 ///		Description:	Handles the behaviour of the pick-up
-///		Date Modified:
+///		Date Modified:	11/10/2018
 ///</summary>
 
 public enum ePickUpType
@@ -113,10 +113,9 @@ public class PickUpActor : MonoBehaviour {
 		}
 		else {
 			m_pickUp.type = ePickUpType.NULL;
-			Debug.LogError("Probabilities do not equal 100.", gameObject);
+			Debug.LogError("Probabilities do not equal 100, but " + totalProbability, gameObject);
 		}
-
-		Debug.Log(m_pickUp.type + ", " + m_pickUp.magnitude + ", " + m_pickUp.duration);
+		
 	}
 
 	private void OnTriggerEnter(Collider other)

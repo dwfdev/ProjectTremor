@@ -57,19 +57,19 @@ public class SplitActor : MonoBehaviour {
 		// check that other is the player
 		if (other.gameObject.tag == "Player") {
 			// get player movement area
-			GameObject moveArea = other.GetComponent<PlayerActor>().m_movementArea;
+			GameObject playfield = GameObject.FindGameObjectWithTag("Playfield");
 
 			// find direction to new centre
-			Vector3 v3DesiredDirection = new Vector3(m_fDesiredX, 0f, 0f) - moveArea.transform.position;
+			Vector3 v3DesiredDirection = new Vector3(m_fDesiredX, 0f, 0f) - playfield.transform.position;
 			v3DesiredDirection = new Vector3(v3DesiredDirection.x, 0f, 0f);
 			v3DesiredDirection.Normalize();
 
 			// move in direction
-			moveArea.transform.Translate(v3DesiredDirection * m_fMoveSpeed * Time.deltaTime);
+			playfield.transform.Translate(v3DesiredDirection * m_fMoveSpeed * Time.deltaTime);
 
 			// if moveArea is more-or-less at destination, set its position to exactly that destination
-			if (Vector2.Distance(new Vector2(m_fDesiredX, 0f), new Vector2(moveArea.transform.position.x, 0f)) <= 0.1f) {
-				moveArea.transform.position = new Vector3(m_fDesiredX, moveArea.transform.position.y, moveArea.transform.position.z);
+			if (Vector2.Distance(new Vector2(m_fDesiredX, 0f), new Vector2(playfield.transform.position.x, 0f)) <= 0.1f) {
+				playfield.transform.position = new Vector3(m_fDesiredX, playfield.transform.position.y, playfield.transform.position.z);
 			}
 
 		}
