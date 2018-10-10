@@ -173,13 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bIsActive: 0
-  m_section: {fileID: 0}
   m_nHealth: 1
-  m_nWorth: 0
-  m_fMaxMovementSpeed: 100
-  m_fOffset: 5
-  m_fMovementSmoothing: 10
+  m_bIsActive: 0
+  m_bIsAlive: 0
+  m_section: {fileID: 0}
 --- !u!23 &402334995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -341,7 +338,7 @@ GameObject:
   - component: {fileID: 793912767}
   - component: {fileID: 793912766}
   m_Layer: 0
-  m_Name: LevelSection (1)
+  m_Name: LevelSection (2)
   m_TagString: LevelSection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,13 +475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bIsActive: 0
-  m_section: {fileID: 0}
   m_nHealth: 1
-  m_nWorth: 0
-  m_fMaxMovementSpeed: 100
-  m_fOffset: 5
-  m_fMovementSmoothing: 10
+  m_bIsActive: 0
+  m_bIsAlive: 0
+  m_section: {fileID: 0}
 --- !u!23 &833135847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -728,18 +722,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fIFRDuration: 5
   m_fIFRMagnitude: 2
-  m_nIFRProbability: 20
+  m_nIFRProbability: 0
   m_fImmunityDuration: 3
-  m_nImmunityProbabilty: 10
+  m_nImmunityProbabilty: 0
   m_fSDTDuration: 3
-  m_fSTDMagnitude: 0.25
-  m_nSTDProbabilty: 10
+  m_fSTDMagnitude: 0.00001
+  m_nSTDProbabilty: 100
   m_fHomingSpellDuration: 5
-  m_nHomingSpellProbabilty: 20
+  m_nHomingSpellProbabilty: 0
   m_fScatterSpellDuration: 5
-  m_nScatterSpellProbabilty: 20
-  m_nShieldProbability: 10
-  m_nBombProbability: 10
+  m_nScatterSpellProbabilty: 0
+  m_nShieldProbability: 0
+  m_nBombProbability: 0
 --- !u!23 &1140738789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1362,13 +1356,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bIsActive: 0
-  m_section: {fileID: 0}
   m_nHealth: 1
-  m_nWorth: 0
-  m_fMaxMovementSpeed: 100
-  m_fOffset: 5
-  m_fMovementSmoothing: 10
+  m_bIsActive: 0
+  m_bIsAlive: 0
+  m_section: {fileID: 0}
 --- !u!23 &1420122563
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1523,7 +1514,7 @@ GameObject:
   - component: {fileID: 1466071204}
   - component: {fileID: 1466071203}
   m_Layer: 0
-  m_Name: LevelSection (2)
+  m_Name: LevelSection (3)
   m_TagString: LevelSection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1661,13 +1652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bIsActive: 0
-  m_section: {fileID: 0}
   m_nHealth: 1
-  m_nWorth: 0
-  m_fMaxMovementSpeed: 100
-  m_fOffset: 5
-  m_fMovementSmoothing: 10
+  m_bIsActive: 0
+  m_bIsAlive: 0
+  m_section: {fileID: 0}
 --- !u!23 &1489028674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1764,7 +1752,7 @@ GameObject:
   - component: {fileID: 1528226522}
   - component: {fileID: 1528226521}
   m_Layer: 0
-  m_Name: LevelSection
+  m_Name: LevelSection (1)
   m_TagString: LevelSection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1914,13 +1902,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bIsActive: 0
-  m_section: {fileID: 0}
   m_nHealth: 1
-  m_nWorth: 0
-  m_fMaxMovementSpeed: 100
-  m_fOffset: 5
-  m_fMovementSmoothing: 10
+  m_bIsActive: 0
+  m_bIsAlive: 0
+  m_section: {fileID: 0}
 --- !u!23 &1826814801
 MeshRenderer:
   m_ObjectHideFlags: 0

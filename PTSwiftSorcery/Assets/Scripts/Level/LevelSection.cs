@@ -54,17 +54,16 @@ public class LevelSection : MonoBehaviour {
 			}
 		}
 
+		// if player has run out of attempts
+		if (m_nCurrentSectionAttempts > m_nNumberOfAttempts) {
+			m_completionState = eCompletionState.FAILED;
+		}
+
+		// if all enemies have been killed
 		if (enemyKillCount == m_enemiesList.Count) {
 			m_completionState = eCompletionState.CLEARED;
 		}
 
-		// check if player has failed the section
-		if (m_nCurrentSectionAttempts > m_nNumberOfAttempts) {
-			m_completionState = eCompletionState.FAILED;
-			foreach(EnemyActor enemy in m_enemiesList) {
-				enemy.gameObject.SetActive(false);
-			}
-		}
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -100,7 +99,11 @@ public class LevelSection : MonoBehaviour {
 
 			// section is failed
 			if (m_completionState == eCompletionState.FAILED) {
-				// do the failed stuff
+				foreach(EnemyActor enemy in m_enemiesList) {
+					enemy.m_bIsAlive = false;
+					enemy.m_bIsActive = false;
+					enemy.enabled = false;
+				}
 			}
 		}
 

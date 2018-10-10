@@ -226,6 +226,8 @@ public class PlayerActor : MonoBehaviour
 			// ...and that the bullet was active
 			if(info.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
 
+				Debug.Log(m_lifeState.ToString());
+
 				// if player isn't invincible
 				if(m_lifeState != eLifeState.INVINCIBLE) {
 					Debug.Log(name + " has collided with an EnemyBullet");
