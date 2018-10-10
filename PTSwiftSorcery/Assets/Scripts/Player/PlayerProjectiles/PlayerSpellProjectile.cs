@@ -30,7 +30,7 @@ public class PlayerSpellProjectile : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		
+		transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
 	}
 	
 	// Update is called once per frame

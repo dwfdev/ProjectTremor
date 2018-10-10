@@ -95,6 +95,8 @@ public class EnemyBulletPatternChild : MonoBehaviour
 
 		if(m_bSpawnChild)
 			newBullet.transform.parent = transform;
+		else
+			newBullet.transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
 
 		newBullet.GetComponent<EnemySpellProjectile>().m_fMoveSpeed = m_fMoveSpeed;
 	}

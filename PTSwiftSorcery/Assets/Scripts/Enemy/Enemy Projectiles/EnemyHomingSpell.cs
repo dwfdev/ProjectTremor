@@ -33,7 +33,7 @@ public class EnemyHomingSpell : EnemySpellProjectile
 
 	override protected void Awake()
 	{
-		m_bActive = true;
+		base.Awake();
 		m_bIsHoming = true;
 		m_fTimer = 0.0f;
 
