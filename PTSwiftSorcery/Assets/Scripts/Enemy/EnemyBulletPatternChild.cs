@@ -28,6 +28,9 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	//The current time in seconds
 	private float m_fCurrentTimer;
 
+	[HideInInspector]
+	public bool m_bEnvironment;
+
 	[Tooltip("How fast the projectile this fires moves")]
 	[SerializeField] private float m_fMoveSpeed;
 
@@ -95,7 +98,7 @@ public class EnemyBulletPatternChild : MonoBehaviour
 
 		if(m_bSpawnChild)
 			newBullet.transform.parent = transform;
-		else
+		else if(!m_bEnvironment)
 			newBullet.transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
 
 		newBullet.GetComponent<EnemySpellProjectile>().m_fMoveSpeed = m_fMoveSpeed;

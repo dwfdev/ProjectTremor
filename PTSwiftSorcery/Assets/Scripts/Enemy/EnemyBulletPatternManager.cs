@@ -9,6 +9,12 @@ using UnityEngine;
 ///</summary>
 public class EnemyBulletPatternManager : MonoBehaviour
 {
+	[Tooltip("What this pattern fires from")]
+	[SerializeField] private GameObject m_parent;
+
+	[Tooltip("Whether or not this pattern moves with the playfield or not")]
+	[SerializeField] private bool m_bEnvironment;
+
 	[Tooltip("How long between pattern firing in seconds. \nThis should always be higher or equal to the longest child timer, or else bad stuff can happen")]
 	[SerializeField] private float m_fTimer;
 
@@ -24,6 +30,8 @@ public class EnemyBulletPatternManager : MonoBehaviour
 		foreach (GameObject child in m_children)
 		{
 			EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+
+			patternChild.m_bEnvironment = m_bEnvironment;
 
 			if (m_fTimer < patternChild.GetTimer())
 				Debug.LogError("Timer on " + gameObject.name + " is shorter than " + child.name + ", you should fix this immediately!");
