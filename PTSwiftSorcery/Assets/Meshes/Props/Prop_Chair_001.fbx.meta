@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ab1710a84dd73744c9f28757677a2170
-timeCreated: 1538634427
+guid: 006faabc6b278e349a373222aec8dce5
+timeCreated: 1539142400
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,8 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Environment_Chair_001
-    9500000: //RootNode
+    4300000: Prop_Chair_001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
