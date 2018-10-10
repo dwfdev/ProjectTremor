@@ -63,7 +63,7 @@ public class PickUpActor : MonoBehaviour {
 	[SerializeField] private float m_fSDTDuration;
 
 	[Tooltip("The rate time will pass while time is slowed.")]
-	[SerializeField] [Range(0.05f, 1)] float m_fSTDMagnitude;
+	[SerializeField] [Range(0.00001f, 1)] float m_fSTDMagnitude;
 	
 	[Tooltip("Probability of Slow Down Time pickup. Makue sure all probabilties sum to 100.")]
 	[SerializeField] [Range(0, 100)] private int m_nSTDProbabilty;
