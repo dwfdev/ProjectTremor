@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
 		m_levelDifficulty = eLevelDifficulty.EASY;
 
 		// hide cursor
-		// Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Locked;
 
 	}
 
