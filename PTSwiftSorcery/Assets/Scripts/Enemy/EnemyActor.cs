@@ -32,6 +32,7 @@ public class EnemyActor : MonoBehaviour
 	private void Start()
 	{
 		m_bIsActive = false;
+		m_bIsAlive = true;
 	}
 
 	private void Update()
@@ -63,6 +64,8 @@ public class EnemyActor : MonoBehaviour
 	{
 		// remove enemy from the section
 		m_section.m_enemiesList.Remove(this);
+
+		m_bIsAlive = false;
 
 		Destroy(gameObject);
 	}
