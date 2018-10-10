@@ -35,85 +35,87 @@ public struct sPickUp
 
 public class PickUpActor : MonoBehaviour {
 
-	#region PickUp variables
-	// increase fire rate pick up
+	// increased fire rate
+	[Header("Increased Fire Rate.")]
+
 	[Tooltip("How long the player will have an increased fire rate.")]
-	[SerializeField] private float m_fIncreaseFireRateEffectDuration;
+	[SerializeField] private float m_fIFRDuration;
 
 	[Tooltip("How many times faster the fire rate will be.")]
-	[SerializeField] private float m_fIncreaseFireRateEffectMagnitude;
+	[SerializeField] private float m_fIFRMagnitude;
+
+	[Tooltip("Probablity of Increased Fire Rate pickup. Makue sure all probabilties sum to 100.")]
+	[SerializeField] [Range(0, 100)] private int m_nIFRProbability;
 
 	// immunity pick up
+	[Header("Immunity.")]
+
 	[Tooltip("How long the player will be immune to enemy spells.")]
-	[SerializeField] private float m_fImmunityEffectDuration;
+	[SerializeField] private float m_fImmunityDuration;
+
+	[Tooltip("Probability of Immunity pickup. Makue sure all probabilties sum to 100.")]
+	[SerializeField] [Range(0, 100)] private int m_nImmunityProbabilty;
 
 	// slow down time pick up
+	[Header("Slow Down Time.")]
+
 	[Tooltip("Time in seconds that slow down time pick up lasts.")]
-	[SerializeField] private float m_fSlowDownTimeEffectDuration;
+	[SerializeField] private float m_fSDTDuration;
 
 	[Tooltip("The rate time will pass while time is slowed.")]
-	[SerializeField] [Range(0.05f, 1)] float m_fSlowedTimeEffectMagnitude;
+	[SerializeField] [Range(0.05f, 1)] float m_fSTDMagnitude;
+	
+	[Tooltip("Probability of Slow Down Time pickup. Makue sure all probabilties sum to 100.")]
+	[SerializeField] [Range(0, 100)] private int m_nSTDProbabilty;
 
 	// homing spells pick up
+	[Header("Homing Spells.")]
+
 	[Tooltip("How long the player's spells will be homing.")]
-	[SerializeField] private float m_fHomingSpellsEffectDuration;
+	[SerializeField] private float m_fHomingSpellDuration;
+
+	[Tooltip("Probabilty of homing spells pickup. Makue sure all probabilties sum to 100.")]
+	[SerializeField] [Range(0, 100)] private int m_nHomingSpellProbabilty;
 
 	// scatter spells pick up
+	[Header("Scatter Spells.")]
+
 	[Tooltip("How long the player's spells will be scatter.")]
-	[SerializeField] private float m_fScatterSpellsEffectDuration;
-	#endregion
+	[SerializeField] private float m_fScatterSpellDuration;
+
+	[Tooltip("Probabilty of scatter spell pickup. Makue sure all probabilties sum to 100.")]
+	[SerializeField] [Range(0, 100)] private int m_nScatterSpellProbabilty;
+
+	// shield pick up
+	[Header("Shield.")]
+
+	[Tooltip("Probability of shield pick up. Make sure all probabilities sum to 100.")]
+	[SerializeField] [Range(0, 100)] private int m_nShieldProbability;
+
+	// bomb pick up
+	[Header("Bomb.")]
+	[SerializeField] [Range(0, 100)] private int m_nBombProbability;
 
 	private sPickUp m_pickUp;
 
-	private float m_fSlowedTime;
+	private Dictionary<sPickUp, int> m_probabilities = new Dictionary<sPickUp, int>();
 
 	// Use this for initialization
 	void Start () {
 
-		// scale slow down time effect time
-		m_fSlowedTime = m_fSlowDownTimeEffectDuration * m_fSlowedTimeEffectMagnitude;
+		// set to child of the playfield
+		transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
 
-		// randomly determine pickup type
-		switch(UnityEngine.Random.Range(2, 2)) {
-			case 0:
-				m_pickUp.type = ePickUpType.INCREASE_FIRE_RATE;
-				m_pickUp.duration = m_fIncreaseFireRateEffectDuration;
-				m_pickUp.magnitude = m_fIncreaseFireRateEffectMagnitude;
-				break;
+		int totalProbability = m_nIFRProbability + m_nImmunityProbabilty + m_nShieldProbability + m_nBombProbability + m_nHomingSpellProbabilty + m_nScatterSpellProbabilty + m_nSTDProbabilty;
 
-			case 1:
-				m_pickUp.type = ePickUpType.IMMUNITY;
-				m_pickUp.duration = m_fImmunityEffectDuration;
-				break;
-
-			case 2:
-				m_pickUp.type = ePickUpType.SLOW_DOWN_TIME;
-				m_pickUp.duration = m_fSlowedTime;
-				m_pickUp.magnitude = m_fSlowedTimeEffectMagnitude;
-				break;
-
-			case 3:
-				m_pickUp.type = ePickUpType.HOMING_SPELLS;
-				m_pickUp.duration = m_fHomingSpellsEffectDuration;
-				break;
-
-			case 4:
-				m_pickUp.type = ePickUpType.SCATTER_SPELLS;
-				m_pickUp.duration = m_fScatterSpellsEffectDuration;
-				break;
-
-			case 5:
-				m_pickUp.type = ePickUpType.BOMB;
-				break;
-
-			case 6:
-				m_pickUp.type = ePickUpType.SHIELD;
-				break;
-
-			default:
-				m_pickUp.type = ePickUpType.NULL;
-				break;
+		if (totalProbability == 100) {
+			Randomise();
 		}
+		else {
+			m_pickUp.type = ePickUpType.NULL;
+			Debug.LogError("Probabilities do not equal 100.", gameObject);
+		}
+
 		Debug.Log(m_pickUp.type + ", " + m_pickUp.magnitude + ", " + m_pickUp.duration);
 	}
 
@@ -124,7 +126,9 @@ public class PickUpActor : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			// try to give player pick up
 			try {
-				other.gameObject.GetComponent<PlayerActor>().SetPickUp(m_pickUp);
+				if (m_pickUp.type != ePickUpType.NULL) {
+					other.gameObject.GetComponent<PlayerActor>().SetPickUp(m_pickUp);
+				}
 			}
 			catch (Exception e) {
 				Debug.LogError(e.Message, gameObject);
@@ -132,6 +136,49 @@ public class PickUpActor : MonoBehaviour {
 
 			// destroy the pick up
 			Destroy(gameObject);
+		}
+
+	}
+
+	private void Randomise() {
+
+		// scale slow down time effect time
+		m_fSDTDuration *= m_fSTDMagnitude;
+
+		// set up pick ups
+		sPickUp ifr = new sPickUp() { duration = m_fIFRDuration, magnitude = m_fIFRMagnitude, type = ePickUpType.INCREASE_FIRE_RATE };
+		sPickUp immunity = new sPickUp() { duration = m_fImmunityDuration, type = ePickUpType.IMMUNITY };
+		sPickUp shield = new sPickUp() { type = ePickUpType.SHIELD };
+		sPickUp sdt = new sPickUp() { duration = m_fSDTDuration, magnitude = m_fSTDMagnitude, type = ePickUpType.SLOW_DOWN_TIME };
+		sPickUp homing = new sPickUp() { duration = m_fHomingSpellDuration, type = ePickUpType.HOMING_SPELLS };
+		sPickUp scatter = new sPickUp() { duration = m_fScatterSpellDuration, type = ePickUpType.SCATTER_SPELLS };
+		sPickUp bomb = new sPickUp() { type = ePickUpType.BOMB };
+
+		// set up probabilities
+		m_probabilities.Add(ifr, m_nIFRProbability);
+		m_probabilities.Add(immunity, m_nImmunityProbabilty);
+		m_probabilities.Add(shield, m_nShieldProbability);
+		m_probabilities.Add(sdt, m_nSTDProbabilty);
+		m_probabilities.Add(homing, m_nHomingSpellProbabilty);
+		m_probabilities.Add(scatter, m_nScatterSpellProbabilty);
+		m_probabilities.Add(bomb, m_nBombProbability);
+
+		try {
+			// create list of possibilities
+			List<sPickUp> possibilites = new List<sPickUp>();
+
+			// fill list:  Fills a list of 100 pickups with the right proportions
+			foreach(KeyValuePair<sPickUp, int> pickUp in m_probabilities) {
+				for (int i = 0; i < pickUp.Value; ++i) {
+					possibilites.Add(pickUp.Key);
+				}
+			}
+
+			// pick random pick up
+			m_pickUp = possibilites[UnityEngine.Random.Range(0, 100)];
+		}
+		catch (Exception e) {
+			Debug.Log(e.Message, gameObject);
 		}
 
 	}

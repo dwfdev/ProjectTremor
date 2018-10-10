@@ -41,8 +41,20 @@ public class LevelSection : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		// check if player has defeated all enemies in the section
-		if (m_enemiesList.Count == 0) {
+		
+		int enemyKillCount = 0;
+
+		//check if player has defeated all enemies in the section
+		foreach(EnemyActor enemy in m_enemiesList) {
+			if(enemy.m_bIsAlive) {
+				continue;
+			}
+			else {
+				++enemyKillCount;
+			}
+		}
+
+		if (enemyKillCount == m_enemiesList.Count) {
 			m_completionState = eCompletionState.CLEARED;
 		}
 
@@ -64,7 +76,7 @@ public class LevelSection : MonoBehaviour {
 
 			// activate all enemies of the section and set their target
 			foreach(EnemyActor enemy in m_enemiesList) {
-				enemy.Activate(other.gameObject, other.gameObject.GetComponent<PlayerActor>().m_movementArea);
+				enemy.Activate(other.gameObject, GameObject.FindGameObjectWithTag("Playfield"));
 			}
 		}
 
@@ -73,14 +85,14 @@ public class LevelSection : MonoBehaviour {
 	void OnTriggerExit(Collider other) {
 
 		// check that other is a playerMovementArea
-		if (other.tag == "PlayerMovementArea") {
+		if (other.tag == "Playfield") {
 			// section is not cleared
 			if (m_completionState == eCompletionState.NOT_CLEARED) {
 				// get the PlayerActor
-				GameObject playerMovementArea = other.gameObject;
+				GameObject Playfield = other.gameObject;
 
 				// move player to the beginning of the section
-				playerMovementArea.transform.position = new Vector3(playerMovementArea.transform.position.x, playerMovementArea.transform.position.y, transform.position.z - (transform.localScale.z / 2f + playerMovementArea.transform.localScale.z / 2f));
+				Playfield.transform.position = new Vector3(Playfield.transform.position.x, Playfield.transform.position.y, transform.position.z - (transform.localScale.z / 2f + Playfield.transform.localScale.z / 2f));
 
 				// increment attempts
 				++m_nCurrentSectionAttempts;

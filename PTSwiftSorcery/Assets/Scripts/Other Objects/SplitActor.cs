@@ -33,8 +33,6 @@ public class SplitActor : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
-		Debug.Log(other.name + " has triggered " + name);
-
 		// check that other is the player
 		if (other.gameObject.tag == "Player") {
 			// calculate which side the player is on.

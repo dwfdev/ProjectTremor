@@ -73,6 +73,8 @@ public class PlayerActor : MonoBehaviour
 
 	private bool m_bHasPickUp;
 
+	private bool m_bFire3Down;
+
 	private int m_nCurrentBombCount;
 
 	// Use this for initialization
@@ -96,6 +98,8 @@ public class PlayerActor : MonoBehaviour
 
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
+
+		m_bFire3Down = false;
 
 	}
 
@@ -135,8 +139,12 @@ public class PlayerActor : MonoBehaviour
 
 		#region Other Inputs
 		// activate pickup
-		if (Input.GetAxis("Fire3") > 0 && m_bHasPickUp) {
+		if (Input.GetAxis("Fire3") > 0 && m_bHasPickUp && !m_bFire3Down) {
+			m_bFire3Down = true;
 			StartCoroutine(ActivatePickUp());
+		}
+		else {
+			m_bFire3Down = false;
 		}
 
 		// pick spell type
@@ -318,60 +326,57 @@ public class PlayerActor : MonoBehaviour
 		switch(m_currentPickUp.type) {
 			case ePickUpType.INCREASE_FIRE_RATE:
 				// affect spell manager
-				m_spellManager.m_fFireRate *= m_currentPickUp.magnitude;
+				m_spellManager.m_fFireRate /= m_currentPickUp.magnitude;
+
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
 
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
 				// reset
-				m_spellManager.m_fFireRate /= m_currentPickUp.magnitude;
+				m_spellManager.m_fFireRate *= m_currentPickUp.magnitude;
 				Debug.Log("Fire rate reset.");
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-				Debug.Log("pick up cleared.");
 				break;
 
 			case ePickUpType.HOMING_SPELLS:
 				// affect spell manager
 				m_spellManager.m_bIsHoming = true;
 
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
 				// reset
 				m_spellManager.m_bIsHoming = false;
-				Debug.Log("spell rate reset.");
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-				Debug.Log("pick up cleared.");
+				Debug.Log("spell type reset.");
 				break;
 
 			case ePickUpType.SCATTER_SPELLS:
 				// affect spell manager
 				m_spellManager.m_bIsScatter = true;
 
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
 				// reset
 				m_spellManager.m_bIsScatter = false;
-				Debug.Log("spell rate reset.");
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-				Debug.Log("pick up cleared.");
+				Debug.Log("spell type reset.");
 				break;
 
 			case ePickUpType.IMMUNITY:
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+
 				// affect player
 				m_lifeState = eLifeState.INVINCIBLE;
 				StartInvincibilityTimer(m_currentPickUp.duration);
 
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-				Debug.Log("pick up cleared.");
 				break;
 
 			case ePickUpType.SLOW_DOWN_TIME:
@@ -381,6 +386,9 @@ public class PlayerActor : MonoBehaviour
 				// scale fixed delta time
 				Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
+				// clear m_currentPickUp
+				m_bHasPickUp = false;
+
 				// wait for duration
 				yield return new WaitForSeconds(m_currentPickUp.duration);
 
@@ -388,10 +396,6 @@ public class PlayerActor : MonoBehaviour
 				Time.timeScale = 1;
 				Time.fixedDeltaTime = 0.02f;
 				Debug.Log("time scale rate reset.");
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-				Debug.Log("pick up cleared.");
 				break;
 
 			default:
@@ -399,7 +403,6 @@ public class PlayerActor : MonoBehaviour
 
 				// clear m_currentPickUp
 				m_bHasPickUp = false;
-				Debug.Log("pick up cleared.");
 				break;
 		}
 
