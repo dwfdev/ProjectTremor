@@ -17,8 +17,19 @@ public enum eEnemyAIType
 
 public class EnemyActor : MonoBehaviour
 {
+	[Header("Global Variables")]
 	[Tooltip("How much health this enemy has")]
 	[SerializeField] private int m_nHealth;
+
+	[Tooltip("Whether or not this enemy should rotate to face the player")]
+	[SerializeField] private bool m_bTrackPlayer;
+
+	[Tooltip("How fast this enemy should rotate, if 0, will not rotate")]
+	[SerializeField] private float m_fRotationSpeed;
+
+	[Tooltip("What type of AI this enemy should have")]
+	[SerializeField]
+	private eEnemyAIType m_enemyAIType;
 
 	[HideInInspector]
 	public bool m_bIsActive;
@@ -29,15 +40,53 @@ public class EnemyActor : MonoBehaviour
 	[HideInInspector]
 	public LevelSection m_section;
 
+	private GameObject m_player;
+
+	[Header("Follow Player Variables")]
+	[Tooltip("How far this enemy should try and stay from the player")]
+	[SerializeField] private Vector3 m_offset;
+
+	[Header("Follow Waypoint Variables")]
+	[Tooltip("The transforms of the waypoints this enemy should go between")]
+	[SerializeField] private Transform[] m_waypoints;
+
+	[Tooltip("How long this enemy should spend at each waypoint")]
+	[SerializeField] private float[] m_delays;
+
 	private void Start()
 	{
 		m_bIsActive = false;
 		m_bIsAlive = true;
+		m_player = GameObject.FindGameObjectWithTag("Player");
+
+		if (m_waypoints.Length != m_delays.Length)
+			Debug.LogError(name + " has mismatching delays and waypoints");
 	}
 
 	private void Update()
 	{
-		
+		if (m_bTrackPlayer)
+		{
+			Quaternion targetRotation = Quaternion.LookRotation(m_player.transform.position - transform.position);
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
+		}
+		else if (m_fRotationSpeed != 0.0f)
+		{
+			transform.Rotate(Vector3.up, m_fRotationSpeed * Time.deltaTime);
+		}
+
+		switch(m_enemyAIType)
+		{
+			case eEnemyAIType.FOLLOW_PLAYER:
+				//follow player code
+				break;
+			case eEnemyAIType.FOLLOW_WAYPOINT:
+				//follow waypoint code
+				break;
+			case eEnemyAIType.STATIC:
+				//static code
+				break;
+		}
 	}
 
 	public void Activate(GameObject target, GameObject newParent)
@@ -63,14 +112,10 @@ public class EnemyActor : MonoBehaviour
 	public void Die()
 	{
 		// remove enemy from the section
-		if(m_section != null)
-		{
-			m_section.m_enemiesList.Remove(this);
-		}
 
 		m_bIsAlive = false;
 
-		Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 
 	private void OnTriggerEnter(Collider other)
