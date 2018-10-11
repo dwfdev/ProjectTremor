@@ -63,7 +63,7 @@ public class EnemyActor : MonoBehaviour
 	[Tooltip("Whether or not the enemy should loop through the waypoints, or if it should just go through them once")]
 	[SerializeField] private bool m_bLoopWaypoints;
 
-	private int m_nCurrentWaypoint;
+	private int m_nCurrentWaypoint = 0;
 
 	private void Start()
 	{
@@ -104,6 +104,7 @@ public class EnemyActor : MonoBehaviour
 					break;
 				case eEnemyAIType.FOLLOW_WAYPOINT:
 					//follow waypoint code
+
 					break;
 				case eEnemyAIType.STATIC:
 					break;
@@ -136,9 +137,16 @@ public class EnemyActor : MonoBehaviour
 	public void Die()
 	{
 		// remove enemy from the section
-
+		m_bIsActive = false;
 		m_bIsAlive = false;
 
+		gameObject.SetActive(false);
+	}
+
+	public void Deactivate()
+	{
+		m_bIsActive = false;
+		m_bIsAlive = false;
 		gameObject.SetActive(false);
 	}
 
