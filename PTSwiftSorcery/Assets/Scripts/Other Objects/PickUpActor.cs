@@ -128,7 +128,15 @@ public class PickUpActor : MonoBehaviour {
 			// try to give player pick up
 			try {
 				if (m_pickUp.type != ePickUpType.NULL) {
-					other.gameObject.GetComponent<PlayerActor>().SetPickUp(m_pickUp);
+					if (m_pickUp.type == ePickUpType.BOMB) {
+						other.gameObject.GetComponent<PlayerActor>().AddToPlayerBombCount(1);
+					}
+					else if (m_pickUp.type == ePickUpType.SHIELD) {
+						other.gameObject.GetComponent<PlayerActor>().m_lifeState = eLifeState.SHIELDED;
+					}
+					else {
+						other.gameObject.GetComponent<PlayerActor>().SetPickUp(m_pickUp);
+					}
 				}
 			}
 			catch (Exception e) {
