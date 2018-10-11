@@ -54,10 +54,10 @@ public class EnemyActor : MonoBehaviour
 	private Vector3 m_v3Velocity;
 
 	[Header("Follow Waypoint Variables")]
-	[Tooltip("The transforms of the waypoints this enemy should go between")]
+	[Tooltip("The transforms of the waypoints this enemy should go between, should have the same size as Delays")]
 	[SerializeField] private Transform[] m_waypoints;
 
-	[Tooltip("How long this enemy should spend at each waypoint")]
+	[Tooltip("How long this enemy should spend at each waypoint, should have the same size as Waypoints")]
 	[SerializeField] private float[] m_delays;
 
 	[Tooltip("Whether or not the enemy should loop through the waypoints, or if it should just go through them once")]
@@ -67,7 +67,7 @@ public class EnemyActor : MonoBehaviour
 
 	private void Start()
 	{
-		m_bIsActive = true;
+		m_bIsActive = false;
 		m_bIsAlive = true;
 		m_player = GameObject.FindGameObjectWithTag("Player");
 
