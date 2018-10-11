@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: abb73c43855b2dd4db7f3bd3a6d1293e
-timeCreated: 1539224706
+guid: 45c6dd1c3ca2f4141ad03623d1a1f751
+timeCreated: 1539217980
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Orc_001
+    4300000: Ice_Elemental_001
     9500000: //RootNode
   externalObjects: {}
   materials:
