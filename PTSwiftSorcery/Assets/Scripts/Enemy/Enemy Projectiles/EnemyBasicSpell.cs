@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyBasicSpell : EnemySpellProjectile
 {
+	[HideInInspector]
+	public float m_fLifespan;
+
+	private float m_fTimer;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -13,6 +18,11 @@ public class EnemyBasicSpell : EnemySpellProjectile
 	// Update is called once per frame
 	override protected void Update ()
 	{
+		m_fTimer += Time.deltaTime;
+
+		if(m_fLifespan != 0 && m_fTimer >= m_fLifespan)
+			Destroy(gameObject);
+
 		transform.position += transform.forward * m_fMoveSpeed * Time.deltaTime;
 	}
 

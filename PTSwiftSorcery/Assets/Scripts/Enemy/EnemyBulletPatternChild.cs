@@ -49,6 +49,9 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	[Tooltip("Whether or not the projectile this child shoots should follow the child")]
 	[SerializeField] private bool m_bSpawnChild;
 
+	[Tooltip("The lifespan of this projectile, if set to zero, projectile lasts forever")]
+	[SerializeField] private float m_fLifespan;
+
 	//Whether or not this pattern child is currently active
 	private bool m_bActive;
 
@@ -90,10 +93,19 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	{
 		GameObject newBullet = Instantiate(m_bulletPrefab, transform.position, transform.rotation);
 		newBullet.GetComponent<EnemySpellProjectile>().m_eBulletType = m_eBulletType;
-		if(m_eBulletType == eBulletType.BEAM)
+
+		switch(m_eBulletType)
 		{
-			newBullet.GetComponent<EnemyBeamSpell>().m_fBeamActiveTimer = m_fBeamActiveTimer;
-			newBullet.GetComponent<EnemyBeamSpell>().m_fBeamStayTimer = m_fBeamStayTimer;
+			case eBulletType.BEAM:
+				newBullet.GetComponent<EnemyBeamSpell>().m_fBeamActiveTimer = m_fBeamActiveTimer;
+				newBullet.GetComponent<EnemyBeamSpell>().m_fBeamStayTimer = m_fBeamStayTimer;
+				break;
+			case eBulletType.BASIC_PROJECTILE:
+				newBullet.GetComponent<EnemyBasicSpell>().m_fLifespan = m_fLifespan;
+				break;
+			case eBulletType.HOMING_PROJECTILE:
+				newBullet.GetComponent<EnemyHomingSpell>().m_fLifespan = m_fLifespan;
+				break;
 		}
 
 		if(m_bSpawnChild)

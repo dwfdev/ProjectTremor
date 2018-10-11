@@ -22,6 +22,9 @@ public class EnemyHomingSpell : EnemySpellProjectile
 	//internal timer
 	private float m_fTimer;
 
+	[HideInInspector]
+	public float m_fLifespan;
+
 	//whether or not this shot is currently homing
 	private bool m_bIsHoming;
 
@@ -52,6 +55,9 @@ public class EnemyHomingSpell : EnemySpellProjectile
 		m_fTimer += Time.deltaTime;
 		if (m_fTimer >= m_fHomeTimer)
 			m_bIsHoming = false;
+
+		if (m_fTimer >= m_fLifespan)
+			Destroy(gameObject);
 
 		if(m_bIsHoming)
 		{
