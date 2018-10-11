@@ -27,10 +27,13 @@ public class PlayerSpellProjectile : MonoBehaviour
 	[Tooltip("How much damage this shot does")]
 	public int m_nDamage;
 
+	private GameObject m_player;
+
 	// Use this for initialization
 	void Start ()
 	{
 		transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
+		m_player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -38,12 +41,24 @@ public class PlayerSpellProjectile : MonoBehaviour
 	{
 		if(m_bIsHoming)
 		{
-			if(m_target == null)
+			if(m_target == null || !m_target.activeSelf)
 			{
-				m_target = GameObject.FindGameObjectWithTag("Enemy");
-				if(m_target == null)
+				GameObject target = null;
+				//m_target = GameObject.FindGameObjectWithTag("Enemy");
+				for(int i = 0; i < m_player.GetComponent<PlayerActor>().m_currentSection.m_enemiesList.Count; i++)
+				{
+					if (m_player.GetComponent<PlayerActor>().m_currentSection.m_enemiesList[i].gameObject.activeSelf)
+					{
+						target = m_player.GetComponent<PlayerActor>().m_currentSection.m_enemiesList[i].gameObject;
+						break;
+					}
+				}
+				if (target != null)
+					m_target = target;
+				else
 				{
 					m_bIsHoming = false;
+					return;
 				}
 			}
 			//seek towards m_target

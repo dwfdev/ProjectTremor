@@ -60,6 +60,9 @@ public class EnemyActor : MonoBehaviour
 	[Tooltip("How long this enemy should spend at each waypoint")]
 	[SerializeField] private float[] m_delays;
 
+	[Tooltip("Whether or not the enemy should loop through the waypoints, or if it should just go through them once")]
+	[SerializeField] private bool m_bLoopWaypoints;
+
 	private int m_nCurrentWaypoint;
 
 	private void Start()
@@ -97,7 +100,7 @@ public class EnemyActor : MonoBehaviour
 							m_player.transform.position.z + m_v3Offset.z * transform.localScale.z
 						);
 					// smoothly move to that position
-					transform.localPosition = Vector3.SmoothDamp(transform.localPosition, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
+					transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
 					break;
 				case eEnemyAIType.FOLLOW_WAYPOINT:
 					//follow waypoint code
