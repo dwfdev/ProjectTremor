@@ -18,38 +18,46 @@ public enum eLifeState {
 
 public class PlayerActor : MonoBehaviour
 {
+
+	#region Member Variables
+	[Header("Lives.")]
 	[Tooltip("Amount of lives the player has.")]
 	public int m_nLives;
 
+	[Tooltip("Maximum amount of lives.")]
+	[SerializeField] private int m_nMaximumLives;
+
+	[Header("Bomb.")]
 	[Tooltip("Initial amount of bombs.")]
 	[SerializeField] private int m_nInitialBombCount;
 
 	[Tooltip("Maximum amount of bombs the player can have.")]
 	[SerializeField] private int m_nMaximumBombCount;
 
+	[Header("Timers.")]
 	[Tooltip("Time, in seconds player has to recover from being hit.")]
 	[SerializeField] private float m_fDyingTimerSeconds;
 
 	[Tooltip("Time, in seconds player has invinciblity after respawn.")]
 	[SerializeField] private float m_fRespawnInvincibilityTimerSeconds;
 
-	[HideInInspector]
-	public eLifeState m_lifeState;
-
+	[Header("Mouse Input.")]
 	[Tooltip("Scales raw mouse movement.")]
 	[SerializeField] private float m_fMouseSensitivity;
 
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
 	[SerializeField] private float m_fMouseSmoothing;
 
+	[Header("")]
+
 	[Tooltip("Position where the player will respawn.")]
 	[SerializeField] private Vector3 m_v3RespawnLocation;
 
 	[Tooltip("The area in which the player can move.")]
 	public GameObject m_movementArea;
-
-	[Tooltip("Bomb asset prefab.")]
-	[SerializeField] private GameObject m_bombPrefab;
+	
+	[HideInInspector]
+	public eLifeState m_lifeState;
 
 	[HideInInspector]
 	public LevelSection m_currentSection;
@@ -70,7 +78,8 @@ public class PlayerActor : MonoBehaviour
 	[HideInInspector]
 	public sPickUp m_currentPickUp;
 
-	private bool m_bHasPickUp;
+	[HideInInspector]
+	public bool m_bHasPickUp;
 
 	private bool m_bFire2Down;
 
@@ -78,7 +87,9 @@ public class PlayerActor : MonoBehaviour
 
 	private BombActor m_bomb;
 
-	private int m_nCurrentBombCount;
+	[HideInInspector]
+	public int m_nCurrentBombCount;
+	#endregion
 
 	// Use this for initialization
 	void Start() {
@@ -233,12 +244,12 @@ public class PlayerActor : MonoBehaviour
 
 	}
 
-	void OnTriggerEnter(Collider info) {
+	void OnTriggerEnter(Collider other) {
 
 		// check that collision was with a bullet...
-		if (info.gameObject.tag == "EnemyBullet") {
+		if (other.gameObject.tag == "EnemyBullet") {
 			// ...and that the bullet was active
-			if(info.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
+			if(other.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
 
 				Debug.Log(m_lifeState.ToString());
 
@@ -312,6 +323,16 @@ public class PlayerActor : MonoBehaviour
 
 	}
 
+	public void AddLives(int adder) {
+
+		// add adder to m_nLives
+		m_nLives += adder;
+
+		// clamp between 0 and maxium lives
+		m_nLives = Mathf.Clamp(m_nLives, 0, m_nMaximumLives);
+
+	}
+
 	public void SetPickUp(sPickUp newPickUp) {
 		
 		// if power up takes immediate effect
@@ -336,6 +357,8 @@ public class PlayerActor : MonoBehaviour
 	IEnumerator ActivatePickUp()
 	{
 
+		Debug.Log(m_currentPickUp.type + " was activated.");
+
 		// run pickups code based on its type
 		switch(m_currentPickUp.type) {
 			case ePickUpType.INCREASE_FIRE_RATE:
@@ -350,6 +373,7 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_fFireRate *= m_currentPickUp.magnitude;
+				Debug.Log(m_currentPickUp.type + " was deactivated.");
 				break;
 
 			case ePickUpType.HOMING_SPELLS:
@@ -364,6 +388,7 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_bIsHoming = false;
+				Debug.Log(m_currentPickUp.type + " was deactivated.");
 				break;
 
 			case ePickUpType.SCATTER_SPELLS:
@@ -378,6 +403,7 @@ public class PlayerActor : MonoBehaviour
 
 				// reset
 				m_spellManager.m_bIsScatter = false;
+				Debug.Log(m_currentPickUp.type + " was deactivated.");
 				break;
 
 			case ePickUpType.IMMUNITY:
@@ -387,7 +413,6 @@ public class PlayerActor : MonoBehaviour
 				// affect player
 				m_lifeState = eLifeState.INVINCIBLE;
 				StartInvincibilityTimer(m_currentPickUp.duration);
-
 				break;
 
 			case ePickUpType.SLOW_DOWN_TIME:
@@ -406,6 +431,7 @@ public class PlayerActor : MonoBehaviour
 				// reset
 				Time.timeScale = 1;
 				Time.fixedDeltaTime = 0.02f;
+				Debug.Log(m_currentPickUp.type + " was deactivated.");
 				break;
 
 			default:
@@ -431,4 +457,5 @@ public class PlayerActor : MonoBehaviour
 		}
 
 	}
+
 }

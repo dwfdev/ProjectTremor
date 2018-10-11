@@ -115,7 +115,9 @@ public class PickUpActor : MonoBehaviour {
 			m_pickUp.type = ePickUpType.NULL;
 			Debug.LogError("Probabilities do not equal 100, but " + totalProbability, gameObject);
 		}
-		
+
+		Debug.Log(m_pickUp.type);
+
 	}
 
 	private void OnTriggerEnter(Collider other)
