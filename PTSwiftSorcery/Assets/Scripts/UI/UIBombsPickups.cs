@@ -17,7 +17,7 @@ public class UIBombsPickups : MonoBehaviour {
 	[SerializeField] private Text m_BombCountText;
 
 	[Tooltip("The Image box that you want the player's current pick up to be displayed by.")]
-	[SerializeField] private Image m_currentPickupImage;
+	[SerializeField] private Image m_pickupImage;
 
 	[Header("Pickup Sprites.")]
 	[Tooltip("Empty / No Pickup Sprite.")]
@@ -43,38 +43,40 @@ public class UIBombsPickups : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
+		// get the PlayerActor
 		m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>();
 
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void OnGUI () {
 
 		// change bomb count text to match the number of bombs the player has
 		m_BombCountText.text = m_player.m_nCurrentBombCount.ToString();
 
 		#region Display Current Pickup
+		// if player has a pickup
 		if (m_player.m_bHasPickUp) {
-
+			// change image to be corresponding sprite
 			switch(m_player.m_currentPickUp.type) {
 				case ePickUpType.INCREASE_FIRE_RATE:
-					m_currentPickupImage.sprite = m_IFRSprite;
+					m_pickupImage.sprite = m_IFRSprite;
 					break;
 
 				case ePickUpType.IMMUNITY:
-					m_currentPickupImage.sprite = m_immunitySprite;
+					m_pickupImage.sprite = m_immunitySprite;
 					break;
 				
 				case ePickUpType.SLOW_DOWN_TIME:
-					m_currentPickupImage.sprite = m_SDTSprite;
+					m_pickupImage.sprite = m_SDTSprite;
 					break;
 
 				case ePickUpType.HOMING_SPELLS:
-					m_currentPickupImage.sprite = m_homingSpellsSprite;
+					m_pickupImage.sprite = m_homingSpellsSprite;
 					break;
 
 				case ePickUpType.SCATTER_SPELLS:
-					m_currentPickupImage.sprite = m_scatterSpellsSprite;
+					m_pickupImage.sprite = m_scatterSpellsSprite;
 					break;
 
 				default:
@@ -83,7 +85,7 @@ public class UIBombsPickups : MonoBehaviour {
 			}
 		}
 		else {
-			m_currentPickupImage.sprite = m_emptySprite;
+			m_pickupImage.sprite = m_emptySprite;
 		}
 		#endregion
 		

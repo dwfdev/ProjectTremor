@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BombCountText: {fileID: 758058388}
-  m_currentPickupImage: {fileID: 704202913}
-  m_emptySprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_pickupImage: {fileID: 704202913}
+  m_emptySprite: {fileID: 0}
   m_IFRSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_immunitySprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_SDTSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
@@ -220,6 +220,7 @@ RectTransform:
   m_Children:
   - {fileID: 758058390}
   - {fileID: 704202915}
+  - {fileID: 1779349607}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -295,7 +296,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_offset: {x: 0, y: 0, z: 0}
+  m_v3Offset: {x: 0, y: 0, z: 0}
+  m_fMaxMovementSpeed: 0
+  m_fMovementSmoothing: 0
   m_waypoints: []
   m_delays: []
 --- !u!23 &402334995
@@ -480,7 +483,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -509,7 +512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: 0}
+  m_AnchoredPosition: {x: 330, y: 25}
   m_SizeDelta: {x: 35, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &758058387
@@ -555,7 +558,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 150
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
@@ -581,9 +584,9 @@ RectTransform:
   m_Father: {fileID: 227041885}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20.87, y: -11.6}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -116.71, y: -25}
   m_SizeDelta: {x: 31.570007, y: 30.009995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &793912765
@@ -700,7 +703,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_offset: {x: 0, y: 0, z: 0}
+  m_v3Offset: {x: 0, y: 0, z: 0}
+  m_fMaxMovementSpeed: 0
+  m_fMovementSmoothing: 0
   m_waypoints: []
   m_delays: []
 --- !u!23 &833135847
@@ -1010,16 +1015,16 @@ MonoBehaviour:
   m_fIFRMagnitude: 2
   m_nIFRProbability: 20
   m_fImmunityDuration: 3
-  m_nImmunityProbabilty: 20
+  m_nImmunityProbabilty: 10
   m_fSDTDuration: 3
   m_fSTDMagnitude: 0.25
-  m_nSTDProbabilty: 20
+  m_nSTDProbabilty: 10
   m_fHomingSpellDuration: 5
   m_nHomingSpellProbabilty: 20
   m_fScatterSpellDuration: 5
   m_nScatterSpellProbabilty: 20
-  m_nShieldProbability: 0
-  m_nBombProbability: 0
+  m_nShieldProbability: 10
+  m_nBombProbability: 10
 --- !u!23 &1140738789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1604,7 +1609,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_offset: {x: 0, y: 0, z: 0}
+  m_v3Offset: {x: 0, y: 0, z: 0}
+  m_fMaxMovementSpeed: 0
+  m_fMovementSmoothing: 0
   m_waypoints: []
   m_delays: []
 --- !u!23 &1420122563
@@ -1906,7 +1913,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_offset: {x: 0, y: 0, z: 0}
+  m_v3Offset: {x: 0, y: 0, z: 0}
+  m_fMaxMovementSpeed: 0
+  m_fMovementSmoothing: 0
   m_waypoints: []
   m_delays: []
 --- !u!23 &1489028674
@@ -2111,6 +2120,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1779349606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1779349607}
+  - component: {fileID: 1779349609}
+  - component: {fileID: 1779349608}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1779349607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779349606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 227041885}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 318, y: 139}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1779349608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779349606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1779349609
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779349606}
 --- !u!1 &1826814798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,7 +2239,9 @@ MonoBehaviour:
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_offset: {x: 0, y: 0, z: 0}
+  m_v3Offset: {x: 0, y: 0, z: 0}
+  m_fMaxMovementSpeed: 0
+  m_fMovementSmoothing: 0
   m_waypoints: []
   m_delays: []
 --- !u!23 &1826814801
@@ -2408,7 +2487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c178052142d8e4d8f361329edee925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nLives: 1
+  m_nLives: 3
   m_nMaximumLives: 1
   m_nInitialBombCount: 1
   m_nMaximumBombCount: 5

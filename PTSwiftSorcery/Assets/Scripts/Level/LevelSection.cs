@@ -100,9 +100,7 @@ public class LevelSection : MonoBehaviour {
 			// section is failed
 			if (m_completionState == eCompletionState.FAILED) {
 				foreach(EnemyActor enemy in m_enemiesList) {
-					enemy.m_bIsAlive = false;
-					enemy.m_bIsActive = false;
-					enemy.enabled = false;
+					enemy.Deactivate();
 				}
 			}
 		}

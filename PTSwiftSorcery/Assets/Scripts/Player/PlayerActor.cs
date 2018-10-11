@@ -411,8 +411,7 @@ public class PlayerActor : MonoBehaviour
 				m_bHasPickUp = false;
 
 				// affect player
-				m_lifeState = eLifeState.INVINCIBLE;
-				StartInvincibilityTimer(m_currentPickUp.duration);
+				StartCoroutine(BecomeImmune(m_lifeState, m_currentPickUp.duration));
 				break;
 
 			case ePickUpType.SLOW_DOWN_TIME:
@@ -444,6 +443,19 @@ public class PlayerActor : MonoBehaviour
 
 	}
 
+	IEnumerator BecomeImmune(eLifeState returnLifeState, float duration) {
+		
+		// turn player invincible
+		m_lifeState = eLifeState.INVINCIBLE;
+
+		// wait for duration
+		yield return new WaitForSeconds(duration);
+
+		// reset
+		m_lifeState = returnLifeState;
+
+	}
+
 	void ShootBomb()
 	{
 
@@ -457,5 +469,6 @@ public class PlayerActor : MonoBehaviour
 		}
 
 	}
+
 
 }
