@@ -28,8 +28,7 @@ public class EnemyActor : MonoBehaviour
 	[SerializeField] private float m_fRotationSpeed;
 
 	[Tooltip("What type of AI this enemy should have")]
-	[SerializeField]
-	private eEnemyAIType m_enemyAIType;
+	[SerializeField] private eEnemyAIType m_enemyAIType;
 
 	[HideInInspector]
 	public bool m_bIsActive;
@@ -44,7 +43,15 @@ public class EnemyActor : MonoBehaviour
 
 	[Header("Follow Player Variables")]
 	[Tooltip("How far this enemy should try and stay from the player")]
-	[SerializeField] private Vector3 m_offset;
+	[SerializeField] private Vector3 m_v3Offset;
+
+	[Tooltip("Maximum speed the enemy will move at")]
+	[SerializeField] private float m_fMaxMovementSpeed;
+
+	[Tooltip("How smoothed the enemy's movement will be, less is more smoothed")]
+	[SerializeField] private float m_fMovementSmoothing;
+
+	private Vector3 m_v3Velocity;
 
 	[Header("Follow Waypoint Variables")]
 	[Tooltip("The transforms of the waypoints this enemy should go between")]
@@ -53,9 +60,11 @@ public class EnemyActor : MonoBehaviour
 	[Tooltip("How long this enemy should spend at each waypoint")]
 	[SerializeField] private float[] m_delays;
 
+	private int m_nCurrentWaypoint;
+
 	private void Start()
 	{
-		m_bIsActive = false;
+		m_bIsActive = true;
 		m_bIsAlive = true;
 		m_player = GameObject.FindGameObjectWithTag("Player");
 
@@ -65,27 +74,39 @@ public class EnemyActor : MonoBehaviour
 
 	private void Update()
 	{
-		if (m_bTrackPlayer)
+		if(m_bIsActive)
 		{
-			Quaternion targetRotation = Quaternion.LookRotation(m_player.transform.position - transform.position);
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
-		}
-		else if (m_fRotationSpeed != 0.0f)
-		{
-			transform.Rotate(Vector3.up, m_fRotationSpeed * Time.deltaTime);
-		}
+			if (m_bTrackPlayer)
+			{
+				Quaternion targetRotation = Quaternion.LookRotation(m_player.transform.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
+			}
+			else if (m_fRotationSpeed != 0.0f)
+			{
+				transform.Rotate(Vector3.up, m_fRotationSpeed * Time.deltaTime);
+			}
 
-		switch(m_enemyAIType)
-		{
-			case eEnemyAIType.FOLLOW_PLAYER:
-				//follow player code
-				break;
-			case eEnemyAIType.FOLLOW_WAYPOINT:
-				//follow waypoint code
-				break;
-			case eEnemyAIType.STATIC:
-				//static code
-				break;
+			switch(m_enemyAIType)
+			{
+				case eEnemyAIType.FOLLOW_PLAYER:
+					// desired position
+					Vector3 desiredPosition = new Vector3
+						(
+							m_player.transform.position.x + m_v3Offset.x * transform.localScale.x, 
+							m_player.transform.position.y + m_v3Offset.y * transform.localScale.y, 
+							m_player.transform.position.z + m_v3Offset.z * transform.localScale.z
+						);
+					// smoothly move to that position
+					transform.localPosition = Vector3.SmoothDamp(transform.localPosition, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
+					break;
+				case eEnemyAIType.FOLLOW_WAYPOINT:
+					//follow waypoint code
+					break;
+				case eEnemyAIType.STATIC:
+					break;
+				default:
+					break;
+			}
 		}
 	}
 
