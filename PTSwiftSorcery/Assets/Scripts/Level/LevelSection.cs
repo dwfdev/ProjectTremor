@@ -2,7 +2,7 @@
 ///		Script Manager:	Denver
 ///		Description:	Handles the functionality of the LevelSection.
 ///						Stores all enemies of its section and loops player.
-///		Date Modified:	04/10/2018
+///		Date Modified:	12/10/2018
 /// </summary>
 
 using System.Collections;
@@ -88,17 +88,17 @@ public class LevelSection : MonoBehaviour {
 			// section is not cleared
 			if (m_completionState == eCompletionState.NOT_CLEARED) {
 				// get the PlayerActor
-				GameObject Playfield = other.gameObject;
+				GameObject playfield = other.gameObject;
 
 				// move player to the beginning of the section
-				Playfield.transform.position = new Vector3(Playfield.transform.position.x, Playfield.transform.position.y, transform.position.z - (transform.localScale.z / 2f + Playfield.transform.localScale.z / 2f));
+				playfield.transform.position = new Vector3(playfield.transform.position.x, playfield.transform.position.y, (transform.position.z - GetComponent<BoxCollider>().size.z / 2) - (playfield.GetComponent<BoxCollider>().size.z / 2));
 
 				// increment attempts
 				++m_nCurrentSectionAttempts;
 			}
 
 			// section is failed
-			if (m_completionState == eCompletionState.FAILED) {
+			else if (m_completionState == eCompletionState.FAILED) {
 				foreach(EnemyActor enemy in m_enemiesList) {
 					enemy.Deactivate();
 				}
