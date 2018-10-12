@@ -56,7 +56,7 @@ public class EnemyHomingSpell : EnemySpellProjectile
 		if (m_fTimer >= m_fHomeTimer)
 			m_bIsHoming = false;
 
-		if (m_fTimer >= m_fLifespan)
+		if (m_fLifespan != 0.0f && m_fTimer >= m_fLifespan)
 			Destroy(gameObject);
 
 		if(m_bIsHoming)
