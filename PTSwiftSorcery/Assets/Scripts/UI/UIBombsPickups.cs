@@ -7,7 +7,7 @@ using UnityEngine.UI;
 ///		Script Manager:	Denver
 ///		Description:	Handles displaying both how many bombs the player has
 ///						and what pick up they have.
-///		Date Modified:	11/10/2018
+///		Date Modified:	14/10/2018
 ///</summary>
 
 public class UIBombsPickups : MonoBehaviour {
@@ -18,6 +18,9 @@ public class UIBombsPickups : MonoBehaviour {
 
 	[Tooltip("The Image box that you want the player's current pick up to be displayed by.")]
 	[SerializeField] private Image m_pickupImage;
+
+	[Tooltip("Progress bar for activated pickup.")]
+	[SerializeField] private Image m_progressBar;
 
 	[Header("Pickup Sprites.")]
 	[Tooltip("Empty / No Pickup Sprite.")]
@@ -40,15 +43,33 @@ public class UIBombsPickups : MonoBehaviour {
 
 	private PlayerActor m_player;
 
+	private bool m_bPickUpIsActive;
+
+	private bool m_bFire3Down;
+
+	private float m_fPickupTimeRemaining;
+
 	// Use this for initialization
 	void Start () {
 		
 		// get the PlayerActor
 		m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>();
 
+		// initialise is pick up active
+		m_bPickUpIsActive = false;
+
+		m_bFire3Down = false;
+
+		m_progressBar.gameObject.SetActive(false);
+
+	}
+
+	void FixedUpdate() {
+		if (m_bPickUpIsActive) {
+			m_fPickupTimeRemaining -= Time.deltaTime;
+		}
 	}
 	
-	// Update is called once per frame
 	void OnGUI () {
 
 		// change bomb count text to match the number of bombs the player has
@@ -89,5 +110,31 @@ public class UIBombsPickups : MonoBehaviour {
 		}
 		#endregion
 		
+		#region Pick up progress bar
+		// if player has activated their pickup
+		if (Input.GetAxis("Fire3") > 0 && m_player.m_bHasPickUp && !m_bFire3Down) {
+			m_bPickUpIsActive = true;
+			m_bFire3Down = true;
+			m_fPickupTimeRemaining = m_player.m_currentPickUp.duration;
+			m_progressBar.gameObject.SetActive(true);
+		}
+
+		if (Input.GetAxis("Fire3") == 0) {
+			m_bFire3Down = false;
+		}
+
+		// if player's pickup is active
+		if (m_bPickUpIsActive) {
+			// scale progress bar
+			m_progressBar.transform.localScale = new Vector3(1f, m_fPickupTimeRemaining / m_player.m_currentPickUp.duration, 1f);
+
+			// check if time has run out
+			if (m_fPickupTimeRemaining <= 0f) {
+				m_bPickUpIsActive = false;
+				m_progressBar.gameObject.SetActive(false);
+			}
+		}
+		#endregion
+
 	}
 }

@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BombCountText: {fileID: 758058388}
   m_pickupImage: {fileID: 704202913}
+  m_progressBar: {fileID: 1110028851}
   m_emptySprite: {fileID: 0}
   m_IFRSprite: {fileID: 21300000, guid: 6822505aeaff3c743877dd04751a4467, type: 3}
   m_immunitySprite: {fileID: 21300000, guid: 44864a23a9195514caa50365b90112d7, type: 3}
@@ -529,7 +530,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1110028850}
   m_Father: {fileID: 227041885}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1044,6 +1046,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1110028849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1110028850}
+  - component: {fileID: 1110028852}
+  - component: {fileID: 1110028851}
+  m_Layer: 5
+  m_Name: Progress Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1110028850
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110028849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 704202915}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -45, y: 0}
+  m_SizeDelta: {x: 10, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1110028851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110028849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1110028852
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110028849}
 --- !u!1 &1136192808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,18 +1246,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fIFRDuration: 5
   m_fIFRMagnitude: 2
-  m_nIFRProbability: 20
+  m_nIFRProbability: 0
   m_fImmunityDuration: 3
-  m_nImmunityProbabilty: 10
+  m_nImmunityProbabilty: 0
   m_fSDTDuration: 3
   m_fSTDMagnitude: 0.25
-  m_nSTDProbabilty: 20
+  m_nSTDProbabilty: 100
   m_fHomingSpellDuration: 5
-  m_nHomingSpellProbabilty: 20
+  m_nHomingSpellProbabilty: 0
   m_fScatterSpellDuration: 5
-  m_nScatterSpellProbabilty: 20
-  m_nShieldProbability: 5
-  m_nBombProbability: 5
+  m_nScatterSpellProbabilty: 0
+  m_nShieldProbability: 0
+  m_nBombProbability: 0
 --- !u!23 &1140738789
 MeshRenderer:
   m_ObjectHideFlags: 0

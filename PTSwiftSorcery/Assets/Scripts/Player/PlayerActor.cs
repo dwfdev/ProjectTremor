@@ -453,6 +453,7 @@ public class PlayerActor : MonoBehaviour
 
 		// reset
 		m_lifeState = returnLifeState;
+		Debug.Log(m_currentPickUp.type + " was deactivated.");
 
 	}
 
