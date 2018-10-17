@@ -73,7 +73,8 @@ public class PlayerActor : MonoBehaviour
 	private float m_fRespawnInvincibilityTimer;
 	private bool m_bRespawnInvincibilityTimerIsActive;
 
-	private PlayerSpellManager m_spellManager;
+	[HideInInspector]
+	public PlayerSpellManager m_spellManager;
 
 	[HideInInspector]
 	public sPickUp m_currentPickUp;
@@ -101,8 +102,8 @@ public class PlayerActor : MonoBehaviour
 		m_lifeState = eLifeState.NORMAL;
 
 		// calculate movement boundaries
-		m_fMovementBoundsX = m_movementArea.transform.localScale.x * transform.localScale.x / 2;
-		m_fMovementBoundsZ = m_movementArea.transform.localScale.z * transform.localScale.z / 2;
+		m_fMovementBoundsX = m_movementArea.GetComponent<BoxCollider>().size.x / 2;
+		m_fMovementBoundsZ = m_movementArea.GetComponent<BoxCollider>().size.z / 2;
 
 		// Get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
