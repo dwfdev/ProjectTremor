@@ -118,7 +118,10 @@ public class EnemyActor : MonoBehaviour
 					if(m_bLoopWaypoints && m_nDesiredWaypoint >= m_waypoints.Length)
 						m_nDesiredWaypoint = 0;
 					else if (!m_bLoopWaypoints && m_nDesiredWaypoint >= m_waypoints.Length)
+					{
 						Deactivate();
+						return;
+					}
 
 					if(m_bWaitingAtWaypoint)
 					{

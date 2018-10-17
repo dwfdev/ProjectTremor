@@ -906,19 +906,19 @@ MonoBehaviour:
   m_bIsAlive: 0
   m_section: {fileID: 0}
   m_v3Offset: {x: 0, y: 0, z: 10}
-  m_fMaxMovementSpeed: 3000
-  m_fMovementSmoothing: 300
+  m_fMaxMovementSpeed: 1000
+  m_fMovementSmoothing: 2
   m_waypoints:
   - {fileID: 1830662806}
   - {fileID: 735016570}
   - {fileID: 1743066685}
   - {fileID: 1511431499}
   m_delays:
-  - 1
-  - 1
-  - 1
-  - 1
-  m_bLoopWaypoints: 1
+  - 0
+  - 0
+  - 0
+  - 0
+  m_bLoopWaypoints: 0
 --- !u!23 &1146255287
 MeshRenderer:
   m_ObjectHideFlags: 0
