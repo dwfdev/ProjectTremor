@@ -47,17 +47,39 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		m_fCurrentTimer += Time.deltaTime;
-
-		if (m_fCurrentTimer >= m_fTimer)
+		if(m_parent.GetComponent<EnemyActor>() != null)
 		{
-			m_fCurrentTimer = 0.0f;
-
-			foreach(GameObject child in m_children)
+			if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
 			{
-				EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+				m_fCurrentTimer += Time.deltaTime;
 
-				patternChild.StartPattern();
+				if (m_fCurrentTimer >= m_fTimer)
+				{
+					m_fCurrentTimer = 0.0f;
+
+					foreach(GameObject child in m_children)
+					{
+						EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+
+						patternChild.StartPattern();
+					}
+				}
+			}
+		}
+		else
+		{
+			m_fCurrentTimer += Time.deltaTime;
+
+			if (m_fCurrentTimer >= m_fTimer)
+			{
+				m_fCurrentTimer = 0.0f;
+
+				foreach (GameObject child in m_children)
+				{
+					EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+
+					patternChild.StartPattern();
+				}
 			}
 		}
 	}
