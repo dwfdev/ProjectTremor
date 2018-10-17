@@ -64,6 +64,9 @@ public class EnemyActor : MonoBehaviour
 	[SerializeField] private bool m_bLoopWaypoints;
 
 	private int m_nCurrentWaypoint = 0;
+	private int m_nDesiredWaypoint = 0;
+	private float m_fTimer;
+	private bool m_bWaitingAtWaypoint;
 
 	private void Start()
 	{
@@ -73,6 +76,10 @@ public class EnemyActor : MonoBehaviour
 
 		if (m_waypoints.Length != m_delays.Length)
 			Debug.LogError(name + " has mismatching delays and waypoints");
+		if (m_waypoints.Length <= 1 && m_enemyAIType == eEnemyAIType.FOLLOW_WAYPOINT)
+		{
+			Debug.LogError(name + " has one or less waypoints, perhaps you meant to use STATIC?");
+		}
 	}
 
 	private void Update()
@@ -103,7 +110,39 @@ public class EnemyActor : MonoBehaviour
 					transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
 					break;
 				case eEnemyAIType.FOLLOW_WAYPOINT:
-					//follow waypoint code
+					//Vector3 homingVector = m_waypoints[m_nCurrentWaypoint + 1].transform.position - transform.position;
+					//homingVector.Normalize();
+					//
+					//transform.position += homingVector * m_fMaxMovementSpeed * Time.deltaTime;
+
+					if(m_bLoopWaypoints && m_nDesiredWaypoint >= m_waypoints.Length)
+						m_nDesiredWaypoint = 0;
+					else if (!m_bLoopWaypoints && m_nDesiredWaypoint >= m_waypoints.Length)
+						Deactivate();
+
+					if(m_bWaitingAtWaypoint)
+					{
+						m_fTimer += Time.deltaTime;
+						if(m_fTimer >= m_delays[m_nCurrentWaypoint])
+						{
+							m_fTimer = 0.0f;
+							m_bWaitingAtWaypoint = false;
+							m_nDesiredWaypoint++;
+						}
+					}
+					else
+					{
+						transform.position = Vector3.SmoothDamp(transform.position, m_waypoints[m_nDesiredWaypoint].position, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
+					}
+
+					if(!m_bWaitingAtWaypoint && m_nDesiredWaypoint < m_waypoints.Length)
+					{
+						if (Vector3.Distance(transform.position, m_waypoints[m_nDesiredWaypoint].position) < 0.1f)
+						{
+							m_nCurrentWaypoint = m_nDesiredWaypoint;
+							m_bWaitingAtWaypoint = true;
+						}
+					}
 
 					break;
 				case eEnemyAIType.STATIC:
@@ -139,7 +178,7 @@ public class EnemyActor : MonoBehaviour
 		// remove enemy from the section
 		m_bIsActive = false;
 		m_bIsAlive = false;
-
+		//give player score and multiplier
 		gameObject.SetActive(false);
 	}
 
