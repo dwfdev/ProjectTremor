@@ -471,6 +471,4 @@ public class PlayerActor : MonoBehaviour
 		}
 
 	}
-
-
 }
