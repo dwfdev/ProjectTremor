@@ -2688,6 +2688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BombCountText: {fileID: 737829859}
   m_pickupImage: {fileID: 1462703390}
+  m_progressBar: {fileID: 0}
   m_emptySprite: {fileID: 0}
   m_IFRSprite: {fileID: 21300000, guid: 6822505aeaff3c743877dd04751a4467, type: 3}
   m_immunitySprite: {fileID: 21300000, guid: 44864a23a9195514caa50365b90112d7, type: 3}
@@ -2855,7 +2856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nLives: 3
   m_nMaximumLives: 0
-  m_nInitialBombCount: 0
+  m_nInitialBombCount: 1
   m_nMaximumBombCount: 0
   m_fDyingTimerSeconds: 0.25
   m_fRespawnInvincibilityTimerSeconds: 3
@@ -2867,3 +2868,16 @@ MonoBehaviour:
   m_currentSection: {fileID: 0}
   m_bHasPickUp: 0
   m_nCurrentBombCount: 0
+--- !u!114 &2031852461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2031852455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd92611cb2946146bfe29890a47ac99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_nBombDamage: 420
+  m_nBulletScore: 420
