@@ -12,6 +12,7 @@ TagManager:
   - LevelSplit
   - LevelSection
   - LevelManager
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

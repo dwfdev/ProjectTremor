@@ -48,6 +48,9 @@ public class PlayerActor : MonoBehaviour
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
 	[SerializeField] private float m_fMouseSmoothing;
 
+	[HideInInspector]
+	public bool m_bCanMove;
+
 	[Header("")]
 
 	[Tooltip("Position where the player will respawn.")]
@@ -116,6 +119,9 @@ public class PlayerActor : MonoBehaviour
 
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
+
+		// initialise CanMove as true
+		m_bCanMove = true;
 
 		m_bFire2Down = false;
 
@@ -199,21 +205,28 @@ public class PlayerActor : MonoBehaviour
 		if (Input.GetAxis("Fire2") == 0) {
 			m_bFire2Down = false;
 		}
+
+		// pause
+		if (Input.GetKeyDown(KeyCode.P)) {
+			SceneManager.Instance.m_SceneState = eSceneState.PAUSED;
+		}
 		#endregion
 		
 		#region Mouse Movement
-		// get the movement of the mouse
-		Vector3 v3MouseMovement = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
+		if (m_bCanMove) {
+			// get the movement of the mouse
+			Vector3 v3MouseMovement = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
 
-		// scale it by sensitivity
-		v3MouseMovement = Vector3.Scale(v3MouseMovement, new Vector3(m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.x), 0, m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.z)));
+			// scale it by sensitivity
+			v3MouseMovement = Vector3.Scale(v3MouseMovement, new Vector3(m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.x), 0, m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.z)));
 
-		// create a smoothed movement vector to move the player by
-		m_v3MouseSmooth.x = Mathf.Lerp(m_v3MouseSmooth.x, v3MouseMovement.x, 1 / m_fMouseSmoothing);
-		m_v3MouseSmooth.z = Mathf.Lerp(m_v3MouseSmooth.z, v3MouseMovement.z, 1 / m_fMouseSmoothing);
+			// create a smoothed movement vector to move the player by
+			m_v3MouseSmooth.x = Mathf.Lerp(m_v3MouseSmooth.x, v3MouseMovement.x, 1 / m_fMouseSmoothing);
+			m_v3MouseSmooth.z = Mathf.Lerp(m_v3MouseSmooth.z, v3MouseMovement.z, 1 / m_fMouseSmoothing);
 
-		// move player
-		transform.localPosition += m_v3MouseSmooth;
+			// move player
+			transform.localPosition += m_v3MouseSmooth;
+		}
 		#endregion
 
 		#region Keeping Player within Boundaries
