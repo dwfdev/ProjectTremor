@@ -463,11 +463,11 @@ public class PlayerActor : MonoBehaviour
 
 		// check that player has bombs
 		if(m_nCurrentBombCount > 0) {
-			// blow up bomb
-			m_bomb.Boom();
-
 			// decrement bomb count
 			--m_nCurrentBombCount;
+			
+			// blow up bomb
+			m_bomb.Boom();
 		}
 
 	}
