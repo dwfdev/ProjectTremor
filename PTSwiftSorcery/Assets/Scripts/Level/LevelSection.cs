@@ -54,11 +54,13 @@ public class LevelSection : MonoBehaviour {
 			}
 		}
 
-		// if player has run out of attempts
-		if (m_nCurrentSectionAttempts > m_nNumberOfAttempts) {
-			m_completionState = eCompletionState.FAILED;
+		if (m_nNumberOfAttempts != 0) {
+			// if player has run out of attempts
+			if (m_nCurrentSectionAttempts > m_nNumberOfAttempts) {
+				m_completionState = eCompletionState.FAILED;
+			}
 		}
-
+		
 		// if all enemies have been killed
 		if (enemyKillCount == m_enemiesList.Count) {
 			m_completionState = eCompletionState.CLEARED;
