@@ -92,12 +92,6 @@ public class EnemyActor : MonoBehaviour
 		//Check if waypoints and delays match
 		if (m_waypoints.Length != m_delays.Length)
 			Debug.LogError(name + " has mismatching delays and waypoints");
-		
-		//Check if there are enough waypoints
-		if (m_waypoints.Length <= 1 && m_enemyAIType == eEnemyAIType.FOLLOW_WAYPOINT)
-		{
-			Debug.LogError(name + " has one or less waypoints, perhaps you meant to use STATIC?");
-		}
 	}
 
 	private void Update()
