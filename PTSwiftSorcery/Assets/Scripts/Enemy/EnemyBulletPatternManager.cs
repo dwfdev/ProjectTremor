@@ -70,21 +70,23 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	{
 		if(m_bIsActive && !m_bIsDisabled)
 		{
-			if (m_fDisableDelay != 0.0f)
-			{
-				m_fActiveTimer += Time.deltaTime;
-				if(m_fActiveTimer >= m_fDisableDelay)
-				{
-					m_bIsActive = false;
-					m_bIsDisabled = true;
-				}
-			}
+			
 			if(m_parent != null)
 			{
 				if(m_parent.GetComponent<EnemyActor>() != null)
 				{
 					if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
 					{
+						if (m_fDisableDelay != 0.0f)
+						{
+							m_fActiveTimer += Time.deltaTime;
+							if (m_fActiveTimer >= m_fDisableDelay)
+							{
+								m_bIsActive = false;
+								m_bIsDisabled = true;
+							}
+						}
+
 						m_fCurrentTimer += Time.deltaTime;
 
 						if (m_fCurrentTimer >= m_fTimer)
@@ -103,6 +105,16 @@ public class EnemyBulletPatternManager : MonoBehaviour
 			}
 			else
 			{
+				if (m_fDisableDelay != 0.0f)
+				{
+					m_fActiveTimer += Time.deltaTime;
+					if (m_fActiveTimer >= m_fDisableDelay)
+					{
+						m_bIsActive = false;
+						m_bIsDisabled = true;
+					}
+				}
+
 				m_fCurrentTimer += Time.deltaTime;
 
 				if (m_fCurrentTimer >= m_fTimer)
