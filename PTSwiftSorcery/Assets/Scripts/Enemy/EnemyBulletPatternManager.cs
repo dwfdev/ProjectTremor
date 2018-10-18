@@ -59,21 +59,24 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	{
 		if(m_bIsActive)
 		{
-			if(m_parent.GetComponent<EnemyActor>() != null)
+			if(m_parent != null)
 			{
-				if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
+				if(m_parent.GetComponent<EnemyActor>() != null)
 				{
-					m_fCurrentTimer += Time.deltaTime;
-
-					if (m_fCurrentTimer >= m_fTimer)
+					if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
 					{
-						m_fCurrentTimer = 0.0f;
+						m_fCurrentTimer += Time.deltaTime;
 
-						foreach(GameObject child in m_children)
+						if (m_fCurrentTimer >= m_fTimer)
 						{
-							EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+							m_fCurrentTimer = 0.0f;
 
-							patternChild.StartPattern();
+							foreach(GameObject child in m_children)
+							{
+								EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+
+								patternChild.StartPattern();
+							}
 						}
 					}
 				}
@@ -97,9 +100,21 @@ public class EnemyBulletPatternManager : MonoBehaviour
 		}
 		else
 		{
-			if(m_parent.GetComponent<EnemyActor>() != null)
+			if(m_parent != null)
 			{
-				if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
+				if(m_parent.GetComponent<EnemyActor>() != null)
+				{
+					if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
+					{
+						m_fCurrentTimer += Time.deltaTime;
+						if (m_fCurrentTimer >= m_fDelay)
+						{
+							m_bIsActive = true;
+							m_fCurrentTimer = 0.0f;
+						}
+					}
+				}
+				else
 				{
 					m_fCurrentTimer += Time.deltaTime;
 					if (m_fCurrentTimer >= m_fDelay)
