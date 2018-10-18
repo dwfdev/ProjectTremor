@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>
+///		Script Manager:	Denver
+///		Description:	Handles Main Menu functionality
+///		Date Modified:	18/10/2018
+
 public class UIMainMenu : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void OnStartPressed() {
+		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("Level1"), UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 }

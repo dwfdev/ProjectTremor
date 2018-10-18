@@ -59,7 +59,7 @@ public class SceneManager : MonoBehaviour {
 			// set current scene
 			m_currentScene.scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 			m_currentScene.name = m_currentScene.scene.name;
-			m_currentScene.index = 0;
+			m_currentScene.index = m_currentScene.scene.buildIndex;
 
 			// initialise game scene data
 			for(int i = 0; i < m_gameScenes.Length; ++i) {
@@ -119,7 +119,7 @@ public class SceneManager : MonoBehaviour {
 		}
 
 		set {
-			if (value.tag == "PauseMenu") {
+			if (value) {
 				m_pauseMenu = value;
 			}
 		}
@@ -134,10 +134,11 @@ public class SceneManager : MonoBehaviour {
 		// lock cursor
 		Cursor.lockState = m_currentScene.lockMode;
 
-		// stop displaying pause menu
-		m_pauseMenu.SetActive(false);
-
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = true;
+		
+		if (PauseMenu) {
+			PauseMenu.SetActive(false);
+		}
 	}
 
 	void SceneStateChangedToPAUSED() {
@@ -146,7 +147,7 @@ public class SceneManager : MonoBehaviour {
 		Time.timeScale = 0f;
 
 		// display pause menu
-		m_pauseMenu.SetActive(true);
+		PauseMenu.SetActive(true);
 
 		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
 

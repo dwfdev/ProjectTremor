@@ -12,14 +12,11 @@ public class UIPauseMenu : MonoBehaviour {
 
 	void Start() {
 
-		// find pause menu
-		GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
-		
-		// tell the scene manager of the object
-		SceneManager.Instance.PauseMenu = pauseMenu;
-
-		// deactivate the object
-		pauseMenu.SetActive(false);
+		if (GameObject.FindGameObjectWithTag("PauseMenu")) {
+			GameObject pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
+			pauseMenu.SetActive(false);
+			SceneManager.Instance.PauseMenu = pauseMenu;
+		}
 	}
 
 	public void OnContinuePressed() {
@@ -28,10 +25,6 @@ public class UIPauseMenu : MonoBehaviour {
 
 	public void OnOptionsPressed() {
 		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("OptionsMenu"), UnityEngine.SceneManagement.LoadSceneMode.Single);
-	}
-
-	public void OnStartPressed() {
-		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("Level1"), UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 
 	public void OnQuitPressed() {
