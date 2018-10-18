@@ -21,11 +21,19 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	[Tooltip("How long until this pattern activates since the object became active in seconds")]
 	[SerializeField] private float m_fDelay;
 
-	//Whether or no this pattern is currently active
+	[Tooltip("How long since becoming active until this pattern stops firing")]
+	[SerializeField] private float m_fDisableDelay;
+
+	//Whether or not this pattern is currently active
 	private bool m_bIsActive;
+
+	//Whether or not this pattern has been disabled
+	private bool m_bIsDisabled;
 
 	//The current time in seconds
 	private float m_fCurrentTimer;
+
+	private float m_fActiveTimer;
 
 	[Tooltip("All spawn locations of bullets in this pattern")]
 	[SerializeField] private GameObject[] m_children;
@@ -46,6 +54,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 			m_bIsActive = true;
 		else
 			m_bIsActive = false;
+		m_bIsDisabled = false;
 	}
 
 	// Use this for initialization
@@ -55,10 +64,20 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	}
 	
 	// Update is called once per frame
+	//WARNING: Pasta below
 	void Update()
 	{
-		if(m_bIsActive)
+		if(m_bIsActive && !m_bIsDisabled)
 		{
+			if (m_fDisableDelay != 0.0f)
+			{
+				m_fActiveTimer += Time.deltaTime;
+				if(m_fActiveTimer >= m_fDisableDelay)
+				{
+					m_bIsActive = false;
+					m_bIsDisabled = true;
+				}
+			}
 			if(m_parent != null)
 			{
 				if(m_parent.GetComponent<EnemyActor>() != null)
