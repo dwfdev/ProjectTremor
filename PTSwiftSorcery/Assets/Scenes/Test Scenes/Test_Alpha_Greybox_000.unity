@@ -814,6 +814,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 827793210}
+  - component: {fileID: 827793207}
   m_Layer: 0
   m_Name: Player Movement Area
   m_TagString: PlayerMovementArea
@@ -821,6 +822,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &827793207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827793206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19, y: 1, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &827793210
 Transform:
   m_ObjectHideFlags: 0
@@ -829,7 +842,7 @@ Transform:
   m_GameObject: {fileID: 827793206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2.5, z: -0.085}
-  m_LocalScale: {x: 19, y: 1, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1862173179}
   m_Father: {fileID: 2018827717}
@@ -885,6 +898,8 @@ MonoBehaviour:
   m_parent: {fileID: 1146255283}
   m_bEnvironment: 0
   m_fTimer: 1
+  m_fDelay: 0
+  m_fDisableDelay: 0
   m_children:
   - {fileID: 1795310819}
 --- !u!114 &1146255286
@@ -918,7 +933,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  m_bLoopWaypoints: 0
+  m_bLoopWaypoints: 1
 --- !u!23 &1146255287
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1316,8 +1331,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862173175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0.3305}
-  m_LocalScale: {x: 0.052631576, y: 1, z: 0.033333335}
+  m_LocalPosition: {x: 0, y: 1, z: -9.915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 705209858}
   m_Father: {fileID: 827793210}
@@ -1346,7 +1361,9 @@ MonoBehaviour:
   m_movementArea: {fileID: 827793206}
   m_lifeState: 0
   m_currentSection: {fileID: 0}
+  m_spellManager: {fileID: 0}
   m_bHasPickUp: 0
+  m_bCanMove: 0
   m_nCurrentBombCount: 0
 --- !u!54 &1862173181
 Rigidbody:
