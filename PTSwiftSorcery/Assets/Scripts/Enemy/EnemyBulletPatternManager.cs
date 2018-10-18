@@ -18,6 +18,12 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	[Tooltip("How long between pattern firing in seconds. \nThis should always be higher or equal to the longest child timer, or else bad stuff can happen")]
 	[SerializeField] private float m_fTimer;
 
+	[Tooltip("How long until this pattern activates since the object became active in seconds")]
+	[SerializeField] private float m_fDelay;
+
+	//Whether or no this pattern is currently active
+	private bool m_bIsActive;
+
 	//The current time in seconds
 	private float m_fCurrentTimer;
 
@@ -36,6 +42,10 @@ public class EnemyBulletPatternManager : MonoBehaviour
 			if (m_fTimer < patternChild.GetTimer())
 				Debug.LogError("Timer on " + gameObject.name + " is shorter than " + child.name + ", you should fix this immediately!");
 		}
+		if (m_fDelay == 0.0f)
+			m_bIsActive = true;
+		else
+			m_bIsActive = false;
 	}
 
 	// Use this for initialization
@@ -47,9 +57,28 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(m_parent.GetComponent<EnemyActor>() != null)
+		if(m_bIsActive)
 		{
-			if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
+			if(m_parent.GetComponent<EnemyActor>() != null)
+			{
+				if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
+				{
+					m_fCurrentTimer += Time.deltaTime;
+
+					if (m_fCurrentTimer >= m_fTimer)
+					{
+						m_fCurrentTimer = 0.0f;
+
+						foreach(GameObject child in m_children)
+						{
+							EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
+
+							patternChild.StartPattern();
+						}
+					}
+				}
+			}
+			else
 			{
 				m_fCurrentTimer += Time.deltaTime;
 
@@ -57,7 +86,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 				{
 					m_fCurrentTimer = 0.0f;
 
-					foreach(GameObject child in m_children)
+					foreach (GameObject child in m_children)
 					{
 						EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
 
@@ -68,17 +97,25 @@ public class EnemyBulletPatternManager : MonoBehaviour
 		}
 		else
 		{
-			m_fCurrentTimer += Time.deltaTime;
-
-			if (m_fCurrentTimer >= m_fTimer)
+			if(m_parent.GetComponent<EnemyActor>() != null)
 			{
-				m_fCurrentTimer = 0.0f;
-
-				foreach (GameObject child in m_children)
+				if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
 				{
-					EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
-
-					patternChild.StartPattern();
+					m_fCurrentTimer += Time.deltaTime;
+					if (m_fCurrentTimer >= m_fDelay)
+					{
+						m_bIsActive = true;
+						m_fCurrentTimer = 0.0f;
+					}
+				}
+			}
+			else
+			{
+				m_fCurrentTimer += Time.deltaTime;
+				if (m_fCurrentTimer >= m_fDelay)
+				{
+					m_bIsActive = true;
+					m_fCurrentTimer = 0.0f;
 				}
 			}
 		}
