@@ -61,6 +61,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	void Awake()
 	{
 		m_fCurrentTimer = 0.0f;
+		m_fActiveTimer = 0.0f;
 	}
 	
 	// Update is called once per frame
