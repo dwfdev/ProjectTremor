@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: abb73c43855b2dd4db7f3bd3a6d1293e
-timeCreated: 1539224706
+guid: 3537ebcfde791c14195d7b29b8b98bec
+timeCreated: 1539835098
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,10 +8,9 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
-    2100002: Orc_Orc_Lp_lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Orc_001
+    4300000: witch_hat:Group4241
     9500000: //RootNode
   externalObjects: {}
   materials:

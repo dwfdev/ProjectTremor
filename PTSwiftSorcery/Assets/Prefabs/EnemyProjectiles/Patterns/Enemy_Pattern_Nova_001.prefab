@@ -535,7 +535,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286087315934798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.18, z: 3.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4033856054496294}
@@ -780,6 +780,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114038859838059434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -800,6 +801,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114092132944720006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -820,6 +822,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114114896032519958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -840,6 +843,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114202492635978098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -860,6 +864,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114250746244948880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -880,6 +885,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114271329336738346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -900,6 +906,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114314142109825546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -920,6 +927,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114388095329099190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -940,6 +948,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114391861014562518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -960,6 +969,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114408869195940072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -980,6 +990,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114449008993367636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1000,6 +1011,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114565192389271790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1020,6 +1032,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114588042572011144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1040,6 +1053,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114654038287410604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1060,6 +1074,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114817609864330370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1080,6 +1095,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114859502375961658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1100,6 +1116,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114896968792685866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1120,6 +1137,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114906813878052454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1134,6 +1152,8 @@ MonoBehaviour:
   m_parent: {fileID: 0}
   m_bEnvironment: 0
   m_fTimer: 1
+  m_fDelay: 0
+  m_fDisableDelay: 0
   m_children:
   - {fileID: 1559779694141330}
   - {fileID: 1300740919066510}
@@ -1179,6 +1199,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114926015463159004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1199,6 +1220,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114935054218423298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1219,6 +1241,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114947108855988150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1239,6 +1262,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114957279446905888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1259,6 +1283,7 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
 --- !u!114 &114978582603075016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1279,3 +1304,4 @@ MonoBehaviour:
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
+  m_fLifespan: 0
