@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 6eaa0aa7144a9bd45ba17317fa257f0f
-timeCreated: 1539231495
+guid: 9e8f19a295c5b6e4d97fb7360e9129d9
+timeCreated: 1539069074
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert4
-    2100002: lambert1
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
     4300000: Book_001
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
