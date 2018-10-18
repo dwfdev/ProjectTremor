@@ -48,9 +48,6 @@ public class PlayerActor : MonoBehaviour
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
 	[SerializeField] private float m_fMouseSmoothing;
 
-	[HideInInspector]
-	public bool m_bCanMove;
-
 	[Header("")]
 
 	[Tooltip("Position where the player will respawn.")]
@@ -84,6 +81,9 @@ public class PlayerActor : MonoBehaviour
 
 	[HideInInspector]
 	public bool m_bHasPickUp;
+
+	[HideInInspector]
+	public bool m_bCanMove;
 
 	private bool m_bFire2Down;
 
@@ -120,7 +120,6 @@ public class PlayerActor : MonoBehaviour
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
 
-		// initialise CanMove as true
 		m_bCanMove = true;
 
 		m_bFire2Down = false;
@@ -208,7 +207,7 @@ public class PlayerActor : MonoBehaviour
 
 		// pause
 		if (Input.GetKeyDown(KeyCode.P)) {
-			SceneManager.Instance.m_SceneState = eSceneState.PAUSED;
+			SceneManager.Instance.SceneState = eSceneState.PAUSED;
 		}
 		#endregion
 		
@@ -226,6 +225,9 @@ public class PlayerActor : MonoBehaviour
 
 			// move player
 			transform.localPosition += m_v3MouseSmooth;
+		}
+		else {
+			Debug.Log("Game is paused");
 		}
 		#endregion
 
