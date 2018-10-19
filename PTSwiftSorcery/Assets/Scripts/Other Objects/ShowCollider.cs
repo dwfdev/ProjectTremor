@@ -97,21 +97,11 @@ public class ShowCollider : MonoBehaviour {
 
 		Gizmos.matrix = Matrix4x4.TRS(drawBoxPosition, transform.rotation, drawBoxVector);
 		
-<<<<<<< .mine
 		// draw wire frame
 		Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
 
 		// shade faces
 		Gizmos.color *= new Color(1, 1, 1, m_alphaValue);
-||||||| .r98
-		Gizmos.color *= new Color(1, 1, 1, 0.25f);
-=======
-		// draw wire frame
-		Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
-
-		// shade faces
-		Gizmos.color *= new Color(1, 1, 1, 0.25f);
->>>>>>> .r99
 		Gizmos.DrawCube(Vector3.zero, Vector3.one);
 	}
 }
