@@ -14,6 +14,7 @@ TagManager:
   - LevelManager
   - PauseMenu
   - DeathScreen
+  - WinScreen
   layers:
   - Default
   - TransparentFX

@@ -138,6 +138,19 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
+	private GameObject m_winScreen;
+	public GameObject WinScreen {
+		get {
+			return m_winScreen;
+		}
+
+		set {
+			if (value) {
+				m_winScreen = value;
+			}
+		}
+	}
+
 	void SceneStateChangedToRUNNING() {
 		
 		// change time scale and fixed delta time
@@ -168,6 +181,24 @@ public class SceneManager : MonoBehaviour {
 		// display pause menu
 		if (PauseMenu) {
 		PauseMenu.SetActive(true);
+		}
+
+		if (GameObject.FindGameObjectWithTag("Player")) {
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		}
+
+		// unlock cursor
+		Cursor.lockState = CursorLockMode.None;
+	}
+
+	void SceneStateChangedToCOMPLETE() {
+
+		// change time scale
+		Time.timeScale = 0f;
+
+		// display winScreen
+		if (WinScreen) {
+			WinScreen.SetActive(true);
 		}
 
 		if (GameObject.FindGameObjectWithTag("Player")) {
