@@ -90,15 +90,15 @@ public class ShowCollider : MonoBehaviour {
 			transform.lossyScale.y * col.size.y,
 			transform.lossyScale.z * col.size.z
 		);
-
 		Vector3 drawBoxPosition = transform.position + col.center;
 
 		Gizmos.matrix = Matrix4x4.TRS(drawBoxPosition, transform.rotation, drawBoxVector);
 		
+		// draw wire frame
+		Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
+
+		// shade faces
 		Gizmos.color *= new Color(1, 1, 1, 0.25f);
 		Gizmos.DrawCube(Vector3.zero, Vector3.one);
-
-		Gizmos.color *= new Color(1, 1, 1, 4);
-		Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
 	}
 }
