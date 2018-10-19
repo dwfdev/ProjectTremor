@@ -5,7 +5,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager:	Denver
 ///		Description:	Handles Player inupts and life state.
-///		Date Modified:	11/10/2018
+///		Date Modified:	19/10/2018
 ///</summary>
 
 public enum eLifeState {
@@ -256,6 +256,7 @@ public class PlayerActor : MonoBehaviour
 		// if the player is dead
 		if(m_lifeState == eLifeState.DEAD) {
 			Debug.Log("Player is DEAD!");
+			SceneManager.Instance.SceneState = eSceneState.FAILED;
 		}
 
 	}

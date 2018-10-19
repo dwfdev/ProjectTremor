@@ -43,6 +43,9 @@ public class LevelManager : MonoBehaviour
 		// hide cursor
 		Cursor.lockState = CursorLockMode.Locked;
 
+		// start level
+		SceneManager.Instance.SceneState = eSceneState.RUNNING;
+
 	}
 
 	void FixedUpdate()

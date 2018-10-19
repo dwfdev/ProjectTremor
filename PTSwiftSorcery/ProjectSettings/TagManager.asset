@@ -13,6 +13,7 @@ TagManager:
   - LevelSection
   - LevelManager
   - PauseMenu
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

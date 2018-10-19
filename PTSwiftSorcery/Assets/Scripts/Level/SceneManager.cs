@@ -9,7 +9,7 @@ using UnityEditor;
 ///		Script Manager: Denver
 ///		Description:	Singleton class that handles the state of the scene and switching
 ///						between scenes
-///		Date Modified:	18/10/2018
+///		Date Modified:	19/10/2018
 ///</summary>
 
 public enum eSceneState {
@@ -125,6 +125,19 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
+	private GameObject m_deathScreen;
+	public GameObject DeathScreen {
+		get {
+			return m_deathScreen;
+		}
+
+		set {
+			if(value) {
+				m_deathScreen = value;
+			}
+		}
+	}
+
 	void SceneStateChangedToRUNNING() {
 		
 		// change time scale and fixed delta time
@@ -133,11 +146,17 @@ public class SceneManager : MonoBehaviour {
 
 		// lock cursor
 		Cursor.lockState = m_currentScene.lockMode;
-
-		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = true;
 		
 		if (PauseMenu) {
 			PauseMenu.SetActive(false);
+		}
+
+		if (DeathScreen) {
+			DeathScreen.SetActive(false);
+		}
+
+		if (GameObject.FindGameObjectWithTag("Player")) {
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = true;
 		}
 	}
 
@@ -147,9 +166,31 @@ public class SceneManager : MonoBehaviour {
 		Time.timeScale = 0f;
 
 		// display pause menu
+		if (PauseMenu) {
 		PauseMenu.SetActive(true);
+		}
 
-		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		if (GameObject.FindGameObjectWithTag("Player")) {
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		}
+
+		// unlock cursor
+		Cursor.lockState = CursorLockMode.None;
+	}
+
+	void SceneStateChangedToFAILED() {
+
+		// change time scale
+		Time.timeScale = 0f;
+
+		// display deathScreen
+		if (DeathScreen) {
+			DeathScreen.SetActive(true);
+		}
+
+		if (GameObject.FindGameObjectWithTag("Player")) {
+			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		}
 
 		// unlock cursor
 		Cursor.lockState = CursorLockMode.None;
@@ -165,8 +206,6 @@ public class SceneManager : MonoBehaviour {
 
 		// load new scene
 		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(m_currentScene.index, loadSceneMode);
-
-		SceneStateChangedToRUNNING();
 	}
 
 	public void UnloadCurrentScene() {
@@ -185,6 +224,12 @@ public class SceneManager : MonoBehaviour {
 			// unload previous scene
 			UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(m_previousScene.index);
 		}
+	}
+
+	public void ReloadCurrentScene() {
+
+		// load current scene
+		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(m_currentScene.index, UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 
 	public sGameScene GetGameSceneWithName(string name) {
