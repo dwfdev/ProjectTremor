@@ -28,6 +28,9 @@ public class ShowCollider : MonoBehaviour {
 	[Tooltip("Colour of collider")]
 	[SerializeField] private eColour m_colour;
 
+	[Tooltip("Transparency of faces.")]
+	[SerializeField] [Range(0f, 1f)] private float m_alphaValue = 0.25f;
+
 	void OnDrawGizmos() {
 
 		// select colour
@@ -94,11 +97,21 @@ public class ShowCollider : MonoBehaviour {
 
 		Gizmos.matrix = Matrix4x4.TRS(drawBoxPosition, transform.rotation, drawBoxVector);
 		
+<<<<<<< .mine
+		// draw wire frame
+		Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
+
+		// shade faces
+		Gizmos.color *= new Color(1, 1, 1, m_alphaValue);
+||||||| .r98
+		Gizmos.color *= new Color(1, 1, 1, 0.25f);
+=======
 		// draw wire frame
 		Gizmos.DrawWireCube(Vector3.zero, Vector3.one);
 
 		// shade faces
 		Gizmos.color *= new Color(1, 1, 1, 0.25f);
+>>>>>>> .r99
 		Gizmos.DrawCube(Vector3.zero, Vector3.one);
 	}
 }
