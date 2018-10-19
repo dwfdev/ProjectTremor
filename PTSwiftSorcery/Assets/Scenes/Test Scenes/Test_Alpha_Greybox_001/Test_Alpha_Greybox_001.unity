@@ -4955,6 +4955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_boss: {fileID: 833135845}
+  m_fDelay: 1
 --- !u!1 &2003272075
 GameObject:
   m_ObjectHideFlags: 0
