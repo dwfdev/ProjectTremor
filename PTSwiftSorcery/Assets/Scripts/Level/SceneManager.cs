@@ -158,6 +158,7 @@ public class SceneManager : MonoBehaviour {
 
 		// lock cursor
 		Cursor.lockState = m_currentScene.lockMode;
+		Cursor.visible = false;
 		
 		if (PauseMenu) {
 			PauseMenu.SetActive(false);
@@ -188,6 +189,7 @@ public class SceneManager : MonoBehaviour {
 
 		// unlock cursor
 		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 	}
 
 	void SceneStateChangedToCOMPLETE() {
@@ -206,6 +208,7 @@ public class SceneManager : MonoBehaviour {
 
 		// unlock cursor
 		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 	}
 
 	void SceneStateChangedToFAILED() {
@@ -224,6 +227,7 @@ public class SceneManager : MonoBehaviour {
 
 		// unlock cursor
 		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 	}
 
 	public void LoadScene(sGameScene newScene, LoadSceneMode loadSceneMode) {
@@ -270,6 +274,10 @@ public class SceneManager : MonoBehaviour {
 			}
 		}
 
-		return new sGameScene();
+		// if no found scene, return null sGameScene
+		return new sGameScene() {
+			name = "NULL",
+			index = -1,
+		};
 	}
 }
