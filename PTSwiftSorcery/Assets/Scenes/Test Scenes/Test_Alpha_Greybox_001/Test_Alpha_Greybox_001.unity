@@ -971,6 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 100
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
   m_enemyAIType: 0
@@ -1788,6 +1789,7 @@ GameObject:
   - component: {fileID: 833135847}
   - component: {fileID: 833135846}
   - component: {fileID: 833135851}
+  - component: {fileID: 833135852}
   m_Layer: 0
   m_Name: enemy (2)
   m_TagString: Enemy
@@ -1807,6 +1809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 100
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
   m_enemyAIType: 1
@@ -1900,6 +1903,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &833135852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833135845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d42df5c2bc434a4ea28cfdcecf9218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+    type: 2}
+  m_fOffset: 1
 --- !u!1 &840466837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,6 +3531,7 @@ GameObject:
   - component: {fileID: 1420122563}
   - component: {fileID: 1420122562}
   - component: {fileID: 1420122567}
+  - component: {fileID: 1420122568}
   m_Layer: 0
   m_Name: enemy (3)
   m_TagString: Enemy
@@ -3533,6 +3551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 100
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
   m_enemyAIType: 1
@@ -3626,6 +3645,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1420122568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420122561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d42df5c2bc434a4ea28cfdcecf9218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+    type: 2}
+  m_fOffset: 1
 --- !u!1 &1441377731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,6 +3881,7 @@ GameObject:
   - component: {fileID: 1489028673}
   - component: {fileID: 1489028678}
   - component: {fileID: 1489028679}
+  - component: {fileID: 1489028680}
   m_Layer: 0
   m_Name: enemy (1)
   m_TagString: Enemy
@@ -3867,6 +3901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 100
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
   m_enemyAIType: 1
@@ -3974,6 +4009,20 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1489028680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489028672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d42df5c2bc434a4ea28cfdcecf9218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+    type: 2}
+  m_fOffset: 1
 --- !u!1 &1503989651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,6 +4850,7 @@ GameObject:
   - component: {fileID: 1826814801}
   - component: {fileID: 1826814800}
   - component: {fileID: 1826814804}
+  - component: {fileID: 1826814805}
   m_Layer: 0
   m_Name: enemy (4)
   m_TagString: Enemy
@@ -4833,6 +4883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 100
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
   m_enemyAIType: 1
@@ -4913,6 +4964,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1826814805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826814798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d42df5c2bc434a4ea28cfdcecf9218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+    type: 2}
+  m_fOffset: 1
 --- !u!1 &1877322426
 GameObject:
   m_ObjectHideFlags: 0

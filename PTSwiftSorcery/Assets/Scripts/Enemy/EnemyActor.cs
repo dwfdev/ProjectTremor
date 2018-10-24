@@ -205,6 +205,11 @@ public class EnemyActor : MonoBehaviour
 		m_bIsActive = false;
 		m_bIsAlive = false;
 		//give player score and multiplier
+
+		// Destroy health bar if present
+		if (GetComponent<UIHealthBar>()) {
+			GetComponent<UIHealthBar>().DestroyHealthBar();
+		}
 		//Disable enemy
 		gameObject.SetActive(false);
 	}
