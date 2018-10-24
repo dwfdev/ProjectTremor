@@ -83,6 +83,16 @@ public class EnemyActor : MonoBehaviour
 	//Whether or not the enemy is currently waiting at a waypoint
 	private bool m_bWaitingAtWaypoint;
 
+	[Header("Score")]
+	[Tooltip("The score value of this enemy immediately upon being killed")]
+	public long m_lRawScore;
+
+	[Tooltip("The score value of the pickups this enemy drops upon death")]
+	public long m_lPickupScore;
+
+	[Tooltip("How much multiplier this enemy is worth, in percentage points")]
+	public float m_fMultiplier;
+
 	private void Start()
 	{
 		//Start out inactive but alive
@@ -204,7 +214,7 @@ public class EnemyActor : MonoBehaviour
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;
-		//give player score and multiplier
+		//TODO give player score and multiplier
 
 		// Destroy health bar if present
 		if (GetComponent<UIHealthBar>()) {
@@ -219,6 +229,12 @@ public class EnemyActor : MonoBehaviour
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;
+
+		if (GetComponent<UIHealthBar>())
+		{
+			GetComponent<UIHealthBar>().DestroyHealthBar();
+		}
+
 		//Disable enemy
 		gameObject.SetActive(false);
 	}
