@@ -9,6 +9,45 @@ using UnityEngine;
 ///</summary>
 public class ScoreManager : MonoBehaviour 
 {
+
+	#region Make a Singleton Class
+	private static ScoreManager instance = null;
+	public static ScoreManager Instance {
+		get {
+			// if ScoreManager doesn't already exist
+			if (instance == null) {
+				// check that a GameObject doesn't already have a ScoreManager component
+				instance = GameObject.FindObjectOfType<ScoreManager>();
+
+				// if there isn't such a GameObject
+				if (instance == null) {
+					// create a GameObject for itself that won't be able to be replaced
+					GameObject go = new GameObject();
+					go.name = "ScoreManager";
+					instance = go.AddComponent<ScoreManager>();
+				}
+			}
+			return instance;
+		}
+	}
+
+	void Awake() {
+
+		if (instance == null) {
+			// set instance
+			instance = this;
+
+			// let ScoreManager transcend scenes
+			DontDestroyOnLoad(instance);
+		}
+		else {
+			Destroy(gameObject);
+		}
+	}
+
+	private ScoreManager() {}
+	#endregion
+
 	//the current score
 	[HideInInspector]
 	public long m_lScore;
@@ -16,12 +55,6 @@ public class ScoreManager : MonoBehaviour
 	//the current multiplier
 	[HideInInspector]
 	public float m_fMultiplier;
-
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()
