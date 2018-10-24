@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -867,7 +867,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_parent: {fileID: 30959158}
   m_bEnvironment: 0
   m_fTimer: 3
-  m_fDelay: 1
+  m_fDelay: 1.5
   m_fDisableDelay: 0
   m_children:
   - {fileID: 1646141083}
@@ -4228,7 +4228,7 @@ MonoBehaviour:
   m_parent: {fileID: 1966445934}
   m_bEnvironment: 0
   m_fTimer: 3
-  m_fDelay: 1
+  m_fDelay: 1.5
   m_fDisableDelay: 0
   m_children:
   - {fileID: 924754984}
@@ -5629,7 +5629,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -6358,7 +6358,7 @@ MonoBehaviour:
   m_parent: {fileID: 775497876}
   m_bEnvironment: 0
   m_fTimer: 3
-  m_fDelay: 1
+  m_fDelay: 1.5
   m_fDisableDelay: 0
   m_children:
   - {fileID: 2004764376}
@@ -6682,7 +6682,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -6798,12 +6798,12 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 0
   m_eBulletType: 0
-  m_bulletPrefab: {fileID: 1160246005099136, guid: b847a4ec427586141a9115ed37a24901,
+  m_bulletPrefab: {fileID: 1160246005099136, guid: 1241f2c777f70434e9d43215b0baeb02,
     type: 2}
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
-  m_fLifespan: 0
+  m_fLifespan: 1.1
 --- !u!4 &913451529 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4198073365904896, guid: 6934738c549175c4584c4ffe74e91d2c,
@@ -8416,7 +8416,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -8810,7 +8810,7 @@ MonoBehaviour:
   m_parent: {fileID: 612379107}
   m_bEnvironment: 0
   m_fTimer: 3
-  m_fDelay: 1
+  m_fDelay: 1.5
   m_fDisableDelay: 0
   m_children:
   - {fileID: 1134221423}
@@ -10066,7 +10066,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -10196,7 +10196,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -12223,7 +12223,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
@@ -13398,7 +13398,7 @@ Prefab:
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
       propertyPath: m_fDelay
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114927402123715396, guid: 62457e446c5d67c4988920a749aaf73d,
         type: 2}
