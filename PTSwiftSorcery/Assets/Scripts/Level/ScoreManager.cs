@@ -9,6 +9,14 @@ using UnityEngine;
 ///</summary>
 public class ScoreManager : MonoBehaviour 
 {
+	//the current score
+	[HideInInspector]
+	public long m_lScore;
+
+	//the current multiplier
+	[HideInInspector]
+	public float m_fMultiplier;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -19,5 +27,15 @@ public class ScoreManager : MonoBehaviour
 	void Update ()
 	{
 		
+	}
+
+	public void AddScore(long scoreValue)
+	{
+		m_lScore += (long)Mathf.Round(scoreValue * m_fMultiplier);
+	}
+
+	public void AddMultiplier(float multiValue)
+	{
+		m_fMultiplier += multiValue;
 	}
 }
