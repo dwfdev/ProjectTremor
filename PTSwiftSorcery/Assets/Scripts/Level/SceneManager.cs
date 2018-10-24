@@ -8,7 +8,7 @@ using UnityEngine.UI;
 ///		Script Manager: Denver
 ///		Description:	Singleton class that handles the state of the scene and switching
 ///						between scenes
-///		Date Modified:	19/10/2018
+///		Date Modified:	24/10/2018
 ///</summary>
 
 public enum eSceneState {
@@ -171,6 +171,13 @@ public class SceneManager : MonoBehaviour {
 		if (GameObject.FindGameObjectWithTag("Player")) {
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = true;
 		}
+	}
+
+	void SceneStateChangedToBOSS_FIGHT() {
+
+		// stop scrolling through level
+		LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+		levelManager.m_fLevelScrollSpeed = 0f;
 	}
 
 	void SceneStateChangedToPAUSED() {

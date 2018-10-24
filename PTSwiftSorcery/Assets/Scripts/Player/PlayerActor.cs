@@ -226,9 +226,6 @@ public class PlayerActor : MonoBehaviour
 			// move player
 			transform.localPosition += m_v3MouseSmooth;
 		}
-		else {
-			Debug.Log("Game is paused");
-		}
 		#endregion
 
 		#region Keeping Player within Boundaries
