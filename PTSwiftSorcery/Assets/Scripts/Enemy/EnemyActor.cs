@@ -18,8 +18,11 @@ public enum eEnemyAIType
 public class EnemyActor : MonoBehaviour
 {
 	[Header("Global Variables")]
-	[Tooltip("How much health this enemy has")]
-	[SerializeField] private int m_nHealth;
+	[Tooltip("The maximum health this enemy has")]
+	public int m_nHealth;
+
+	[HideInInspector]
+	public int m_nCurrentHealth;
 
 	[Tooltip("Whether or not this enemy should rotate to face the player")]
 	[SerializeField] private bool m_bTrackPlayer;
@@ -85,6 +88,9 @@ public class EnemyActor : MonoBehaviour
 		//Start out inactive but alive
 		m_bIsActive = false;
 		m_bIsAlive = true;
+
+		//Set current health to maximum health
+		m_nCurrentHealth = m_nHealth;
 
 		//Get player
 		m_player = GameObject.FindGameObjectWithTag("Player");
@@ -185,10 +191,10 @@ public class EnemyActor : MonoBehaviour
 	public void TakeDamage(int damage)
 	{
 		//deal the damage
-		m_nHealth -= damage;
+		m_nCurrentHealth -= damage;
 
 		// if enemy runs out of health
-		if(m_nHealth <= 0) {
+		if(m_nCurrentHealth <= 0) {
 			Die();
 		}
 	}
