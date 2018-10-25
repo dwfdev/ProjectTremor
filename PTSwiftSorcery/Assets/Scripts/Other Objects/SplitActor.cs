@@ -31,6 +31,14 @@ public class SplitActor : MonoBehaviour {
 
 	private eLevelDifficulty m_desiredDifficulty;
 
+	void Start() {
+
+		// check tag
+		if (gameObject.tag != "LevelSplit") {
+			Debug.LogError("Tag is not LevelSplit", gameObject);
+		}
+	}
+
 	void OnTriggerEnter(Collider other) {
 
 		// check that other is the player

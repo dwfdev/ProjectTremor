@@ -2658,7 +2658,7 @@ MonoBehaviour:
     lockMode: 0
   - name: Greybox
     index: 1
-    lockMode: 0
+    lockMode: 1
 --- !u!4 &1120215083
 Transform:
   m_ObjectHideFlags: 0

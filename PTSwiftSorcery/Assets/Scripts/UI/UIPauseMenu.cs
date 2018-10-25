@@ -17,6 +17,9 @@ public class UIPauseMenu : MonoBehaviour {
 			pauseMenu.SetActive(false);
 			SceneManager.Instance.PauseMenu = pauseMenu;
 		}
+		else {
+			Debug.LogError("Could not find Pause Menu. Make sure tags are set.", gameObject);
+		}
 	}
 
 	public void OnContinuePressed() {

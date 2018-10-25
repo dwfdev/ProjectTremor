@@ -5,7 +5,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager: Denver
 ///		Description:	Handles the difficulty of the level, scroll direction and speed as well as moves the player
-///		Date Modified:	03/10/2018
+///		Date Modified:	25/10/2018
 ///</summary>
 
 public enum eLevelDifficulty
@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
 	void Start()
 	{
 
+		// check that tag has been set
 		if (gameObject.tag != "LevelManager") {
 			Debug.LogError("Tag must be LevelManager", gameObject);
 		}

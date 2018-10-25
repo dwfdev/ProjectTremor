@@ -99,8 +99,15 @@ public class PlayerActor : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 
-		// make sure tag is set to 'Player'
-		gameObject.tag = "Player";
+		// check player tag
+		if (gameObject.tag != "Player") {
+			Debug.LogError("Tag is not Player", gameObject);
+		}
+
+		// check movement area tag
+		if (m_movementArea.tag != "PlayerMovementArea") {
+			Debug.LogError("Tag is not PlayerMovementArea", gameObject);
+		}
 
 		// initialise lifeState as NORMAL
 		m_lifeState = eLifeState.NORMAL;

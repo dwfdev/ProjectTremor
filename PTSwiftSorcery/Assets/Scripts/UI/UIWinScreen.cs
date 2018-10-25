@@ -11,6 +11,9 @@ public class UIWinScreen : MonoBehaviour {
 			winScreen.SetActive(false);
 			SceneManager.Instance.WinScreen = winScreen;
 		}
+		else {
+			Debug.LogError("Could not find Win Screen. Make sure tags are set.", gameObject);
+		}
 	}
 
 	public void OnNextLevelPressed() {

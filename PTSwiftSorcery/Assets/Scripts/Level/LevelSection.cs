@@ -38,6 +38,11 @@ public class LevelSection : MonoBehaviour {
 
 		m_nCurrentSectionAttempts = 0;
 
+		// check tag
+		if (gameObject.tag != "LevelSection") {
+			Debug.LogError("tag is not LevelSection.", gameObject);
+		}
+
 	}
 
 	void FixedUpdate() {

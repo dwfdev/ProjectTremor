@@ -38,6 +38,11 @@ public class CameraActor : MonoBehaviour {
 		m_player = GameObject.FindGameObjectWithTag("Player");
 
 		m_fOriginX = transform.parent.transform.localPosition.x;
+
+		// check tag
+		if (gameObject.tag != "MainCamera") {
+			Debug.LogError("Tag is not MainCamera", gameObject);
+		}
 		
 	}
 	

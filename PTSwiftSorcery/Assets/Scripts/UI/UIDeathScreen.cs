@@ -18,6 +18,9 @@ public class UIDeathScreen : MonoBehaviour {
 			deathScreen.SetActive(false);
 			SceneManager.Instance.DeathScreen = deathScreen;
 		}
+		else {
+			Debug.LogError("Could not find Death Screen. Make sure tags are set.", gameObject);
+		}
 	}
 	
 	public void OnRestartPressed() {
