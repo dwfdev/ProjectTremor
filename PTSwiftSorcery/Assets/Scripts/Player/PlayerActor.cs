@@ -90,6 +90,8 @@ public class PlayerActor : MonoBehaviour {
 
 	private BombActor m_bomb;
 
+	private CameraActor m_cameraActor;
+
 	[HideInInspector]
 	public int m_nCurrentBombCount;
 	#endregion
@@ -115,6 +117,9 @@ public class PlayerActor : MonoBehaviour {
 
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
+
+		// get camera actor
+		m_cameraActor = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraActor>();
 
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
@@ -191,6 +196,7 @@ public class PlayerActor : MonoBehaviour {
 		// normal spells
 		if(Input.GetAxis("Fire1") > 0) {
 			m_spellManager.Fire();
+			// m_cameraActor.ShakeCamera(0.25f, 2f);
 		}
 
 		// bomb

@@ -3640,8 +3640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fLerpSpeed: 3
   m_fLerpRange: 0.25
-  m_fDefaultShakeMagnitude: 3
-  m_fDefaultShakeRoughness: 2
+  m_fDefaultShakeMagnitude: 6
+  m_fDefaultShakeRoughness: 4
   m_fDefaultFadeInTime: 0.15
   m_fDefaultFadeOutTime: 1
 --- !u!114 &1391364006

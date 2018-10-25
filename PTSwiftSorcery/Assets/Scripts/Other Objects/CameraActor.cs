@@ -51,7 +51,7 @@ public class CameraActor : MonoBehaviour {
 		
 	}
 
-	public void ShakeCamera(float shakeMagnitude = 0, float shakeRougness = 0, float fadeInTime = float.MinValue, float fadeOutTime = float.MinValue) {
+	public void ShakeCamera(float shakeMagnitude = 0f, float shakeRougness = 0f, float fadeInTime = float.MinValue, float fadeOutTime = float.MinValue) {
 
 		// check to see if no values were inputted
 		if (shakeMagnitude == 0) {
@@ -72,6 +72,5 @@ public class CameraActor : MonoBehaviour {
 
 		// shake camera
 		CameraShaker.Instance.ShakeOnce(shakeMagnitude, shakeRougness, fadeInTime, fadeOutTime);
-
 	}
 }
