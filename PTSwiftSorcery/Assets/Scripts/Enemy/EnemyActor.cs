@@ -90,8 +90,10 @@ public class EnemyActor : MonoBehaviour
 	[Tooltip("The score value of the pickups this enemy drops upon death")]
 	public long m_lPickupScore;
 
-	[Tooltip("How much multiplier this enemy is worth, in percentage points")]
+	[Tooltip("How much additional multiplier this enemy is worth")]
 	public float m_fMultiplier;
+
+	private ScoreManager m_ScoreManager;
 
 	private void Start()
 	{
@@ -102,6 +104,8 @@ public class EnemyActor : MonoBehaviour
 		//Set current health to maximum health
 		m_nCurrentHealth = m_nHealth;
 
+
+		m_ScoreManager = ScoreManager.Instance;
 		//Get player
 		m_player = GameObject.FindGameObjectWithTag("Player");
 
@@ -214,7 +218,11 @@ public class EnemyActor : MonoBehaviour
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;
-		//TODO give player score and multiplier
+
+		//Give multiplier and score
+		m_ScoreManager.AddMultiplier(m_fMultiplier);
+		m_ScoreManager.AddScore(m_lRawScore);
+		//TODO drop score pickups
 
 		// Destroy health bar if present
 		if (GetComponent<UIHealthBar>()) {
