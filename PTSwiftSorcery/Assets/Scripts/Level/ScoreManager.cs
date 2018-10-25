@@ -31,8 +31,12 @@ public class ScoreManager : MonoBehaviour
 		}
 	}
 
-	void Awake() {
+	private void Start()
+	{
+		m_fMultiplier = 1.0f;
+	}
 
+	void Awake() {
 		if (instance == null) {
 			// set instance
 			instance = this;
