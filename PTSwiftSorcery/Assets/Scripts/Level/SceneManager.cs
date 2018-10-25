@@ -8,7 +8,7 @@ using UnityEngine.UI;
 ///		Script Manager: Denver
 ///		Description:	Singleton class that handles the state of the scene and switching
 ///						between scenes
-///		Date Modified:	24/10/2018
+///		Date Modified:	25/10/2018
 ///</summary>
 
 public enum eSceneState {
@@ -51,6 +51,7 @@ public class SceneManager : MonoBehaviour {
 	}
 
 	void Awake() {
+		
 		if (instance == null) {
 			// set instance
 			instance = this;
@@ -168,8 +169,9 @@ public class SceneManager : MonoBehaviour {
 			DeathScreen.SetActive(false);
 		}
 
-		if (GameObject.FindGameObjectWithTag("Player")) {
-			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = true;
+		GameObject player;
+		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+			player.GetComponent<PlayerActor>().m_bCanMove = true;
 		}
 	}
 
@@ -190,8 +192,10 @@ public class SceneManager : MonoBehaviour {
 		PauseMenu.SetActive(true);
 		}
 
-		if (GameObject.FindGameObjectWithTag("Player")) {
-			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		// check if a player GameObject exists
+		GameObject player;
+		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
 
 		// unlock cursor
@@ -209,8 +213,10 @@ public class SceneManager : MonoBehaviour {
 			WinScreen.SetActive(true);
 		}
 
-		if (GameObject.FindGameObjectWithTag("Player")) {
-			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		// check if a player GameObject exists
+		GameObject player;
+		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
 
 		// unlock cursor
@@ -228,8 +234,10 @@ public class SceneManager : MonoBehaviour {
 			DeathScreen.SetActive(true);
 		}
 
-		if (GameObject.FindGameObjectWithTag("Player")) {
-			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>().m_bCanMove = false;
+		// check if a player GameObject exists
+		GameObject player;
+		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
 
 		// unlock cursor

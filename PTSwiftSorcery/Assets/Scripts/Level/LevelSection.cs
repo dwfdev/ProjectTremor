@@ -2,7 +2,7 @@
 ///		Script Manager:	Denver
 ///		Description:	Handles the functionality of the LevelSection.
 ///						Stores all enemies of its section and loops player.
-///		Date Modified:	12/10/2018
+///		Date Modified:	25/10/2018
 /// </summary>
 
 using System.Collections;
@@ -46,10 +46,7 @@ public class LevelSection : MonoBehaviour {
 
 		//check if player has defeated all enemies in the section
 		foreach(EnemyActor enemy in m_enemiesList) {
-			if(enemy.m_bIsAlive) {
-				continue;
-			}
-			else {
+			if(!enemy.m_bIsAlive) {
 				++enemyKillCount;
 			}
 		}

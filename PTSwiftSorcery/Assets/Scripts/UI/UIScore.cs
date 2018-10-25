@@ -17,12 +17,15 @@ public class UIScore : MonoBehaviour {
 	[Tooltip("Text box that shows multiplier.")]
 	[SerializeField] private Text m_multiplierTextBox;
 
+	[Tooltip("prefix for the multiplier value.")]
+	[SerializeField] private string m_strMultiplierPrefix = "x";
+
 	void FixedUpdate() {
 
 		// change score text box text
 		m_scoreTextBox.text = ScoreManager.Instance.m_lScore.ToString();
 
 		// change multiplier text box text
-		m_multiplierTextBox.text = "x" + ScoreManager.Instance.m_fMultiplier.ToString();
+		m_multiplierTextBox.text = m_strMultiplierPrefix + ScoreManager.Instance.m_fMultiplier.ToString();
 	}
 }

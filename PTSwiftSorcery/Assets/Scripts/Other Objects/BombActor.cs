@@ -5,7 +5,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager: Denver
 ///		Description:	Handles the functionality of the bomb.
-///		Date Modified:	11/10/2018
+///		Date Modified:	25/10/2018
 ///</summary>
 
 public class BombActor : MonoBehaviour {
@@ -35,7 +35,7 @@ public class BombActor : MonoBehaviour {
 		m_bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
 		foreach (GameObject bullet in m_bullets) {
-			// add score
+			ScoreManager.Instance.AddScore(m_nBulletScore);
 			Destroy(bullet);
 		}
 
@@ -45,6 +45,5 @@ public class BombActor : MonoBehaviour {
 				enemy.TakeDamage(m_nBombDamage);
 			}
 		}
-
 	}
 }

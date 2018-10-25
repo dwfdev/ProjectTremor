@@ -16,8 +16,7 @@ public enum eLifeState {
 	INVINCIBLE
 }
 
-public class PlayerActor : MonoBehaviour
-{
+public class PlayerActor : MonoBehaviour {
 
 	#region Member Variables
 	[Header("Lives.")]
@@ -125,7 +124,6 @@ public class PlayerActor : MonoBehaviour
 		m_bFire2Down = false;
 
 		m_bFire3Down = false;
-
 	}
 
 	// Update is called once per frame
@@ -255,7 +253,6 @@ public class PlayerActor : MonoBehaviour
 			Debug.Log("Player is DEAD!");
 			SceneManager.Instance.SceneState = eSceneState.FAILED;
 		}
-
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -284,7 +281,6 @@ public class PlayerActor : MonoBehaviour
 				}
 			}
 		}
-		
 	}
 
 	void Respawn() {
@@ -305,36 +301,29 @@ public class PlayerActor : MonoBehaviour
 			m_lifeState = eLifeState.INVINCIBLE;
 			StartInvincibilityTimer(m_fRespawnInvincibilityTimerSeconds);
 		}
-
 	}
 
-	public void StartDyingTimer()
-	{
+	public void StartDyingTimer() {
 
 		// start dying timer
 		m_bDyingTimerIsActive = true;
 		m_fDyingTimer = m_fDyingTimerSeconds;
-
 	}
 
-	public void StartInvincibilityTimer(float duration)
-	{
+	public void StartInvincibilityTimer(float duration) {
 
 		// start respawn timer
 		m_bRespawnInvincibilityTimerIsActive = true;
 		m_fRespawnInvincibilityTimer = duration;
-
 	}
 
-	public void AddToPlayerBombCount(int adder)
-	{
+	public void AddToPlayerBombCount(int adder) {
 
 		// add adder to m_nCurrentBombCount
 		m_nCurrentBombCount += adder;
 
 		// clamp between 0 and maximum bomb count
 		m_nCurrentBombCount = Mathf.Clamp(m_nCurrentBombCount, 0, m_nMaximumBombCount);
-
 	}
 
 	public void AddLives(int adder) {
@@ -344,7 +333,6 @@ public class PlayerActor : MonoBehaviour
 
 		// clamp between 0 and maxium lives
 		m_nLives = Mathf.Clamp(m_nLives, 0, m_nMaximumLives);
-
 	}
 
 	public void SetPickUp(sPickUp newPickUp) {
@@ -365,11 +353,9 @@ public class PlayerActor : MonoBehaviour
 			// set HasPickUp to true
 			m_bHasPickUp = true;
 		}
-
 	}
 
-	IEnumerator ActivatePickUp()
-	{
+	IEnumerator ActivatePickUp() {
 
 		Debug.Log(m_currentPickUp.type + " was activated.");
 
@@ -454,7 +440,6 @@ public class PlayerActor : MonoBehaviour
 				m_bHasPickUp = false;
 				break;
 		}
-
 	}
 
 	IEnumerator BecomeImmune(eLifeState returnLifeState, float duration) {
@@ -468,11 +453,9 @@ public class PlayerActor : MonoBehaviour
 		// reset
 		m_lifeState = returnLifeState;
 		Debug.Log(m_currentPickUp.type + " was deactivated.");
-
 	}
-
-	void ShootBomb()
-	{
+	
+	void ShootBomb() {
 
 		// check that player has bombs
 		if(m_nCurrentBombCount > 0) {
@@ -482,6 +465,5 @@ public class PlayerActor : MonoBehaviour
 			// blow up bomb
 			m_bomb.Boom();
 		}
-
 	}
 }
