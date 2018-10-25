@@ -1000,9 +1000,9 @@ MonoBehaviour:
   m_waypoints: []
   m_delays: []
   m_bLoopWaypoints: 0
-  m_lRawScore: 0
+  m_lRawScore: 100
   m_lPickupScore: 0
-  m_fMultiplier: 0
+  m_fMultiplier: 0.1
 --- !u!23 &402334995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1841,9 +1841,9 @@ MonoBehaviour:
   m_waypoints: []
   m_delays: []
   m_bLoopWaypoints: 0
-  m_lRawScore: 0
+  m_lRawScore: 100
   m_lPickupScore: 0
-  m_fMultiplier: 0
+  m_fMultiplier: 0.1
 --- !u!23 &833135847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3777,9 +3777,9 @@ MonoBehaviour:
   m_waypoints: []
   m_delays: []
   m_bLoopWaypoints: 0
-  m_lRawScore: 0
+  m_lRawScore: 100
   m_lPickupScore: 0
-  m_fMultiplier: 0
+  m_fMultiplier: 0.1
 --- !u!23 &1420122563
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4130,9 +4130,9 @@ MonoBehaviour:
   m_waypoints: []
   m_delays: []
   m_bLoopWaypoints: 0
-  m_lRawScore: 0
+  m_lRawScore: 100
   m_lPickupScore: 0
-  m_fMultiplier: 0
+  m_fMultiplier: 0.1
 --- !u!23 &1489028674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5115,9 +5115,9 @@ MonoBehaviour:
   m_waypoints: []
   m_delays: []
   m_bLoopWaypoints: 0
-  m_lRawScore: 0
+  m_lRawScore: 100
   m_lPickupScore: 0
-  m_fMultiplier: 0
+  m_fMultiplier: 0.1
 --- !u!23 &1826814801
 MeshRenderer:
   m_ObjectHideFlags: 0
