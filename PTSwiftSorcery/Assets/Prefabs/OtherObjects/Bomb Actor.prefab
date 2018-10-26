@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nBombDamage: 1
   m_nBulletScore: 100
-  m_fMaximumRange: 15
+  m_fMaximumRange: 17.5
   m_fDuration: 0.5
   m_fStartRange: 3
   m_fShakeMagnitude: 12
