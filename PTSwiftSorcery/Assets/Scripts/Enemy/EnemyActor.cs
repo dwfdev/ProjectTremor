@@ -222,7 +222,7 @@ public class EnemyActor : MonoBehaviour
 		//Give multiplier and score
 		m_ScoreManager.AddMultiplier(m_fMultiplier);
 		m_ScoreManager.AddScore(m_lRawScore);
-		//TODO drop score pickups
+		m_ScoreManager.DropScorePickup(m_lPickupScore, transform);
 
 		// Destroy health bar if present
 		if (GetComponent<UIHealthBar>()) {

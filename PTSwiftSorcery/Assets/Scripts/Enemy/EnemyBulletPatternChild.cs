@@ -55,6 +55,17 @@ public class EnemyBulletPatternChild : MonoBehaviour
 	//Whether or not this pattern child is currently active
 	private bool m_bActive;
 
+	[HideInInspector]
+	public EnemyBulletPatternManager m_parent;
+
+	private void Start()
+	{
+		if(m_fLifespan == 0.0f && m_fMoveSpeed == 0.0f && m_eBulletType != eBulletType.BEAM)
+		{
+			Debug.LogError("A child of " + m_parent.gameObject.name + " has projectiles that will not delete themselves");
+		}
+	}
+
 	// Use this for initialization
 	void Awake()
 	{

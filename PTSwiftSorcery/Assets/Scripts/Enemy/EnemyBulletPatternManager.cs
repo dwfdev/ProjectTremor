@@ -45,6 +45,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 		{
 			EnemyBulletPatternChild patternChild = child.GetComponent<EnemyBulletPatternChild>();
 
+			patternChild.m_parent = this;
 			patternChild.m_bEnvironment = m_bEnvironment;
 
 			if (m_fTimer < patternChild.GetTimer())
