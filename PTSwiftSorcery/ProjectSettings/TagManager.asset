@@ -15,6 +15,7 @@ TagManager:
   - PauseMenu
   - DeathScreen
   - WinScreen
+  - ScorePickup
   layers:
   - Default
   - TransparentFX
