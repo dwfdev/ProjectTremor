@@ -152,7 +152,7 @@ public class BombActor : MonoBehaviour {
 		// reset bomb effect
 		transform.localScale = new Vector3(1, 0.1f, 1);
 
-		Debug.Log("Bomb has stopped");
+		Destroy(gameObject, 1f);
 	}
 
 	IEnumerator SlowDownTime() {
@@ -168,6 +168,8 @@ public class BombActor : MonoBehaviour {
 		// reset
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = 0.02f;
+
+		Debug.Log("Slow Down Time ended");
 	}
 
 	void OnTriggerEnter(Collider other) {

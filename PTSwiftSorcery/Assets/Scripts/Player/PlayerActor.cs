@@ -56,8 +56,8 @@ public class PlayerActor : MonoBehaviour {
 	[Tooltip("The area in which the player can move.")]
 	public GameObject m_movementArea;
 
-	[Tooltip("Bomb Actor.")]
-	[SerializeField] private BombActor m_bombActor;
+	[Tooltip("Bomb Actor Prefab.")]
+	[SerializeField] private GameObject m_bombActorPrefab;
 	
 	[HideInInspector]
 	public eLifeState m_lifeState;
@@ -473,11 +473,13 @@ public class PlayerActor : MonoBehaviour {
 	void ShootBomb() {
 
 		// check that player has bombs
-		if(m_nCurrentBombCount > 0 && !m_bombActor.m_bIsExploding) {
+		if(m_nCurrentBombCount > 0) {
 			// decrement bomb count
 			--m_nCurrentBombCount;
 
-			m_bombActor.StartBomb();
+			BombActor bombActor = Instantiate(m_bombActorPrefab, transform.position, Quaternion.identity).GetComponent<BombActor>();
+			bombActor.transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
+			bombActor.StartBomb();
 		}
 	}
 }
