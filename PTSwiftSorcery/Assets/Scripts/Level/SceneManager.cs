@@ -180,6 +180,10 @@ public class SceneManager : MonoBehaviour {
 		// stop scrolling through level
 		LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 		levelManager.m_fLevelScrollSpeed = 0f;
+
+		// change to boss music
+		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
+		musicManager.StartBossMusic();
 	}
 
 	void SceneStateChangedToPAUSED() {
@@ -213,6 +217,10 @@ public class SceneManager : MonoBehaviour {
 			WinScreen.SetActive(true);
 		}
 
+		// start victory music
+		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
+		musicManager.StartVictoryMusic();
+
 		// check if a player GameObject exists
 		GameObject player;
 		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
@@ -233,6 +241,10 @@ public class SceneManager : MonoBehaviour {
 		if (DeathScreen) {
 			DeathScreen.SetActive(true);
 		}
+
+		// play failed music
+		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
+		musicManager.StartFailedMusic();
 
 		// check if a player GameObject exists
 		GameObject player;
