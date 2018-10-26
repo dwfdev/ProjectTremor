@@ -11,6 +11,7 @@ using UnityEngine;
 
 public class BombActor : MonoBehaviour {
 
+	[Header("Bomb")]
 	[Tooltip("How much damage will be dealt to all active enemies.")]
 	[SerializeField] private int m_nBombDamage;
 
@@ -25,6 +26,26 @@ public class BombActor : MonoBehaviour {
 
 	[Tooltip("Starting distance.")]
 	[SerializeField] [Range(1f, float.MaxValue)] private float m_fStartRange;
+
+	[Header("Camera Shake")]
+	[Tooltip("Magnitude of shake.")]
+	[SerializeField] private float m_fShakeMagnitude;
+
+	[Tooltip("Roughness of shake.")]
+	[SerializeField] private float m_fShakeRoughness;
+
+	[Tooltip("Fade in time of shake.")]
+	[SerializeField] private float m_fShakeFadeIn;
+
+	[Tooltip("Fade out time of shake.")]
+	[SerializeField] private float m_fShakeFadeOut;
+
+	[Header("Slow Down Time")]
+	[Tooltip("By how much do you want to slow down time.")]
+	[SerializeField] [Range(0.0001f, 1)] private float m_fTimeMagnitude;
+
+	[Tooltip("How long the effect will take place in seconds.")]
+	[SerializeField] private float m_fTimeDuration;
 
 	[HideInInspector]
 	public bool m_bIsExploding;
@@ -62,6 +83,9 @@ public class BombActor : MonoBehaviour {
 		m_fChangeInValue = 0f;
 		m_fCurrentRange = m_fStartRange;
 		m_fOldRange = 0f;
+
+		// calculate scaled slow down time duration
+		m_fTimeDuration *= m_fTimeMagnitude;
 	}
 
 	void FixedUpdate() {
@@ -100,6 +124,13 @@ public class BombActor : MonoBehaviour {
 		// invoke stop bomb
 		Invoke("StopBomb", m_fDuration);
 
+		// shake camera
+		CameraActor cameraActor = GameObject.FindObjectOfType<CameraActor>();
+		cameraActor.ShakeCamera(m_fShakeMagnitude, m_fShakeRoughness, m_fShakeFadeIn, m_fShakeFadeOut);
+
+		// slow down time
+		StartCoroutine(SlowDownTime());
+
 		m_bIsExploding = true;
 	}
 
@@ -122,6 +153,21 @@ public class BombActor : MonoBehaviour {
 		transform.localScale = new Vector3(1, 0.1f, 1);
 
 		Debug.Log("Bomb has stopped");
+	}
+
+	IEnumerator SlowDownTime() {
+
+		// set time scale
+		Time.timeScale = m_fTimeMagnitude;
+
+		// scale fixedDeltaTime
+		Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+		yield return new WaitForSeconds(m_fTimeDuration);
+
+		// reset
+		Time.timeScale = 1f;
+		Time.fixedDeltaTime = 0.02f;
 	}
 
 	void OnTriggerEnter(Collider other) {
