@@ -190,6 +190,10 @@ public class SceneManager : MonoBehaviour {
 
 	void SceneStateChangedToPAUSED() {
 	
+		// unlock cursor
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+		
 		// change time scale
 		Time.timeScale = 0f;
 
@@ -203,14 +207,14 @@ public class SceneManager : MonoBehaviour {
 		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
-
-		// unlock cursor
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.visible = true;
 	}
 
 	void SceneStateChangedToCOMPLETE() {
 
+		// unlock cursor
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+		
 		// change time scale
 		Time.timeScale = 0f;
 
@@ -230,13 +234,13 @@ public class SceneManager : MonoBehaviour {
 		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
+	}
+
+	void SceneStateChangedToFAILED() {
 
 		// unlock cursor
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
-	}
-
-	void SceneStateChangedToFAILED() {
 
 		// change time scale
 		Time.timeScale = 0f;
@@ -257,10 +261,6 @@ public class SceneManager : MonoBehaviour {
 		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
-
-		// unlock cursor
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.visible = true;
 	}
 
 	public void LoadScene(sGameScene newScene, LoadSceneMode loadSceneMode) {
