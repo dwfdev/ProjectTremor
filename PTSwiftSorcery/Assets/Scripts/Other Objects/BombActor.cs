@@ -174,7 +174,7 @@ public class BombActor : MonoBehaviour {
 
 		// check that other is an EnemyBullet
 		if (other.tag == "EnemyBullet") {
-			ScoreManager.Instance.AddScore(m_nBulletScore);
+			ScoreManager.Instance.DropScorePickup(m_nBulletScore, other.gameObject.transform);
 			Destroy(other.gameObject);
 		}
 	}

@@ -1925,8 +1925,14 @@ MonoBehaviour:
   m_nBombDamage: 1
   m_nBulletScore: 100
   m_fMaximumRange: 15
-  m_fDuration: 2
+  m_fDuration: 0.5
   m_fStartRange: 3
+  m_fShakeMagnitude: 12
+  m_fShakeRoughness: 6
+  m_fShakeFadeIn: 0.15
+  m_fShakeFadeOut: 0.75
+  m_fTimeMagnitude: 0.25
+  m_fTimeDuration: 1
   m_bIsExploding: 0
 --- !u!1 &833135845
 GameObject:
@@ -2214,7 +2220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190.86, y: -78.1}
+  m_AnchoredPosition: {x: 100, y: -78.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &901027350
@@ -2386,6 +2392,11 @@ Prefab:
       propertyPath: m_parent
       value: 
       objectReference: {fileID: 402334993}
+    - target: {fileID: 114906813878052454, guid: e0e9970f0db916f499ee269b5694ae4b,
+        type: 2}
+      propertyPath: m_fTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0e9970f0db916f499ee269b5694ae4b, type: 2}
   m_IsPrefabParent: 0
@@ -2677,6 +2688,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_lScore: 0
   m_fMultiplier: 0
+  m_pickupPrefab: {fileID: 1618678415637018, guid: 975b3343401cd0f40a4ee19d8bb9ce95,
+    type: 2}
+  m_fPickupMoveSpeed: 1
+  m_lMinScorePickupValue: 25
+  m_lLowScorePickupValue: 50
+  m_lMidScorePickupValue: 100
+  m_lHighScorePickupValue: 250
+  m_lMaxScorePickupValue: 500
 --- !u!4 &1040038668
 Transform:
   m_ObjectHideFlags: 0

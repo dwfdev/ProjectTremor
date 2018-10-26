@@ -124,9 +124,6 @@ public class PlayerActor : MonoBehaviour {
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
 
-		// get camera actor
-		// m_cameraActor = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraActor>();
-
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
 
@@ -207,6 +204,13 @@ public class PlayerActor : MonoBehaviour {
 		// bomb
 		if (Input.GetAxis("Fire2") > 0 && !m_bFire2Down) {
 			m_bFire2Down = true;
+
+			// stop player from dying
+			if (m_lifeState == eLifeState.DYING) {
+				m_lifeState = eLifeState.NORMAL;
+				m_bDyingTimerIsActive = false;
+			}
+
 			ShootBomb();
 		}
 		
