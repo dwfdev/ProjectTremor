@@ -209,6 +209,7 @@ public class PlayerActor : MonoBehaviour {
 			if (m_lifeState == eLifeState.DYING) {
 				m_lifeState = eLifeState.NORMAL;
 				m_bDyingTimerIsActive = false;
+				m_nCurrentBombCount = 1;
 			}
 
 			ShootBomb();
