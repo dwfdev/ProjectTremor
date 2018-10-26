@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,6 +55,9 @@ public class PlayerActor : MonoBehaviour {
 
 	[Tooltip("The area in which the player can move.")]
 	public GameObject m_movementArea;
+
+	[Tooltip("Bomb Actor.")]
+	[SerializeField] private BombActor m_bombActor;
 	
 	[HideInInspector]
 	public eLifeState m_lifeState;
@@ -88,9 +92,7 @@ public class PlayerActor : MonoBehaviour {
 
 	private bool m_bFire3Down;
 
-	private BombActor m_bomb;
-
-	private CameraActor m_cameraActor;
+	// private CameraActor m_cameraActor;
 
 	[HideInInspector]
 	public int m_nCurrentBombCount;
@@ -119,14 +121,11 @@ public class PlayerActor : MonoBehaviour {
 		// Get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
 
-		// set up bomb actor
-		m_bomb = GetComponent<BombActor>();
-
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
 
 		// get camera actor
-		m_cameraActor = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraActor>();
+		// m_cameraActor = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraActor>();
 
 		// initialise hasPowerUp to false
 		m_bHasPickUp = false;
@@ -203,7 +202,6 @@ public class PlayerActor : MonoBehaviour {
 		// normal spells
 		if(Input.GetAxis("Fire1") > 0) {
 			m_spellManager.Fire();
-			// m_cameraActor.ShakeCamera(0.25f, 2f);
 		}
 
 		// bomb
@@ -333,10 +331,9 @@ public class PlayerActor : MonoBehaviour {
 	public void AddToPlayerBombCount(int adder) {
 
 		// add adder to m_nCurrentBombCount
-		m_nCurrentBombCount += adder;
-
-		// clamp between 0 and maximum bomb count
-		m_nCurrentBombCount = Mathf.Clamp(m_nCurrentBombCount, 0, m_nMaximumBombCount);
+		if(m_nCurrentBombCount + adder <= m_nMaximumBombCount) {
+			m_nCurrentBombCount += adder;
+		}
 	}
 
 	public void AddLives(int adder) {
@@ -471,12 +468,11 @@ public class PlayerActor : MonoBehaviour {
 	void ShootBomb() {
 
 		// check that player has bombs
-		if(m_nCurrentBombCount > 0) {
+		if(m_nCurrentBombCount > 0 && !m_bombActor.m_bIsExploding) {
 			// decrement bomb count
 			--m_nCurrentBombCount;
-			
-			// blow up bomb
-			m_bomb.Boom();
+
+			m_bombActor.StartBomb();
 		}
 	}
 }

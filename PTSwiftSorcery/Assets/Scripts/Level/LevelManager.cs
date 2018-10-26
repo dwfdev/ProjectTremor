@@ -38,6 +38,10 @@ public class LevelManager : MonoBehaviour
 			Debug.LogError("Tag must be LevelManager", gameObject);
 		}
 
+		if (m_playField.tag != "Playfield") {
+			Debug.LogError("Tag must be Playfield", m_playField);
+		}
+
 		// initialise level difficulty to EASY
 		m_levelDifficulty = eLevelDifficulty.EASY;
 
