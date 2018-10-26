@@ -223,16 +223,16 @@ public class SceneManager : MonoBehaviour {
 			WinScreen.SetActive(true);
 		}
 
-		// start victory music
-		MusicManager musicManager; 
-		if ((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
-			musicManager.StartVictoryMusic();
-		}
-
 		// check if a player GameObject exists
 		GameObject player;
 		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
+		}
+
+		// start victory music
+		MusicManager musicManager;
+		if((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+			musicManager.StartVictoryMusic();
 		}
 	}
 
@@ -250,16 +250,16 @@ public class SceneManager : MonoBehaviour {
 			DeathScreen.SetActive(true);
 		}
 
-		// play failed music
-		MusicManager musicManager; 
-		if ((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
- 			musicManager.StartFailedMusic();
-		}
-
 		// check if a player GameObject exists
 		GameObject player;
 		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
+		}
+
+		// play failed music
+		MusicManager musicManager;
+		if((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+			musicManager.StartFailedMusic();
 		}
 	}
 
