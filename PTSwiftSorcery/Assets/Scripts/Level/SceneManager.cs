@@ -182,8 +182,10 @@ public class SceneManager : MonoBehaviour {
 		levelManager.m_fLevelScrollSpeed = 0f;
 
 		// change to boss music
-		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-		musicManager.StartBossMusic();
+		MusicManager musicManager;
+		if ((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+			musicManager.StartBossMusic();
+		}
 	}
 
 	void SceneStateChangedToPAUSED() {
@@ -218,8 +220,10 @@ public class SceneManager : MonoBehaviour {
 		}
 
 		// start victory music
-		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-		musicManager.StartVictoryMusic();
+		MusicManager musicManager; 
+		if ((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+			musicManager.StartVictoryMusic();
+		}
 
 		// check if a player GameObject exists
 		GameObject player;
@@ -243,8 +247,10 @@ public class SceneManager : MonoBehaviour {
 		}
 
 		// play failed music
-		MusicManager musicManager = GameObject.FindObjectOfType<MusicManager>();
-		musicManager.StartFailedMusic();
+		MusicManager musicManager; 
+		if ((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+ 			musicManager.StartFailedMusic();
+		}
 
 		// check if a player GameObject exists
 		GameObject player;
