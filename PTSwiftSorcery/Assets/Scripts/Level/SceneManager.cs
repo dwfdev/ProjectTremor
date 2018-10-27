@@ -170,9 +170,11 @@ public class SceneManager : MonoBehaviour {
 		}
 
 		GameObject player;
-		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+		if ((player = GameObject.FindGameObjectWithTag("Player"))) {
 			player.GetComponent<PlayerActor>().m_bCanMove = true;
 		}
+
+		Debug.Log("Scene state change to running");
 	}
 
 	void SceneStateChangedToBOSS_FIGHT() {
@@ -183,7 +185,7 @@ public class SceneManager : MonoBehaviour {
 
 		// change to boss music
 		MusicManager musicManager;
-		if ((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+		if ((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
 			musicManager.StartBossMusic();
 		}
 	}
@@ -204,9 +206,11 @@ public class SceneManager : MonoBehaviour {
 
 		// check if a player GameObject exists
 		GameObject player;
-		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+		if ((player = GameObject.FindGameObjectWithTag("Player"))) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
+
+		Debug.Log("Scene state change to paused");
 	}
 
 	void SceneStateChangedToCOMPLETE() {
@@ -225,15 +229,17 @@ public class SceneManager : MonoBehaviour {
 
 		// check if a player GameObject exists
 		GameObject player;
-		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+		if ((player = GameObject.FindGameObjectWithTag("Player"))) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
 
 		// start victory music
 		MusicManager musicManager;
-		if((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+		if((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
 			musicManager.StartVictoryMusic();
 		}
+
+		Debug.Log("Scene state change to complete");
 	}
 
 	void SceneStateChangedToFAILED() {
@@ -252,15 +258,17 @@ public class SceneManager : MonoBehaviour {
 
 		// check if a player GameObject exists
 		GameObject player;
-		if ((player = GameObject.FindGameObjectWithTag("Player")) != null) {
+		if ((player = GameObject.FindGameObjectWithTag("Player"))) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
 
 		// play failed music
 		MusicManager musicManager;
-		if((musicManager = GameObject.FindObjectOfType<MusicManager>()) != null) {
+		if((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
 			musicManager.StartFailedMusic();
 		}
+
+		Debug.Log("Scene state change to failed");
 	}
 
 	public void LoadScene(sGameScene newScene, LoadSceneMode loadSceneMode) {
@@ -272,7 +280,7 @@ public class SceneManager : MonoBehaviour {
 		m_currentScene = newScene;
 
 		// load new scene
-		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(m_currentScene.index, loadSceneMode);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(m_currentScene.index, loadSceneMode);
 	}
 
 	public void UnloadCurrentScene() {
@@ -296,7 +304,7 @@ public class SceneManager : MonoBehaviour {
 	public void ReloadCurrentScene() {
 
 		// load current scene
-		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(m_currentScene.index, UnityEngine.SceneManagement.LoadSceneMode.Single);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
 	}
 
 	public sGameScene GetGameSceneWithName(string name) {

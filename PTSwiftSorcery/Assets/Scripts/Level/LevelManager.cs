@@ -45,10 +45,7 @@ public class LevelManager : MonoBehaviour
 		// initialise level difficulty to EASY
 		m_levelDifficulty = eLevelDifficulty.EASY;
 
-		// hide cursor
-		Cursor.lockState = CursorLockMode.Locked;
-
-		// start level
+		// set scene state to running
 		SceneManager.Instance.SceneState = eSceneState.RUNNING;
 
 	}
