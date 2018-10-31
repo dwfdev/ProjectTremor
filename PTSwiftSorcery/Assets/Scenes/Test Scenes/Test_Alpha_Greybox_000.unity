@@ -547,9 +547,9 @@ MonoBehaviour:
   m_playField: {fileID: 2018827715}
   m_fLevelScrollSpeed: 0
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 0}
-  m_fMinTimeScale: 0
-  m_fTimeScaleCurve: 0
-  m_fTimeScaleCurveDropOff: 0
+  m_fMinTimeScale: 0.05
+  m_fTimeScaleCurve: 50
+  m_fTimeScaleCurveDropOff: 1
   m_levelDifficulty: 0
   m_fTimeScale: 0
 --- !u!4 &227548889
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nHealth: 50
+  m_nHealth: 1000
   m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_eSpellType: 0
   m_bIsHoming: 0
   m_bIsScatter: 0
-  m_fScatterSpread: 5
+  m_fFireSpread: 10
   m_firePrefab: {fileID: 1231070219212850, guid: 79f034304347dfb479ad74bbe3092401,
     type: 2}
   m_icePrefab: {fileID: 1197272987208826, guid: 22293b600a12d014b9853505294c50b5,
@@ -1465,6 +1465,7 @@ MonoBehaviour:
   m_nFireDamage: 30
   m_nIceDamage: 15
   m_nLightningDamage: 5
+  m_nSpellLevel: 0
 --- !u!1 &1887802659
 GameObject:
   m_ObjectHideFlags: 0

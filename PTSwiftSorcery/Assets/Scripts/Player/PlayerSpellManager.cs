@@ -61,8 +61,8 @@ public class PlayerSpellManager : MonoBehaviour
 	[Tooltip("Whether or not the player is firing scatter shots")]
 	public bool m_bIsScatter;
 
-	[Tooltip("How many degrees out scatter shots should spread")]
-	public float m_fScatterSpread;
+	[Tooltip("The maxmimum amount of degrees a fire shot can spread")]
+	public float m_fFireSpread;
 
 	[Header("Prefabs")]
 
@@ -83,20 +83,27 @@ public class PlayerSpellManager : MonoBehaviour
 
 	[Tooltip("How much damage lightning shots do")]
 	[SerializeField] private int m_nLightningDamage;
+
+	[HideInInspector] public int m_nSpellLevel;
 	// Use this for initialization
-	void Start ()
+	void Start()
 	{
-		
+
 	}
-	
+
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
 		//update the timer
 		m_fTimer += Time.deltaTime;
+
+		if(Input.GetKeyDown(KeyCode.B))
+		{
+			m_nSpellLevel++;
+		}
 	}
 
-	public void Fire()
+	/*public void Fire()
 	{
 		switch(m_eSpellType)
 		{
@@ -197,5 +204,133 @@ public class PlayerSpellManager : MonoBehaviour
 				m_fTimer = 0.0f;
 				break;
 		}
+	}*/
+
+	public void Fire()
+	{
+		switch(m_eSpellType)
+		{
+			case eSpellType.FIRE:
+				ShootFire();
+				break;
+			case eSpellType.ICE:
+				ShootIce();
+				break;
+			case eSpellType.LIGHTNING:
+				ShootLightning();
+				break;
+			default:
+				break;
+		}
+	}
+
+	private void ShootFire()
+	{
+		if(m_fTimer >= m_fFireRate * m_fFireMultiplier)
+		{
+			switch(m_nSpellLevel)
+			{
+				case 0:
+					GameObject level1newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level1newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread));
+					break;
+				case 1:
+					GameObject level2newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level2newBullet2 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level2newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 5.0f);
+					level2newBullet2.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) + 5.0f);
+					break;
+				case 2:
+					GameObject level3newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level3newBullet2 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level3newBullet3 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level3newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 5.0f);
+					level3newBullet2.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) + 5.0f);
+					level3newBullet3.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread));
+					break;
+				case 3:
+					GameObject level4newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet2 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet3 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet4 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet5 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level4newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread));
+					level4newBullet2.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 5.0f);
+					level4newBullet3.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 10.0f);
+					level4newBullet4.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) + 5.0f);
+					level4newBullet5.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) + 10.0f);
+					break;
+				default:
+					if (m_nSpellLevel < 0)
+						m_nSpellLevel = 0;
+					else if (m_nSpellLevel > 3)
+						m_nSpellLevel = 3;
+					break;
+			}
+			m_fTimer = 0.0f;
+		}
+	}
+
+	private void ShootIce()
+	{
+		if(m_fTimer >= m_fFireRate * m_fIceMultiplier)
+		{
+			switch(m_nSpellLevel)
+			{
+				case 0:
+					GameObject level1newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					break;
+				case 1:
+					GameObject level2newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level2newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+
+					Vector3 newPos = new Vector3(0.5f, 0.0f, 0.0f);
+
+					level2newBullet1.transform.position += newPos;
+					level2newBullet2.transform.position -= newPos;
+
+					break;
+				case 2:
+					GameObject level3newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level3newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level3newBullet3 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+
+					Vector3 newPos2 = new Vector3(0.5f, 0.0f, 0.0f);
+
+					level3newBullet2.transform.position += newPos2;
+					level3newBullet3.transform.position -= newPos2;
+					break;
+				case 3:
+					GameObject level4newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet3 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+
+					Vector3 newPos3 = new Vector3(0.5f, 0.0f, 0.0f);
+
+					level4newBullet2.transform.position += newPos3;
+					level4newBullet3.transform.position -= newPos3;
+
+					level4newBullet1.GetComponent<PlayerSpellProjectile>().m_bIsHoming = true;
+					level4newBullet2.GetComponent<PlayerSpellProjectile>().m_bIsHoming = true;
+					level4newBullet3.GetComponent<PlayerSpellProjectile>().m_bIsHoming = true;
+					break;
+				default:
+					if (m_nSpellLevel < 0)
+						m_nSpellLevel = 0;
+					else if (m_nSpellLevel > 3)
+						m_nSpellLevel = 3;
+					break;
+			}
+			m_fTimer = 0.0f;
+		}
+	}
+
+	private void ShootLightning()
+	{
+		Debug.LogWarning("Lightning is not implemented yet");
 	}
 }
