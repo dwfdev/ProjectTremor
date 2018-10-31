@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 ///<summary>
 ///Script Manager: Drake
@@ -33,9 +34,19 @@ public class ScoreManager : MonoBehaviour
 
 	private void Start()
 	{
-		m_fMultiplier = 1.0f;
+		//m_fMultiplier = 1.0f;
+		//
+		//m_playfield = GameObject.FindGameObjectWithTag("Playfield");
+	}
 
-		m_playfield = GameObject.FindGameObjectWithTag("Playfield");
+	private void OnEnable()
+	{
+		UnityEngine.SceneManagement.SceneManager.sceneLoaded += LevelLoaded;
+	}
+
+	private void OnDisable()
+	{
+		UnityEngine.SceneManagement.SceneManager.sceneLoaded -= LevelLoaded;
 	}
 
 	void Awake() {
@@ -93,6 +104,13 @@ public class ScoreManager : MonoBehaviour
 		{
 			Debug.Log(m_lScore);
 		}
+	}
+
+	void LevelLoaded(Scene scene, LoadSceneMode mode)
+	{
+		m_fMultiplier = 1.0f;
+
+		m_playfield = GameObject.FindGameObjectWithTag("Playfield");
 	}
 
 	public void AddScore(long scoreValue)
