@@ -120,7 +120,7 @@ MonoBehaviour:
   m_fShakeRoughness: 6
   m_fShakeFadeIn: 0.15
   m_fShakeFadeOut: 0.75
-  m_fTimeMagnitude: 0.25
+  m_fTimeMagnitude: 0.516
   m_fTimeDuration: 0.4
   m_bIsExploding: 0
 --- !u!135 &135989224247549458
