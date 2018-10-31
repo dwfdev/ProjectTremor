@@ -547,7 +547,11 @@ MonoBehaviour:
   m_playField: {fileID: 2018827715}
   m_fLevelScrollSpeed: 0
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 0}
+  m_fMinTimeScale: 0
+  m_fTimeScaleCurve: 0
+  m_fTimeScaleCurveDropOff: 0
   m_levelDifficulty: 0
+  m_fTimeScale: 0
 --- !u!4 &227548889
 Transform:
   m_ObjectHideFlags: 0
@@ -1408,7 +1412,7 @@ MonoBehaviour:
   m_fMouseSmoothing: 1
   m_v3RespawnLocation: {x: 0, y: 1, z: -0.3305}
   m_movementArea: {fileID: 827793206}
-  m_bombActor: {fileID: 0}
+  m_bombActorPrefab: {fileID: 0}
   m_lifeState: 0
   m_currentSection: {fileID: 0}
   m_spellManager: {fileID: 0}

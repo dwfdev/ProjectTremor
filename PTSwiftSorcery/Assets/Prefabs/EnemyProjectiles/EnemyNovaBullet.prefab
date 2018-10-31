@@ -748,7 +748,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160246005099136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6660913, y: 2.676263, z: -5.360545}
+  m_LocalPosition: {x: 2.1946118, y: 0.5, z: 7.4294567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4125432440272208}
@@ -871,6 +871,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114086303496221364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -892,6 +893,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114139856119523898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -913,6 +915,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114180551642114334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,6 +951,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114290552599887404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -969,6 +973,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114308947362282224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -990,6 +995,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114336782951346740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1011,6 +1017,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114358451730020890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1032,6 +1039,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114418106116021268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1046,6 +1054,8 @@ MonoBehaviour:
   m_parent: {fileID: 0}
   m_bEnvironment: 0
   m_fTimer: 1
+  m_fDelay: 0
+  m_fDisableDelay: 0
   m_children:
   - {fileID: 1322717802256684}
   - {fileID: 1868105410929452}
@@ -1092,6 +1102,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114443055646477940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1113,6 +1124,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114481582856898268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1134,6 +1146,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114527592620932018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1155,6 +1168,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114567025334567726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1176,6 +1190,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114568053826033120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1197,6 +1212,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114583588020913824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1218,6 +1234,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114593366252142838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1239,6 +1256,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114624995291147900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1260,6 +1278,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114636779574195746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1281,6 +1300,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114684414764974416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1302,6 +1322,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114712555677529558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1323,6 +1344,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114739354317341402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1344,6 +1366,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114868460050602416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1365,6 +1388,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114948567916834292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1386,6 +1410,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114976979924137728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1407,6 +1432,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!135 &135501392644172334
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1417,5 +1443,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.25
   m_Center: {x: 0, y: 0, z: 0}
