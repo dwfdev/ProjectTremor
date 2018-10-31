@@ -120,7 +120,7 @@ MonoBehaviour:
   m_fShakeRoughness: 6
   m_fShakeFadeIn: 0.15
   m_fShakeFadeOut: 0.75
-  m_fTimeMagnitude: 0.516
+  m_fTimeMagnitude: 0.35
   m_fTimeDuration: 0.4
   m_bIsExploding: 0
 --- !u!135 &135989224247549458
@@ -133,5 +133,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

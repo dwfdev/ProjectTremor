@@ -109,7 +109,6 @@ public class BombActor : MonoBehaviour {
 
 			// display range visually using bomb effect
 			transform.localScale = new Vector3(m_fCurrentRange, transform.localScale.y, m_fCurrentRange);
-			Debug.Log(m_fCurrentRange);
 		}
 	}
 
@@ -121,6 +120,8 @@ public class BombActor : MonoBehaviour {
 
 	public void StartBomb() {
 
+		m_bIsExploding = true;
+		
 		// invoke stop bomb
 		Invoke("StopBomb", m_fDuration);
 
@@ -130,8 +131,6 @@ public class BombActor : MonoBehaviour {
 
 		// slow down time
 		StartCoroutine(SlowDownTime());
-
-		m_bIsExploding = true;
 	}
 
 	void StopBomb() {

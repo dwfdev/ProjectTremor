@@ -5,7 +5,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager: Denver
 ///		Description:	Handles the difficulty of the level, scroll direction and speed as well as moves the player
-///		Date Modified:	31/10/2018
+///		Date Modified:	1/11/2018
 ///</summary>
 
 public enum eLevelDifficulty

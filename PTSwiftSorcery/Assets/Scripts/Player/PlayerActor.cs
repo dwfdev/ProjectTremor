@@ -6,7 +6,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager:	Denver
 ///		Description:	Handles Player inupts and life state.
-///		Date Modified:	19/10/2018
+///		Date Modified:	1/11/2018
 ///</summary>
 
 public enum eLifeState {
@@ -53,7 +53,7 @@ public class PlayerActor : MonoBehaviour {
 	[Tooltip("Position where the player will respawn.")]
 	[SerializeField] private Vector3 m_v3RespawnLocation;
 
-	[Tooltip("The area in which the player can move.")]
+	[HideInInspector]
 	public GameObject m_movementArea;
 
 	[Tooltip("Bomb Actor Prefab.")]
@@ -80,9 +80,6 @@ public class PlayerActor : MonoBehaviour {
 	public PlayerSpellManager m_spellManager;
 
 	[HideInInspector]
-	public sPickUp m_currentPickUp;
-
-	[HideInInspector]
 	public bool m_bHasPickUp;
 
 	[HideInInspector]
@@ -100,6 +97,9 @@ public class PlayerActor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+
+		// get movementArea
+		m_movementArea = GameObject.FindGameObjectWithTag("PlayerMovementArea");
 
 		// check player tag
 		if (gameObject.tag != "Player") {
@@ -172,7 +172,6 @@ public class PlayerActor : MonoBehaviour {
 		// activate pickup
 		if (Input.GetAxis("Fire3") > 0 && m_bHasPickUp && !m_bFire3Down) {
 			m_bFire3Down = true;
-			StartCoroutine(ActivatePickUp());
 		}
 		
 		if (Input.GetAxis("Fire3") == 0) {
@@ -350,126 +349,6 @@ public class PlayerActor : MonoBehaviour {
 		m_nLives = Mathf.Clamp(m_nLives, 0, m_nMaximumLives);
 	}
 
-	public void SetPickUp(sPickUp newPickUp) {
-		
-		// if power up takes immediate effect
-		if (newPickUp.type == ePickUpType.BOMB) {
-			AddToPlayerBombCount(1);
-		}
-
-		if (newPickUp.type == ePickUpType.SHIELD) {
-			m_lifeState = eLifeState.SHIELDED;
-		}
-
-		// if it must be activated manually by the player
-		else {
-			m_currentPickUp = newPickUp;
-
-			// set HasPickUp to true
-			m_bHasPickUp = true;
-		}
-	}
-
-	IEnumerator ActivatePickUp() {
-
-		Debug.Log(m_currentPickUp.type + " was activated.");
-
-		// run pickups code based on its type
-		switch(m_currentPickUp.type) {
-			case ePickUpType.INCREASE_FIRE_RATE:
-				// affect spell manager
-				m_spellManager.m_fFireRate /= m_currentPickUp.magnitude;
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-
-				// wait for duration
-				yield return new WaitForSeconds(m_currentPickUp.duration);
-
-				// reset
-				m_spellManager.m_fFireRate *= m_currentPickUp.magnitude;
-				Debug.Log(m_currentPickUp.type + " was deactivated.");
-				break;
-
-			case ePickUpType.HOMING_SPELLS:
-				// affect spell manager
-				m_spellManager.m_bIsHoming = true;
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-
-				// wait for duration
-				yield return new WaitForSeconds(m_currentPickUp.duration);
-
-				// reset
-				m_spellManager.m_bIsHoming = false;
-				Debug.Log(m_currentPickUp.type + " was deactivated.");
-				break;
-
-			case ePickUpType.SCATTER_SPELLS:
-				// affect spell manager
-				m_spellManager.m_bIsScatter = true;
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-
-				// wait for duration
-				yield return new WaitForSeconds(m_currentPickUp.duration);
-
-				// reset
-				m_spellManager.m_bIsScatter = false;
-				Debug.Log(m_currentPickUp.type + " was deactivated.");
-				break;
-
-			case ePickUpType.IMMUNITY:
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-
-				// affect player
-				StartCoroutine(BecomeImmune(m_lifeState, m_currentPickUp.duration));
-				break;
-
-			case ePickUpType.SLOW_DOWN_TIME:
-				// affect time scale
-				Time.timeScale = m_currentPickUp.magnitude;
-
-				// scale fixed delta time
-				Time.fixedDeltaTime = 0.02f * Time.timeScale;
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-
-				// wait for duration
-				yield return new WaitForSeconds(m_currentPickUp.duration);
-
-				// reset
-				Time.timeScale = 1;
-				Time.fixedDeltaTime = 0.02f;
-				Debug.Log(m_currentPickUp.type + " was deactivated.");
-				break;
-
-			default:
-				Debug.LogError("Could not activate pick up.");
-
-				// clear m_currentPickUp
-				m_bHasPickUp = false;
-				break;
-		}
-	}
-
-	IEnumerator BecomeImmune(eLifeState returnLifeState, float duration) {
-		
-		// turn player invincible
-		m_lifeState = eLifeState.INVINCIBLE;
-
-		// wait for duration
-		yield return new WaitForSeconds(duration);
-
-		// reset
-		m_lifeState = returnLifeState;
-		Debug.Log(m_currentPickUp.type + " was deactivated.");
-	}
-	
 	void ShootBomb() {
 
 		// check that player has bombs

@@ -53,12 +53,10 @@ public class UIBombsPickups : MonoBehaviour {
 	void Start () {
 		
 		// get the PlayerActor
-		m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>();
+		m_player = GameObject.FindObjectOfType<PlayerActor>();
 
 		// initialise is pick up active
 		m_bPickUpIsActive = false;
-
-		m_bFire3Down = false;
 
 		m_progressBar.gameObject.SetActive(false);
 
@@ -74,67 +72,6 @@ public class UIBombsPickups : MonoBehaviour {
 
 		// change bomb count text to match the number of bombs the player has
 		m_BombCountText.text = m_player.m_nCurrentBombCount.ToString();
-
-		#region Display Current Pickup
-		// if player has a pickup
-		if (m_player.m_bHasPickUp) {
-			// change image to be corresponding sprite
-			switch(m_player.m_currentPickUp.type) {
-				case ePickUpType.INCREASE_FIRE_RATE:
-					m_pickupImage.sprite = m_IFRSprite;
-					break;
-
-				case ePickUpType.IMMUNITY:
-					m_pickupImage.sprite = m_immunitySprite;
-					break;
-				
-				case ePickUpType.SLOW_DOWN_TIME:
-					m_pickupImage.sprite = m_SDTSprite;
-					break;
-
-				case ePickUpType.HOMING_SPELLS:
-					m_pickupImage.sprite = m_homingSpellsSprite;
-					break;
-
-				case ePickUpType.SCATTER_SPELLS:
-					m_pickupImage.sprite = m_scatterSpellsSprite;
-					break;
-
-				default:
-					Debug.LogError("Sprite could not be changed.", gameObject);
-					break;
-			}
-		}
-		else {
-			m_pickupImage.sprite = m_emptySprite;
-		}
-		#endregion
-		
-		#region Pick up progress bar
-		// if player has activated their pickup
-		if (Input.GetAxis("Fire3") > 0 && m_player.m_bHasPickUp && !m_bFire3Down) {
-			m_bPickUpIsActive = true;
-			m_bFire3Down = true;
-			m_fPickupTimeRemaining = m_player.m_currentPickUp.duration;
-			m_progressBar.gameObject.SetActive(true);
-		}
-
-		if (Input.GetAxis("Fire3") == 0) {
-			m_bFire3Down = false;
-		}
-
-		// if player's pickup is active
-		if (m_bPickUpIsActive) {
-			// scale progress bar
-			m_progressBar.transform.localScale = new Vector3(1f, m_fPickupTimeRemaining / m_player.m_currentPickUp.duration, 1f);
-
-			// check if time has run out
-			if (m_fPickupTimeRemaining <= 0f) {
-				m_bPickUpIsActive = false;
-				m_progressBar.gameObject.SetActive(false);
-			}
-		}
-		#endregion
 
 	}
 }
