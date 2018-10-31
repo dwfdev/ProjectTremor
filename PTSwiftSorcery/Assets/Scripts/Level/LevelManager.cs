@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
 	[SerializeField] private float m_fMinTimeScale;
 
 	[Tooltip("How many bullets that need to be on screen until time scale reaches 0.")]
-	[SerializeField] private float m_fTimeScaleCurve;
+	[SerializeField] [Range(1, float.MaxValue)] private float m_fTimeScaleCurve;
 
 	[Tooltip("Controls how long it takes until slow down effect begins.")]
 	[SerializeField] private float m_fTimeScaleCurveDropOff;
