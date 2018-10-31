@@ -108,7 +108,7 @@ public class BombActor : MonoBehaviour {
 			m_fCurrentRange = Mathf.Clamp(m_fCurrentRange, m_fStartRange, m_fMaximumRange);
 
 			// display range visually using bomb effect
-			transform.localScale = new Vector3(m_fCurrentRange, 0.1f, m_fCurrentRange);
+			transform.localScale = new Vector3(m_fCurrentRange, transform.localScale.y, m_fCurrentRange);
 			Debug.Log(m_fCurrentRange);
 		}
 	}
@@ -150,7 +150,7 @@ public class BombActor : MonoBehaviour {
 		m_fOldRange = 0f;
 
 		// reset bomb effect
-		transform.localScale = new Vector3(1, 0.1f, 1);
+		transform.localScale = new Vector3(1, transform.localScale.y, 1);
 
 		Destroy(gameObject, 1f);
 	}
@@ -166,8 +166,15 @@ public class BombActor : MonoBehaviour {
 		yield return new WaitForSeconds(m_fTimeDuration);
 
 		// reset
-		Time.timeScale = 1f;
-		Time.fixedDeltaTime = 0.02f;
+		LevelManager levelManager = GameObject.FindObjectOfType<LevelManager>();
+		if (levelManager) {
+			Time.timeScale = levelManager.m_fTimeScale;
+			Time.fixedDeltaTime = 0.02f * levelManager.m_fTimeScale;
+		}
+		else {
+			Time.timeScale = 1f;
+			Time.fixedDeltaTime = 0.02f * Time.deltaTime;
+		}
 
 		Debug.Log("Slow Down Time ended");
 	}
