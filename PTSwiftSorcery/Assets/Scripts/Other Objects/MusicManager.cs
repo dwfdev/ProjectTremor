@@ -39,68 +39,77 @@ public class MusicManager : MonoBehaviour {
 		if (!m_backgroundMusic.loop) {
 			Debug.LogError("Background music should be looping.", gameObject);
 		}
-	}
+	} 
 
 	public void StartBossMusic () {
 		
-		// stop background music
-		if (m_backgroundMusic.isPlaying) {
-			m_backgroundMusic.Stop();
-		}
+		// check that boss music exists
+		if (m_bossMusic != null) {
+			// stop background music
+			if (m_backgroundMusic.isPlaying) {
+				m_backgroundMusic.Stop();
+			}
 
-		// stop victory music
-		if (m_victoryMusic.isPlaying) {
-			m_victoryMusic.Stop();
-		}
+			// stop victory music
+			if (m_victoryMusic.isPlaying) {
+				m_victoryMusic.Stop();
+			}
 
-		// stop failed music
-		if (m_failedMusic.isPlaying) {
-			m_failedMusic.Stop();
-		}
+			// stop failed music
+			if (m_failedMusic.isPlaying) {
+				m_failedMusic.Stop();
+			}
 
-		// play boss music
-		m_bossMusic.Play();
+			// play boss music
+			m_bossMusic.Play();
+		}
 	}
 
 	public void StartVictoryMusic() {
 
-		// stop background music
-		if (m_backgroundMusic.isPlaying) {
-			m_backgroundMusic.Stop();
-		}
+		// check that victory music exists
+		if (m_victoryMusic != null) {
+			// stop background music
+			if (m_backgroundMusic.isPlaying) {
+				m_backgroundMusic.Stop();
+			}
 
-		// stop boss music
-		if (m_bossMusic.isPlaying) {
-			m_bossMusic.Stop();
-		}
+			// stop boss music
+			if (m_bossMusic.isPlaying) {
+				m_bossMusic.Stop();
+			}
 
-		// stop failed music
-		if (m_failedMusic.isPlaying) {
-			m_failedMusic.Stop();
-		}
+			// stop failed music
+			if (m_failedMusic.isPlaying) {
+				m_failedMusic.Stop();
+			}
 
-		// play victory music
-		m_victoryMusic.Play();
+			// play victory music
+			m_victoryMusic.Play();
+		}
 	}
 
 	public void StartFailedMusic() {
 
-		// stop background music
-		if (m_backgroundMusic.isPlaying) {
-			m_backgroundMusic.Stop();
-		}
+		// check that failed music exists
+		if (m_failedMusic != null) {
+			// stop background music
+			if (m_backgroundMusic.isPlaying) {
+				m_backgroundMusic.Stop();
+			}
 
-		// stop boss music
-		if (m_bossMusic.isPlaying) {
-			m_bossMusic.Stop();
-		}
+			// stop boss music
+			if (m_bossMusic.isPlaying) {
+				m_bossMusic.Stop();
+			}
 
-		// stop victory music
-		if (m_victoryMusic.isPlaying) {
-			m_victoryMusic.Stop();
-		}
+			// stop victory music
+			if (m_victoryMusic.isPlaying) {
+				m_victoryMusic.Stop();
+			}
 
-		// play failed music
-		m_failedMusic.Play();
+			// play failed music
+			m_failedMusic.Play();
+		}
 	}
 }
