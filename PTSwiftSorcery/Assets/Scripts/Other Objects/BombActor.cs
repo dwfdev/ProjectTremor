@@ -165,15 +165,8 @@ public class BombActor : MonoBehaviour {
 		yield return new WaitForSeconds(m_fTimeDuration);
 
 		// reset
-		LevelManager levelManager = GameObject.FindObjectOfType<LevelManager>();
-		if (levelManager) {
-			Time.timeScale = levelManager.m_fTimeScale;
-			Time.fixedDeltaTime = 0.02f * levelManager.m_fTimeScale;
-		}
-		else {
-			Time.timeScale = 1f;
-			Time.fixedDeltaTime = 0.02f * Time.deltaTime;
-		}
+		Time.timeScale = 1f;
+		Time.fixedDeltaTime = 0.02f;
 	}
 
 	void OnTriggerEnter(Collider other) {

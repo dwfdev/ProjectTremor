@@ -154,16 +154,8 @@ public class SceneManager : MonoBehaviour {
 	void SceneStateChangedToRUNNING() {
 		
 		// change time scale and fixed delta time
-		LevelManager levelManger = GameObject.FindObjectOfType<LevelManager>();
-
-		if (levelManger) {
-			Time.timeScale = levelManger.m_fTimeScale;
-			Time.fixedDeltaTime = 0.02f * levelManger.m_fTimeScale;
-		}
-		else {
-			Time.timeScale = 1f;
-			Time.fixedDeltaTime = 0.02f;
-		}
+		Time.timeScale = 1f;
+		Time.fixedDeltaTime = 0.02f;
 
 		// lock cursor
 		Cursor.lockState = m_currentScene.lockMode;
