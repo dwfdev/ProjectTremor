@@ -151,6 +151,16 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
+	private bool m_bIsWitch = true;
+	public bool IsWitch {
+		get {
+			return m_bIsWitch;
+		}
+		set {
+			m_bIsWitch = value;
+		}
+	}
+	
 	void SceneStateChangedToRUNNING() {
 		
 		// change time scale and fixed delta time

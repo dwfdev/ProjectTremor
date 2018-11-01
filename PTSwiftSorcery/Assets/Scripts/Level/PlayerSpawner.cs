@@ -10,16 +10,14 @@ public class PlayerSpawner : MonoBehaviour {
 	[Tooltip("Wizard prefab.")]
 	[SerializeField] private GameObject m_wizardPrefab;
 
-	[SerializeField] private bool isWitch;
-
 	// Use this for initialization
 	void Awake () {
 
 		// create player object based on user's choice
-		if (isWitch) {
+		if (SceneManager.Instance.IsWitch) {
 			Instantiate(m_witchPrefab, transform.position, transform.rotation).GetComponent<PlayerActor>().transform.parent = transform.parent;
 		}
-		else if (!isWitch) {
+		else if (!SceneManager.Instance.IsWitch) {
 			Instantiate(m_wizardPrefab, transform.position, transform.rotation).GetComponent<PlayerActor>().transform.parent = transform.parent;
 		}
 		else {
