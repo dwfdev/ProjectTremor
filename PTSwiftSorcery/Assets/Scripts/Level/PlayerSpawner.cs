@@ -16,18 +16,14 @@ public class PlayerSpawner : MonoBehaviour {
 	void Awake () {
 
 		// create player object based on user's choice
-		switch(isWitch)	{
-			case true:
-				Instantiate(m_witchPrefab, transform.position, transform.rotation).GetComponent<PlayerActor>().transform.parent = transform.parent;
-				break;
-
-			case false:
-				Instantiate(m_wizardPrefab, transform.position, transform.rotation).GetComponent<PlayerActor>().transform.parent = transform.parent;
-				break;
-			
-			default:
-				Debug.LogError("Could not instantiate player object", gameObject);
-				break;
+		if (isWitch) {
+			Instantiate(m_witchPrefab, transform.position, transform.rotation).GetComponent<PlayerActor>().transform.parent = transform.parent;
+		}
+		else if (!isWitch) {
+			Instantiate(m_wizardPrefab, transform.position, transform.rotation).GetComponent<PlayerActor>().transform.parent = transform.parent;
+		}
+		else {
+			Debug.LogError("Could not instantiate player object", gameObject);
 		}
 	}
 }
