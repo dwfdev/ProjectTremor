@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<sumarry>
+///		Script Manager:	Denver
+///		Description:	Handles the music of the level
+///		Date Modified:	2/11/2018
+///</summary>
+
 public class MusicManager : MonoBehaviour {
 
 	[Tooltip("Background music Audio Source.")]
@@ -19,25 +25,45 @@ public class MusicManager : MonoBehaviour {
 	void Start() {
 
 		// stop boss and victory music if playing
-		if (m_bossMusic.isPlaying) {
-			m_bossMusic.Stop();
+		if (m_bossMusic != null) {
+			if (m_bossMusic.isPlaying) {
+				m_bossMusic.Stop();
+			}
+		}
+		else {
+			Debug.LogWarning("Boss Music is null.", gameObject);
 		}
 
-		if (m_victoryMusic.isPlaying) {
-			m_victoryMusic.Stop();
+		if (m_victoryMusic != null) {
+			if (m_victoryMusic.isPlaying) {
+				m_victoryMusic.Stop();
+			}
+		}
+		else {
+			Debug.LogWarning("Victory Music is null.", gameObject);
 		}
 
-		if (m_failedMusic.isPlaying) {
-			m_failedMusic.Stop();
+		if (m_failedMusic != null) {
+			if (m_failedMusic.isPlaying) {
+				m_failedMusic.Stop();
+			}
+		}
+		else {
+			Debug.LogWarning("Failed Music is null.", gameObject);
 		}
 
 		// check that background music is looping
-		if (!m_backgroundMusic.playOnAwake) {
-			Debug.LogError("Background music should play on awake.", gameObject);
-		}
+		if (m_backgroundMusic != null) {
+			if (!m_backgroundMusic.playOnAwake) {
+				Debug.LogError("Background music should play on awake.", gameObject);
+			}
 
-		if (!m_backgroundMusic.loop) {
-			Debug.LogError("Background music should be looping.", gameObject);
+			if (!m_backgroundMusic.loop) {
+				Debug.LogError("Background music should be looping.", gameObject);
+			}
+		}
+		else {
+			Debug.LogWarning("Background music is null.", gameObject);
 		}
 	} 
 
