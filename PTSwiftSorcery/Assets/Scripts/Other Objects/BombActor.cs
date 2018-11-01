@@ -6,7 +6,7 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager: Denver
 ///		Description:	Handles the functionality of the bomb.
-///		Date Modified:	26/10/2018
+///		Date Modified:	1/11/2018
 ///</summary>
 
 public class BombActor : MonoBehaviour {
@@ -174,8 +174,6 @@ public class BombActor : MonoBehaviour {
 			Time.timeScale = 1f;
 			Time.fixedDeltaTime = 0.02f * Time.deltaTime;
 		}
-
-		Debug.Log("Slow Down Time ended");
 	}
 
 	void OnTriggerEnter(Collider other) {

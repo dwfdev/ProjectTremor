@@ -82,8 +82,6 @@ public class LevelManager : MonoBehaviour
 
 			Time.timeScale = m_fTimeScale;
 			Time.fixedDeltaTime = 0.02f * Time.timeScale;
-
-			Debug.Log(Time.timeScale);
 		}
 
 	}
