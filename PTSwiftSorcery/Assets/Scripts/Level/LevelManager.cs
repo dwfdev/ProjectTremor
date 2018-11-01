@@ -18,7 +18,6 @@ public enum eLevelDifficulty
 public class LevelManager : MonoBehaviour
 {
 
-	[Header("Scrolling Level")]
 	[Tooltip("The play field of the level.")]
 	public GameObject m_playField;
 
@@ -27,16 +26,6 @@ public class LevelManager : MonoBehaviour
 
 	[Tooltip("The direction the level will scroll.")]
 	public Vector3 m_v3LevelScrollDirection;
-
-	[Header("Slow Down Time Effect")]
-	[Tooltip("How sclow the game will become due to amount of bullets on screen.")]
-	[SerializeField] private float m_fMinTimeScale;
-
-	[Tooltip("How many bullets that need to be on screen until time scale reaches 0.")]
-	[SerializeField] [Range(1, float.MaxValue)] private float m_fTimeScaleCurve;
-
-	[Tooltip("Controls how long it takes until slow down effect begins.")]
-	[SerializeField] private float m_fTimeScaleCurveDropOff;
 
 	[HideInInspector]
 	public eLevelDifficulty m_levelDifficulty;
@@ -69,20 +58,6 @@ public class LevelManager : MonoBehaviour
 
 		// move the player's movement area
 		m_playField.transform.Translate(m_v3LevelScrollDirection * m_fLevelScrollSpeed * Time.deltaTime);
-
-		BombActor bombActor = GameObject.FindObjectOfType<BombActor>();
-		if (!bombActor || !bombActor.m_bIsExploding) {
-			// get all enemy bullets in scene
-			GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-			
-			// scale time scale
-			m_fTimeScale = (1 / m_fTimeScaleCurve) * -Mathf.Log10(bullets.Length + 1) + m_fTimeScaleCurveDropOff;
-
-			m_fTimeScale = Mathf.Clamp(m_fTimeScale, m_fMinTimeScale, 1f);
-
-			Time.timeScale = m_fTimeScale;
-			Time.fixedDeltaTime = 0.02f * Time.timeScale;
-		}
 
 	}
 
