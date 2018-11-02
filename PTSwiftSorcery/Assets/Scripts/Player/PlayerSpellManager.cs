@@ -32,9 +32,6 @@ public class PlayerSpellManager : MonoBehaviour
 	[Tooltip("Multiplier for ice shots fire rate, the lower the multiplier, the faster this type of shot fires")]
 	public float m_fIceMultiplier;
 
-	[Tooltip("Multiplier for lightning shots fire rate, the lower the multiplier, the faster this type of shot fires")]
-	public float m_fLightningMultiplier;
-
 	//current timer in seconds
 	private float m_fTimer;
 
@@ -45,9 +42,6 @@ public class PlayerSpellManager : MonoBehaviour
 
 	[Tooltip("How fast an ice shot moves")]
 	public float m_fIceMoveSpeed;
-
-	[Tooltip("How fast a lightning shot moves")]
-	public float m_fLightningMoveSpeed;
 
 	[Header("Misc Config")]
 
@@ -64,9 +58,6 @@ public class PlayerSpellManager : MonoBehaviour
 
 	[Tooltip("The prefab for ice shots")]
 	[SerializeField] private GameObject m_icePrefab;
-
-	[Tooltip("The prefab for lightning shots")]
-	[SerializeField] private GameObject m_lightningPrefab;
 
 	[Header("Fire Damage")]
 
