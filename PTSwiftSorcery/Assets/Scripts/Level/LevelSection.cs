@@ -24,6 +24,12 @@ public class LevelSection : MonoBehaviour {
 	[Tooltip("List of all the enemies in this section.")]
 	public List<EnemyActor> m_enemiesList;
 
+	[Tooltip("If this section is the final boss battle.")]
+	[SerializeField] private bool m_bIsBossFight;
+
+	[Tooltip("Whether scrolling should stop when in boss fight.")]
+	[SerializeField] private bool m_bStopScrollingOnBossFight;
+
 	private eCompletionState m_completionState;
 
 	private int m_nCurrentSectionAttempts;
@@ -80,6 +86,16 @@ public class LevelSection : MonoBehaviour {
 			// activate all enemies of the section and set their target
 			foreach(EnemyActor enemy in m_enemiesList) {
 				enemy.Activate(other.gameObject, GameObject.FindGameObjectWithTag("Playfield"));
+			}
+
+			// set scene state to boss fight
+			if (m_bIsBossFight) {
+				if (m_bStopScrollingOnBossFight) {
+					SceneManager.Instance.SceneState = eSceneState.BOSS_FIGHT_STATIONARY;
+				}
+				else {
+					SceneManager.Instance.SceneState = eSceneState.BOSS_FIGHT_SCROLLING;
+				}
 			}
 		}
 

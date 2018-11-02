@@ -71,6 +71,9 @@ public class MusicManager : MonoBehaviour {
 		
 		// check that boss music exists
 		if (m_bossMusic != null) {
+			// play boss music
+			m_bossMusic.Play();
+			
 			// stop background music
 			if (m_backgroundMusic.isPlaying) {
 				m_backgroundMusic.Stop();
@@ -85,9 +88,6 @@ public class MusicManager : MonoBehaviour {
 			if (m_failedMusic.isPlaying) {
 				m_failedMusic.Stop();
 			}
-
-			// play boss music
-			m_bossMusic.Play();
 		}
 	}
 
@@ -95,6 +95,9 @@ public class MusicManager : MonoBehaviour {
 
 		// check that victory music exists
 		if (m_victoryMusic != null) {
+			// play victory music
+			m_victoryMusic.Play();
+
 			// stop background music
 			if (m_backgroundMusic.isPlaying) {
 				m_backgroundMusic.Stop();
@@ -109,9 +112,6 @@ public class MusicManager : MonoBehaviour {
 			if (m_failedMusic.isPlaying) {
 				m_failedMusic.Stop();
 			}
-
-			// play victory music
-			m_victoryMusic.Play();
 		}
 	}
 
@@ -119,6 +119,9 @@ public class MusicManager : MonoBehaviour {
 
 		// check that failed music exists
 		if (m_failedMusic != null) {
+			// play failed music
+			m_failedMusic.Play();
+
 			// stop background music
 			if (m_backgroundMusic.isPlaying) {
 				m_backgroundMusic.Stop();
@@ -133,9 +136,39 @@ public class MusicManager : MonoBehaviour {
 			if (m_victoryMusic.isPlaying) {
 				m_victoryMusic.Stop();
 			}
-
-			// play failed music
-			m_failedMusic.Play();
 		}
+	}
+
+	public bool IsPlaying() {
+
+		// check background music
+		if (m_backgroundMusic != null) {
+			if (m_backgroundMusic.isPlaying) {
+				return true;
+			}
+		}
+
+		// check boss music
+		if (m_bossMusic != null) {
+			if (m_bossMusic.isPlaying) {
+				return true;
+			}
+		}
+
+		// check failed music
+		if (m_failedMusic != null) {
+			if (m_failedMusic.isPlaying) {
+				return true;
+			}
+		}
+
+		// check victory music
+		if (m_victoryMusic != null) {
+			if (m_victoryMusic.isPlaying) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

@@ -13,7 +13,8 @@ using UnityEngine.UI;
 
 public enum eSceneState {
 	RUNNING,
-	BOSS_FIGHT,
+	BOSS_FIGHT_STATIONARY,
+	BOSS_FIGHT_SCROLLING,
 	PAUSED,
 	COMPLETE,
 	FAILED
@@ -187,16 +188,27 @@ public class SceneManager : MonoBehaviour {
 		Debug.Log("Scene state change to running");
 	}
 
-	void SceneStateChangedToBOSS_FIGHT() {
+	void SceneStateChangedToBOSS_FIGHT_STATIONARY() {
 
 		// stop scrolling through level
-		LevelManager levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
+		LevelManager levelManager = GameObject.FindObjectOfType<LevelManager>();
 		levelManager.m_fLevelScrollSpeed = 0f;
 
 		// change to boss music
 		MusicManager musicManager;
 		if ((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
 			musicManager.StartBossMusic();
+		}
+	}
+
+	void SceneStateChangedToBOSS_FIGHT_SCROLLING() {
+
+		// change to boss music
+		MusicManager musicManager;
+		if ((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
+			if (!musicManager.IsPlaying()) {
+				musicManager.StartBossMusic();
+			}
 		}
 	}
 

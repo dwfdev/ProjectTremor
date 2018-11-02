@@ -11,12 +11,14 @@ using EZCameraShake;
 
 public class CameraActor : MonoBehaviour {
 
+	[Header("Dynamic Camera")]
 	[Tooltip("Speed at which the camera will move to follow the player.")]
 	[SerializeField] private float m_fLerpSpeed;
 
 	[Tooltip("How far the camera can move to follow the player.")]
 	[SerializeField] [Range(0f, 1f)] private float m_fLerpRange;
 
+	[Header("Camera Shake")]
 	[Tooltip("Magnitude of camera shake. The bigger the value, the larger the shake.")]
 	[SerializeField] private float m_fDefaultShakeMagnitude;
 
