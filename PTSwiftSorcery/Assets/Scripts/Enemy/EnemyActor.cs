@@ -207,6 +207,8 @@ public class EnemyActor : MonoBehaviour
 		//deal the damage
 		m_nCurrentHealth -= damage;
 
+		GetComponent<UIHitEffect>().Show();
+
 		// if enemy runs out of health
 		if(m_nCurrentHealth <= 0) {
 			Die();
