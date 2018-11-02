@@ -163,16 +163,19 @@ public class PlayerActor : MonoBehaviour {
 		// FIRE
 		if (Input.GetButtonDown("FireSwitch")) {
 			m_spellManager.m_eSpellType = eSpellType.FIRE;
+			m_spellManager.StopFiring();
 		}
 
 		// ICE
 		if (Input.GetButtonDown("IceSwitch")) {
 			m_spellManager.m_eSpellType = eSpellType.ICE;
+			m_spellManager.StopFiring();
 		}
 
 		// LIGHTNING
 		if (Input.GetButtonDown("LightningSwitch")) {
 			m_spellManager.m_eSpellType = eSpellType.LIGHTNING;
+			m_spellManager.StopFiring();
 		}
 
 		// shooting
