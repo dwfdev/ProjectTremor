@@ -319,6 +319,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &49532614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49532607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEffectSprite: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  m_fEffectDuration: 0.05
 --- !u!1 &206104143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1823,7 @@ GameObject:
   - component: {fileID: 833135846}
   - component: {fileID: 833135851}
   - component: {fileID: 833135852}
+  - component: {fileID: 833135853}
   m_Layer: 0
   m_Name: enemy (2)
   m_TagString: Enemy
@@ -1828,7 +1842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nHealth: 100
+  m_nHealth: 1500
   m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
@@ -1940,6 +1954,19 @@ MonoBehaviour:
   m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
     type: 2}
   m_fOffset: 1
+--- !u!114 &833135853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833135845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEffectSprite: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  m_fEffectDuration: 0.05
 --- !u!1 &840466837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3486,8 @@ GameObject:
   - component: {fileID: 1391364002}
   - component: {fileID: 1391364006}
   - component: {fileID: 1391364005}
+  - component: {fileID: 1391364008}
+  - component: {fileID: 1391364007}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3559,6 +3588,101 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
+--- !u!82 &1391364007
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391364000}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3a302dcc7f094b44fb7332d6fd576739, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1391364008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391364000}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a248a3b47d17b4f4ba30c9ab141d3eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_backgroundMusic: {fileID: 1391364007}
+  m_bossMusic: {fileID: 0}
+  m_victoryMusic: {fileID: 0}
+  m_failedMusic: {fileID: 0}
 --- !u!1 &1408053299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,6 +3818,7 @@ GameObject:
   - component: {fileID: 1420122562}
   - component: {fileID: 1420122567}
   - component: {fileID: 1420122568}
+  - component: {fileID: 1420122569}
   m_Layer: 0
   m_Name: enemy (3)
   m_TagString: Enemy
@@ -3824,6 +3949,19 @@ MonoBehaviour:
   m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
     type: 2}
   m_fOffset: 1
+--- !u!114 &1420122569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420122561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEffectSprite: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  m_fEffectDuration: 0.05
 --- !u!1 &1441377731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,6 +4185,7 @@ GameObject:
   - component: {fileID: 1489028678}
   - component: {fileID: 1489028679}
   - component: {fileID: 1489028680}
+  - component: {fileID: 1489028681}
   m_Layer: 0
   m_Name: enemy (1)
   m_TagString: Enemy
@@ -4065,7 +4204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a080a77458e8994a83300c5467b3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nHealth: 100
+  m_nHealth: 1000
   m_nCurrentHealth: 0
   m_bTrackPlayer: 0
   m_fRotationSpeed: 0
@@ -4191,6 +4330,19 @@ MonoBehaviour:
   m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
     type: 2}
   m_fOffset: 1
+--- !u!114 &1489028681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489028672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEffectSprite: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  m_fEffectDuration: 0.05
 --- !u!1 &1503989651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,6 +5166,7 @@ GameObject:
   - component: {fileID: 1826814800}
   - component: {fileID: 1826814804}
   - component: {fileID: 1826814805}
+  - component: {fileID: 1826814806}
   m_Layer: 0
   m_Name: enemy (4)
   m_TagString: Enemy
@@ -5144,6 +5297,19 @@ MonoBehaviour:
   m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
     type: 2}
   m_fOffset: 1
+--- !u!114 &1826814806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826814798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hitEffectSprite: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  m_fEffectDuration: 0.05
 --- !u!1 &1877322426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,9 +5354,6 @@ MonoBehaviour:
   m_playField: {fileID: 1441377731}
   m_fLevelScrollSpeed: 10
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 1}
-  m_fMinTimeScale: 0.5
-  m_fTimeScaleCurve: 10
-  m_fTimeScaleCurveDropOff: 1
   m_levelDifficulty: 0
   m_fTimeScale: 0
 --- !u!114 &1877322429
@@ -5250,4 +5413,3 @@ MonoBehaviour:
     type: 2}
   m_wizardPrefab: {fileID: 1138887368001102, guid: de56f623a6fd9a34ea6a34ed6a50b790,
     type: 2}
-  isWitch: 1
