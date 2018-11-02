@@ -6,11 +6,119 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BackL
+    100004: BackR
+    100006: BottomPiece1L
+    100008: BottomPiece1R
+    100010: BottomPiece2L
+    100012: BottomPiece2R
+    100014: BottomPiece3L
+    100016: BottomPiece3R
+    100018: BottomPieceMid
+    100020: LegBL
+    100022: LegBR
+    100024: LegFL
+    100026: LegFL_Block1
+    100028: LegFL_Block2
+    100030: LegFL_Block3
+    100032: LegFR
+    100034: LegFR_Block1
+    100036: LegFR_Block2
+    100038: LegFR_Block3
+    100040: LegsL
+    100042: LegsR
+    100044: Mid
+    100046: Prop_Chair_001_BackR_Backing
+    100048: Prop_Chair_001_BackR_BackRBlock2
     400000: //RootNode
+    400002: BackL
+    400004: BackR
+    400006: BottomPiece1L
+    400008: BottomPiece1R
+    400010: BottomPiece2L
+    400012: BottomPiece2R
+    400014: BottomPiece3L
+    400016: BottomPiece3R
+    400018: BottomPieceMid
+    400020: LegBL
+    400022: LegBR
+    400024: LegFL
+    400026: LegFL_Block1
+    400028: LegFL_Block2
+    400030: LegFL_Block3
+    400032: LegFR
+    400034: LegFR_Block1
+    400036: LegFR_Block2
+    400038: LegFR_Block3
+    400040: LegsL
+    400042: LegsR
+    400044: Mid
+    400046: Prop_Chair_001_BackR_Backing
+    400048: Prop_Chair_001_BackR_BackRBlock2
     2100000: lambert1
     2300000: //RootNode
+    2300002: BackL
+    2300004: BackR
+    2300006: BottomPiece1L
+    2300008: BottomPiece1R
+    2300010: BottomPiece3L
+    2300012: BottomPiece3R
+    2300014: BottomPieceMid
+    2300016: LegBL
+    2300018: LegBR
+    2300020: LegFL
+    2300022: LegFL_Block1
+    2300024: LegFL_Block2
+    2300026: LegFL_Block3
+    2300028: LegFR
+    2300030: LegFR_Block1
+    2300032: LegFR_Block2
+    2300034: LegFR_Block3
+    2300036: Mid
+    2300038: Prop_Chair_001_BackR_Backing
+    2300040: Prop_Chair_001_BackR_BackRBlock2
     3300000: //RootNode
+    3300002: BackL
+    3300004: BackR
+    3300006: BottomPiece1L
+    3300008: BottomPiece1R
+    3300010: BottomPiece3L
+    3300012: BottomPiece3R
+    3300014: BottomPieceMid
+    3300016: LegBL
+    3300018: LegBR
+    3300020: LegFL
+    3300022: LegFL_Block1
+    3300024: LegFL_Block2
+    3300026: LegFL_Block3
+    3300028: LegFR
+    3300030: LegFR_Block1
+    3300032: LegFR_Block2
+    3300034: LegFR_Block3
+    3300036: Mid
+    3300038: Prop_Chair_001_BackR_Backing
+    3300040: Prop_Chair_001_BackR_BackRBlock2
     4300000: Prop_Chair_001
+    4300002: BackR
+    4300004: BackL
+    4300006: Mid
+    4300008: Prop_Chair_001_BackR_Backing
+    4300010: Prop_Chair_001_BackR_BackRBlock2
+    4300012: LegFR
+    4300014: LegFR_Block1
+    4300016: LegBR
+    4300018: BottomPiece1R
+    4300020: LegFR_Block2
+    4300022: BottomPiece3R
+    4300024: LegFR_Block3
+    4300026: LegFL
+    4300028: LegFL_Block1
+    4300030: LegBL
+    4300032: BottomPiece1L
+    4300034: LegFL_Block2
+    4300036: BottomPiece3L
+    4300038: BottomPieceMid
+    4300040: LegFL_Block3
   externalObjects: {}
   materials:
     importMaterials: 1

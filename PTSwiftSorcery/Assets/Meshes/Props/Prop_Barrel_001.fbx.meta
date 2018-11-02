@@ -6,11 +6,26 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BottomRing
+    100004: Main
+    100006: TopRing
     400000: //RootNode
+    400002: BottomRing
+    400004: Main
+    400006: TopRing
     2100000: lambert1
     2300000: //RootNode
+    2300002: BottomRing
+    2300004: Main
+    2300006: TopRing
     3300000: //RootNode
+    3300002: BottomRing
+    3300004: Main
+    3300006: TopRing
     4300000: Prop_Barrel_001
+    4300002: TopRing
+    4300004: Main
+    4300006: BottomRing
   externalObjects: {}
   materials:
     importMaterials: 1

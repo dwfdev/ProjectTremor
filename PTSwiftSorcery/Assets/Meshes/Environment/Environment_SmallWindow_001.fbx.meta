@@ -6,11 +6,26 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: WindowBorder
+    100004: WindowGlass
+    100006: WindowInner
     400000: //RootNode
+    400002: WindowBorder
+    400004: WindowGlass
+    400006: WindowInner
     2100000: lambert1
     2300000: //RootNode
+    2300002: WindowBorder
+    2300004: WindowGlass
+    2300006: WindowInner
     3300000: //RootNode
+    3300002: WindowBorder
+    3300004: WindowGlass
+    3300006: WindowInner
     4300000: Environment_Window_002
+    4300002: WindowBorder
+    4300004: WindowGlass
+    4300006: WindowInner
   externalObjects: {}
   materials:
     importMaterials: 1

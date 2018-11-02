@@ -6,11 +6,71 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: beampin1
+    100004: beampin2
+    100006: l1b
+    100008: l2b1
+    100010: l3b
+    100012: l4b
+    100014: leg1
+    100016: leg2
+    100018: leg3
+    100020: leg4
+    100022: supportbeam
+    100024: top
     400000: //RootNode
+    400002: beampin1
+    400004: beampin2
+    400006: l1b
+    400008: l2b1
+    400010: l3b
+    400012: l4b
+    400014: leg1
+    400016: leg2
+    400018: leg3
+    400020: leg4
+    400022: supportbeam
+    400024: top
     2100000: lambert1
     2300000: //RootNode
+    2300002: beampin1
+    2300004: beampin2
+    2300006: l1b
+    2300008: l2b1
+    2300010: l3b
+    2300012: l4b
+    2300014: leg1
+    2300016: leg2
+    2300018: leg3
+    2300020: leg4
+    2300022: supportbeam
+    2300024: top
     3300000: //RootNode
+    3300002: beampin1
+    3300004: beampin2
+    3300006: l1b
+    3300008: l2b1
+    3300010: l3b
+    3300012: l4b
+    3300014: leg1
+    3300016: leg2
+    3300018: leg3
+    3300020: leg4
+    3300022: supportbeam
+    3300024: top
     4300000: Prop_Table_001
+    4300002: top
+    4300004: l2b1
+    4300006: leg2
+    4300008: leg3
+    4300010: leg1
+    4300012: l1b
+    4300014: supportbeam
+    4300016: l3b
+    4300018: leg4
+    4300020: l4b
+    4300022: beampin1
+    4300024: beampin2
   externalObjects: {}
   materials:
     importMaterials: 1
