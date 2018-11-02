@@ -160,10 +160,7 @@ public class PlayerSpellManager : MonoBehaviour
 
 	public void StopFiring()
 	{
-		if(m_eSpellType == eSpellType.LIGHTNING)
-		{
-			StopLightning();
-		}
+		StopLightning();
 	}
 
 	private void ShootFire()
