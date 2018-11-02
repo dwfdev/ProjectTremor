@@ -180,7 +180,7 @@ public class PlayerActor : MonoBehaviour {
 
 		// shooting
 		// normal spells
-		if(Input.GetButton("Fire1")) {
+		if(Input.GetButton("Fire1") && m_bCanMove) {
 			m_spellManager.Fire();
 		}
 
