@@ -313,12 +313,36 @@ public class PlayerSpellManager : MonoBehaviour
 		switch(m_nSpellLevel)
 		{
 			case 0:
+				Vector3 level1NewScale = new Vector3(m_fTier1LightningRadius * 2, 0.1f, m_fTier1LightningRadius * 2);
+
+				m_lightningObject.transform.localScale = level1NewScale;
+				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage;
+
+				m_lightningObject.SetActive(true);
 				break;
 			case 1:
+				Vector3 level2NewScale = new Vector3(m_fTier2LightningRadius * 2, 0.1f, m_fTier2LightningRadius * 2);
+
+				m_lightningObject.transform.localScale = level2NewScale;
+				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage + m_nTier2LightningDamageAddition;
+
+				m_lightningObject.SetActive(true);
 				break;
 			case 2:
+				Vector3 level3NewScale = new Vector3(m_fTier3LightningRadius * 2, 0.1f, m_fTier3LightningRadius * 2);
+
+				m_lightningObject.transform.localScale = level3NewScale;
+				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage + m_nTier2LightningDamageAddition + m_nTier3LightningDamageAddition;
+
+				m_lightningObject.SetActive(true);
 				break;
 			case 3:
+				Vector3 level4NewScale = new Vector3(m_fTier4LightningRadius * 2, 0.1f, m_fTier4LightningRadius * 2);
+
+				m_lightningObject.transform.localScale = level4NewScale;
+				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage + m_nTier2LightningDamageAddition + m_nTier3LightningDamageAddition + m_nTier4LightningDamageAddition;
+
+				m_lightningObject.SetActive(true);
 				break;
 			default:
 				if (m_nSpellLevel < 0)
@@ -330,6 +354,6 @@ public class PlayerSpellManager : MonoBehaviour
 	}
 	private void StopLightning()
 	{
-
+		m_lightningObject.SetActive(false);
 	}
 }

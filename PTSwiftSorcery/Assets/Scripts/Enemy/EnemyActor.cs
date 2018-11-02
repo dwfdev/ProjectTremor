@@ -207,12 +207,12 @@ public class EnemyActor : MonoBehaviour
 		//deal the damage
 		m_nCurrentHealth -= damage;
 
-		GetComponent<UIHitEffect>().Show();
-
 		// if enemy runs out of health
 		if(m_nCurrentHealth <= 0) {
 			Die();
 		}
+
+		GetComponent<UIHitEffect>().Show();
 	}
 
 	public void Die()
@@ -247,6 +247,14 @@ public class EnemyActor : MonoBehaviour
 
 		//Disable enemy
 		gameObject.SetActive(false);
+	}
+
+	private void OnTriggerStay(Collider other)
+	{
+		if (other.tag == "LightningAttack")
+		{
+			TakeDamage(other.GetComponent<LightningSpellProjectile>().m_nDamage);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)
