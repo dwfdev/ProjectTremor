@@ -16,8 +16,7 @@ public enum eSpellType
 {
 	FIRE,
 	ICE,
-	LIGHTNING,
-	ARCANE
+	LIGHTNING
 };
 
 public class PlayerSpellManager : MonoBehaviour
@@ -55,12 +54,6 @@ public class PlayerSpellManager : MonoBehaviour
 	[Tooltip("What type of spell is being fired")]
 	public eSpellType m_eSpellType;
 
-	[Tooltip("Whether or not the player is firing homing shots")]
-	public bool m_bIsHoming;
-
-	[Tooltip("Whether or not the player is firing scatter shots")]
-	public bool m_bIsScatter;
-
 	[Tooltip("The maxmimum amount of degrees a fire shot can spread")]
 	public float m_fFireSpread;
 
@@ -75,14 +68,64 @@ public class PlayerSpellManager : MonoBehaviour
 	[Tooltip("The prefab for lightning shots")]
 	[SerializeField] private GameObject m_lightningPrefab;
 
-	[Tooltip("How much damage fire shots do")]
+	[Header("Fire Damage")]
+
+	[Tooltip("How much base damage fire shots do")]
 	[SerializeField] private int m_nFireDamage;
 
-	[Tooltip("How much damage ice shots do")]
+	[Tooltip("How much additional damage tier 2 fire shots do over base")]
+	[SerializeField] private int m_nTier2FireDamageAddition;
+
+	[Tooltip("How much additional damage tier 3 fire shots do over tier 2")]
+	[SerializeField] private int m_nTier3FireDamageAddition;
+
+	[Tooltip("How much additional damage tier 4 fire shots do over tier 3")]
+	[SerializeField] private int m_nTier4FireDamageAddition;
+
+	[Header("Ice Damage")]
+
+	[Tooltip("How much base damage ice shots do")]
 	[SerializeField] private int m_nIceDamage;
 
-	[Tooltip("How much damage lightning shots do")]
+	[Tooltip("How much additional damage tier 2 ice shots do over base")]
+	[SerializeField] private int m_nTier2IceDamageAddition;
+
+	[Tooltip("How much additional damage tier 3 ice shots do over tier 2")]
+	[SerializeField] private int m_nTier3IceDamageAddition;
+
+	[Tooltip("How much additional damage tier 4 ice shots do over tier 3")]
+	[SerializeField] private int m_nTier4IceDamageAddition;
+
+	[Header("Lightning Damage")]
+
+	[Tooltip("How much base damage lightning attacks do each frame")]
 	[SerializeField] private int m_nLightningDamage;
+
+	[Tooltip("How much additional damage tier 2 lightning attacks do per frame over base")]
+	[SerializeField] private int m_nTier2LightningDamageAddition;
+
+	[Tooltip("How much additional damage tier 3 lightning attacks do per frame over tier 2")]
+	[SerializeField] private int m_nTier3LightningDamageAddition;
+
+	[Tooltip("How much additional damage tier 4 lightning attacks do per frame over tier 3")]
+	[SerializeField] private int m_nTier4LightningDamageAddition;
+
+	[Header("Lightning")]
+
+	[Tooltip("Lightning object")]
+	[SerializeField] private GameObject m_lightningObject;
+
+	[Tooltip("Base level lightning radius")]
+	[SerializeField] private float m_fTier1LightningRadius;
+
+	[Tooltip("Base level lightning radius")]
+	[SerializeField] private float m_fTier2LightningRadius;
+
+	[Tooltip("Base level lightning radius")]
+	[SerializeField] private float m_fTier3LightningRadius;
+
+	[Tooltip("Base level lightning radius")]
+	[SerializeField] private float m_fTier4LightningRadius;
 
 	[HideInInspector] public int m_nSpellLevel;
 	// Use this for initialization
@@ -97,114 +140,14 @@ public class PlayerSpellManager : MonoBehaviour
 		//update the timer
 		m_fTimer += Time.deltaTime;
 
-		if(Input.GetKeyDown(KeyCode.B))
+		if(Application.isEditor)
 		{
-			m_nSpellLevel++;
+			if(Input.GetKeyDown(KeyCode.B))
+			{
+				m_nSpellLevel++;
+			}
 		}
 	}
-
-	/*public void Fire()
-	{
-		switch(m_eSpellType)
-		{
-			case eSpellType.FIRE:
-				if (m_fTimer >= m_fFireRate * m_fFireMultiplier)
-				{
-					//instantiate fire shot prefab
-					GameObject newBullet = Instantiate(m_firePrefab, transform.position, transform.rotation);
-					if(m_bIsScatter)
-					{
-						GameObject leftBullet = Instantiate(m_firePrefab, transform.position, transform.rotation);
-						leftBullet.transform.Rotate(Vector3.up, -m_fScatterSpread);
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fFireMoveSpeed;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage;
-
-						GameObject rightBullet = Instantiate(m_firePrefab, transform.position, transform.rotation);
-						rightBullet.transform.Rotate(Vector3.up, m_fScatterSpread);
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fFireMoveSpeed;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage;
-
-						newBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-					}
-					newBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-					newBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fFireMoveSpeed;
-					newBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage;
-
-					m_fTimer = 0.0f;
-				}
-				break;
-			case eSpellType.ICE:
-				//instantiate ice shot prefab
-				if (m_fTimer >= m_fFireRate * m_fIceMultiplier)
-				{
-					//instantiate fire shot prefab
-					GameObject newBullet = Instantiate(m_icePrefab, transform.position, transform.rotation);
-					if (m_bIsScatter)
-					{
-						GameObject leftBullet = Instantiate(m_icePrefab, transform.position, transform.rotation);
-						leftBullet.transform.Rotate(Vector3.up, -m_fScatterSpread);
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fIceMoveSpeed;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage;
-
-						GameObject rightBullet = Instantiate(m_icePrefab, transform.position, transform.rotation);
-						rightBullet.transform.Rotate(Vector3.up, m_fScatterSpread);
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fIceMoveSpeed;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage;
-
-						newBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-					}
-					newBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-					newBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fIceMoveSpeed;
-					newBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage;
-
-					m_fTimer = 0.0f;
-				}
-				break;
-			case eSpellType.LIGHTNING:
-				//instantiate lightning shot prefab
-				if (m_fTimer >= m_fFireRate * m_fLightningMultiplier)
-				{
-					//instantiate fire shot prefab
-					GameObject newBullet = Instantiate(m_lightningPrefab, transform.position, transform.rotation);
-					if (m_bIsScatter)
-					{
-						GameObject leftBullet = Instantiate(m_lightningPrefab, transform.position, transform.rotation);
-						leftBullet.transform.Rotate(Vector3.up, -m_fScatterSpread);
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fLightningMoveSpeed;
-						leftBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nLightningDamage;
-
-						GameObject rightBullet = Instantiate(m_lightningPrefab, transform.position, transform.rotation);
-						rightBullet.transform.Rotate(Vector3.up, m_fScatterSpread);
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fLightningMoveSpeed;
-						rightBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nLightningDamage;
-
-						newBullet.GetComponent<PlayerSpellProjectile>().m_bIsScatter = true;
-					}
-					newBullet.GetComponent<PlayerSpellProjectile>().m_bIsHoming = m_bIsHoming;
-					newBullet.GetComponent<PlayerSpellProjectile>().m_fMoveSpeed = m_fLightningMoveSpeed;
-					newBullet.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nLightningDamage;
-
-					m_fTimer = 0.0f;
-				}
-				break;
-			default:
-				Debug.LogWarning(gameObject.name + " has an invalid spell type, this should be fixed");
-				m_fTimer = 0.0f;
-				break;
-		}
-	}*/
 
 	public void Fire()
 	{
@@ -224,6 +167,14 @@ public class PlayerSpellManager : MonoBehaviour
 		}
 	}
 
+	public void StopFiring()
+	{
+		if(m_eSpellType == eSpellType.LIGHTNING)
+		{
+			StopLightning();
+		}
+	}
+
 	private void ShootFire()
 	{
 		if(m_fTimer >= m_fFireRate * m_fFireMultiplier)
@@ -233,11 +184,16 @@ public class PlayerSpellManager : MonoBehaviour
 				case 0:
 					GameObject level1newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
 
+					level1newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage;
+
 					level1newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread));
 					break;
 				case 1:
 					GameObject level2newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
 					GameObject level2newBullet2 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level2newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition;
+					level2newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition;
 
 					level2newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 5.0f);
 					level2newBullet2.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) + 5.0f);
@@ -246,6 +202,10 @@ public class PlayerSpellManager : MonoBehaviour
 					GameObject level3newBullet1 = Instantiate(m_firePrefab, transform.position, transform.rotation);
 					GameObject level3newBullet2 = Instantiate(m_firePrefab, transform.position, transform.rotation);
 					GameObject level3newBullet3 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level3newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition;
+					level3newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition;
+					level3newBullet3.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition;
 
 					level3newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 5.0f);
 					level3newBullet2.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) + 5.0f);
@@ -257,6 +217,12 @@ public class PlayerSpellManager : MonoBehaviour
 					GameObject level4newBullet3 = Instantiate(m_firePrefab, transform.position, transform.rotation);
 					GameObject level4newBullet4 = Instantiate(m_firePrefab, transform.position, transform.rotation);
 					GameObject level4newBullet5 = Instantiate(m_firePrefab, transform.position, transform.rotation);
+
+					level4newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition + m_nTier4FireDamageAddition;
+					level4newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition + m_nTier4FireDamageAddition;
+					level4newBullet3.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition + m_nTier4FireDamageAddition;
+					level4newBullet4.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition + m_nTier4FireDamageAddition;
+					level4newBullet5.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nFireDamage + m_nTier2FireDamageAddition + m_nTier3FireDamageAddition + m_nTier4FireDamageAddition;
 
 					level4newBullet1.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread));
 					level4newBullet2.transform.Rotate(Vector3.up, Random.Range(-m_fFireSpread, m_fFireSpread) - 5.0f);
@@ -283,10 +249,15 @@ public class PlayerSpellManager : MonoBehaviour
 			{
 				case 0:
 					GameObject level1newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+
+					level1newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage;
 					break;
 				case 1:
 					GameObject level2newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 					GameObject level2newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+
+					level2newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition;
+					level2newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition;
 
 					Vector3 newPos = new Vector3(0.5f, 0.0f, 0.0f);
 
@@ -299,6 +270,10 @@ public class PlayerSpellManager : MonoBehaviour
 					GameObject level3newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 					GameObject level3newBullet3 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 
+					level3newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition;
+					level3newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition;
+					level3newBullet3.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition;
+
 					Vector3 newPos2 = new Vector3(0.5f, 0.0f, 0.0f);
 
 					level3newBullet2.transform.position += newPos2;
@@ -308,6 +283,10 @@ public class PlayerSpellManager : MonoBehaviour
 					GameObject level4newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 					GameObject level4newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 					GameObject level4newBullet3 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+
+					level4newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
+					level4newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
+					level4newBullet3.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
 
 					Vector3 newPos3 = new Vector3(0.5f, 0.0f, 0.0f);
 
@@ -331,6 +310,26 @@ public class PlayerSpellManager : MonoBehaviour
 
 	private void ShootLightning()
 	{
-		Debug.LogWarning("Lightning is not implemented yet");
+		switch(m_nSpellLevel)
+		{
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			default:
+				if (m_nSpellLevel < 0)
+					m_nSpellLevel = 0;
+				else if (m_nSpellLevel > 3)
+					m_nSpellLevel = 3;
+				break;
+		}
+	}
+	private void StopLightning()
+	{
+
 	}
 }

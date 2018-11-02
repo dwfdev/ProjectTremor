@@ -21,9 +21,6 @@ public class PlayerSpellProjectile : MonoBehaviour
 	[Tooltip("Whether or not the player is firing homing shots")]
 	public bool m_bIsHoming;
 
-	[Tooltip("Whether or not the player is firing scatter shots")]
-	public bool m_bIsScatter;
-
 	[Tooltip("How much damage this shot does")]
 	public int m_nDamage;
 
