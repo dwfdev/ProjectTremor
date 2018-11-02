@@ -85,12 +85,6 @@ public class PlayerActor : MonoBehaviour {
 	[HideInInspector]
 	public bool m_bCanMove;
 
-	private bool m_bFire2Down;
-
-	private bool m_bFire3Down;
-
-	// private CameraActor m_cameraActor;
-
 	[HideInInspector]
 	public int m_nCurrentBombCount;
 	#endregion
@@ -128,10 +122,6 @@ public class PlayerActor : MonoBehaviour {
 		m_bHasPickUp = false;
 
 		m_bCanMove = true;
-
-		m_bFire2Down = false;
-
-		m_bFire3Down = false;
 	}
 
 	// Update is called once per frame
@@ -169,41 +159,34 @@ public class PlayerActor : MonoBehaviour {
 		#endregion
 
 		#region Other Inputs
-		// activate pickup
-		if (Input.GetAxis("Fire3") > 0 && m_bHasPickUp && !m_bFire3Down) {
-			m_bFire3Down = true;
-		}
-		
-		if (Input.GetAxis("Fire3") == 0) {
-			m_bFire3Down = false;
-		}
-
 		// pick spell type
 		// FIRE
-		if (Input.GetAxis("FireSwitch") > 0) {
+		if (Input.GetButtonDown("FireSwitch")) {
 			m_spellManager.m_eSpellType = eSpellType.FIRE;
 		}
 
 		// ICE
-		if (Input.GetAxis("IceSwitch") > 0) {
+		if (Input.GetButtonDown("IceSwitch")) {
 			m_spellManager.m_eSpellType = eSpellType.ICE;
 		}
 
 		// LIGHTNING
-		if (Input.GetAxis("LightningSwitch") > 0) {
+		if (Input.GetButtonDown("LightningSwitch")) {
 			m_spellManager.m_eSpellType = eSpellType.LIGHTNING;
 		}
 
 		// shooting
 		// normal spells
-		if(Input.GetAxis("Fire1") > 0) {
+		if(Input.GetButton("Fire1")) {
 			m_spellManager.Fire();
 		}
 
-		// bomb
-		if (Input.GetAxis("Fire2") > 0 && !m_bFire2Down) {
-			m_bFire2Down = true;
+		if (Input.GetButtonUp("Fire1")) {
+			m_spellManager.StopFiring();
+		}
 
+		// bomb
+		if (Input.GetButtonDown("Fire2")) {
 			// stop player from dying
 			if (m_lifeState == eLifeState.DYING) {
 				m_lifeState = eLifeState.NORMAL;
@@ -212,10 +195,6 @@ public class PlayerActor : MonoBehaviour {
 			}
 
 			ShootBomb();
-		}
-		
-		if (Input.GetAxis("Fire2") == 0) {
-			m_bFire2Down = false;
 		}
 
 		// pause
