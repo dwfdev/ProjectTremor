@@ -26,6 +26,6 @@ public class UIScore : MonoBehaviour {
 		m_scoreTextBox.text = ScoreManager.Instance.m_lScore.ToString();
 
 		// change multiplier text box text
-		m_multiplierTextBox.text = m_strMultiplierPrefix + ScoreManager.Instance.m_fMultiplier.ToString();
+		m_multiplierTextBox.text = m_strMultiplierPrefix + ScoreManager.Instance.m_fMultiplier.ToString("F2");
 	}
 }
