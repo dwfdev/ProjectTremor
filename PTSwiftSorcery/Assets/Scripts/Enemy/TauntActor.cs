@@ -29,8 +29,11 @@ public class TauntActor : MonoBehaviour {
 		// generate random wait time
 		float randTime = Random.Range(m_fMinWaitTime, m_fMaxWaitTime);
 
-		// invoke playback fucntion
-		Invoke("PlaySound", randTime);
+		// check audioSources
+		if(VerifyAudioSources()) {
+			// invoke playback fucntion
+			Invoke("PlaySound", randTime);
+		}
 	}
 
 	void PlaySound() {
@@ -46,5 +49,16 @@ public class TauntActor : MonoBehaviour {
 
 		// invoke PlaySound function
 		Invoke("PlaySound", m_audioSources[randIndex].clip.length + randTime);
+	}
+
+	bool VerifyAudioSources() {
+
+		foreach(AudioSource audio in m_audioSources) {
+			if (audio.clip == null) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 }
