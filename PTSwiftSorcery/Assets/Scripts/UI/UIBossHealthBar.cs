@@ -30,8 +30,6 @@ public class UIBossHealthBar : MonoBehaviour {
 
 		// move to top of hierarchy
 		m_healthBar.transform.SetSiblingIndex(0);
-
-		Debug.Log(m_enemyActor.name);
 	}
 	
 	// Update is called once per frame
@@ -50,8 +48,6 @@ public class UIBossHealthBar : MonoBehaviour {
 			// decrease alpha
 			m_healthBar.canvasRenderer.SetAlpha(m_healthBar.canvasRenderer.GetAlpha() - m_fFadeOut);
 			m_healthBarFilled.canvasRenderer.SetAlpha(m_healthBarFilled.canvasRenderer.GetAlpha() - m_fFadeOut);
-
-			Debug.Log(m_healthBar.canvasRenderer.GetAlpha() + ", " + m_healthBarFilled.canvasRenderer.GetAlpha());
 
 			if (m_healthBar.canvasRenderer.GetAlpha() <= 0) {
 				Destroy(gameObject);
