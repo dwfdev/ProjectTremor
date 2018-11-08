@@ -27,6 +27,30 @@ public class MusicManager : MonoBehaviour {
 	[Tooltip("Failure music Audio Source.")]
 	[SerializeField] private AudioSource m_failedMusic;
 
+	public AudioSource BackgroundMusic {
+		get {
+			return m_backgroundMusic;
+		}
+	}
+
+	public AudioSource BossMusic {
+		get {
+			return m_bossMusic;
+		}
+	}
+
+	public AudioSource VictoryMusic {
+		get {
+			return m_victoryMusic;
+		}
+	}
+
+	public AudioSource FailedMusic {
+		get {
+			return m_failedMusic;
+		}
+	}
+
 	private AudioSource m_currentSource;
 
 	void Start() {

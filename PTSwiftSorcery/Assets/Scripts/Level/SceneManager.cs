@@ -206,7 +206,7 @@ public class SceneManager : MonoBehaviour {
 		// change to boss music
 		MusicManager musicManager;
 		if ((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
-			if (!musicManager.IsPlaying()) {
+			if (!musicManager.BossMusic.isPlaying) {
 				musicManager.StartBossMusic();
 			}
 		}
