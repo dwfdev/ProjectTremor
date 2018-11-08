@@ -16,6 +16,7 @@ TagManager:
   - DeathScreen
   - WinScreen
   - ScorePickup
+  - LightningAttack
   layers:
   - Default
   - TransparentFX
