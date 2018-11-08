@@ -106,17 +106,31 @@ public class PlayerSpellManager : MonoBehaviour
 	[Tooltip("Lightning object")]
 	[SerializeField] private GameObject m_lightningObject;
 
-	[Tooltip("Base level lightning radius")]
+	[Tooltip("Level 1 lightning radius")]
 	[SerializeField] private float m_fTier1LightningRadius;
 
-	[Tooltip("Base level lightning radius")]
+	[Tooltip("Level 2 lightning radius")]
 	[SerializeField] private float m_fTier2LightningRadius;
 
-	[Tooltip("Base level lightning radius")]
+	[Tooltip("Level 3 level lightning radius")]
 	[SerializeField] private float m_fTier3LightningRadius;
 
-	[Tooltip("Base level lightning radius")]
+	[Tooltip("Level 4 level lightning radius")]
 	[SerializeField] private float m_fTier4LightningRadius;
+
+	[Header("Audio")]
+
+	[Tooltip("Fire Spell Audio")]
+	[SerializeField] private AudioClip m_fireAudioClip;
+
+	[Tooltip("Fire Spell Audio Volume")]
+	[SerializeField] [Range(0f, 1f)] private float m_fFireAudioClipVolume;
+
+	[Tooltip("Ice Spell Audio")]
+	[SerializeField] private AudioClip m_iceAudioClip;
+
+	[Tooltip("Ice Spell Audio Volume")]
+	[SerializeField] [Range(0f, 1f)] private float m_fIceAudioClipVolume;
 
 	[HideInInspector] public int m_nSpellLevel;
 	// Use this for initialization
@@ -167,6 +181,9 @@ public class PlayerSpellManager : MonoBehaviour
 	{
 		if(m_fTimer >= m_fFireRate * m_fFireMultiplier)
 		{
+			// create new audio source at point
+			AudioSource.PlayClipAtPoint(m_fireAudioClip, transform.position, m_fFireAudioClipVolume);
+
 			switch(m_nSpellLevel)
 			{
 				case 0:
@@ -233,6 +250,9 @@ public class PlayerSpellManager : MonoBehaviour
 	{
 		if(m_fTimer >= m_fFireRate * m_fIceMultiplier)
 		{
+			// create audio clip at point
+			AudioSource.PlayClipAtPoint(m_iceAudioClip, transform.position, m_fIceAudioClipVolume);
+
 			switch(m_nSpellLevel)
 			{
 				case 0:
