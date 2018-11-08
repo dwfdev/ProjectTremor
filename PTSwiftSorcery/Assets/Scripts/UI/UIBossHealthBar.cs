@@ -10,7 +10,10 @@ public class UIBossHealthBar : MonoBehaviour {
 	[SerializeField] private EnemyActor m_enemyActor;
 
 	[Tooltip("Rate at which fade in happens")]
-	[SerializeField] [Range(0.0001f, 1f)] private float m_fFadeIn = 0.01f; 
+	[SerializeField] [Range(0.0001f, 1f)] private float m_fFadeIn = 0.01f;
+
+	[Tooltip("Rate at which fade out happens")]
+	[SerializeField] [Range(0.0001f, 1f)] private float m_fFadeOut = 0.01f;
 
 	private Image m_healthBar;
 	private Image m_healthBarFilled;
@@ -37,14 +40,24 @@ public class UIBossHealthBar : MonoBehaviour {
 		// fill bar according to boss' health
 		m_healthBarFilled.fillAmount = (float)m_enemyActor.m_nCurrentHealth / (float)m_enemyActor.m_nHealth;
 
-		if (m_enemyActor.m_bIsActive && m_healthBar.canvasRenderer.GetAlpha() < 255) {
+		if (m_enemyActor.m_bIsActive && m_healthBar.canvasRenderer.GetAlpha() < 1) {
 			// increase alpha
 			m_healthBar.canvasRenderer.SetAlpha(m_healthBar.canvasRenderer.GetAlpha() + m_fFadeIn);
 			m_healthBarFilled.canvasRenderer.SetAlpha(m_healthBarFilled.canvasRenderer.GetAlpha() + m_fFadeIn);
 		}
 		
 		if (!m_enemyActor.m_bIsAlive) {
-			Destroy(gameObject);
+			// decrease alpha
+			m_healthBar.canvasRenderer.SetAlpha(m_healthBar.canvasRenderer.GetAlpha() - m_fFadeOut);
+			m_healthBarFilled.canvasRenderer.SetAlpha(m_healthBarFilled.canvasRenderer.GetAlpha() - m_fFadeOut);
+
+			Debug.Log(m_healthBar.canvasRenderer.GetAlpha() + ", " + m_healthBarFilled.canvasRenderer.GetAlpha());
+
+			if (m_healthBar.canvasRenderer.GetAlpha() <= 0) {
+				Destroy(gameObject);
+			}
 		}
 	}
+
+	
 }
