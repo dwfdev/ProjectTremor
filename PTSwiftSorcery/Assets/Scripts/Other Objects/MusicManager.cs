@@ -10,6 +10,11 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
 
+	[Tooltip("Speed of transition between Audio clips")]
+	[SerializeField] private float m_fTransitionSpeed = 0.01f;
+
+	[Header("Audio Sources")]
+
 	[Tooltip("Background music Audio Source.")]
 	[SerializeField] private AudioSource m_backgroundMusic;
 
@@ -21,6 +26,8 @@ public class MusicManager : MonoBehaviour {
 
 	[Tooltip("Failure music Audio Source.")]
 	[SerializeField] private AudioSource m_failedMusic;
+
+	private AudioSource m_currentSource;
 
 	void Start() {
 
@@ -61,6 +68,8 @@ public class MusicManager : MonoBehaviour {
 			if (!m_backgroundMusic.loop) {
 				Debug.LogError("Background music should be looping.", gameObject);
 			}
+
+			m_currentSource = m_backgroundMusic;
 		}
 		else {
 			Debug.LogWarning("Background music is null.", gameObject);
@@ -71,23 +80,8 @@ public class MusicManager : MonoBehaviour {
 		
 		// check that boss music exists
 		if (m_bossMusic != null) {
-			// play boss music
-			m_bossMusic.Play();
-			
-			// stop background music
-			if (m_backgroundMusic.isPlaying) {
-				m_backgroundMusic.Stop();
-			}
-
-			// stop victory music
-			if (m_victoryMusic.isPlaying) {
-				m_victoryMusic.Stop();
-			}
-
-			// stop failed music
-			if (m_failedMusic.isPlaying) {
-				m_failedMusic.Stop();
-			}
+			// transition to boss music
+			StartCoroutine(Transition(m_bossMusic));
 		}
 	}
 
@@ -95,23 +89,8 @@ public class MusicManager : MonoBehaviour {
 
 		// check that victory music exists
 		if (m_victoryMusic != null) {
-			// play victory music
-			m_victoryMusic.Play();
-
-			// stop background music
-			if (m_backgroundMusic.isPlaying) {
-				m_backgroundMusic.Stop();
-			}
-
-			// stop boss music
-			if (m_bossMusic.isPlaying) {
-				m_bossMusic.Stop();
-			}
-
-			// stop failed music
-			if (m_failedMusic.isPlaying) {
-				m_failedMusic.Stop();
-			}
+			// transition to victory music
+			StartCoroutine(Transition(m_victoryMusic));
 		}
 	}
 
@@ -119,23 +98,8 @@ public class MusicManager : MonoBehaviour {
 
 		// check that failed music exists
 		if (m_failedMusic != null) {
-			// play failed music
-			m_failedMusic.Play();
-
-			// stop background music
-			if (m_backgroundMusic.isPlaying) {
-				m_backgroundMusic.Stop();
-			}
-
-			// stop boss music
-			if (m_bossMusic.isPlaying) {
-				m_bossMusic.Stop();
-			}
-
-			// stop victory music
-			if (m_victoryMusic.isPlaying) {
-				m_victoryMusic.Stop();
-			}
+			// transition to failed music
+			StartCoroutine(Transition(m_failedMusic));
 		}
 	}
 
@@ -170,5 +134,36 @@ public class MusicManager : MonoBehaviour {
 		}
 
 		return false;
+	}
+
+	IEnumerator Transition(AudioSource targetSource) {
+
+		// begin playing target source
+		targetSource.volume = 0f;
+		targetSource.Play();
+
+		while(true) {
+			// quiten current source
+			m_currentSource.volume -= m_fTransitionSpeed;
+
+			// louden target source
+			targetSource.volume += m_fTransitionSpeed;
+
+			// if transition is not complete
+			if(m_currentSource.volume != 0f || targetSource.volume != 1f) {
+				// continue during next frame
+				yield return new WaitForEndOfFrame();
+			}
+			else {
+				// stop current source
+				m_currentSource.Stop();
+
+				// set current source to targetSource
+				m_currentSource = targetSource;
+
+				// stop transitioning
+				break;
+			}
+		}
 	}
 }
