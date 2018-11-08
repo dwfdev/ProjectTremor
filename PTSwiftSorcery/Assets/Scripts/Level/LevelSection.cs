@@ -16,6 +16,8 @@ public enum eCompletionState
 	FAILED
 }
 
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class LevelSection : MonoBehaviour {
 
 	[Tooltip("Number of attempts the player is given to complete a section before the section is skipped.")]
@@ -35,6 +37,10 @@ public class LevelSection : MonoBehaviour {
 	private int m_nCurrentSectionAttempts;
 
 	void Start() {
+
+		// guarantee collider and rb settings
+		GetComponent<Collider>().isTrigger = true;
+		GetComponent<Rigidbody>().isKinematic = true;
 		
 		foreach(EnemyActor enemy in m_enemiesList) {
 			enemy.m_section = this;

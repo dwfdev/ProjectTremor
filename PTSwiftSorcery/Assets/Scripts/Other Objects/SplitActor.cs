@@ -10,6 +10,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class SplitActor : MonoBehaviour {
 
 	[Tooltip("Speed at which the split will move the player movement area.")]
@@ -32,6 +34,10 @@ public class SplitActor : MonoBehaviour {
 	private eLevelDifficulty m_desiredDifficulty;
 
 	void Start() {
+
+		// guarantee collider and rb settings
+		GetComponent<Collider>().isTrigger = true;
+		GetComponent<Rigidbody>().isKinematic = true;
 
 		// check tag
 		if (gameObject.tag != "LevelSplit") {

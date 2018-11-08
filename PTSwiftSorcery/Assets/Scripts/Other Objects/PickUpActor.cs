@@ -15,10 +15,19 @@ enum ePickUpType {
 	BOMB
 }
 
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class PickUpActor : MonoBehaviour {
 
 	[Tooltip("What type of pick up this is.")]
 	[SerializeField] private ePickUpType m_type;
+
+	private void Start() {
+
+		// guarantee collider and rb settings
+		GetComponent<Collider>().isTrigger = true;
+		GetComponent<Rigidbody>().isKinematic = true;
+	}
 
 	void OnTriggerEnter(Collider other) {
 

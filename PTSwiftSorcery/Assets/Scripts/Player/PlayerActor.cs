@@ -18,6 +18,8 @@ public enum eLifeState {
 }
 
 [RequireComponent(typeof(PlayerSpellManager))]
+[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerActor : MonoBehaviour {
 
 	#region Member Variables
@@ -92,6 +94,10 @@ public class PlayerActor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+
+		// guarantee collider and rb settings
+		GetComponent<Collider>().isTrigger = true;
+		GetComponent<Rigidbody>().isKinematic = true;
 
 		// get movementArea
 		m_movementArea = GameObject.FindGameObjectWithTag("PlayerMovementArea");
