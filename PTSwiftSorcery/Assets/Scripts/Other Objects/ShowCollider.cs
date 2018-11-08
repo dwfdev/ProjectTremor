@@ -21,7 +21,8 @@ public enum eColour {
 	CLEAR,
 	GREY
 }
-	
+
+[RequireComponent(typeof(BoxCollider))]
 public class ShowCollider : MonoBehaviour {
 
 

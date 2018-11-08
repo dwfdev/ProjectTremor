@@ -17,6 +17,7 @@ public enum eLifeState {
 	INVINCIBLE
 }
 
+[RequireComponent(typeof(PlayerSpellManager))]
 public class PlayerActor : MonoBehaviour {
 
 	#region Member Variables

@@ -6,9 +6,11 @@ using UnityEngine;
 ///<summary>
 ///		Script Manager: Denver
 ///		Description:	Handles the functionality of the bomb.
-///		Date Modified:	1/11/2018
+///		Date Modified:	8/11/2018
 ///</summary>
 
+[RequireComponent(typeof(MeshRenderer))]
+[RequireComponent(typeof(SphereCollider))]
 public class BombActor : MonoBehaviour {
 
 	[Header("Bomb")]
@@ -57,10 +59,6 @@ public class BombActor : MonoBehaviour {
 	private float m_fCurrentRange;
 
 	private float m_fOldRange;
-
-	private PlayerActor m_player;
-
-	private GameObject[] m_bullets;
 
 	private CameraActor m_camera;
 
