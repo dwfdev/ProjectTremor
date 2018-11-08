@@ -182,7 +182,7 @@ public class PlayerSpellManager : MonoBehaviour
 		if(m_fTimer >= m_fFireRate * m_fFireMultiplier)
 		{
 			// create new audio source at point
-			AudioSource.PlayClipAtPoint(m_fireAudioClip, transform.position, m_fFireAudioClipVolume);
+			PlayClipAt(m_fireAudioClip, transform.position, m_fFireAudioClipVolume);
 
 			switch(m_nSpellLevel)
 			{
@@ -251,7 +251,7 @@ public class PlayerSpellManager : MonoBehaviour
 		if(m_fTimer >= m_fFireRate * m_fIceMultiplier)
 		{
 			// create audio clip at point
-			AudioSource.PlayClipAtPoint(m_iceAudioClip, transform.position, m_fIceAudioClipVolume);
+			PlayClipAt(m_iceAudioClip, transform.position, m_fIceAudioClipVolume);
 
 			switch(m_nSpellLevel)
 			{
@@ -363,5 +363,35 @@ public class PlayerSpellManager : MonoBehaviour
 	private void StopLightning()
 	{
 		m_lightningObject.SetActive(false);
+	}
+
+	AudioSource PlayClipAt(AudioClip clip, Vector3 pos, float vol) {
+
+		// create temp GameObject
+		GameObject tempGO = new GameObject("tempAudio");
+		
+		// set position
+		tempGO.transform.position = pos;
+
+		// add audio source component to temp game object
+		AudioSource audioSource = tempGO.AddComponent<AudioSource>();
+
+		// define audio clip
+		audioSource.clip = clip;
+
+		// volume
+		audioSource.volume = vol;
+
+		// Spatial Blen
+		audioSource.spatialBlend = 0f;
+
+		// start sound
+		audioSource.Play();
+
+		// destroy temp object after clip duration 
+		Destroy(tempGO, clip.length);
+
+		// return the AudioSource reference
+		return audioSource;
 	}
 }
