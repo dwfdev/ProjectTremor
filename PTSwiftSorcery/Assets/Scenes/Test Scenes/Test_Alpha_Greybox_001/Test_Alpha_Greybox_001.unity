@@ -225,7 +225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b0a065f974934a44592790162f2361d5, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b0a065f974934a44592790162f2361d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3396,7 +3396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fade14b9a9a6961458ec607e2f3c84f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nNumberOfAttempts: 2
+  m_nNumberOfAttempts: 50
   m_enemiesList:
   - {fileID: 49532609}
   m_bIsBossFight: 0
@@ -3455,7 +3455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167315190
 GameObject:
@@ -5622,7 +5622,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.85521007}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1826814800
 MonoBehaviour:
@@ -5994,7 +5994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62459f7abde30f49b852e8d9d5a1923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_witchPrefab: {fileID: 1242177659063098, guid: 43db0721268dcda4491bb840f3f4ae20,
+  m_witchPrefab: {fileID: 1986412619424048, guid: 9d1a74ffdb5190e4fac02e09e47938db,
     type: 2}
   m_wizardPrefab: {fileID: 1138887368001102, guid: de56f623a6fd9a34ea6a34ed6a50b790,
     type: 2}
@@ -6035,7 +6035,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4036967471321494, guid: 4daa298967c121a4f9d6b5fac4876904, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4daa298967c121a4f9d6b5fac4876904, type: 2}

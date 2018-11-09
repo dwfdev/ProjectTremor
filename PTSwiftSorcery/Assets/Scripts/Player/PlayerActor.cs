@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 ///<summary>
 ///		Script Manager:	Denver
@@ -82,6 +83,9 @@ public class PlayerActor : MonoBehaviour {
 	[HideInInspector]
 	public PlayerSpellManager m_spellManager;
 
+	private Animator m_animator;
+	private float m_fAttackAnimWeight;
+
 	[HideInInspector]
 	public bool m_bHasPickUp;
 
@@ -119,8 +123,11 @@ public class PlayerActor : MonoBehaviour {
 		m_fMovementBoundsX = m_movementArea.GetComponent<BoxCollider>().size.x / 2;
 		m_fMovementBoundsZ = m_movementArea.GetComponent<BoxCollider>().size.z / 2;
 
-		// Get spell manager
+		// get spell manager
 		m_spellManager = GetComponent<PlayerSpellManager>();
+
+		// get animator
+		m_animator = GetComponent<Animator>();
 
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
@@ -189,6 +196,17 @@ public class PlayerActor : MonoBehaviour {
 		// normal spells
 		if(Input.GetButton("Fire1") && m_bCanMove) {
 			m_spellManager.Fire();
+			
+			// increase weight
+			m_fAttackAnimWeight += Time.deltaTime * 2;
+			m_fAttackAnimWeight = Mathf.Clamp(m_fAttackAnimWeight, 0, 1);
+			m_animator.SetLayerWeight(1, m_fAttackAnimWeight);
+		}
+		else {
+			// decrease weight
+			m_fAttackAnimWeight -= Time.deltaTime * 2;
+			m_fAttackAnimWeight = Mathf.Clamp(m_fAttackAnimWeight, 0, 1);
+			m_animator.SetLayerWeight(1, m_fAttackAnimWeight);
 		}
 
 		if (Input.GetButtonUp("Fire1")) {

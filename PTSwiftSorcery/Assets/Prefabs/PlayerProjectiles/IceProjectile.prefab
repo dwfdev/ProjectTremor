@@ -107,7 +107,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197272987208826}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c314914a26c61b4b9a882e64f780f1d, type: 3}
@@ -196,7 +196,6 @@ MonoBehaviour:
   m_spellType: 1
   m_target: {fileID: 0}
   m_bIsHoming: 0
-  m_bIsScatter: 0
   m_nDamage: 10
 --- !u!135 &135666686709548764
 SphereCollider:
