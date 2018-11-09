@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct sBossPhase {
+	public bool trackPlayer;
+	public float rotationSpeed;
+	public eEnemyAIType EnemyAIType;
+	public float maxMovementSpeed;
+	public float movementSmooth;
+}
+
 public class BossActor : EnemyActor
 {
 	[Tooltip("The health values at which the boss changes phases, going down")]
