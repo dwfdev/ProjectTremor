@@ -85,13 +85,15 @@ public class LevelSection : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		// check that other is a player
-		if (other.tag == "Player") {
+		if (other.tag == "TriggerOperator") {
 			// set player's CurrentSection to this
-			other.gameObject.GetComponent<PlayerActor>().m_currentSection = this;
+			FindObjectOfType<PlayerActor>().m_currentSection = this;
 
 			// activate all enemies of the section and set their target
-			foreach(EnemyActor enemy in m_enemiesList) {
-				enemy.Activate(other.gameObject, GameObject.FindGameObjectWithTag("Playfield"));
+			if (m_nCurrentSectionAttempts == 0) {
+				foreach(EnemyActor enemy in m_enemiesList) {
+					enemy.Activate(other.gameObject, GameObject.FindGameObjectWithTag("Playfield"));
+				}
 			}
 
 			// set scene state to boss fight
@@ -121,6 +123,8 @@ public class LevelSection : MonoBehaviour {
 
 				// increment attempts
 				++m_nCurrentSectionAttempts;
+
+				return;
 			}
 
 			// section is failed
@@ -129,6 +133,12 @@ public class LevelSection : MonoBehaviour {
 					enemy.Deactivate();
 				}
 			}
+
+			foreach(EnemyActor enemy in m_enemiesList) {
+				Destroy(enemy.gameObject, 3f);
+			}
+
+			Destroy(gameObject, 3f);
 		}
 
 	}

@@ -21,7 +21,7 @@ public class EnemyActor : MonoBehaviour
 	[Tooltip("The maximum health this enemy has")]
 	public int m_nHealth;
 
-	[HideInInspector]
+	//[HideInInspector]
 	public int m_nCurrentHealth;
 
 	[Tooltip("Whether or not this enemy should rotate to face the player")]
@@ -34,11 +34,11 @@ public class EnemyActor : MonoBehaviour
 	[SerializeField] protected eEnemyAIType m_enemyAIType;
 
 	//Whether or not this enemy is currently active
-	[HideInInspector]
+	//[HideInInspector]
 	public bool m_bIsActive;
 
 	//Whether or not this enemy is currently alive
-	[HideInInspector]
+	//[HideInInspector]
 	public bool m_bIsAlive;
 
 	//The current level section of this enemy
@@ -195,6 +195,8 @@ public class EnemyActor : MonoBehaviour
 
 	public void Activate(GameObject target, GameObject newParent)
 	{
+
+		Debug.Log(gameObject.name + " was activated");
 		// set isActive to true
 		m_bIsActive = true;
 
@@ -217,6 +219,8 @@ public class EnemyActor : MonoBehaviour
 
 	public void Die()
 	{
+		Debug.Log(gameObject.name + " has died");
+
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;
@@ -236,6 +240,8 @@ public class EnemyActor : MonoBehaviour
 
 	public void Deactivate()
 	{
+		Debug.Log(gameObject.name + " was deactivated");
+
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;

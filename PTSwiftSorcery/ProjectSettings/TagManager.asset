@@ -17,6 +17,7 @@ TagManager:
   - WinScreen
   - ScorePickup
   - LightningAttack
+  - TriggerOperator
   layers:
   - Default
   - TransparentFX

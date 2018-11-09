@@ -196,21 +196,16 @@ public class PlayerActor : MonoBehaviour {
 		// normal spells
 		if(Input.GetButton("Fire1") && m_bCanMove) {
 			m_spellManager.Fire();
-			
-			// increase weight
-			m_fAttackAnimWeight += Time.deltaTime * 2;
-			m_fAttackAnimWeight = Mathf.Clamp(m_fAttackAnimWeight, 0, 1);
-			m_animator.SetLayerWeight(1, m_fAttackAnimWeight);
-		}
-		else {
-			// decrease weight
-			m_fAttackAnimWeight -= Time.deltaTime * 2;
-			m_fAttackAnimWeight = Mathf.Clamp(m_fAttackAnimWeight, 0, 1);
-			m_animator.SetLayerWeight(1, m_fAttackAnimWeight);
+
+			// start attacking in animator
+			m_animator.SetBool("IsAttacking", true);
 		}
 
 		if (Input.GetButtonUp("Fire1")) {
 			m_spellManager.StopFiring();
+
+			// stop attacking in animator
+			m_animator.SetBool("IsAttacking", false);
 		}
 
 		// bomb

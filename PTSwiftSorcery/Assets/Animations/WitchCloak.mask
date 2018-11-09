@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: WitchCloak
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Ctrl_World
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand/Book_001
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand/Ctrl_Right_Hand
+    m_Weight: 0
+  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand/Ctrl_Right_Hand/Staff
+    m_Weight: 0
+  - m_Path: Model
+    m_Weight: 0
+  - m_Path: Model/Belt
+    m_Weight: 0
+  - m_Path: Model/Body
+    m_Weight: 0
+  - m_Path: Model/Boots
+    m_Weight: 0
+  - m_Path: Model/Cloak
+    m_Weight: 1
+  - m_Path: Model/Coat
+    m_Weight: 0
+  - m_Path: Model/Hair
+    m_Weight: 0
+  - m_Path: Model/Hat
+    m_Weight: 0
+  - m_Path: Model/Pentagram
+    m_Weight: 0
+  - m_Path: Model/Scarf_Left
+    m_Weight: 0
+  - m_Path: Model/Scarf_Right
+    m_Weight: 0
+  - m_Path: Model/Skirt
+    m_Weight: 0
+  - m_Path: Model/Spiral
+    m_Weight: 0
+  - m_Path: Model/WaistBelt
+    m_Weight: 0
+  - m_Path: Root
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Cloak
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Cloak_Left
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Cloak_Right
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Left_Leg
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Left_Leg/Jnt_Left_Knee
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Left_Leg/Jnt_Left_Knee/Jnt_Left_Foot
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Right_Leg
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Right_Leg/Jnt_Right_Knee
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Right_Leg/Jnt_Right_Knee/Jnt_Right_Foot
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Scarf
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Neck
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Neck/Jnt_Head
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand
+    m_Weight: 0
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Scarf
+    m_Weight: 0
