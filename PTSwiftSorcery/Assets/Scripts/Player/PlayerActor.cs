@@ -221,7 +221,7 @@ public class PlayerActor : MonoBehaviour {
 		}
 
 		// pause
-		if (Input.GetKeyDown(KeyCode.P)) {
+		if (Input.GetButtonDown("Pause")) {
 			SceneManager.Instance.SceneState = eSceneState.PAUSED;
 		}
 		#endregion
