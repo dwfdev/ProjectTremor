@@ -48,15 +48,15 @@ public class EnemyActor : MonoBehaviour
 	//Reference to the player
 	private GameObject m_player;
 
-	[Header("Follow Player Variables")]
-	[Tooltip("How far this enemy should try and stay from the player")]
-	[SerializeField] protected Vector3 m_v3Offset;
-
 	[Tooltip("Maximum speed the enemy will move at")]
 	[SerializeField] protected float m_fMaxMovementSpeed;
 
 	[Tooltip("How smoothed the enemy's movement will be, less is more smoothed")]
 	[SerializeField] protected float m_fMovementSmoothing;
+
+	[Header("Follow Player Variables")]
+	[Tooltip("How far this enemy should try and stay from the player")]
+	[SerializeField] protected Vector3 m_v3Offset;
 
 	//The current speed of the enemy
 	private Vector3 m_v3Velocity;
@@ -95,7 +95,7 @@ public class EnemyActor : MonoBehaviour
 
 	private ScoreManager m_ScoreManager;
 
-	private void Start()
+	protected virtual void Start()
 	{
 		//Start out inactive but alive
 		m_bIsActive = false;
@@ -202,7 +202,7 @@ public class EnemyActor : MonoBehaviour
 		transform.parent = newParent.transform;
 	}
 
-	public void TakeDamage(int damage)
+	public virtual void TakeDamage(int damage)
 	{
 		//deal the damage
 		m_nCurrentHealth -= damage;
