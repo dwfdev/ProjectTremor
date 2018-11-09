@@ -21,7 +21,7 @@ public class EnemyActor : MonoBehaviour
 	[Tooltip("The maximum health this enemy has")]
 	public int m_nHealth;
 
-	//[HideInInspector]
+	[HideInInspector]
 	public int m_nCurrentHealth;
 
 	[Tooltip("Whether or not this enemy should rotate to face the player")]
@@ -34,11 +34,11 @@ public class EnemyActor : MonoBehaviour
 	[SerializeField] protected eEnemyAIType m_enemyAIType;
 
 	//Whether or not this enemy is currently active
-	//[HideInInspector]
+	[HideInInspector]
 	public bool m_bIsActive;
 
 	//Whether or not this enemy is currently alive
-	//[HideInInspector]
+	[HideInInspector]
 	public bool m_bIsAlive;
 
 	//The current level section of this enemy
