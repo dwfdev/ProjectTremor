@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: d51119190d3d93b4b91274ff3b77ee77
+timeCreated: 1541740071
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Beard
+    100002: Belt
+    100004: Body
+    100006: Book_001
+    100008: Boots
+    100010: Buckle
+    100012: Cape
+    100014: Ctrl_Hip
+    100016: Ctrl_Left_Elbow
+    100018: Ctrl_Left_Hand
+    100020: Ctrl_Left_Shoulder
+    100022: Ctrl_Neck
+    100024: Ctrl_Right_Elbow
+    100026: Ctrl_Right_Hand
+    100028: Ctrl_Right_Shoulder
+    100030: Ctrl_Waist
+    100032: Ctrl_World
+    100034: Cuffs
+    100036: Grp_Hip
+    100038: Grp_Left_Elbow
+    100040: Grp_Left_Hand
+    100042: Grp_Left_Shoulder
+    100044: Grp_Neck
+    100046: Grp_Right_Elbow
+    100048: Grp_Right_Hand
+    100050: Grp_Right_Shoulder
+    100052: Grp_Waist
+    100054: Hat
+    100056: Jnt_Cape
+    100058: Jnt_Chest
+    100060: Jnt_Head
+    100062: Jnt_Hip
+    100064: Jnt_Left_Cloak
+    100066: Jnt_Left_Collar
+    100068: Jnt_Left_Elbow
+    100070: Jnt_Left_Foot
+    100072: Jnt_Left_Hand
+    100074: Jnt_Left_Knee
+    100076: Jnt_Left_Leg
+    100078: Jnt_Left_Shoulder
+    100080: Jnt_Neck
+    100082: Jnt_Right_Cloak
+    100084: Jnt_Right_Collar
+    100086: Jnt_Right_Elbow
+    100088: Jnt_Right_Foot
+    100090: Jnt_Right_Hand
+    100092: Jnt_Right_Knee
+    100094: Jnt_Right_Leg
+    100096: Jnt_Right_Shoulder
+    100098: Jnt_Waist
+    100100: Model
+    100102: Robe
+    100104: Root
+    100106: Scarf
+    100108: Staff_002
+    100110: //RootNode
+    400000: Beard
+    400002: Belt
+    400004: Body
+    400006: Book_001
+    400008: Boots
+    400010: Buckle
+    400012: Cape
+    400014: Ctrl_Hip
+    400016: Ctrl_Left_Elbow
+    400018: Ctrl_Left_Hand
+    400020: Ctrl_Left_Shoulder
+    400022: Ctrl_Neck
+    400024: Ctrl_Right_Elbow
+    400026: Ctrl_Right_Hand
+    400028: Ctrl_Right_Shoulder
+    400030: Ctrl_Waist
+    400032: Ctrl_World
+    400034: Cuffs
+    400036: Grp_Hip
+    400038: Grp_Left_Elbow
+    400040: Grp_Left_Hand
+    400042: Grp_Left_Shoulder
+    400044: Grp_Neck
+    400046: Grp_Right_Elbow
+    400048: Grp_Right_Hand
+    400050: Grp_Right_Shoulder
+    400052: Grp_Waist
+    400054: Hat
+    400056: Jnt_Cape
+    400058: Jnt_Chest
+    400060: Jnt_Head
+    400062: Jnt_Hip
+    400064: Jnt_Left_Cloak
+    400066: Jnt_Left_Collar
+    400068: Jnt_Left_Elbow
+    400070: Jnt_Left_Foot
+    400072: Jnt_Left_Hand
+    400074: Jnt_Left_Knee
+    400076: Jnt_Left_Leg
+    400078: Jnt_Left_Shoulder
+    400080: Jnt_Neck
+    400082: Jnt_Right_Cloak
+    400084: Jnt_Right_Collar
+    400086: Jnt_Right_Elbow
+    400088: Jnt_Right_Foot
+    400090: Jnt_Right_Hand
+    400092: Jnt_Right_Knee
+    400094: Jnt_Right_Leg
+    400096: Jnt_Right_Shoulder
+    400098: Jnt_Waist
+    400100: Model
+    400102: Robe
+    400104: Root
+    400106: Scarf
+    400108: Staff_002
+    400110: //RootNode
+    2100000: lambert6
+    2100002: lambert7
+    2100004: Normal_Map
+    2300000: Book_001
+    2300002: Staff_002
+    3300000: Book_001
+    3300002: Staff_002
+    4300000: Book_001
+    4300002: Staff_002
+    4300004: Cuffs
+    4300006: Cape
+    4300008: Robe
+    4300010: Beard
+    4300012: Boots
+    4300014: Buckle
+    4300016: Belt
+    4300018: Scarf
+    4300020: Body
+    4300022: Hat
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Beard
+    13700002: Belt
+    13700004: Body
+    13700006: Boots
+    13700008: Buckle
+    13700010: Cape
+    13700012: Cuffs
+    13700014: Hat
+    13700016: Robe
+    13700018: Scarf
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

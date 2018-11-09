@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: a64b3fc78d6c3b04a88471de4a7ab8f9
+timeCreated: 1541740070
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Belt
+    100002: Body
+    100004: Book_001
+    100006: Boots
+    100008: Cloak
+    100010: Coat
+    100012: Ctrl_Hip
+    100014: Ctrl_Left_Collar
+    100016: Ctrl_Left_Elbow
+    100018: Ctrl_Left_Hand
+    100020: Ctrl_Left_Shoulder
+    100022: Ctrl_Right_Collar
+    100024: Ctrl_Right_Elbow
+    100026: Ctrl_Right_Hand
+    100028: Ctrl_Right_Shoulder
+    100030: Ctrl_Waist
+    100032: Ctrl_World
+    100034: Grp_Group_Elbow
+    100036: Grp_Hip
+    100038: Grp_Left_Collar
+    100040: Grp_Left_Elbow
+    100042: Grp_Left_Hand
+    100044: Grp_Left_Shoulder
+    100046: Grp_Right_Collar
+    100048: Grp_Right_Hand
+    100050: Grp_Right_Shoulder
+    100052: Grp_Waist
+    100054: Hair
+    100056: Hat
+    100058: Jnt_Chest
+    100060: Jnt_Cloak
+    100062: Jnt_Cloak_Left
+    100064: Jnt_Cloak_Right
+    100066: Jnt_Head
+    100068: Jnt_Hip
+    100070: Jnt_Left_Collar
+    100072: Jnt_Left_Elbow
+    100074: Jnt_Left_Foot
+    100076: Jnt_Left_Hand
+    100078: Jnt_Left_Knee
+    100080: Jnt_Left_Leg
+    100082: Jnt_Left_Scarf
+    100084: Jnt_Left_Shoulder
+    100086: Jnt_Neck
+    100088: Jnt_Right_Collar
+    100090: Jnt_Right_Elbow
+    100092: Jnt_Right_Foot
+    100094: Jnt_Right_Hand
+    100096: Jnt_Right_Knee
+    100098: Jnt_Right_Leg
+    100100: Jnt_Right_Scarf
+    100102: Jnt_Right_Shoulder
+    100104: Jnt_Waist
+    100106: Model
+    100108: Pentagram
+    100110: Root
+    100112: Scarf_Left
+    100114: Scarf_Right
+    100116: Skirt
+    100118: Spiral
+    100120: Staff_002
+    100122: WaistBelt
+    100124: //RootNode
+    400000: Belt
+    400002: Body
+    400004: Book_001
+    400006: Boots
+    400008: Cloak
+    400010: Coat
+    400012: Ctrl_Hip
+    400014: Ctrl_Left_Collar
+    400016: Ctrl_Left_Elbow
+    400018: Ctrl_Left_Hand
+    400020: Ctrl_Left_Shoulder
+    400022: Ctrl_Right_Collar
+    400024: Ctrl_Right_Elbow
+    400026: Ctrl_Right_Hand
+    400028: Ctrl_Right_Shoulder
+    400030: Ctrl_Waist
+    400032: Ctrl_World
+    400034: Grp_Group_Elbow
+    400036: Grp_Hip
+    400038: Grp_Left_Collar
+    400040: Grp_Left_Elbow
+    400042: Grp_Left_Hand
+    400044: Grp_Left_Shoulder
+    400046: Grp_Right_Collar
+    400048: Grp_Right_Hand
+    400050: Grp_Right_Shoulder
+    400052: Grp_Waist
+    400054: Hair
+    400056: Hat
+    400058: Jnt_Chest
+    400060: Jnt_Cloak
+    400062: Jnt_Cloak_Left
+    400064: Jnt_Cloak_Right
+    400066: Jnt_Head
+    400068: Jnt_Hip
+    400070: Jnt_Left_Collar
+    400072: Jnt_Left_Elbow
+    400074: Jnt_Left_Foot
+    400076: Jnt_Left_Hand
+    400078: Jnt_Left_Knee
+    400080: Jnt_Left_Leg
+    400082: Jnt_Left_Scarf
+    400084: Jnt_Left_Shoulder
+    400086: Jnt_Neck
+    400088: Jnt_Right_Collar
+    400090: Jnt_Right_Elbow
+    400092: Jnt_Right_Foot
+    400094: Jnt_Right_Hand
+    400096: Jnt_Right_Knee
+    400098: Jnt_Right_Leg
+    400100: Jnt_Right_Scarf
+    400102: Jnt_Right_Shoulder
+    400104: Jnt_Waist
+    400106: Model
+    400108: Pentagram
+    400110: Root
+    400112: Scarf_Left
+    400114: Scarf_Right
+    400116: Skirt
+    400118: Spiral
+    400120: Staff_002
+    400122: WaistBelt
+    400124: //RootNode
+    2100000: lambert6
+    2100002: lambert4
+    2100004: Normal
+    2300000: Book_001
+    2300002: Staff_002
+    3300000: Book_001
+    3300002: Staff_002
+    4300000: Book_001
+    4300002: Staff_002
+    4300004: Hair
+    4300006: Boots
+    4300008: Hat
+    4300010: Skirt
+    4300012: Cloak
+    4300014: Pentagram
+    4300016: Belt
+    4300018: WaistBelt
+    4300020: Scarf_Left
+    4300022: Scarf_Right
+    4300024: Body
+    4300026: Spiral
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Belt
+    13700002: Body
+    13700004: Boots
+    13700006: Cloak
+    13700008: Hair
+    13700010: Hat
+    13700012: Pentagram
+    13700014: Scarf_Left
+    13700016: Scarf_Right
+    13700018: Skirt
+    13700020: Spiral
+    13700022: WaistBelt
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
