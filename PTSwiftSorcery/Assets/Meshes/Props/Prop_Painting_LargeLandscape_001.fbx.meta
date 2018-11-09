@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f8ea590800f3a994fb8b848951c156b0
-timeCreated: 1541128069
+guid: 3c877481eb036414598fc5d515d20af8
+timeCreated: 1539906849
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Painting_LargeLandescape_001
+    4300000: Prop_Painting_LargeLandscape_001
   externalObjects: {}
   materials:
     importMaterials: 1

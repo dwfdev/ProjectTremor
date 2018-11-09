@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5486f4e2d83ead5418f1b618e7ece351
-timeCreated: 1539906849
+guid: 680680437a98a284a8ff5b9cd91be007
+timeCreated: 1539912241
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,8 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Prop_Painting_SmallLandscape_001
+    4300000: ShutterWindow
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -85,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
