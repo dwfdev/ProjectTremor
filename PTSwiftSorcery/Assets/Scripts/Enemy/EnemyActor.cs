@@ -198,6 +198,10 @@ public class EnemyActor : MonoBehaviour
 		// set isActive to true
 		m_bIsActive = true;
 
+		m_bIsAlive = true;
+
+		m_nCurrentHealth = m_nHealth;
+
 		// make enemy position and movement relative to the player's movement area
 		transform.parent = newParent.transform;
 	}
