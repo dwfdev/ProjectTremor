@@ -25,13 +25,13 @@ public class EnemyActor : MonoBehaviour
 	public int m_nCurrentHealth;
 
 	[Tooltip("Whether or not this enemy should rotate to face the player")]
-	[SerializeField] private bool m_bTrackPlayer;
+	[SerializeField] protected bool m_bTrackPlayer;
 
 	[Tooltip("How fast this enemy should rotate, if 0, will not rotate")]
-	[SerializeField] private float m_fRotationSpeed;
+	[SerializeField] protected float m_fRotationSpeed;
 
 	[Tooltip("What type of AI this enemy should have")]
-	[SerializeField] private eEnemyAIType m_enemyAIType;
+	[SerializeField] protected eEnemyAIType m_enemyAIType;
 
 	//Whether or not this enemy is currently active
 	[HideInInspector]
@@ -50,26 +50,26 @@ public class EnemyActor : MonoBehaviour
 
 	[Header("Follow Player Variables")]
 	[Tooltip("How far this enemy should try and stay from the player")]
-	[SerializeField] private Vector3 m_v3Offset;
+	[SerializeField] protected Vector3 m_v3Offset;
 
 	[Tooltip("Maximum speed the enemy will move at")]
-	[SerializeField] private float m_fMaxMovementSpeed;
+	[SerializeField] protected float m_fMaxMovementSpeed;
 
 	[Tooltip("How smoothed the enemy's movement will be, less is more smoothed")]
-	[SerializeField] private float m_fMovementSmoothing;
+	[SerializeField] protected float m_fMovementSmoothing;
 
 	//The current speed of the enemy
 	private Vector3 m_v3Velocity;
 
 	[Header("Follow Waypoint Variables")]
 	[Tooltip("The transforms of the waypoints this enemy should go between, should have the same size as Delays")]
-	[SerializeField] private Transform[] m_waypoints;
+	[SerializeField] protected Transform[] m_waypoints;
 
 	[Tooltip("How long this enemy should spend at each waypoint, should have the same size as Waypoints")]
-	[SerializeField] private float[] m_delays;
+	[SerializeField] protected float[] m_delays;
 
 	[Tooltip("Whether or not the enemy should loop through the waypoints, or if it should just go through them once")]
-	[SerializeField] private bool m_bLoopWaypoints;
+	[SerializeField] protected bool m_bLoopWaypoints;
 
 	//The current/previous waypoint the enemy was at
 	private int m_nCurrentWaypoint = 0;
