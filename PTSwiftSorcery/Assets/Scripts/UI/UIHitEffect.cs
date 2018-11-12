@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UIHitEffect : MonoBehaviour {
 
-	[Tooltip("Hit Effect Sprite.")]
-	[SerializeField] private Texture m_hitEffectSprite; 
+	[Tooltip("Hit Effect Texture.")]
+	[SerializeField] private Texture m_hitEffectTexture; 
 
 	[Tooltip("How long the texture is drawn for.")]
 	[SerializeField] private float m_fEffectDuration;
@@ -33,8 +33,11 @@ public class UIHitEffect : MonoBehaviour {
 			// calculate desired position for texture
 			Vector2 desiredPosition = Camera.main.WorldToScreenPoint(transform.position);
 
+			// calculate desired Texture Rectangle
+			Rect desiredRect = new Rect(desiredPosition.x - (m_hitEffectTexture.width / 2), Screen.height - desiredPosition.y - (m_hitEffectTexture.height / 2), m_hitEffectTexture.width, m_hitEffectTexture.height);
+
 			// draw texture
-			GUI.DrawTexture(new Rect(desiredPosition.x - (m_hitEffectSprite.width / 2), Screen.height - desiredPosition.y - (m_hitEffectSprite.height / 2), m_hitEffectSprite.width, m_hitEffectSprite.height), m_hitEffectSprite);
+			GUI.DrawTexture(desiredRect, m_hitEffectTexture);
 		}
 	}
 }
