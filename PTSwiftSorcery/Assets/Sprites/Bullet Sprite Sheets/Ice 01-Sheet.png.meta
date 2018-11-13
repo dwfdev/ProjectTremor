@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: fce948a2a2f41ad4ca122dff1d2f88b9
+timeCreated: 1542101513
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ice 01-Sheet_0
+    21300002: Ice 01-Sheet_1
+    21300004: Ice 01-Sheet_2
+    21300006: Ice 01-Sheet_3
+    21300008: Ice 01-Sheet_4
+    21300010: Ice 01-Sheet_5
+    21300012: Ice 01-Sheet_6
+    21300014: Ice 01-Sheet_7
+    21300016: Ice 01-Sheet_8
+    21300018: Ice 01-Sheet_9
+    21300020: Ice 01-Sheet_10
+    21300022: Ice 01-Sheet_11
+    21300024: Ice 01-Sheet_12
+    21300026: Ice 01-Sheet_13
+    21300028: Ice 01-Sheet_14
+    21300030: Ice 01-Sheet_15
+    21300032: Ice 01-Sheet_16
+    21300034: Ice 01-Sheet_17
+    21300036: Ice 01-Sheet_18
+    21300038: Ice 01-Sheet_19
+    21300040: Ice 01-Sheet_20
+    21300042: Ice 01-Sheet_21
+    21300044: Ice 01-Sheet_22
+    21300046: Ice 01-Sheet_23
+    21300048: Ice 01-Sheet_24
+    21300050: Ice 01-Sheet_25
+    21300052: Ice 01-Sheet_26
+    21300054: Ice 01-Sheet_27
+    21300056: Ice 01-Sheet_28
+    21300058: Ice 01-Sheet_29
+    21300060: Ice 01-Sheet_30
+    21300062: Ice 01-Sheet_31
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ice 01-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2646
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2809
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3138
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3301
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3629
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 3794
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 3958
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 4122
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 4286
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4450
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4615
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 4777
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 4940
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ice 01-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 5106
+        y: 0
+        width: 125
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

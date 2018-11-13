@@ -1,0 +1,570 @@
+fileFormatVersion: 2
+guid: 3a7decc0c1786d049aaa98394dd18a57
+timeCreated: 1542099041
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fire 2-Sheet_0
+    21300002: fire 2-Sheet_1
+    21300004: fire 2-Sheet_2
+    21300006: fire 2-Sheet_3
+    21300008: fire 2-Sheet_4
+    21300010: fire 2-Sheet_5
+    21300012: fire 2-Sheet_6
+    21300014: fire 2-Sheet_7
+    21300016: fire 2-Sheet_8
+    21300018: fire 2-Sheet_9
+    21300020: fire 2-Sheet_10
+    21300022: fire 2-Sheet_11
+    21300024: fire 2-Sheet_12
+    21300026: fire 2-Sheet_13
+    21300028: fire 2-Sheet_14
+    21300030: fire 2-Sheet_15
+    21300032: fire 2-Sheet_16
+    21300034: fire 2-Sheet_17
+    21300036: fire 2-Sheet_18
+    21300038: fire 2-Sheet_19
+    21300040: fire 2-Sheet_20
+    21300042: fire 2-Sheet_21
+    21300044: fire 2-Sheet_22
+    21300046: fire 2-Sheet_23
+    21300048: fire 2-Sheet_24
+    21300050: fire 2-Sheet_25
+    21300052: fire 2-Sheet_26
+    21300054: fire 2-Sheet_27
+    21300056: fire 2-Sheet_28
+    21300058: fire 2-Sheet_29
+    21300060: fire 2-Sheet_30
+    21300062: fire 2-Sheet_31
+    21300064: fire 2-Sheet_32
+    21300066: fire 2-Sheet_33
+    21300068: fire 2-Sheet_34
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fire 2-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 5
+        width: 57
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 5
+        width: 59
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 8
+        width: 56
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 7
+        width: 60
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 5
+        width: 63
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 7
+        width: 56
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 7
+        width: 62
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 7
+        width: 56
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 8
+        width: 54
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2185
+        y: 5
+        width: 56
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 7
+        width: 57
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2514
+        y: 2
+        width: 59
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2677
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2841
+        y: 2
+        width: 61
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 8
+        width: 59
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3170
+        y: 7
+        width: 62
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 5
+        width: 56
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 7
+        width: 60
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 3663
+        y: 5
+        width: 56
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3825
+        y: 7
+        width: 56
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 3992
+        y: 5
+        width: 55
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4155
+        y: 7
+        width: 56
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 7
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 4484
+        y: 7
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 4645
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 4811
+        y: 7
+        width: 58
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 4975
+        y: 5
+        width: 56
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fire 2-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 7
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
