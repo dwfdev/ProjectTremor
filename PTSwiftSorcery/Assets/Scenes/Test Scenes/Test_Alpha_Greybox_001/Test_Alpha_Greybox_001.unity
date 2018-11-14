@@ -6288,7 +6288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_witchPrefab: {fileID: 1487310804936804, guid: 9d1a74ffdb5190e4fac02e09e47938db,
     type: 2}
-  m_wizardPrefab: {fileID: 1138887368001102, guid: de56f623a6fd9a34ea6a34ed6a50b790,
+  m_wizardPrefab: {fileID: 1098775466097994, guid: 0bf1e49c816d84446bb206705a97135e,
     type: 2}
 --- !u!1 &2001230757
 GameObject:

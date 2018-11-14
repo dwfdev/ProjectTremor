@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: 5007c3506e0e35c4d87dc0e0c80848a1
-timeCreated: 1542236277
+guid: e9e81ee498507e34192f53292c9944d0
+timeCreated: 1542236156
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy lightning 01-Sheet_0
-    21300002: enemy lightning 01-Sheet_1
-    21300004: enemy lightning 01-Sheet_2
-    21300006: enemy lightning 01-Sheet_3
-    21300008: enemy lightning 01-Sheet_4
-    21300010: enemy lightning 01-Sheet_5
-    21300012: enemy lightning 01-Sheet_6
-    21300014: enemy lightning 01-Sheet_7
-    21300016: enemy lightning 01-Sheet_8
-    21300018: enemy lightning 01-Sheet_9
-    21300020: enemy lightning 01-Sheet_10
-    21300022: enemy lightning 01-Sheet_11
-    21300024: enemy lightning 01-Sheet_12
-    21300026: enemy lightning 01-Sheet_13
-    21300028: enemy lightning 01-Sheet_14
-    21300030: enemy lightning 01-Sheet_15
-    21300032: enemy lightning 01-Sheet_16
-    21300034: enemy lightning 01-Sheet_17
-    21300036: enemy lightning 01-Sheet_18
-    21300038: enemy lightning 01-Sheet_19
-    21300040: enemy lightning 01-Sheet_20
-    21300042: enemy lightning 01-Sheet_21
-    21300044: enemy lightning 01-Sheet_22
-    21300046: enemy lightning 01-Sheet_23
-    21300048: enemy lightning 01-Sheet_24
-    21300050: enemy lightning 01-Sheet_25
-    21300052: enemy lightning 01-Sheet_26
-    21300054: enemy lightning 01-Sheet_27
-    21300056: enemy lightning 01-Sheet_28
-    21300058: enemy lightning 01-Sheet_29
-    21300060: enemy lightning 01-Sheet_30
+    21300000: Generic 0-1Sheet_0
+    21300002: Generic 0-1Sheet_1
+    21300004: Generic 0-1Sheet_2
+    21300006: Generic 0-1Sheet_3
+    21300008: Generic 0-1Sheet_4
+    21300010: Generic 0-1Sheet_5
+    21300012: Generic 0-1Sheet_6
+    21300014: Generic 0-1Sheet_7
+    21300016: Generic 0-1Sheet_8
+    21300018: Generic 0-1Sheet_9
+    21300020: Generic 0-1Sheet_10
+    21300022: Generic 0-1Sheet_11
+    21300024: Generic 0-1Sheet_12
+    21300026: Generic 0-1Sheet_13
+    21300028: Generic 0-1Sheet_14
+    21300030: Generic 0-1Sheet_15
+    21300032: Generic 0-1Sheet_16
+    21300034: Generic 0-1Sheet_17
+    21300036: Generic 0-1Sheet_18
+    21300038: Generic 0-1Sheet_19
+    21300040: Generic 0-1Sheet_20
+    21300042: Generic 0-1Sheet_21
+    21300044: Generic 0-1Sheet_22
+    21300046: Generic 0-1Sheet_23
+    21300048: Generic 0-1Sheet_24
+    21300050: Generic 0-1Sheet_25
+    21300052: Generic 0-1Sheet_26
+    21300054: Generic 0-1Sheet_27
+    21300056: Generic 0-1Sheet_28
+    21300058: Generic 0-1Sheet_29
+    21300060: Generic 0-1Sheet_30
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -107,11 +107,41 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_0
+      name: Generic 0-1Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_1
+      name: Generic 0-1Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -139,7 +169,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_2
+      name: Generic 0-1Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,7 +183,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_3
+      name: Generic 0-1Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -167,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_4
+      name: Generic 0-1Sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -181,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_5
+      name: Generic 0-1Sheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -195,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_6
+      name: Generic 0-1Sheet_6
       rect:
         serializedVersion: 2
         x: 384
@@ -209,7 +239,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_7
+      name: Generic 0-1Sheet_7
       rect:
         serializedVersion: 2
         x: 448
@@ -223,7 +253,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_8
+      name: Generic 0-1Sheet_8
       rect:
         serializedVersion: 2
         x: 512
@@ -237,7 +267,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_9
+      name: Generic 0-1Sheet_9
       rect:
         serializedVersion: 2
         x: 576
@@ -251,7 +281,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_10
+      name: Generic 0-1Sheet_10
       rect:
         serializedVersion: 2
         x: 640
@@ -265,7 +295,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_11
+      name: Generic 0-1Sheet_11
       rect:
         serializedVersion: 2
         x: 704
@@ -279,7 +309,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_12
+      name: Generic 0-1Sheet_12
       rect:
         serializedVersion: 2
         x: 768
@@ -293,7 +323,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_13
+      name: Generic 0-1Sheet_13
       rect:
         serializedVersion: 2
         x: 832
@@ -307,7 +337,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_14
+      name: Generic 0-1Sheet_14
       rect:
         serializedVersion: 2
         x: 896
@@ -321,7 +351,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_15
+      name: Generic 0-1Sheet_15
       rect:
         serializedVersion: 2
         x: 960
@@ -335,7 +365,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_16
+      name: Generic 0-1Sheet_16
       rect:
         serializedVersion: 2
         x: 1024
@@ -349,7 +379,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_17
+      name: Generic 0-1Sheet_17
       rect:
         serializedVersion: 2
         x: 1088
@@ -363,7 +393,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_18
+      name: Generic 0-1Sheet_18
       rect:
         serializedVersion: 2
         x: 1152
@@ -377,7 +407,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_19
+      name: Generic 0-1Sheet_19
       rect:
         serializedVersion: 2
         x: 1216
@@ -391,7 +421,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_20
+      name: Generic 0-1Sheet_20
       rect:
         serializedVersion: 2
         x: 1280
@@ -405,7 +435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_21
+      name: Generic 0-1Sheet_21
       rect:
         serializedVersion: 2
         x: 1344
@@ -419,7 +449,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_22
+      name: Generic 0-1Sheet_22
       rect:
         serializedVersion: 2
         x: 1408
@@ -433,7 +463,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_23
+      name: Generic 0-1Sheet_23
       rect:
         serializedVersion: 2
         x: 1472
@@ -447,7 +477,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_24
+      name: Generic 0-1Sheet_24
       rect:
         serializedVersion: 2
         x: 1536
@@ -461,7 +491,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_25
+      name: Generic 0-1Sheet_25
       rect:
         serializedVersion: 2
         x: 1600
@@ -475,7 +505,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_26
+      name: Generic 0-1Sheet_26
       rect:
         serializedVersion: 2
         x: 1664
@@ -489,7 +519,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_27
+      name: Generic 0-1Sheet_27
       rect:
         serializedVersion: 2
         x: 1728
@@ -503,7 +533,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_28
+      name: Generic 0-1Sheet_28
       rect:
         serializedVersion: 2
         x: 1792
@@ -517,7 +547,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_29
+      name: Generic 0-1Sheet_29
       rect:
         serializedVersion: 2
         x: 1856
@@ -531,7 +561,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy lightning 01-Sheet_30
+      name: Generic 0-1Sheet_30
       rect:
         serializedVersion: 2
         x: 1920
