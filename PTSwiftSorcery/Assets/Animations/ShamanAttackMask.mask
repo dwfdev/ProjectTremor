@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ShamanAttackMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Clothes_001
+    m_Weight: 0
+  - m_Path: Root
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Neck
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Neck/Jnt_Head
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Left
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Left/Jnt_Shoulder_Left
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Left/Jnt_Shoulder_Left/Jnt_Elbow_Left
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Left/Jnt_Shoulder_Left/Jnt_Elbow_Left/Jnt_Wrist_Left
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Right
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Right/Jnt_Shoulder_Right
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Right/Jnt_Shoulder_Right/Jnt_Elbow_Right
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Scapula_Right/Jnt_Shoulder_Right/Jnt_Elbow_Right/Jnt_Wrist_Right
+    m_Weight: 1
+  - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Left
+    m_Weight: 0
+  - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Left/Jnt_Knee_Left
+    m_Weight: 0
+  - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Left/Jnt_Knee_Left/Jnt_Foot_Left
+    m_Weight: 0
+  - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Right
+    m_Weight: 0
+  - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Right/Jnt_Knee_Right
+    m_Weight: 0
+  - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Right/Jnt_Knee_Right/Jnt_Foot_Right
+    m_Weight: 0
+  - m_Path: Shaman
+    m_Weight: 1
+  - m_Path: Shaman/Shaman_001
+    m_Weight: 1
+  - m_Path: Shaman/Shaman_Skull_001
+    m_Weight: 1
