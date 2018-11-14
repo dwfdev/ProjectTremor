@@ -15,9 +15,9 @@ AvatarMask:
   - m_Path: Root
     m_Weight: 1
   - m_Path: Root/Jnt_Spine_01
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03
     m_Weight: 1
   - m_Path: Root/Jnt_Spine_01/Jnt_Spine_02/Jnt_Spine_03/Jnt_Neck
@@ -53,8 +53,8 @@ AvatarMask:
   - m_Path: Root/Jnt_Spine_01/Jnt_Thigh_Right/Jnt_Knee_Right/Jnt_Foot_Right
     m_Weight: 0
   - m_Path: Shaman
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Shaman/Shaman_001
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Shaman/Shaman_Skull_001
-    m_Weight: 1
+    m_Weight: 0

@@ -6286,7 +6286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62459f7abde30f49b852e8d9d5a1923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_witchPrefab: {fileID: 1137651217953578, guid: 9d1a74ffdb5190e4fac02e09e47938db,
+  m_witchPrefab: {fileID: 1487310804936804, guid: 9d1a74ffdb5190e4fac02e09e47938db,
     type: 2}
   m_wizardPrefab: {fileID: 1138887368001102, guid: de56f623a6fd9a34ea6a34ed6a50b790,
     type: 2}
