@@ -231,6 +231,9 @@ public class PlayerActor : MonoBehaviour {
 			// get the movement of the mouse
 			Vector3 v3MouseMovement = new Vector3(Input.GetAxisRaw("Mouse X"), 0, Input.GetAxisRaw("Mouse Y"));
 
+			// animate movement
+			m_animator.SetFloat("hInput", v3MouseMovement.x);
+
 			// scale it by sensitivity
 			v3MouseMovement = Vector3.Scale(v3MouseMovement, new Vector3(m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.x), 0, m_fMouseSensitivity * (1 / m_movementArea.transform.localScale.z)));
 

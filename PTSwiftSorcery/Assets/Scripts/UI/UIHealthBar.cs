@@ -11,7 +11,7 @@ using UnityEngine.UI;
 ///		Date Modified:	25/10/2018
 ///</summary>
 
-[RequireComponent(typeof(Image))]
+
 public class UIHealthBar : MonoBehaviour {
 
 	[Tooltip("Health Bar prefab.")]

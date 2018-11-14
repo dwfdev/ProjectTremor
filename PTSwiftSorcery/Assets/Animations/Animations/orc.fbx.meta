@@ -1,17 +1,63 @@
 fileFormatVersion: 2
-guid: f89770003da0e244da79edb7f767a071
-timeCreated: 1541732219
+guid: 1242061044240174283808df9c0bfa39
+timeCreated: 1541741494
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert6
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Book_001
+    100000: Jnt_prefix_Base
+    100002: Jnt_prefix_Collar
+    100004: Jnt_prefix_Elbow_Left
+    100006: Jnt_prefix_Elbow_Right
+    100008: Jnt_prefix_Foot_Left
+    100010: Jnt_prefix_Foot_Right
+    100012: Jnt_prefix_Head
+    100014: Jnt_prefix_Knee_Left
+    100016: Jnt_prefix_Knee_Right
+    100018: Jnt_prefix_Mid
+    100020: Jnt_prefix_Neck
+    100022: Jnt_prefix_Scapula_Left
+    100024: Jnt_prefix_Scapula_Right
+    100026: Jnt_prefix_Shoulder_Left
+    100028: Jnt_prefix_Shoulder_Right
+    100030: Jnt_prefix_Thigh_Left
+    100032: Jnt_prefix_Thigh_Right
+    100034: Jnt_prefix_Wrist_Left
+    100036: Jnt_prefix_Wrist_Right
+    100038: Jnt_Toe_R
+    100040: Jnt_Toe_R1
+    100042: //RootNode
+    100044: Orc_001
+    100046: Root
+    400000: Jnt_prefix_Base
+    400002: Jnt_prefix_Collar
+    400004: Jnt_prefix_Elbow_Left
+    400006: Jnt_prefix_Elbow_Right
+    400008: Jnt_prefix_Foot_Left
+    400010: Jnt_prefix_Foot_Right
+    400012: Jnt_prefix_Head
+    400014: Jnt_prefix_Knee_Left
+    400016: Jnt_prefix_Knee_Right
+    400018: Jnt_prefix_Mid
+    400020: Jnt_prefix_Neck
+    400022: Jnt_prefix_Scapula_Left
+    400024: Jnt_prefix_Scapula_Right
+    400026: Jnt_prefix_Shoulder_Left
+    400028: Jnt_prefix_Shoulder_Right
+    400030: Jnt_prefix_Thigh_Left
+    400032: Jnt_prefix_Thigh_Right
+    400034: Jnt_prefix_Wrist_Left
+    400036: Jnt_prefix_Wrist_Right
+    400038: Jnt_Toe_R
+    400040: Jnt_Toe_R1
+    400042: //RootNode
+    400044: Orc_001
+    400046: Root
+    2100000: StingrayPBS1
+    4300000: Orc_001
+    7400000: Take 001
     9500000: //RootNode
+    13700000: Orc_001
   externalObjects: {}
   materials:
     importMaterials: 1
