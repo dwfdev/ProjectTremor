@@ -1860,9 +1860,9 @@ MonoBehaviour:
   m_fIceMoveSpeed: 45
   m_eSpellType: 0
   m_fFireSpread: 7.5
-  m_firePrefab: {fileID: 1069823472348064, guid: b48f46b9772b2e04bafa0cf5f1210ab3,
+  m_firePrefab: {fileID: 1942996033339112, guid: 8ee286e6e3912c04484db44c8b896ba0,
     type: 2}
-  m_icePrefab: {fileID: 1537505270010958, guid: 78afbb4a95c37c84ab9687e4fc69da36,
+  m_icePrefab: {fileID: 1218460552346400, guid: 317776bdb919ce843b5aad94bf90afa0,
     type: 2}
   m_nFireDamage: 20
   m_nTier2FireDamageAddition: 0
