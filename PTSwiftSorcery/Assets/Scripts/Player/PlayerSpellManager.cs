@@ -321,34 +321,50 @@ public class PlayerSpellManager : MonoBehaviour
 		switch(m_nSpellLevel)
 		{
 			case 0:
-				Vector3 level1NewScale = new Vector3(m_fTier1LightningRadius * 2, m_fTier1LightningRadius * 2, 1);
-
-				m_lightningObject.transform.localScale = level1NewScale;
+				m_lightningObject.GetComponent<SphereCollider>().radius = m_fTier1LightningRadius;
 				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage;
+
+				ParticleSystem.MainModule Tier1LightningParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_lightningParticle.main;
+				Tier1LightningParticles.startSize = m_fTier1LightningRadius * 3.0f;
+
+				ParticleSystem.MainModule Tier1PerimiterParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_perimiterParticle.main;
+				Tier1PerimiterParticles.startSize = m_fTier1LightningRadius * 4.5f;
 
 				m_lightningObject.SetActive(true);
 				break;
 			case 1:
-				Vector3 level2NewScale = new Vector3(m_fTier2LightningRadius * 2, m_fTier2LightningRadius * 2, 1);
-
-				m_lightningObject.transform.localScale = level2NewScale;
+				m_lightningObject.GetComponent<SphereCollider>().radius = m_fTier2LightningRadius;
 				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage + m_nTier2LightningDamageAddition;
+
+				ParticleSystem.MainModule Tier2LightningParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_lightningParticle.main;
+				Tier2LightningParticles.startSize = m_fTier2LightningRadius * 3.0f;
+
+				ParticleSystem.MainModule Tier2PerimiterParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_perimiterParticle.main;
+				Tier2PerimiterParticles.startSize = m_fTier2LightningRadius * 4.5f;
 
 				m_lightningObject.SetActive(true);
 				break;
 			case 2:
-				Vector3 level3NewScale = new Vector3(m_fTier3LightningRadius * 2, m_fTier3LightningRadius * 2, 1);
-
-				m_lightningObject.transform.localScale = level3NewScale;
+				m_lightningObject.GetComponent<SphereCollider>().radius = m_fTier3LightningRadius;
 				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage + m_nTier2LightningDamageAddition + m_nTier3LightningDamageAddition;
+
+				ParticleSystem.MainModule Tier3LightningParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_lightningParticle.main;
+				Tier3LightningParticles.startSize = m_fTier3LightningRadius * 3.0f;
+
+				ParticleSystem.MainModule Tier3PerimiterParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_perimiterParticle.main;
+				Tier3PerimiterParticles.startSize = m_fTier3LightningRadius * 4.5f;
 
 				m_lightningObject.SetActive(true);
 				break;
 			case 3:
-				Vector3 level4NewScale = new Vector3(m_fTier4LightningRadius * 2, m_fTier4LightningRadius * 2, 1);
-
-				m_lightningObject.transform.localScale = level4NewScale;
+				m_lightningObject.GetComponent<SphereCollider>().radius = m_fTier4LightningRadius;
 				m_lightningObject.GetComponent<LightningSpellProjectile>().m_nDamage = m_nLightningDamage + m_nTier2LightningDamageAddition + m_nTier3LightningDamageAddition + m_nTier4LightningDamageAddition;
+
+				ParticleSystem.MainModule Tier4LightningParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_lightningParticle.main;
+				Tier4LightningParticles.startSize = m_fTier4LightningRadius * 3.0f;
+
+				ParticleSystem.MainModule Tier4PerimiterParticles = m_lightningObject.GetComponent<LightningSpellProjectile>().m_perimiterParticle.main;
+				Tier4PerimiterParticles.startSize = m_fTier4LightningRadius * 4.5f;
 
 				m_lightningObject.SetActive(true);
 				break;

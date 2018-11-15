@@ -271,9 +271,4 @@ public class EnemyActor : MonoBehaviour
 			TakeDamage(other.GetComponent<PlayerSpellProjectile>().m_nDamage);
 		}
 	}
-
-	private void OnTriggerExit(Collider other)
-	{
-		
-	}
 }

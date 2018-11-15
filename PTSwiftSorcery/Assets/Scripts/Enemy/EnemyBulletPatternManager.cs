@@ -33,6 +33,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	//The current time in seconds
 	private float m_fCurrentTimer;
 
+	//how long 
 	private float m_fActiveTimer;
 
 	[Tooltip("All spawn locations of bullets in this pattern")]

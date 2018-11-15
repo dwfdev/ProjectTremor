@@ -32,20 +32,15 @@ public class ScoreManager : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-		//m_fMultiplier = 1.0f;
-		//
-		//m_playfield = GameObject.FindGameObjectWithTag("Playfield");
-	}
-
 	private void OnEnable()
 	{
+		//add level load code
 		UnityEngine.SceneManagement.SceneManager.sceneLoaded += LevelLoaded;
 	}
 
 	private void OnDisable()
 	{
+		//remove level load code
 		UnityEngine.SceneManagement.SceneManager.sceneLoaded -= LevelLoaded;
 	}
 
@@ -84,51 +79,50 @@ public class ScoreManager : MonoBehaviour
 	[Header("How much each score pickup can be worth")]
 	//list of score values
 	[Tooltip("The lowest value for score pickups that is non-zero")]
-	[SerializeField] private long m_lMinScorePickupValue;
+	[SerializeField] private long m_lMinScorePickupValue = 5;
 	[Tooltip("A low value for score pickups")]
-	[SerializeField] private long m_lLowScorePickupValue;
+	[SerializeField] private long m_lLowScorePickupValue = 10;
 	[Tooltip("An average value for score pickups")]
-	[SerializeField] private long m_lMidScorePickupValue;
+	[SerializeField] private long m_lMidScorePickupValue = 25;
 	[Tooltip("A high value for score pickups")]
-	[SerializeField] private long m_lHighScorePickupValue;
+	[SerializeField] private long m_lHighScorePickupValue = 100;
 	[Tooltip("The max value for score pickups")]
-	[SerializeField] private long m_lMaxScorePickupValue;
+	[SerializeField] private long m_lMaxScorePickupValue = 500;
 
 	//playfield
 	private GameObject m_playfield;
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		if (Input.GetKeyDown(KeyCode.J))
-		{
-			Debug.Log(m_lScore);
-		}
-	}
 
+	//code to be called on level load
 	void LevelLoaded(Scene scene, LoadSceneMode mode)
 	{
+		//reset multiplier
 		m_fMultiplier = 1.0f;
 
+		//get playfield
 		m_playfield = GameObject.FindGameObjectWithTag("Playfield");
 	}
 
 	public void AddScore(long scoreValue)
 	{
-		m_lScore += (long)Mathf.Round(scoreValue * m_fMultiplier);
+		//add score multiplied by multiplier
+		m_lScore += (long)(scoreValue * m_fMultiplier);
 	}
 
 	public void AddMultiplier(float multiValue)
 	{
+		//increase multiplier
 		m_fMultiplier += multiValue;
 	}
 
 	public void DropScorePickup(long scoreValue, Transform transform)
 	{
+		//get score to drop
 		long scoreToDrop = scoreValue;
 		
+		//while loop for still having score to drop
 		while(scoreToDrop > 0)
 		{
+			//check if score left is greater than or equal to max value of score pickup
 			if(scoreToDrop >= m_lMaxScorePickupValue)
 			{
 				GameObject newPickup = Instantiate(m_pickupPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up));
@@ -139,8 +133,10 @@ public class ScoreManager : MonoBehaviour
 				newPickup.transform.parent = m_playfield.transform;
 				newPickup.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * Random.Range(20.0f, 100.0f));
 
+				//decrease score left value
 				scoreToDrop -= m_lMaxScorePickupValue;
 			}
+			//check if score left is greater than or equal to high value of score pickup
 			if(scoreToDrop < m_lMaxScorePickupValue && scoreToDrop >= m_lHighScorePickupValue)
 			{
 				GameObject newPickup = Instantiate(m_pickupPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up));
@@ -151,8 +147,10 @@ public class ScoreManager : MonoBehaviour
 				newPickup.transform.parent = m_playfield.transform;
 				newPickup.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * Random.Range(20.0f, 100.0f));
 
+				//decrease score left value
 				scoreToDrop -= m_lHighScorePickupValue;
 			}
+			//check if score left is greater than or equal to mid value of score pickup
 			if(scoreToDrop < m_lHighScorePickupValue && scoreToDrop >= m_lMidScorePickupValue)
 			{
 				GameObject newPickup = Instantiate(m_pickupPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up));
@@ -163,8 +161,10 @@ public class ScoreManager : MonoBehaviour
 				newPickup.transform.parent = m_playfield.transform;
 				newPickup.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * Random.Range(20.0f, 100.0f));
 
+				//decrease score left value
 				scoreToDrop -= m_lMidScorePickupValue;
 			}
+			//check if score left is greater than or equal to low value of score pickup
 			if(scoreToDrop < m_lMidScorePickupValue && scoreToDrop >= m_lLowScorePickupValue)
 			{
 				GameObject newPickup = Instantiate(m_pickupPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up));
@@ -175,8 +175,10 @@ public class ScoreManager : MonoBehaviour
 				newPickup.transform.parent = m_playfield.transform;
 				newPickup.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * Random.Range(20.0f, 100.0f));
 
+				//decrease score left value
 				scoreToDrop -= m_lLowScorePickupValue;
 			}
+			//check if score left is greater than or equal to min value of score pickup
 			if(scoreToDrop < m_lLowScorePickupValue && scoreToDrop >= m_lMinScorePickupValue)
 			{
 				GameObject newPickup = Instantiate(m_pickupPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up));
@@ -187,8 +189,10 @@ public class ScoreManager : MonoBehaviour
 				newPickup.transform.parent = m_playfield.transform;
 				newPickup.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * Random.Range(20.0f, 100.0f));
 
+				//decrease score left value
 				scoreToDrop -= m_lMinScorePickupValue;
 			}
+			//check if score left is greater than or equal to 1
 			if(scoreToDrop < m_lMinScorePickupValue && scoreToDrop >= 1)
 			{
 				GameObject newPickup = Instantiate(m_pickupPrefab, transform.position, Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up));
@@ -199,6 +203,7 @@ public class ScoreManager : MonoBehaviour
 				newPickup.transform.parent = m_playfield.transform;
 				newPickup.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * Random.Range(20.0f, 100.0f));
 
+				//decrease score left value
 				scoreToDrop -= 1;
 			}
 		}

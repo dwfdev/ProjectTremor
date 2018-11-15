@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//all variables the boss has that change with phase
 [System.Serializable]
 public struct sBossPhase
 {

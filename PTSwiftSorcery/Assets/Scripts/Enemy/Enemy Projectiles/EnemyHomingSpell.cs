@@ -23,6 +23,7 @@ public class EnemyHomingSpell : EnemySpellProjectile
 	private float m_fTimer;
 
 	[HideInInspector]
+	//how long this shot will exist for
 	public float m_fLifespan;
 
 	//whether or not this shot is currently homing
@@ -36,40 +37,53 @@ public class EnemyHomingSpell : EnemySpellProjectile
 
 	override protected void Awake()
 	{
+		//call base projectile awake
 		base.Awake();
+		//set homing to true and timer to 0
 		m_bIsHoming = true;
 		m_fTimer = 0.0f;
 
+		//set target to player
 		m_target = GameObject.FindWithTag("Player");
-		if(m_target == null)
+
+		//if no player tag, there are much worse problems than a lack of a target
+		if (m_target == null)
 		{
 			Debug.LogError("No object with the player tag was found, did you forget to tag the player?");
 		}
 
+		//initial push of speed
 		gameObject.GetComponent<Rigidbody>().AddForce(m_fMoveSpeed * m_fSpeedBurst * transform.forward);
 	}
 
 	// Update is called once per frame
 	override protected void Update ()
 	{
+		//increment timer
 		m_fTimer += Time.deltaTime;
+
+		//if timer exceeds homing time, stop homing
 		if (m_fTimer >= m_fHomeTimer)
 			m_bIsHoming = false;
 
+		//if homing exceeds lifespan, destroy self
 		if (m_fLifespan != 0.0f && m_fTimer >= m_fLifespan)
 			Destroy(gameObject);
 
+		//if currently homing, smoothly rotate towards player
 		if(m_bIsHoming)
 		{
 			Quaternion targetRotation = Quaternion.LookRotation(m_target.transform.position - transform.position);
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
 		}
 
+		//push bullet towards forward direction
 		gameObject.GetComponent<Rigidbody>().AddForce(m_fMaxVelocity * transform.forward);
 	}
 
 	private void FixedUpdate()
 	{
+		//if bullet exceeds max movement speed, reset to max move speed
 		if(gameObject.GetComponent<Rigidbody>().velocity.magnitude > m_fMoveSpeed)
 		{
 			gameObject.GetComponent<Rigidbody>().velocity = gameObject.GetComponent<Rigidbody>().velocity.normalized * m_fMoveSpeed;
@@ -78,11 +92,13 @@ public class EnemyHomingSpell : EnemySpellProjectile
 
 	protected override void OnTriggerEnter(Collider other)
 	{
+		//call basic collision code
 		base.OnTriggerEnter(other);
 	}
 
 	protected override void OnTriggerExit(Collider other)
 	{
+		//call basic exit code
 		base.OnTriggerExit(other);
 	}
 }

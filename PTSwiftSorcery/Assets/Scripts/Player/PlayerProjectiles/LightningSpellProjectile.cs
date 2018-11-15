@@ -10,15 +10,9 @@ public class LightningSpellProjectile : MonoBehaviour
 	[Tooltip("What type of spell this shot is")]
 	public eSpellType m_spellType;
 
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
+	[Tooltip("Lightning effect particle system")]
+	public ParticleSystem m_lightningParticle;
+
+	[Tooltip("Lightning perimiter particle system")]
+	public ParticleSystem m_perimiterParticle;
 }

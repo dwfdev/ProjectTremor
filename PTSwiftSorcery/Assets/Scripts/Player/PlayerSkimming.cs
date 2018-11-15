@@ -7,40 +7,28 @@ public class PlayerSkimming : MonoBehaviour
 	[Tooltip("How many points should be gained per second while skimming")]
 	[SerializeField] private long m_lSkimPoints;
 
+	//if the player is currently skimming
 	private bool m_bIsSkimming;
-
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		//if player is currently skimming, add score
 		if(m_bIsSkimming)
-		{
-			long skimPoints = (long)(m_lSkimPoints * Time.deltaTime);
-			Debug.Log(skimPoints);
-			ScoreManager.Instance.AddScore(skimPoints);
-		}
+			ScoreManager.Instance.AddScore((long)(m_lSkimPoints * Time.deltaTime));
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
+		//if near an enemy bullet, start skimming
 		if (other.tag == "EnemyBullet")
-		{
 			m_bIsSkimming = true;
-			//Debug.Log("Skimming!");
-		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
+		//if no longer near an enemy bullet, stop skimming
 		if(other.tag == "EnemyBullet")
-		{
 			m_bIsSkimming = false;
-			//Debug.Log("Stopped skimming!");
-		}
 	}
 }
