@@ -93,6 +93,10 @@ public class LevelSection : MonoBehaviour {
 			if (m_nCurrentSectionAttempts == 0) {
 				foreach(EnemyActor enemy in m_enemiesList) {
 					enemy.Activate(other.gameObject, GameObject.FindGameObjectWithTag("Playfield"));
+
+					if (enemy.GetComponent<UIHealthBar>()) {
+						enemy.GetComponent<UIHealthBar>().enabled = true;
+					}
 				}
 			}
 
@@ -131,6 +135,7 @@ public class LevelSection : MonoBehaviour {
 			else if (m_completionState == eCompletionState.FAILED) {
 				foreach(EnemyActor enemy in m_enemiesList) {
 					enemy.Deactivate();
+					enemy.GetComponent<UIHealthBar>().DestroyHealthBar();
 				}
 			}
 

@@ -25,6 +25,10 @@ public class UIHealthBar : MonoBehaviour {
 	private Image m_healthBar;
 	private Image m_healthBarFilled;
 
+	void Awake() {
+		this.enabled = false;
+	}
+
 	// Use this for initialization
 	void Start () {
 		
@@ -51,9 +55,9 @@ public class UIHealthBar : MonoBehaviour {
 	public void DestroyHealthBar() {
 
 		// destroy background
-		Destroy(m_healthBar);
+		Destroy(m_healthBar.gameObject);
 			
 		// destroy fill bar	
-		Destroy(m_healthBarFilled);
+		Destroy(m_healthBarFilled.gameObject);
 	}
 }

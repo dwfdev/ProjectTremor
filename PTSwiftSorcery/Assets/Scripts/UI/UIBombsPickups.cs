@@ -58,8 +58,6 @@ public class UIBombsPickups : MonoBehaviour {
 		// initialise is pick up active
 		m_bPickUpIsActive = false;
 
-		m_progressBar.gameObject.SetActive(false);
-
 	}
 
 	void FixedUpdate() {
