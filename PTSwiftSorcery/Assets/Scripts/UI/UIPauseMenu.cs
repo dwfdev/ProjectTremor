@@ -26,11 +26,7 @@ public class UIPauseMenu : MonoBehaviour {
 		SceneManager.Instance.SceneState = eSceneState.RUNNING;
 	}
 
-	public void OnOptionsPressed() {
-		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("OptionsMenu"), UnityEngine.SceneManagement.LoadSceneMode.Single);
-	}
-
 	public void OnQuitPressed() {
-		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("MainMenu"), UnityEngine.SceneManagement.LoadSceneMode.Single);
+		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneByType(eSceneType.MAIN_MENU), UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 }

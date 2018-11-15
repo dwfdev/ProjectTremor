@@ -20,9 +20,19 @@ public enum eSceneState {
 	FAILED
 }
 
+public enum eSceneType {
+	MAIN_MENU,
+	LEVEL_1,
+	LEVEL_2,
+	LEVEL_3,
+	CREDITS,
+	NULL
+}
+
 [System.Serializable]
 public struct sGameScene {
 	public string name;
+	public eSceneType type;
 	public int index;
 	public Scene scene;
 	public CursorLockMode lockMode;
@@ -340,6 +350,22 @@ public class SceneManager : MonoBehaviour {
 		// if no found scene, return null sGameScene
 		return new sGameScene() {
 			name = "NULL",
+			type = eSceneType.NULL,
+			index = -1,
+		};
+	}
+
+	public sGameScene GetGameSceneByType(eSceneType type) {
+
+		foreach(sGameScene scene in m_gameScenes) {
+			if (scene.type == type) {
+				return scene;
+			}
+		}
+
+		return new sGameScene() {
+			name = "NULL",
+			type = eSceneType.NULL,
 			index = -1,
 		};
 	}

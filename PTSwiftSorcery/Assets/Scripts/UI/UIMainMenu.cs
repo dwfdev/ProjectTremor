@@ -9,11 +9,8 @@ using UnityEngine;
 
 public class UIMainMenu : MonoBehaviour {
 
-	[Tooltip("Main Menu parent game object.")]
-	[SerializeField] private GameObject m_mainMenu;
-
 	[Tooltip("Options Menu parent game object.")]
-	[SerializeField] private GameObject m_optionsMenu;
+	[SerializeField] private GameObject m_CharacterSelectMenu;
 
 	[Tooltip("Character selection toggle.")]
 	[SerializeField] private UnityEngine.UI.Toggle m_toggle;
@@ -21,33 +18,20 @@ public class UIMainMenu : MonoBehaviour {
 	void Start() {
 
 		// initialise menu screens
-		m_mainMenu.SetActive(true);
-		m_optionsMenu.SetActive(false);
+		gameObject.SetActive(true);
+		m_CharacterSelectMenu.SetActive(false);
 
 		// initialise toggle
 		m_toggle.isOn = SceneManager.Instance.IsWitch;
 	}
 
 	public void OnStartPressed() {
-		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("Level1"), UnityEngine.SceneManagement.LoadSceneMode.Single);
-	}
+		
+		// activate character select screen
+		m_CharacterSelectMenu.SetActive(true);
 
-	public void OnOptionsPressed() {
-		m_mainMenu.SetActive(false);
-		m_optionsMenu.SetActive(true);
-	}
-
-	public void OnBackPressed() {
-		m_optionsMenu.SetActive(false);
-		m_mainMenu.SetActive(true);
-	}
-
-	public void OnSelectCharacterToggleChange(UnityEngine.UI.Toggle toggle) {
-
-		// change character
-		SceneManager.Instance.IsWitch = toggle.isOn;
-
-		Debug.Log(SceneManager.Instance.IsWitch);
+		// deactivate main menu
+		gameObject.SetActive(false);
 	}
 
 	public void OnQuitPressed() {

@@ -32,6 +32,6 @@ public class UIDeathScreen : MonoBehaviour {
 	public void OnQuitPressed() {
 
 		// load Main Menu scene
-		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneWithName("MainMenu"), UnityEngine.SceneManagement.LoadSceneMode.Single);
+		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneByType(eSceneType.MAIN_MENU), UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 }
