@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -219,15 +219,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 40
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 700
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1164089162}
   - {fileID: 1062911520}
@@ -235,6 +236,9 @@ MonoBehaviour:
   - 3
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &19742991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -507,6 +511,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &119940879
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,20 +758,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1914617292}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &193993623
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -934,7 +943,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -2, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 513367149}
+  - {fileID: 965324970}
   - {fileID: 487263533}
   - {fileID: 951420202}
   - {fileID: 1164089162}
@@ -1042,20 +1051,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 268777098}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &287311746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1377,6 +1390,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &356309263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1563,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &395552280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +2007,7 @@ MonoBehaviour:
   m_fMouseSmoothing: 2
   m_v3RespawnLocation: {x: 0, y: -0.5, z: -7}
   m_movementArea: {fileID: 257694116}
+  m_bombActorPrefab: {fileID: 0}
   m_lifeState: 0
   m_currentSection: {fileID: 0}
   m_spellManager: {fileID: 0}
@@ -2012,23 +2028,36 @@ MonoBehaviour:
   m_fFireRate: 0.1
   m_fFireMultiplier: 2
   m_fIceMultiplier: 1
-  m_fLightningMultiplier: 0.5
   m_fFireMoveSpeed: 15
   m_fIceMoveSpeed: 30
-  m_fLightningMoveSpeed: 60
   m_eSpellType: 1
-  m_bIsHoming: 0
-  m_bIsScatter: 0
-  m_fScatterSpread: 5
+  m_fFireSpread: 0
   m_firePrefab: {fileID: 1231070219212850, guid: 79f034304347dfb479ad74bbe3092401,
     type: 2}
   m_icePrefab: {fileID: 1197272987208826, guid: 22293b600a12d014b9853505294c50b5,
     type: 2}
-  m_lightningPrefab: {fileID: 1386940179694796, guid: d046560de86958b4c9ad784a6bad94da,
-    type: 2}
   m_nFireDamage: 20
+  m_nTier2FireDamageAddition: 0
+  m_nTier3FireDamageAddition: 0
+  m_nTier4FireDamageAddition: 0
   m_nIceDamage: 10
+  m_nTier2IceDamageAddition: 0
+  m_nTier3IceDamageAddition: 0
+  m_nTier4IceDamageAddition: 0
   m_nLightningDamage: 5
+  m_nTier2LightningDamageAddition: 0
+  m_nTier3LightningDamageAddition: 0
+  m_nTier4LightningDamageAddition: 0
+  m_lightningObject: {fileID: 0}
+  m_fTier1LightningRadius: 0
+  m_fTier2LightningRadius: 0
+  m_fTier3LightningRadius: 0
+  m_fTier4LightningRadius: 0
+  m_fireAudioClip: {fileID: 0}
+  m_fFireAudioClipVolume: 0
+  m_iceAudioClip: {fileID: 0}
+  m_fIceAudioClipVolume: 0
+  m_nSpellLevel: 0
 --- !u!114 &513367154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2071,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nBombDamage: 420
   m_nBulletScore: 100
+  m_fMaximumRange: 0
+  m_fDuration: 0
+  m_fStartRange: 0
+  m_fShakeMagnitude: 0
+  m_fShakeRoughness: 0
+  m_fShakeFadeIn: 0
+  m_fShakeFadeOut: 0
+  m_fTimeMagnitude: 0
+  m_fTimeDuration: 0
+  m_bIsExploding: 0
 --- !u!135 &513367155
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2115,15 +2154,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 40
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 700
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1048330087}
   - {fileID: 967012662}
@@ -2131,6 +2171,9 @@ MonoBehaviour:
   - 3
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!23 &546499881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2216,20 +2259,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 268777098}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &578321581
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2445,6 +2492,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &663535914 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: abb73c43855b2dd4db7f3bd3a6d1293e, type: 3}
@@ -2465,15 +2513,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 2000
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1826467003}
   - {fileID: 1164089162}
@@ -2485,6 +2534,9 @@ MonoBehaviour:
   - 9
   - 2
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &663535919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2790,6 +2842,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &867189464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,8 +2875,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db94cf86ac6d404e8afde7e5da3a9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_image: {fileID: 1072939003}
-  m_selectedBorder: {fileID: 1447739158}
+  m_fireSpellImage: {fileID: 0}
+  m_iceSpellImage: {fileID: 0}
+  m_lightningSpellImage: {fileID: 0}
+  m_fireSpellSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_iceSpellSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_lightningSpellSprites:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &867189466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2978,15 +3041,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 30
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1164089162}
   - {fileID: 951420202}
@@ -2994,6 +3058,9 @@ MonoBehaviour:
   - 0
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &892673187
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3108,20 +3175,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 268777098}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &893796260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3259,6 +3330,8 @@ MonoBehaviour:
   - {fileID: 1809650612}
   - {fileID: 193993622}
   - {fileID: 1019418344}
+  m_bIsBossFight: 0
+  m_bStopScrollingOnBossFight: 0
 --- !u!65 &925801837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3367,6 +3440,10 @@ Prefab:
     - {fileID: 9500000, guid: 0bc1d1b00face4646a8d10fa407b6c23, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 0bc1d1b00face4646a8d10fa407b6c23, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &965324970 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 965324969}
 --- !u!1 &966350137
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,20 +3570,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1914617292}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &1019418345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3642,6 +3723,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1001 &1031571624
 Prefab:
   m_ObjectHideFlags: 0
@@ -3757,6 +3839,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &1048330086
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,20 +4439,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1914617292}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &1215455310
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4575,6 +4662,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &1261548154
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,6 +4716,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1001 &1270326937
 Prefab:
   m_ObjectHideFlags: 0
@@ -4761,15 +4850,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 30
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 487263533}
   - {fileID: 951420202}
@@ -4777,6 +4867,9 @@ MonoBehaviour:
   - 0
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!23 &1290075413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5007,15 +5100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 30
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 487263533}
   - {fileID: 951420202}
@@ -5023,6 +5117,9 @@ MonoBehaviour:
   - 0
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!23 &1399248986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5145,6 +5242,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1001 &1425804159
 Prefab:
   m_ObjectHideFlags: 0
@@ -5406,6 +5504,8 @@ MonoBehaviour:
   m_enemiesList:
   - {fileID: 19742990}
   - {fileID: 546499880}
+  m_bIsBossFight: 0
+  m_bStopScrollingOnBossFight: 0
 --- !u!65 &1468012461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5464,6 +5564,7 @@ MonoBehaviour:
   m_fLevelScrollSpeed: 10
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 1}
   m_levelDifficulty: 0
+  m_fTimeScale: 0
 --- !u!4 &1491023803
 Transform:
   m_ObjectHideFlags: 0
@@ -5524,6 +5625,8 @@ MonoBehaviour:
   m_nNumberOfAttempts: 333
   m_enemiesList:
   - {fileID: 663535916}
+  m_bIsBossFight: 0
+  m_bStopScrollingOnBossFight: 0
 --- !u!65 &1508122390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5582,20 +5685,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 268777098}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &1547762795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5710,15 +5817,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 30
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 487263533}
   - {fileID: 951420202}
@@ -5726,6 +5834,9 @@ MonoBehaviour:
   - 0
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!23 &1615159971
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5861,6 +5972,7 @@ MonoBehaviour:
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!1 &1742427142
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,15 +6005,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 30
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1164089162}
   - {fileID: 951420202}
@@ -5909,6 +6022,9 @@ MonoBehaviour:
   - 0
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &1742427144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6089,20 +6205,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nHealth: 20
+  m_nCurrentHealth: 0
   m_bTrackPlayer: 1
   m_fRotationSpeed: 15
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
   m_section: {fileID: 0}
-  m_v3Offset: {x: 0, y: 0, z: 10}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
+  m_v3Offset: {x: 0, y: 0, z: 10}
   m_waypoints:
   - {fileID: 1914617292}
   m_delays:
   - 0
   m_bLoopWaypoints: 0
+  m_lRawScore: 0
+  m_lPickupScore: 0
+  m_fMultiplier: 0
 --- !u!54 &1809650613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6329,6 +6449,8 @@ MonoBehaviour:
   - {fileID: 1399248985}
   - {fileID: 1742427143}
   - {fileID: 892673186}
+  m_bIsBossFight: 0
+  m_bStopScrollingOnBossFight: 0
 --- !u!65 &1841350182
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6557,6 +6679,8 @@ MonoBehaviour:
   - {fileID: 1547762794}
   - {fileID: 578321580}
   - {fileID: 893796259}
+  m_bIsBossFight: 0
+  m_bStopScrollingOnBossFight: 0
 --- !u!65 &2116981751
 BoxCollider:
   m_ObjectHideFlags: 0
