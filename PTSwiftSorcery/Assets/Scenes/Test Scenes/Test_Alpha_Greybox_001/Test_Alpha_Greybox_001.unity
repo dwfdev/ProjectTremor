@@ -1905,7 +1905,7 @@ Transform:
   m_GameObject: {fileID: 793912765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: 67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -3222,7 +3222,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec720b3567b6b584485dfaa045df5137, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3457,7 +3457,7 @@ Transform:
   m_GameObject: {fileID: 1162665818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.4300003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -3494,7 +3494,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec720b3567b6b584485dfaa045df5137, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3778,7 +3778,7 @@ Transform:
   m_GameObject: {fileID: 1230946551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 48.175}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -3914,7 +3914,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec720b3567b6b584485dfaa045df5137, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4615,7 +4615,7 @@ Transform:
   m_GameObject: {fileID: 1466071202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 0, z: 67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -4891,7 +4891,7 @@ Transform:
   m_GameObject: {fileID: 1528226520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 26.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -5952,12 +5952,12 @@ Prefab:
     - target: {fileID: 224258265942612108, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 65
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 224258265942612108, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 10
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 224258265942612108, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
@@ -5996,12 +5996,12 @@ Prefab:
     - target: {fileID: 224258265942612108, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224258265942612108, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114479252914703762, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
@@ -6011,6 +6011,16 @@ Prefab:
     - target: {fileID: 114734518656771628, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
         type: 2}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224296927232292326, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224296927232292326, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+        type: 2}
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
