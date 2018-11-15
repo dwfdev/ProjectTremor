@@ -12,41 +12,59 @@ using UnityEngine.UI;
 
 public class UISpells : MonoBehaviour {
 
-	[Tooltip("Image of spells.")]
-	[SerializeField] private Image m_image;
+	[Header("Spell Images.")]
 
-	[Tooltip("Border for selected spell.")]
-	[SerializeField] private Image m_selectedBorder;
+	[Tooltip("Fire Spell Image.")]
+	[SerializeField] private Image m_fireSpellImage;
 
-	private PlayerActor m_player;
+	[Tooltip("Ice Spell Image.")]
+	[SerializeField] private Image m_iceSpellImage;
+
+	[Tooltip("Lightning Spell Image.")]
+	[SerializeField] private Image m_lightningSpellImage;
+
+	[Header("Spell Sprites.")]
+
+	[Tooltip("Fire Spell Sprites. Unselected and selected.")]
+	[SerializeField] private Sprite[] m_fireSpellSprites = new Sprite[2];
+
+	[Tooltip("Ice Spell Sprites. Unselected and selected.")]
+	[SerializeField] private Sprite[] m_iceSpellSprites = new Sprite[2];
+
+	[Tooltip("Lightning Spell Sprites. Unselected and selected.")]
+	[SerializeField] private Sprite[] m_lightningSpellSprites = new Sprite[2];
+
+	private PlayerSpellManager m_spellManager;
 
 	void Start() {
 
 		// get instance of the player
-		m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerActor>();
+		m_spellManager = FindObjectOfType<PlayerSpellManager>();
 	}
 
 	void FixedUpdate() {
 		
-		// change position of border based on selected spell type
-		switch(m_player.m_spellManager.m_eSpellType) {
+		switch(m_spellManager.m_eSpellType) {
 			case eSpellType.FIRE:
-				// set border position to top third
-				m_selectedBorder.rectTransform.position = new Vector3(m_selectedBorder.rectTransform.position.x, m_image.rectTransform.position.y + m_image.rectTransform.rect.height / 3, 0);
+				m_fireSpellImage.sprite = m_fireSpellSprites[1];
+				m_iceSpellImage.sprite = m_iceSpellSprites[0];
+				m_lightningSpellImage.sprite = m_lightningSpellSprites[0];
 				break;
 
 			case eSpellType.ICE:
-				// set border position to middle third
-				m_selectedBorder.rectTransform.position = m_image.rectTransform.position;
+				m_fireSpellImage.sprite = m_fireSpellSprites[0];
+				m_iceSpellImage.sprite = m_iceSpellSprites[1];
+				m_lightningSpellImage.sprite = m_lightningSpellSprites[0];
 				break;
 
 			case eSpellType.LIGHTNING:
-				// set border position to bottom third
-				m_selectedBorder.rectTransform.position = new Vector3(m_selectedBorder.rectTransform.position.x, m_image.rectTransform.position.y - m_image.rectTransform.rect.height / 3, 0);
+				m_fireSpellImage.sprite = m_fireSpellSprites[0];
+				m_iceSpellImage.sprite = m_iceSpellSprites[0];
+				m_lightningSpellImage.sprite = m_lightningSpellSprites[1];
 				break;
 
 			default:
-				Debug.LogError("Could not find player's selected spell type.", gameObject);
+				Debug.LogError("Could not find spell type.", gameObject);
 				break;
 		}
 	}
