@@ -165,12 +165,13 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 5
   m_eBulletType: 2
-  m_bulletPrefab: {fileID: 1282511936524776, guid: 83ca202a57a610841939549f537ae6a1,
+  m_bulletPrefab: {fileID: 1030261940021892, guid: 5a206dd13df4b804ab2caaf8cb453b7d,
     type: 2}
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114831801184860814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,12 +187,13 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 5
   m_eBulletType: 2
-  m_bulletPrefab: {fileID: 1282511936524776, guid: 83ca202a57a610841939549f537ae6a1,
+  m_bulletPrefab: {fileID: 1030261940021892, guid: 5a206dd13df4b804ab2caaf8cb453b7d,
     type: 2}
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114987492340891658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,9 +209,10 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 5
   m_eBulletType: 2
-  m_bulletPrefab: {fileID: 1282511936524776, guid: 83ca202a57a610841939549f537ae6a1,
+  m_bulletPrefab: {fileID: 1030261940021892, guid: 5a206dd13df4b804ab2caaf8cb453b7d,
     type: 2}
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}

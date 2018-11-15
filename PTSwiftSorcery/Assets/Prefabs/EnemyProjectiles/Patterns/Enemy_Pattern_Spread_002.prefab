@@ -115,12 +115,13 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 5
   m_eBulletType: 0
-  m_bulletPrefab: {fileID: 1478734474133304, guid: c2befeb2f268e0a4e9a351a5374d7fb6,
+  m_bulletPrefab: {fileID: 1622680885217540, guid: 642e74ae14ddcfb468f25264e6db365e,
     type: 2}
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114959970035156288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,12 +137,13 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 5
   m_eBulletType: 0
-  m_bulletPrefab: {fileID: 1478734474133304, guid: c2befeb2f268e0a4e9a351a5374d7fb6,
+  m_bulletPrefab: {fileID: 1622680885217540, guid: 642e74ae14ddcfb468f25264e6db365e,
     type: 2}
   m_fBeamActiveTimer: 0
   m_fBeamStayTimer: 0
   m_bSpawnChild: 0
   m_fLifespan: 0
+  m_parent: {fileID: 0}
 --- !u!114 &114982629880809322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,6 +158,8 @@ MonoBehaviour:
   m_parent: {fileID: 0}
   m_bEnvironment: 0
   m_fTimer: 0.7
+  m_fDelay: 0
+  m_fDisableDelay: 0
   m_children:
   - {fileID: 1643158646905004}
   - {fileID: 1349109078726938}

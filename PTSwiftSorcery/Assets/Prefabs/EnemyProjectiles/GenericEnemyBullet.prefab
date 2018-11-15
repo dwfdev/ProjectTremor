@@ -36,9 +36,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4837723867842044}
-  - component: {fileID: 114330875670987138}
   - component: {fileID: 135378612332146798}
   - component: {fileID: 54575043264095846}
+  - component: {fileID: 114556586136080426}
   m_Layer: 0
   m_Name: GenericEnemyBullet
   m_TagString: EnemyBullet
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1622680885217540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.8033733, y: 2.94, z: 494.99258}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4781939000075900}
@@ -105,7 +105,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114330875670987138
+--- !u!114 &114556586136080426
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -113,11 +113,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1622680885217540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73516917b2185fa4dbf82070af332288, type: 3}
+  m_Script: {fileID: 11500000, guid: 452c13e24db7f584ea6a4558f05b667d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_eBulletType: 0
   m_fMoveSpeed: 0
+  m_fLifespan: 0
 --- !u!135 &135378612332146798
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -128,7 +129,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212367991709571452
 SpriteRenderer:

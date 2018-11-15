@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nBombDamage: 5
-  m_nBulletScore: 100
+  m_nBulletScore: 50
   m_fMaximumRange: 17.5
   m_fDuration: 0.5
   m_fStartRange: 3
