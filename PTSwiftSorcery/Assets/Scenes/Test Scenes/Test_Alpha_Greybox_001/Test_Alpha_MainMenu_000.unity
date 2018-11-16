@@ -890,6 +890,14 @@ MonoBehaviour:
     type: 1
     index: 1
     lockMode: 1
+  - name: Level2
+    type: 2
+    index: 2
+    lockMode: 1
+  - name: Level3
+    type: 3
+    index: 3
+    lockMode: 1
 --- !u!4 &1176845693
 Transform:
   m_ObjectHideFlags: 0
