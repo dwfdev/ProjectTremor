@@ -54,9 +54,6 @@ public class PlayerActor : MonoBehaviour {
 
 	[Header("")]
 
-	[Tooltip("Position where the player will respawn.")]
-	[SerializeField] private Vector3 m_v3RespawnLocation;
-
 	[HideInInspector]
 	public GameObject m_movementArea;
 
@@ -311,9 +308,6 @@ public class PlayerActor : MonoBehaviour {
 			m_lifeState = eLifeState.DEAD;
 		}
 		else {
-			// move the player to the respawn position
-			transform.localPosition = m_v3RespawnLocation;
-
 			// give player invinciblity
 			m_lifeState = eLifeState.INVINCIBLE;
 			StartInvincibilityTimer(m_fRespawnInvincibilityTimerSeconds);
