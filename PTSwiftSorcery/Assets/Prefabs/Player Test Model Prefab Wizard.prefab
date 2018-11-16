@@ -1954,7 +1954,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a507361f726f6fe47bf043f29a273673, type: 3}
+  - {fileID: 2100000, guid: 371b1d70a7ebdc64583a964e53963c1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1988,7 +1988,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100002, guid: a507361f726f6fe47bf043f29a273673, type: 3}
+  - {fileID: 2100000, guid: 371b1d70a7ebdc64583a964e53963c1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2258,7 +2258,6 @@ MonoBehaviour:
   m_fRespawnInvincibilityTimerSeconds: 1
   m_fMouseSensitivity: 0.25
   m_fMouseSmoothing: 2
-  m_v3RespawnLocation: {x: 0, y: 0, z: -6}
   m_movementArea: {fileID: 0}
   m_bombActorPrefab: {fileID: 1590706385417856, guid: d1d38830e2243b042ba445a2923009ff,
     type: 2}
