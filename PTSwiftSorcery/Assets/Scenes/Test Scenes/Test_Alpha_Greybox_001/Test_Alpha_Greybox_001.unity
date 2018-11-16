@@ -5341,7 +5341,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 100056, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
       propertyPath: m_Name
@@ -5351,6 +5351,22 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2b171cdf6a2c97049a920b22866092e3, type: 2}
+    - target: {fileID: 400056, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400056, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ba488bfa027ba6469f5862b38a89279, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a36c494c1b772b40a0a568941a54671, type: 3}
   m_IsPrefabParent: 0
@@ -5708,7 +5724,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1826814800
 MonoBehaviour:
