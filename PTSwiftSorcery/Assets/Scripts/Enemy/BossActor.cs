@@ -46,6 +46,11 @@ public class BossActor : EnemyActor
 		{
 			Debug.LogError(gameObject.name + " has mismatching health thresholds and phases!");
 		}
+
+		if (m_BossPhases.Length <= 0)
+		{
+			m_bLastPhase = true;
+		}
 	}
 
 	public override void TakeDamage(int damage)
@@ -103,5 +108,6 @@ public class BossActor : EnemyActor
 		}
 
 		++m_nNextPhase;
+		Debug.Log(gameObject.name + " has changed phase to " + (m_nNextPhase + 1).ToString());
 	}
 }
