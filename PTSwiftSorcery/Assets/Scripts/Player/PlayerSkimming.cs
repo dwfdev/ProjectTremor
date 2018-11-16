@@ -15,7 +15,10 @@ public class PlayerSkimming : MonoBehaviour
 	{
 		//if player is currently skimming, add score
 		if(m_bIsSkimming)
+		{
 			ScoreManager.Instance.AddScore((long)(m_lSkimPoints * Time.deltaTime));
+			m_bIsSkimming = false;
+		}
 	}
 
 	private void OnTriggerStay(Collider other)
@@ -23,12 +26,5 @@ public class PlayerSkimming : MonoBehaviour
 		//if near an enemy bullet, start skimming
 		if (other.tag == "EnemyBullet")
 			m_bIsSkimming = true;
-	}
-
-	private void OnTriggerExit(Collider other)
-	{
-		//if no longer near an enemy bullet, stop skimming
-		if(other.tag == "EnemyBullet")
-			m_bIsSkimming = false;
 	}
 }
