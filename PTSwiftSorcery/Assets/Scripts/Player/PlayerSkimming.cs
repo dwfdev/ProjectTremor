@@ -12,7 +12,13 @@ public class PlayerSkimming : MonoBehaviour
 
 	//if the player is currently skimming
 	private bool m_bIsSkimming;
-	
+
+	private void Awake()
+	{
+		ParticleSystem.MainModule psmain = m_particleSystem.main;
+		psmain.customSimulationSpace = GameObject.FindGameObjectWithTag("Playfield").transform;
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
