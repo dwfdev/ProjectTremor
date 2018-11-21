@@ -170,7 +170,7 @@ public class BombActor : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		// check that other is an EnemyBullet
-		if (other.tag == "EnemyBullet") {
+		if (other.tag == "EnemyBullet" && other.gameObject.GetComponent<EnemySpellProjectile>().m_eBulletType != eBulletType.BEAM) {
 			ScoreManager.Instance.DropScorePickup(m_nBulletScore, other.gameObject.transform);
 			Destroy(other.gameObject);
 		}
