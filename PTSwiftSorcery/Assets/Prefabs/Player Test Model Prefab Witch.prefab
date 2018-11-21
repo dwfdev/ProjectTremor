@@ -1832,6 +1832,11 @@ MonoBehaviour:
   m_fRespawnInvincibilityTimerSeconds: 1
   m_fMouseSensitivity: 0.25
   m_fMouseSmoothing: 2
+  m_nNumOfFreezeFrames: 12
+  m_fHitShakeMagnitude: 0
+  m_fHitShakeRoughness: 0
+  m_fHitShakeFadeIn: -1
+  m_fHitShakeFadeOut: -1
   m_movementArea: {fileID: 0}
   m_bombActorPrefab: {fileID: 1590706385417856, guid: d1d38830e2243b042ba445a2923009ff,
     type: 2}
