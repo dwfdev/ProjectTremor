@@ -7,6 +7,9 @@ public class PlayerSkimming : MonoBehaviour
 	[Tooltip("How many points should be gained per second while skimming")]
 	[SerializeField] private long m_lSkimPoints;
 
+	[Tooltip("The particle system skimming is attached to")]
+	[SerializeField] private ParticleSystem m_particleSystem;
+
 	//if the player is currently skimming
 	private bool m_bIsSkimming;
 	
@@ -18,6 +21,7 @@ public class PlayerSkimming : MonoBehaviour
 		{
 			ScoreManager.Instance.AddScore((long)(m_lSkimPoints * Time.deltaTime));
 			m_bIsSkimming = false;
+			m_particleSystem.Emit(1);
 		}
 	}
 
