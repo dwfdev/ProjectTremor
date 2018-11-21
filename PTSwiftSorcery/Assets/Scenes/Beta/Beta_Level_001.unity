@@ -373,6 +373,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -609,6 +610,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 700
   m_fMovementSmoothing: 5
@@ -1178,6 +1180,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -4695,6 +4698,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -5173,6 +5177,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215897613}
   m_Mesh: {fileID: 4300000, guid: 85d4b18b76ec21d4da0cba63bb5f6151, type: 3}
+--- !u!1 &218880382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1085706810}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1085706811}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &223713120
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,6 +6566,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -8638,6 +8658,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -11699,11 +11720,20 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6be10dd84a89496479ee921281112c60, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &439355240 stripped
+--- !u!4 &439355240
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4554971052887886, guid: 6be10dd84a89496479ee921281112c60,
     type: 2}
   m_PrefabInternal: {fileID: 439355239}
+  m_GameObject: {fileID: 1527346414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1704167175}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440588894
 GameObject:
   m_ObjectHideFlags: 0
@@ -13368,6 +13398,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -13564,6 +13595,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 496444261}
   m_Mesh: {fileID: 4300000, guid: dd2c572a4e6238241a43e0c74b6a1a65, type: 3}
+--- !u!1 &498425890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1330616830}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 498425891}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498425891
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1330616830}
+  m_GameObject: {fileID: 498425890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1330616831}
+  m_Father: {fileID: 1428863630}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &498724888
 GameObject:
   m_ObjectHideFlags: 0
@@ -15005,6 +15065,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 700
   m_fMovementSmoothing: 5
@@ -15412,6 +15473,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -15965,6 +16027,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -17036,6 +17099,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -17515,6 +17579,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -19661,6 +19726,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -21035,6 +21101,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -24296,6 +24363,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -24459,6 +24527,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -25814,6 +25883,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -27835,6 +27905,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -30555,11 +30626,20 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6be10dd84a89496479ee921281112c60, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1085706811 stripped
+--- !u!4 &1085706811
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4554971052887886, guid: 6be10dd84a89496479ee921281112c60,
     type: 2}
   m_PrefabInternal: {fileID: 1085706810}
+  m_GameObject: {fileID: 218880382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1960432751}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086263860
 GameObject:
   m_ObjectHideFlags: 0
@@ -34023,6 +34103,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -36315,6 +36396,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -36822,6 +36904,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -37141,11 +37224,20 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6be10dd84a89496479ee921281112c60, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1330616831 stripped
+--- !u!4 &1330616831
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4554971052887886, guid: 6be10dd84a89496479ee921281112c60,
     type: 2}
   m_PrefabInternal: {fileID: 1330616830}
+  m_GameObject: {fileID: 1475558277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498425891}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1331495643
 Prefab:
   m_ObjectHideFlags: 0
@@ -37600,6 +37692,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -37919,6 +38012,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -38933,6 +39027,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -40158,9 +40253,9 @@ Transform:
   m_LocalPosition: {x: -0.7319424, y: 26.45083, z: 60.31762}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1085706811}
-  - {fileID: 1330616831}
-  - {fileID: 439355240}
+  - {fileID: 1960432751}
+  - {fileID: 498425891}
+  - {fileID: 1704167175}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41238,6 +41333,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1474980311}
   m_Mesh: {fileID: 4300000, guid: a4e3fac1fef03294cbcecb4d2a787a34, type: 3}
+--- !u!1 &1475558277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1330616830}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1330616831}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1479945695
 GameObject:
   m_ObjectHideFlags: 0
@@ -41941,6 +42051,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -42375,9 +42486,10 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
-  m_fMaxMovementSpeed: 400
-  m_fMovementSmoothing: 5
+  m_fMaxMovementSpeed: 360
+  m_fMovementSmoothing: 1
   m_v3Offset: {x: 0, y: 0, z: 0}
   m_waypoints:
   - {fileID: 1826467003}
@@ -42872,6 +42984,21 @@ MonoBehaviour:
   m_bSpawnChild: 0
   m_fLifespan: 0
   m_parent: {fileID: 0}
+--- !u!1 &1527346414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 439355239}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 439355240}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1528512734
 GameObject:
   m_ObjectHideFlags: 0
@@ -43325,6 +43452,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -44832,6 +44960,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -46547,6 +46676,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -46708,6 +46838,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -47828,6 +47959,35 @@ Transform:
   m_Father: {fileID: 1640443522}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1704167174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 439355239}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1704167175}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704167175
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 439355239}
+  m_GameObject: {fileID: 1704167174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 439355240}
+  m_Father: {fileID: 1428863630}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1705708038
 GameObject:
   m_ObjectHideFlags: 0
@@ -48631,6 +48791,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 400
   m_fMovementSmoothing: 5
@@ -49964,6 +50125,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -52396,6 +52558,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
@@ -54629,6 +54792,35 @@ Transform:
   m_PrefabParentObject: {fileID: 4198073365904896, guid: 6934738c549175c4584c4ffe74e91d2c,
     type: 2}
   m_PrefabInternal: {fileID: 1963328198}
+--- !u!1 &1960432750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1085706810}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1960432751}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960432751
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1085706810}
+  m_GameObject: {fileID: 1960432750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1085706811}
+  m_Father: {fileID: 1428863630}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1963328198
 Prefab:
   m_ObjectHideFlags: 0
@@ -55252,6 +55444,7 @@ MonoBehaviour:
   m_enemyAIType: 2
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 500
   m_fMovementSmoothing: 5
