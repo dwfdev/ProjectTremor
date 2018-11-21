@@ -23,15 +23,7 @@ public class SplitActor : MonoBehaviour {
 	[Tooltip("Position of the centre of the right side path. (X axis)")]
 	[SerializeField] private float m_fRightSideX;
 
-	[Tooltip("Left side level difficulty.")]
-	[SerializeField] private eLevelDifficulty m_leftDifficulty;
-
-	[Tooltip("Right side level difficulty.")]
-	[SerializeField] private eLevelDifficulty m_rightDifficulty;
-
 	private float m_fDesiredX;
-
-	private eLevelDifficulty m_desiredDifficulty;
 
 	void Start() {
 
@@ -53,15 +45,10 @@ public class SplitActor : MonoBehaviour {
 			//if the player is on the right
 			if (other.gameObject.transform.position.x - transform.position.x > 0f) {
 				m_fDesiredX = m_fRightSideX;
-				m_desiredDifficulty = m_rightDifficulty;
 			}
 			else {
 				m_fDesiredX = m_fLeftSideX;
-				m_desiredDifficulty = m_leftDifficulty;
 			}
-
-			// set new difficulty
-			FindObjectOfType<LevelManager>().SetLevelDifficulty(m_desiredDifficulty);
 		}
 
 	}

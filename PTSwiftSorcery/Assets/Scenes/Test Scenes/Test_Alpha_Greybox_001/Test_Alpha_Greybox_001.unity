@@ -198,6 +198,7 @@ MonoBehaviour:
   m_enemyAIType: 0
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 0
   m_fMovementSmoothing: 0
@@ -400,6 +401,7 @@ MonoBehaviour:
   m_enemyAIType: 0
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 0
   m_fMovementSmoothing: 0
@@ -719,8 +721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06959e1e21c6aa4ba74f2e345c78181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lifeSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_lostLifeSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_lifeSprite: {fileID: 21300000, guid: 78782fc9e70cd1b42b0aabea8523002b, type: 3}
+  m_lostLifeSprite: {fileID: 21300002, guid: 78782fc9e70cd1b42b0aabea8523002b, type: 3}
   m_imageHolders:
   - {fileID: 726952106}
   - {fileID: 1561883335}
@@ -1784,7 +1786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -116.71, y: -25}
+  m_AnchoredPosition: {x: -244, y: -8}
   m_SizeDelta: {x: 31.570007, y: 30.009995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &770382273
@@ -2647,6 +2649,7 @@ MonoBehaviour:
   m_enemyAIType: 1
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 750
   m_fMovementSmoothing: 50
@@ -3715,8 +3718,6 @@ MonoBehaviour:
   m_fMoveSpeed: 10
   m_fLeftSideX: -6
   m_fRightSideX: 6
-  m_leftDifficulty: 1
-  m_rightDifficulty: 2
 --- !u!23 &1230946553
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4275,6 +4276,7 @@ MonoBehaviour:
   m_enemyAIType: 1
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 750
   m_fMovementSmoothing: 50
@@ -5786,6 +5788,7 @@ MonoBehaviour:
   m_enemyAIType: 1
   m_bIsActive: 0
   m_bIsAlive: 0
+  m_bIsShooting: 0
   m_section: {fileID: 0}
   m_fMaxMovementSpeed: 750
   m_fMovementSmoothing: 50
@@ -5935,8 +5938,6 @@ MonoBehaviour:
   m_playField: {fileID: 1441377731}
   m_fLevelScrollSpeed: 10
   m_v3LevelScrollDirection: {x: 0, y: 0, z: 1}
-  m_levelDifficulty: 0
-  m_fTimeScale: 0
 --- !u!114 &1877322429
 MonoBehaviour:
   m_ObjectHideFlags: 0

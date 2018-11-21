@@ -24,13 +24,6 @@ public enum eLifeState {
 public class PlayerActor : MonoBehaviour {
 
 	#region Member Variables
-	[Header("Lives.")]
-	[Tooltip("Amount of lives the player has.")]
-	public int m_nLives;
-
-	[Tooltip("Maximum amount of lives.")]
-	[SerializeField] private int m_nMaximumLives;
-
 	[Header("Bomb.")]
 	[Tooltip("Initial amount of bombs.")]
 	[SerializeField] private int m_nInitialBombCount;
@@ -39,8 +32,6 @@ public class PlayerActor : MonoBehaviour {
 	[SerializeField] private int m_nMaximumBombCount;
 
 	[Header("Timers.")]
-	[Tooltip("Time, in seconds player has to recover from being hit.")]
-	[SerializeField] private float m_fDyingTimerSeconds;
 
 	[Tooltip("Time, in seconds player has invinciblity after respawn.")]
 	[SerializeField] private float m_fRespawnInvincibilityTimerSeconds;
@@ -52,13 +43,33 @@ public class PlayerActor : MonoBehaviour {
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
 	[SerializeField] private float m_fMouseSmoothing;
 
-	[Header("")]
+	[Header("Hit Juicing")]
+
+	[Tooltip("Number of freeze frames.")]
+	[SerializeField] private int m_nNumOfFreezeFrames;
+
+	[Tooltip("Magnitude of camera shake.")]
+	[SerializeField] private float m_fHitShakeMagnitude;
+
+	[Tooltip("Roughness of camera shake.")]
+	[SerializeField] private float m_fHitShakeRoughness;
+
+	[Tooltip("Fade in time of camera shake.")]
+	[SerializeField] private float m_fHitShakeFadeIn = -1f;
+
+	[Tooltip("Fade out time of camera shake.")]
+	[SerializeField] private float m_fHitShakeFadeOut = -1f;
 
 	[HideInInspector]
 	public GameObject m_movementArea;
 
 	[Tooltip("Bomb Actor Prefab.")]
 	[SerializeField] private GameObject m_bombActorPrefab;
+
+	[HideInInspector]
+	public int m_nLives;
+
+	private int m_nMaximumLives;
 	
 	[HideInInspector]
 	public eLifeState m_lifeState;
@@ -71,8 +82,7 @@ public class PlayerActor : MonoBehaviour {
 	private float m_fMovementBoundsX;
 	private float m_fMovementBoundsZ;
 
-	private float m_fDyingTimer;
-	private bool m_bDyingTimerIsActive;
+	private bool m_bHasBombSaved;
 
 	private float m_fRespawnInvincibilityTimer;
 	private bool m_bRespawnInvincibilityTimerIsActive;
@@ -99,6 +109,21 @@ public class PlayerActor : MonoBehaviour {
 		// guarantee collider and rb settings
 		GetComponent<Collider>().isTrigger = true;
 		GetComponent<Rigidbody>().isKinematic = true;
+
+		// if current difficulties num of lives has been set
+		if (SceneManager.Instance.CurrentDifficulty.numOfLives > 0) {
+			// set lives
+			m_nMaximumLives = SceneManager.Instance.CurrentDifficulty.numOfLives;
+			m_nLives = m_nMaximumLives;
+		}
+		else {
+			// send debug message
+			Debug.LogError("Couldn't find current difficulties number of lives, defaulting to 3.", gameObject);
+
+			// default to 3
+			m_nMaximumLives = 3;
+			m_nLives = 3;
+		}
 
 		// get movementArea
 		m_movementArea = GameObject.FindGameObjectWithTag("PlayerMovementArea");
@@ -139,20 +164,6 @@ public class PlayerActor : MonoBehaviour {
 	void Update() {
 
 		#region Timers
-		// if player is dying
-		if (m_bDyingTimerIsActive) {
-			// count down dying timer
-			m_fDyingTimer -= Time.deltaTime;
-		
-			// if timer is up
-			if (m_fDyingTimer <= 0f) {
-				// deactivate timer
-				m_bDyingTimerIsActive = false;
-
-				Respawn();
-			}
-		}
-
 		// if player has just respawned
 		if (m_bRespawnInvincibilityTimerIsActive) {
 			// count down invincibility timer
@@ -207,14 +218,16 @@ public class PlayerActor : MonoBehaviour {
 
 		// bomb
 		if (Input.GetButtonDown("Fire2")) {
-			// stop player from dying
-			if (m_lifeState == eLifeState.DYING) {
-				m_lifeState = eLifeState.NORMAL;
-				m_bDyingTimerIsActive = false;
-				m_nCurrentBombCount = 1;
-			}
+			if (m_nCurrentBombCount > 0) {
+				// stop player from dying
+				if (m_lifeState == eLifeState.DYING) {
+					m_lifeState = eLifeState.NORMAL;
+					m_nCurrentBombCount = 1;
+					m_bHasBombSaved = true;
+				}
 
-			ShootBomb();
+				ShootBomb();
+			}
 		}
 
 		// pause
@@ -267,7 +280,6 @@ public class PlayerActor : MonoBehaviour {
 
 		// if the player is dead
 		if(m_lifeState == eLifeState.DEAD) {
-			Debug.Log("Player is DEAD!");
 			SceneManager.Instance.SceneState = eSceneState.FAILED;
 		}
 	}
@@ -276,11 +288,16 @@ public class PlayerActor : MonoBehaviour {
 
 		// check that collision was with a bullet...
 		if (other.gameObject.tag == "EnemyBullet") {
+
 			// ...and that the bullet was active
 			if(other.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
+
 				// if player isn't invincible
 				if(m_lifeState != eLifeState.INVINCIBLE) {
-					Debug.Log(name + " has collided with an EnemyBullet");
+
+					// shake camera
+					CameraActor cameraActor = FindObjectOfType<CameraActor>();
+					cameraActor.ShakeCamera(m_fHitShakeMagnitude, m_fHitShakeRoughness, m_fHitShakeFadeIn, m_fHitShakeFadeOut);
 
 					//if player is shielded
 					if(m_lifeState == eLifeState.SHIELDED) {
@@ -290,10 +307,47 @@ public class PlayerActor : MonoBehaviour {
 					else if(m_lifeState == eLifeState.NORMAL) {
 						// set life state to dying
 						m_lifeState = eLifeState.DYING;
-						StartDyingTimer();
 					}
+
+					// freeze frames
+					StartCoroutine(FreezeFrames(m_nNumOfFreezeFrames));
 				}
 			}
+		}
+	}
+
+	IEnumerator FreezeFrames(int numOfFrames) {
+
+		// freeze game
+		Time.timeScale = 0f;
+
+		// freeze player
+		m_bCanMove = false;
+		
+		int i = 0;
+
+		while (i < numOfFrames) {
+			// wait for next frame
+			yield return new WaitForEndOfFrame();
+
+			// increment iterations
+			i++;
+		}
+
+		// unfreeze player
+		m_bCanMove = true;
+
+		// if player hasn't used the bomb to save themselves
+		if (!m_bHasBombSaved) {
+			
+			// reset time scale
+			Time.timeScale = 1f;
+			
+			Respawn();
+		}
+		else {
+			// reset boolean
+			m_bHasBombSaved = false;
 		}
 	}
 
@@ -314,13 +368,6 @@ public class PlayerActor : MonoBehaviour {
 		}
 	}
 
-	public void StartDyingTimer() {
-
-		// start dying timer
-		m_bDyingTimerIsActive = true;
-		m_fDyingTimer = m_fDyingTimerSeconds;
-	}
-
 	public void StartInvincibilityTimer(float duration) {
 
 		// start respawn timer
@@ -339,10 +386,9 @@ public class PlayerActor : MonoBehaviour {
 	public void AddLives(int adder) {
 
 		// add adder to m_nLives
-		m_nLives += adder;
-
-		// clamp between 0 and maxium lives
-		m_nLives = Mathf.Clamp(m_nLives, 0, m_nMaximumLives);
+		if (m_nLives + adder <= m_nMaximumLives) {
+			m_nLives += adder;
+		}
 	}
 
 	void ShootBomb() {
@@ -352,8 +398,13 @@ public class PlayerActor : MonoBehaviour {
 			// decrement bomb count
 			--m_nCurrentBombCount;
 
+			// create bomb
 			BombActor bombActor = Instantiate(m_bombActorPrefab, transform.position, Quaternion.identity).GetComponent<BombActor>();
+			
+			// parent bomb to Playfield
 			bombActor.transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
+			
+			// Start bomb
 			bombActor.StartBomb();
 		}
 	}

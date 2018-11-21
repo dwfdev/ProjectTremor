@@ -15,8 +15,28 @@ public class UICharacterSelect : MonoBehaviour {
 
 	[Tooltip("Witch toggle.")]
 	[SerializeField] private Toggle m_witchToggle;
+
+	[Tooltip("Difficulty dropdown component.")]
+	[SerializeField] private Dropdown m_difficultyDropdown;
+
+	void Start() {
+
+		List<Dropdown.OptionData> newOptions = new List<Dropdown.OptionData>();
+		
+		// fill newOptions with SceneManager difficulties
+		foreach(sGameDifficulty difficulty in SceneManager.Instance.Difficulties) {
+			Dropdown.OptionData newData = new Dropdown.OptionData(difficulty.name);
+			newOptions.Add(newData);
+		}
+
+		// Add these options to the drop down
+		m_difficultyDropdown.AddOptions(newOptions);
+
+		// initialise current difficulty to lowest
+		SceneManager.Instance.CurrentDifficulty = SceneManager.Instance.Difficulties[0];
+	}
 	
-	public void OnBooleanChanged(Toggle toggle) {
+	public void OnCharacterChanged(Toggle toggle) {
 
 		// check if toggle is set to false
 		if (!toggle.isOn) {
@@ -26,6 +46,12 @@ public class UICharacterSelect : MonoBehaviour {
 				toggle.isOn = true;
 			}
 		}
+	}
+
+	public void OnDifficultyChanged(Dropdown dropdown) {
+
+		// set current difficulty
+		SceneManager.Instance.CurrentDifficulty = SceneManager.Instance.Difficulties[dropdown.value];
 	}
 
 	public void OnBeginClick() {

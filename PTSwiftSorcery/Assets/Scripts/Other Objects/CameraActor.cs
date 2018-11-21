@@ -58,7 +58,7 @@ public class CameraActor : MonoBehaviour {
 		
 	}
 
-	public void ShakeCamera(float shakeMagnitude = 0f, float shakeRougness = 0f, float fadeInTime = float.MinValue, float fadeOutTime = float.MinValue) {
+	public void ShakeCamera(float shakeMagnitude = 0f, float shakeRougness = 0f, float fadeInTime = -1f, float fadeOutTime = -1f) {
 
 		// check to see if no values were inputted
 		if (shakeMagnitude == 0) {
@@ -69,11 +69,11 @@ public class CameraActor : MonoBehaviour {
 			shakeRougness = m_fDefaultShakeRoughness;
 		}
 
-		if (fadeInTime == float.MinValue) {
+		if (fadeInTime == -1f) {
 			fadeInTime = m_fDefaultFadeInTime;
 		}
 
-		if (fadeOutTime == float.MinValue) {
+		if (fadeOutTime == -1f) {
 			fadeOutTime = m_fDefaultFadeOutTime;
 		}
 

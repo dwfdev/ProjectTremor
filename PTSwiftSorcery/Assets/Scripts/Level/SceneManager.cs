@@ -38,6 +38,12 @@ public struct sGameScene {
 	public CursorLockMode lockMode;
 }
 
+[System.Serializable]
+public struct sGameDifficulty {
+	public string name;
+	public int numOfLives;
+}
+
 public class SceneManager : MonoBehaviour {
 
 	#region Make a Singleton Class
@@ -115,6 +121,18 @@ public class SceneManager : MonoBehaviour {
 
 	private sGameScene m_previousScene;
 
+	[Header("Design Settings")]
+
+	[Tooltip("Difficulties")]
+	[SerializeField] private sGameDifficulty[] m_difficulties;
+	public sGameDifficulty[] Difficulties {
+		get {
+			return m_difficulties;
+		}
+	}
+
+	[Header("")]
+
 	[Tooltip("List of all scenes in the game")]
 	[SerializeField] private sGameScene[] m_gameScenes;
 	public sGameScene[] GameScenes {
@@ -171,7 +189,17 @@ public class SceneManager : MonoBehaviour {
 			m_bIsWitch = value;
 		}
 	}
-	
+
+	private sGameDifficulty m_currentDifficulty;
+	public sGameDifficulty CurrentDifficulty {
+		get {
+			return m_currentDifficulty;
+		}
+		set {
+			m_currentDifficulty = value;
+		}
+	}
+
 	void SceneStateChangedToRUNNING() {
 		
 		// change time scale and fixed delta time
@@ -194,8 +222,6 @@ public class SceneManager : MonoBehaviour {
 		if ((player = GameObject.FindGameObjectWithTag("Player"))) {
 			player.GetComponent<PlayerActor>().m_bCanMove = true;
 		}
-
-		Debug.Log("Scene state change to running");
 	}
 
 	void SceneStateChangedToBOSS_FIGHT_STATIONARY() {
@@ -241,8 +267,6 @@ public class SceneManager : MonoBehaviour {
 		if ((player = GameObject.FindGameObjectWithTag("Player"))) {
 			player.GetComponent<PlayerActor>().m_bCanMove = false;
 		}
-
-		Debug.Log("Scene state change to paused");
 	}
 
 	void SceneStateChangedToCOMPLETE() {
@@ -270,8 +294,6 @@ public class SceneManager : MonoBehaviour {
 		if((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
 			musicManager.StartVictoryMusic();
 		}
-
-		Debug.Log("Scene state change to complete");
 	}
 
 	void SceneStateChangedToFAILED() {
@@ -299,8 +321,6 @@ public class SceneManager : MonoBehaviour {
 		if((musicManager = GameObject.FindObjectOfType<MusicManager>())) {
 			musicManager.StartFailedMusic();
 		}
-
-		Debug.Log("Scene state change to failed");
 	}
 
 	public void LoadScene(sGameScene newScene, LoadSceneMode loadSceneMode) {
@@ -341,7 +361,7 @@ public class SceneManager : MonoBehaviour {
 
 	public sGameScene GetGameSceneWithName(string name) {
 
-		foreach(sGameScene scene in m_gameScenes) {
+		foreach (sGameScene scene in m_gameScenes) {
 			if (scene.name == name) {
 				return scene;
 			}
@@ -357,12 +377,13 @@ public class SceneManager : MonoBehaviour {
 
 	public sGameScene GetGameSceneByType(eSceneType type) {
 
-		foreach(sGameScene scene in m_gameScenes) {
+		foreach (sGameScene scene in m_gameScenes) {
 			if (scene.type == type) {
 				return scene;
 			}
 		}
 
+		// if no scene of type exists, return null game scene
 		return new sGameScene() {
 			name = "NULL",
 			type = eSceneType.NULL,

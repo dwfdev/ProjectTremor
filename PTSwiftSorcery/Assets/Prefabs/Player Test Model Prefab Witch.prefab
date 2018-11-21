@@ -1824,22 +1824,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c178052142d8e4d8f361329edee925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nLives: 3
-  m_nMaximumLives: 3
   m_nInitialBombCount: 1
   m_nMaximumBombCount: 5
-  m_fDyingTimerSeconds: 1
   m_fRespawnInvincibilityTimerSeconds: 1
   m_fMouseSensitivity: 0.25
   m_fMouseSmoothing: 2
   m_nNumOfFreezeFrames: 12
-  m_fHitShakeMagnitude: 0
-  m_fHitShakeRoughness: 0
-  m_fHitShakeFadeIn: -1
-  m_fHitShakeFadeOut: -1
+  m_fHitShakeMagnitude: 6
+  m_fHitShakeRoughness: 4
+  m_fHitShakeFadeIn: 0.15
+  m_fHitShakeFadeOut: 1
   m_movementArea: {fileID: 0}
   m_bombActorPrefab: {fileID: 1590706385417856, guid: d1d38830e2243b042ba445a2923009ff,
     type: 2}
+  m_nLives: 3
   m_lifeState: 0
   m_currentSection: {fileID: 0}
   m_spellManager: {fileID: 0}

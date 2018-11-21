@@ -8,13 +8,6 @@ using UnityEngine;
 ///		Date Modified:	1/11/2018
 ///</summary>
 
-public enum eLevelDifficulty
-{
-	EASY,
-	NORMAL,
-	HARD
-}
-
 public class LevelManager : MonoBehaviour
 {
 
@@ -26,12 +19,6 @@ public class LevelManager : MonoBehaviour
 
 	[Tooltip("The direction the level will scroll.")]
 	public Vector3 m_v3LevelScrollDirection;
-
-	[HideInInspector]
-	public eLevelDifficulty m_levelDifficulty;
-
-	[HideInInspector]
-	public float m_fTimeScale;
 
 	void Start()
 	{
@@ -45,9 +32,6 @@ public class LevelManager : MonoBehaviour
 			Debug.LogError("Tag must be Playfield", m_playField);
 		}
 
-		// initialise level difficulty to EASY
-		m_levelDifficulty = eLevelDifficulty.EASY;
-
 		// set scene state to running
 		SceneManager.Instance.SceneState = eSceneState.RUNNING;
 
@@ -58,14 +42,6 @@ public class LevelManager : MonoBehaviour
 
 		// move the player's movement area
 		m_playField.transform.Translate(m_v3LevelScrollDirection * m_fLevelScrollSpeed * Time.deltaTime);
-
-	}
-
-	public void SetLevelDifficulty(eLevelDifficulty difficulty)
-	{
-
-		// change level difficulty
-		m_levelDifficulty = difficulty;
 
 	}
 }
