@@ -291,19 +291,23 @@ public class PlayerSpellManager : MonoBehaviour
 					GameObject level4newBullet1 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 					GameObject level4newBullet2 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 					GameObject level4newBullet3 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet4 = Instantiate(m_icePrefab, transform.position, transform.rotation);
+					GameObject level4newBullet5 = Instantiate(m_icePrefab, transform.position, transform.rotation);
 
 					level4newBullet1.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
 					level4newBullet2.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
 					level4newBullet3.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
+					level4newBullet4.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
+					level4newBullet5.GetComponent<PlayerSpellProjectile>().m_nDamage = m_nIceDamage + m_nTier2IceDamageAddition + m_nTier3IceDamageAddition + m_nTier4IceDamageAddition;
 
 					Vector3 newPos3 = new Vector3(0.5f, 0.0f, 0.0f);
+					Vector3 newPos4 = new Vector3(1.0f, 0.0f, 0.0f);
 
 					level4newBullet2.transform.position += newPos3;
 					level4newBullet3.transform.position -= newPos3;
+					level4newBullet4.transform.position += newPos4;
+					level4newBullet5.transform.position -= newPos4;
 
-					level4newBullet1.GetComponent<PlayerSpellProjectile>().m_bIsHoming = true;
-					level4newBullet2.GetComponent<PlayerSpellProjectile>().m_bIsHoming = true;
-					level4newBullet3.GetComponent<PlayerSpellProjectile>().m_bIsHoming = true;
 					break;
 				default:
 					if (m_nSpellLevel < 0)

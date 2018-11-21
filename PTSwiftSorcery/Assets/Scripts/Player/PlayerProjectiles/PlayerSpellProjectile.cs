@@ -18,9 +18,6 @@ public class PlayerSpellProjectile : MonoBehaviour
 	[Tooltip("What this shot seeks towards, assuming it's homing")]
 	public GameObject m_target;
 
-	[Tooltip("Whether or not the player is firing homing shots")]
-	public bool m_bIsHoming;
-
 	[Tooltip("How much damage this shot does")]
 	public int m_nDamage;
 
@@ -36,38 +33,7 @@ public class PlayerSpellProjectile : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(m_bIsHoming)
-		{
-			if(m_target == null || !m_target.activeSelf)
-			{
-				GameObject target = null;
-				//m_target = GameObject.FindGameObjectWithTag("Enemy");
-				for(int i = 0; i < m_player.GetComponent<PlayerActor>().m_currentSection.m_enemiesList.Count; i++)
-				{
-					if (m_player.GetComponent<PlayerActor>().m_currentSection.m_enemiesList[i].gameObject.activeSelf)
-					{
-						target = m_player.GetComponent<PlayerActor>().m_currentSection.m_enemiesList[i].gameObject;
-						break;
-					}
-				}
-				if (target != null)
-					m_target = target;
-				else
-				{
-					m_bIsHoming = false;
-					return;
-				}
-			}
-			//seek towards m_target
-			Vector3 homingVector = m_target.transform.position - transform.position;
-			homingVector.Normalize();
-
-			transform.position += homingVector * m_fMoveSpeed * Time.deltaTime;
-		}
-		else
-		{
-			transform.position += transform.forward * m_fMoveSpeed * Time.deltaTime;
-		}
+		transform.position += transform.forward * m_fMoveSpeed * Time.deltaTime;
 	}
 
 	private void OnTriggerExit(Collider other)

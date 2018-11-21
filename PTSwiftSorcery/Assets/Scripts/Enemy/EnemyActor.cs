@@ -41,6 +41,9 @@ public class EnemyActor : MonoBehaviour
 	[HideInInspector]
 	public bool m_bIsAlive;
 
+	[HideInInspector]
+	public bool m_bIsShooting;
+
 	//The current level section of this enemy
 	[HideInInspector]
 	public LevelSection m_section;
@@ -269,6 +272,19 @@ public class EnemyActor : MonoBehaviour
 		if (other.tag == "PlayerProjectile")
 		{
 			TakeDamage(other.GetComponent<PlayerSpellProjectile>().m_nDamage);
+		}
+
+		if (other.tag == "Playfield")
+		{
+			m_bIsShooting = true;
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if(other.tag == "Playfield")
+		{
+			m_bIsShooting = false;
 		}
 	}
 }

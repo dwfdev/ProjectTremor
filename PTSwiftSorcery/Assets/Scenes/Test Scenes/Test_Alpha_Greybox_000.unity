@@ -3154,12 +3154,12 @@ Prefab:
     - target: {fileID: 114768714304547922, guid: 9d1a74ffdb5190e4fac02e09e47938db,
         type: 2}
       propertyPath: m_nMaximumLives
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114768714304547922, guid: 9d1a74ffdb5190e4fac02e09e47938db,
         type: 2}
       propertyPath: m_nLives
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114850636868403150, guid: 9d1a74ffdb5190e4fac02e09e47938db,
         type: 2}
@@ -3200,6 +3200,16 @@ Prefab:
         type: 2}
       propertyPath: m_fTier4LightningRadius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 23116825530245050, guid: 9d1a74ffdb5190e4fac02e09e47938db,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114768714304547922, guid: 9d1a74ffdb5190e4fac02e09e47938db,
+        type: 2}
+      propertyPath: m_nMaximumBombCount
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d1a74ffdb5190e4fac02e09e47938db, type: 2}
@@ -3895,7 +3905,6 @@ MonoBehaviour:
   m_fRespawnInvincibilityTimerSeconds: 3
   m_fMouseSensitivity: 0.25
   m_fMouseSmoothing: 2
-  m_v3RespawnLocation: {x: 0, y: 1, z: -7}
   m_movementArea: {fileID: 0}
   m_bombActorPrefab: {fileID: 1590706385417856, guid: d1d38830e2243b042ba445a2923009ff,
     type: 2}
