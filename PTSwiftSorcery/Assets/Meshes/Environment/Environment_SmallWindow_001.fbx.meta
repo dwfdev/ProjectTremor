@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6098dd732e778434fbdd834f87e7d0fe
-timeCreated: 1539906587
+guid: febefefe348f8b54e92e0cc6ceffd1bc
+timeCreated: 1542841277
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -14,18 +14,15 @@ ModelImporter:
     400004: WindowGlass
     400006: WindowInner
     2100000: lambert1
-    2300000: //RootNode
-    2300002: WindowBorder
-    2300004: WindowGlass
-    2300006: WindowInner
-    3300000: //RootNode
-    3300002: WindowBorder
-    3300004: WindowGlass
-    3300006: WindowInner
-    4300000: Environment_Window_002
-    4300002: WindowBorder
-    4300004: WindowGlass
-    4300006: WindowInner
+    2300000: WindowBorder
+    2300002: WindowGlass
+    2300004: WindowInner
+    3300000: WindowBorder
+    3300002: WindowGlass
+    3300004: WindowInner
+    4300000: WindowBorder
+    4300002: WindowGlass
+    4300004: WindowInner
   externalObjects: {}
   materials:
     importMaterials: 1
