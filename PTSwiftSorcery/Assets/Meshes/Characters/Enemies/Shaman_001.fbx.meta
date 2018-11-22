@@ -1,17 +1,69 @@
 fileFormatVersion: 2
-guid: 4275e6f2932a1784b88f1dd2614d59f1
-timeCreated: 1539224706
+guid: f65134b9d743b8c4d9b649865d84f5cf
+timeCreated: 1542865127
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Shaman_001
+    100000: Clothes_001
+    100002: Jnt_Elbow_Left
+    100004: Jnt_Elbow_Right
+    100006: Jnt_Foot_Left
+    100008: Jnt_Foot_Right
+    100010: Jnt_Head
+    100012: Jnt_Knee_Left
+    100014: Jnt_Knee_Right
+    100016: Jnt_Neck
+    100018: Jnt_Scapula_Left
+    100020: Jnt_Scapula_Right
+    100022: Jnt_Shoulder_Left
+    100024: Jnt_Shoulder_Right
+    100026: Jnt_Spine_01
+    100028: Jnt_Spine_02
+    100030: Jnt_Spine_03
+    100032: Jnt_Thigh_Left
+    100034: Jnt_Thigh_Right
+    100036: Jnt_Wrist_Left
+    100038: Jnt_Wrist_Right
+    100040: Root
+    100042: Shaman
+    100044: Shaman_001
+    100046: //RootNode
+    100048: Shaman_Skull_001
+    400000: Clothes_001
+    400002: Jnt_Elbow_Left
+    400004: Jnt_Elbow_Right
+    400006: Jnt_Foot_Left
+    400008: Jnt_Foot_Right
+    400010: Jnt_Head
+    400012: Jnt_Knee_Left
+    400014: Jnt_Knee_Right
+    400016: Jnt_Neck
+    400018: Jnt_Scapula_Left
+    400020: Jnt_Scapula_Right
+    400022: Jnt_Shoulder_Left
+    400024: Jnt_Shoulder_Right
+    400026: Jnt_Spine_01
+    400028: Jnt_Spine_02
+    400030: Jnt_Spine_03
+    400032: Jnt_Thigh_Left
+    400034: Jnt_Thigh_Right
+    400036: Jnt_Wrist_Left
+    400038: Jnt_Wrist_Right
+    400040: Root
+    400042: Shaman
+    400044: //RootNode
+    400046: Shaman_001
+    400048: Shaman_Skull_001
+    2100000: lambert3
+    2100002: lambert1
+    4300000: Shaman_Skull_001
+    4300002: Shaman_001
+    4300004: Clothes_001
     9500000: //RootNode
+    13700000: Clothes_001
+    13700002: Shaman_001
+    13700004: Shaman_Skull_001
   externalObjects: {}
   materials:
     importMaterials: 1
