@@ -37,8 +37,8 @@ public class PlayerActor : MonoBehaviour {
 	[SerializeField] private float m_fRespawnInvincibilityTimerSeconds;
 
 	[Header("Mouse Input.")]
-	[Tooltip("Scales raw mouse movement.")]
-	[SerializeField] private float m_fMouseSensitivity;
+	
+	private float m_fMouseSensitivity;
 
 	[Tooltip("Lessens jitter. Too high a value makes it unresponsive.")]
 	[SerializeField] private float m_fMouseSmoothing;
@@ -118,11 +118,24 @@ public class PlayerActor : MonoBehaviour {
 		}
 		else {
 			// send debug message
-			Debug.LogError("Couldn't find current difficulties number of lives, defaulting to 3.", gameObject);
+			Debug.LogWarning("Couldn't find current difficulties number of lives, defaulting to 3.", gameObject);
 
 			// default to 3
 			m_nMaximumLives = 3;
 			m_nLives = 3;
+		}
+
+		// if scene manager has a mouse sensitivity
+		if (SceneManager.Instance.MouseSensitivity > 0) {
+			// set mouse sensitivity
+			m_fMouseSensitivity = SceneManager.Instance.MouseSensitivity;
+		}
+		else {
+			// send warning
+			Debug.LogWarning("Couldn't find mouse sensitivity, defaulting to 0.25", gameObject);
+
+			// default to 0.25
+			m_fMouseSensitivity = 0.25f;
 		}
 
 		// get movementArea

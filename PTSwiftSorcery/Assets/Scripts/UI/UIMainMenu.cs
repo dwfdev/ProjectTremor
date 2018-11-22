@@ -9,8 +9,11 @@ using UnityEngine;
 
 public class UIMainMenu : MonoBehaviour {
 
-	[Tooltip("Options Menu parent game object.")]
-	[SerializeField] private GameObject m_CharacterSelectMenu;
+	[Tooltip("Options menu parent game object.")]
+	[SerializeField] private GameObject m_optionsMenu;
+
+	[Tooltip("Chracter Select Menu parent game object.")]
+	[SerializeField] private GameObject m_characterSelectMenu;
 
 	[Tooltip("Character selection toggle.")]
 	[SerializeField] private UnityEngine.UI.Toggle m_toggle;
@@ -19,7 +22,7 @@ public class UIMainMenu : MonoBehaviour {
 
 		// initialise menu screens
 		gameObject.SetActive(true);
-		m_CharacterSelectMenu.SetActive(false);
+		m_characterSelectMenu.SetActive(false);
 
 		// initialise toggle
 		m_toggle.isOn = SceneManager.Instance.IsWitch;
@@ -28,7 +31,16 @@ public class UIMainMenu : MonoBehaviour {
 	public void OnStartPressed() {
 		
 		// activate character select screen
-		m_CharacterSelectMenu.SetActive(true);
+		m_characterSelectMenu.SetActive(true);
+
+		// deactivate main menu
+		gameObject.SetActive(false);
+	}
+
+	public void OnOptionsPressed() {
+
+		// activate options menu
+		m_optionsMenu.SetActive(true);
 
 		// deactivate main menu
 		gameObject.SetActive(false);

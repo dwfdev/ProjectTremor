@@ -1827,7 +1827,6 @@ MonoBehaviour:
   m_nInitialBombCount: 1
   m_nMaximumBombCount: 5
   m_fRespawnInvincibilityTimerSeconds: 1
-  m_fMouseSensitivity: 0.25
   m_fMouseSmoothing: 2
   m_nNumOfFreezeFrames: 12
   m_fHitShakeMagnitude: 6
@@ -1883,6 +1882,7 @@ MonoBehaviour:
   m_fTier2LightningRadius: 6
   m_fTier3LightningRadius: 9
   m_fTier4LightningRadius: 12
+  m_audioMixerGroup: {fileID: 24300002, guid: 6290262ee52c1ef4d9270507d95e355f, type: 2}
   m_fireAudioClip: {fileID: 8300000, guid: 3cf13eeb6ffad624d87fa6583be19609, type: 3}
   m_fFireAudioClipVolume: 0.4
   m_iceAudioClip: {fileID: 8300000, guid: 2605687f2ec714246b6506e7c7c79f9d, type: 3}

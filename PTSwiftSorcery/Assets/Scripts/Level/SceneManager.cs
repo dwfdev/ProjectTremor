@@ -141,6 +141,7 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 
+	#region Screen Objects
 	private GameObject m_pauseMenu;
 	public GameObject PauseMenu {
 		get {
@@ -179,7 +180,9 @@ public class SceneManager : MonoBehaviour {
 			}
 		}
 	}
+	#endregion
 
+	#region User Settings
 	private bool m_bIsWitch = true;
 	public bool IsWitch {
 		get {
@@ -199,6 +202,17 @@ public class SceneManager : MonoBehaviour {
 			m_currentDifficulty = value;
 		}
 	}
+	
+	private float m_mouseSensitivity = 0.25f;
+	public float MouseSensitivity {
+		get {
+			return m_mouseSensitivity;
+		}
+		set {
+			m_mouseSensitivity = value;
+		}
+	}
+	#endregion
 
 	void SceneStateChangedToRUNNING() {
 		

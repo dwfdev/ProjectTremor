@@ -48,10 +48,10 @@ public class UICharacterSelect : MonoBehaviour {
 		}
 	}
 
-	public void OnDifficultyChanged(Dropdown dropdown) {
+	public void OnDifficultyChanged(int difficultyIndex) {
 
 		// set current difficulty
-		SceneManager.Instance.CurrentDifficulty = SceneManager.Instance.Difficulties[dropdown.value];
+		SceneManager.Instance.CurrentDifficulty = SceneManager.Instance.Difficulties[difficultyIndex];
 	}
 
 	public void OnBeginClick() {

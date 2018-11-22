@@ -120,6 +120,9 @@ public class PlayerSpellManager : MonoBehaviour
 
 	[Header("Audio")]
 
+	[Tooltip("Audio Mixer Group")]
+	[SerializeField] private UnityEngine.Audio.AudioMixerGroup m_audioMixerGroup;
+
 	[Tooltip("Fire Spell Audio")]
 	[SerializeField] private AudioClip m_fireAudioClip;
 
@@ -388,7 +391,7 @@ public class PlayerSpellManager : MonoBehaviour
 	AudioSource PlayClipAt(AudioClip clip, Vector3 pos, float vol) {
 
 		// create temp GameObject
-		GameObject tempGO = new GameObject("tempAudio");
+		GameObject tempGO = new GameObject("PlayerProjectileAudio");
 		
 		// set position
 		tempGO.transform.position = pos;
@@ -401,6 +404,9 @@ public class PlayerSpellManager : MonoBehaviour
 
 		// volume
 		audioSource.volume = vol;
+
+		// audio mixer
+		audioSource.outputAudioMixerGroup = m_audioMixerGroup;
 
 		// Spatial Blen
 		audioSource.spatialBlend = 0f;
