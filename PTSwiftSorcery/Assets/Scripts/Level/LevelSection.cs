@@ -84,6 +84,13 @@ public class LevelSection : MonoBehaviour {
 		// if all enemies have been killed
 		if (enemyKillCount == m_enemiesList.Count) {
 			m_completionState = eCompletionState.CLEARED;
+
+			// if this was a stationary level section
+			if (m_bStopScrollingOnBossFight) {
+				// continue scrolling
+				LevelManager levelManager = FindObjectOfType<LevelManager>();
+				levelManager.m_fLevelScrollSpeed = levelManager.MaxScrollSpeed;
+			}
 		}
 
 	}
@@ -145,13 +152,6 @@ public class LevelSection : MonoBehaviour {
 					enemy.Deactivate();
 					enemy.GetComponent<UIHealthBar>().DestroyHealthBar();
 				}
-			}
-
-			// if this was a stationary level section
-			if (m_bStopScrollingOnBossFight) {
-				// continue scrolling
-				LevelManager levelManager = FindObjectOfType<LevelManager>();
-				levelManager.m_fLevelScrollSpeed = levelManager.MaxScrollSpeed;
 			}
 
 			foreach(EnemyActor enemy in m_enemiesList) {
