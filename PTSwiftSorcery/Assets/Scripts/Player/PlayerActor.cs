@@ -66,6 +66,9 @@ public class PlayerActor : MonoBehaviour {
 	[Tooltip("Bomb Actor Prefab.")]
 	[SerializeField] private GameObject m_bombActorPrefab;
 
+	[Tooltip("HitBox Indicator.")]
+	[SerializeField] private GameObject m_hitBoxIndicator;
+
 	[HideInInspector]
 	public int m_nLives;
 
@@ -241,6 +244,12 @@ public class PlayerActor : MonoBehaviour {
 
 				ShootBomb();
 			}
+		}
+
+		// show hit box indicator
+		if (Input.GetButtonDown("ShowHitBox")) {
+			MeshRenderer renderer = m_hitBoxIndicator.GetComponent<MeshRenderer>();
+			renderer.enabled = !renderer.enabled;
 		}
 
 		// pause
