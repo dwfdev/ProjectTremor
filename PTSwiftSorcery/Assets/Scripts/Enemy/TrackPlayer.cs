@@ -19,7 +19,7 @@ public class TrackPlayer : MonoBehaviour {
 	void Update ()
 	{
 		Vector3 lookPos = m_player.transform.position - transform.position;
-		lookPos.y = transform.position.y;
+		lookPos.y = 0;
 
 		Quaternion targetRotation = Quaternion.LookRotation(lookPos);
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
