@@ -18,7 +18,10 @@ public class TrackPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		Quaternion targetRotation = Quaternion.LookRotation(m_player.transform.position - transform.position);
+		Vector3 lookPos = m_player.transform.position - transform.position;
+		lookPos.y = transform.position.y;
+
+		Quaternion targetRotation = Quaternion.LookRotation(lookPos);
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
 	}
 }
