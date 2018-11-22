@@ -35,6 +35,9 @@ public class PlayerSkimming : MonoBehaviour
 	{
 		//if near an enemy bullet, start skimming
 		if (other.tag == "EnemyBullet")
-			m_bIsSkimming = true;
+		{
+			if(other.GetComponent<EnemySpellProjectile>().m_bActive)
+				m_bIsSkimming = true;
+		}
 	}
 }

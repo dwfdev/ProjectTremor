@@ -67,7 +67,6 @@ public class BossActor : EnemyActor
 				if (m_nNextPhase >= m_BossPhases.Length)
 				{
 					m_bLastPhase = true;
-					Debug.Log("This is the last phase");
 				}
 			}
 		}
@@ -108,6 +107,5 @@ public class BossActor : EnemyActor
 		}
 
 		++m_nNextPhase;
-		Debug.Log(gameObject.name + " has changed phase to " + (m_nNextPhase + 1).ToString());
 	}
 }

@@ -34,14 +34,19 @@ public class EnemyBeamSpell : EnemySpellProjectile
 			m_fTimer = 0.0f;
 
 			//set active to true
-			m_bActive = true;
-			
-			//get colour
-			Color color = gameObject.GetComponent<Renderer>().material.color;
-			//set colour alpha to opaque
-			color.a = 1.0f;
-			//set new colour
-			gameObject.GetComponent<Renderer>().material.color = color;
+			if (m_fBeamStayTimer != 0.0f)
+			{
+				m_bActive = true;
+
+				//get colour
+				Color color = gameObject.GetComponent<Renderer>().material.color;
+				//set colour alpha to opaque
+				color.a = 1.0f;
+				//set new colour
+				gameObject.GetComponent<Renderer>().material.color = color;
+			}
+			else
+				Destroy(gameObject);
 		}
 
 		//if timer reaches end of stay timer and is already active, destroy self

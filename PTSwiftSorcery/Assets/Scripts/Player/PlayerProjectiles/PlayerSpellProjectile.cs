@@ -21,13 +21,10 @@ public class PlayerSpellProjectile : MonoBehaviour
 	[Tooltip("How much damage this shot does")]
 	public int m_nDamage;
 
-	private GameObject m_player;
-
 	// Use this for initialization
 	void Start ()
 	{
 		transform.parent = GameObject.FindGameObjectWithTag("Playfield").transform;
-		m_player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame

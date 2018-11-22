@@ -15,6 +15,7 @@ public enum eEnemyAIType
 	FOLLOW_WAYPOINT
 };
 
+[RequireComponent(typeof(UIHitEffect))]
 public class EnemyActor : MonoBehaviour
 {
 	[Header("Global Variables")]
@@ -198,8 +199,6 @@ public class EnemyActor : MonoBehaviour
 
 	public void Activate(GameObject target, GameObject newParent)
 	{
-
-		Debug.Log(gameObject.name + " was activated");
 		// set isActive to true
 		m_bIsActive = true;
 
@@ -222,8 +221,6 @@ public class EnemyActor : MonoBehaviour
 
 	public void Die()
 	{
-		Debug.Log(gameObject.name + " has died");
-
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;
@@ -243,8 +240,6 @@ public class EnemyActor : MonoBehaviour
 
 	public void Deactivate()
 	{
-		Debug.Log(gameObject.name + " was deactivated");
-
 		//Set inactive and dead
 		m_bIsActive = false;
 		m_bIsAlive = false;

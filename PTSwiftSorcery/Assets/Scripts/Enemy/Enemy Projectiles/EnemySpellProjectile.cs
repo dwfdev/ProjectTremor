@@ -16,7 +16,8 @@ public class EnemySpellProjectile : MonoBehaviour
 	public float m_fMoveSpeed;
 
 	//whether or not this projectile is active
-	protected bool m_bActive;
+	[HideInInspector]
+	public bool m_bActive;
 
 	// Use this for initialization
 	virtual protected void Awake ()

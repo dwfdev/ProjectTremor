@@ -24,6 +24,9 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	[Tooltip("How long since becoming active until this pattern stops firing")]
 	[SerializeField] private float m_fDisableDelay;
 
+	[Tooltip("Whether this pattern should start shooting immediately")]
+	[SerializeField] private bool m_bStartShooting;
+
 	//Whether or not this pattern is currently active
 	private bool m_bIsActive;
 
@@ -33,7 +36,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	//The current time in seconds
 	private float m_fCurrentTimer;
 
-	//how long 
+	//timer for how long this pattern will stay active(?)
 	private float m_fActiveTimer;
 
 	[Tooltip("All spawn locations of bullets in this pattern")]
@@ -62,7 +65,10 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
-		m_fCurrentTimer = 0.0f;
+		if (m_bStartShooting)
+			m_fCurrentTimer = m_fTimer;
+		else
+			m_fCurrentTimer = 0.0f;
 		m_fActiveTimer = 0.0f;
 	}
 	
@@ -72,7 +78,6 @@ public class EnemyBulletPatternManager : MonoBehaviour
 	{
 		if(m_bIsActive && !m_bIsDisabled)
 		{
-			
 			if(m_parent != null)
 			{
 				if(m_parent.GetComponent<EnemyActor>() != null)
