@@ -936,6 +936,7 @@ MonoBehaviour:
   m_fTimer: 3
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 397415608}
 --- !u!1001 &105203693
@@ -951,11 +952,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4392289228569348, guid: 263758676932b7a45b95d933a63be322, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4392289228569348, guid: 263758676932b7a45b95d933a63be322, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10.35
+      value: -8.92
       objectReference: {fileID: 0}
     - target: {fileID: 4392289228569348, guid: 263758676932b7a45b95d933a63be322, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1286,6 +1287,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 14956126}
 --- !u!1 &139141534
@@ -1337,6 +1339,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 2.7
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1062886580}
 --- !u!1001 &185892044
@@ -2007,33 +2010,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4286316016846972, guid: e0e9970f0db916f499ee269b5694ae4b,
     type: 2}
   m_PrefabInternal: {fileID: 551038207}
---- !u!1 &295378530 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1787388917287664, guid: 263758676932b7a45b95d933a63be322,
-    type: 2}
-  m_PrefabInternal: {fileID: 105203693}
 --- !u!4 &295378531 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4392289228569348, guid: 263758676932b7a45b95d933a63be322,
     type: 2}
   m_PrefabInternal: {fileID: 105203693}
---- !u!114 &295378532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 295378530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dda6d44feba32e4ca0e7b4fcbdf15ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_parent: {fileID: 0}
-  m_bEnvironment: 0
-  m_fTimer: 0
-  m_fDelay: 0
-  m_fDisableDelay: 0
-  m_children: []
 --- !u!1 &304806733
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,6 +2331,7 @@ MonoBehaviour:
   m_fTimer: 3
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 77145746}
 --- !u!1 &355322587
@@ -2832,6 +2814,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 3.1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 578991261}
 --- !u!1 &393868923
@@ -3805,6 +3788,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1.9
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1318520958}
 --- !u!1 &487263532
@@ -5104,6 +5088,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1.9
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1514521237}
 --- !u!1 &595148961
@@ -5404,6 +5389,7 @@ MonoBehaviour:
   m_fTimer: 2
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1059963097}
   - {fileID: 2146979690}
@@ -5679,6 +5665,7 @@ MonoBehaviour:
   m_fTimer: 3
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1704602761}
 --- !u!1 &695738940
@@ -6112,6 +6099,53 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0e9970f0db916f499ee269b5694ae4b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &710216702
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757597102928552, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23581290148085314, guid: 63f7c15d5bda6204f81919338cd59c99,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b257d0d465ffaea4e8e964ed4032d573, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 63f7c15d5bda6204f81919338cd59c99, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &719471279
 GameObject:
@@ -7117,6 +7151,7 @@ MonoBehaviour:
   m_fTimer: 1
   m_fDelay: 0
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 551811685}
   - {fileID: 1955793470}
@@ -7938,6 +7973,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 937766094}
 --- !u!1 &978823897
@@ -7989,6 +8025,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1.5
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 2028442252}
 --- !u!1 &988435717
@@ -8040,6 +8077,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 2.5
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1707383662}
 --- !u!1 &994512615
@@ -8499,6 +8537,7 @@ MonoBehaviour:
   m_fTimer: 5
   m_fDelay: 0
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1976605937}
   - {fileID: 1256154909}
@@ -8553,6 +8592,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 2.9
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 778974176}
 --- !u!1 &1144819991
@@ -8717,90 +8757,6 @@ Transform:
   m_Father: {fileID: 519307700}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &1145101335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1145101339}
-  - component: {fileID: 1145101338}
-  - component: {fileID: 1145101337}
-  - component: {fileID: 1145101336}
-  m_Layer: 0
-  m_Name: Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1145101336
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1145101335}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 901ef315737d7b94d8ebb063d0193ab7, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &1145101337
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1145101335}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1145101338
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1145101335}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1145101339
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1145101335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 300}
-  m_LocalScale: {x: 18, y: 1, z: 600}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154723770
 GameObject:
   m_ObjectHideFlags: 0
@@ -9216,6 +9172,7 @@ MonoBehaviour:
   m_fTimer: 2
   m_fDelay: 0
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1567549353}
   - {fileID: 1535246533}
@@ -9498,6 +9455,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 2.1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 543050896}
 --- !u!1 &1202813416
@@ -9623,6 +9581,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1765575993}
 --- !u!1001 &1233060462
@@ -10571,6 +10530,7 @@ MonoBehaviour:
   m_fTimer: 3
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 2127425292}
 --- !u!1 &1322994882
@@ -10865,6 +10825,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1.5
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1720280211}
 --- !u!1 &1341022850
@@ -10916,6 +10877,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 2.1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 943206919}
 --- !u!1 &1347779039
@@ -11009,6 +10971,7 @@ MonoBehaviour:
   m_fTimer: 2
   m_fDelay: 1.5
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 695738940}
   - {fileID: 450147365}
@@ -11762,6 +11725,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 0
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 212068059}
   - {fileID: 973704550}
@@ -13370,6 +13334,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1.7
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 324674828}
 --- !u!1 &1720280211
@@ -14221,6 +14186,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1.7
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 445018811}
 --- !u!1 &1852401403
@@ -14617,6 +14583,7 @@ MonoBehaviour:
   m_fTimer: 2
   m_fDelay: 0.5
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1885074644}
   - {fileID: 1001309547}
@@ -15392,6 +15359,7 @@ MonoBehaviour:
   m_fTimer: 0.5
   m_fDelay: 1
   m_fDisableDelay: 0
+  m_bStartShooting: 0
   m_children:
   - {fileID: 1845070345}
 --- !u!1 &1951986932
