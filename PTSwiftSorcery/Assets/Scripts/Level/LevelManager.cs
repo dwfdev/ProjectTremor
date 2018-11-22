@@ -17,6 +17,14 @@ public class LevelManager : MonoBehaviour
 	[Tooltip("The speed at which the level will scroll.")]
 	public float m_fLevelScrollSpeed;
 
+	[Tooltip("Maximum scroll speed.")]
+	private float m_fMaxLevelScrollSpeed;
+	public float MaxScrollSpeed {
+		get {
+			return m_fMaxLevelScrollSpeed;
+		}
+	}
+
 	[Tooltip("The direction the level will scroll.")]
 	public Vector3 m_v3LevelScrollDirection;
 
@@ -31,6 +39,9 @@ public class LevelManager : MonoBehaviour
 		if (m_playField.tag != "Playfield") {
 			Debug.LogError("Tag must be Playfield", m_playField);
 		}
+
+		// set Max scroll speed
+		m_fMaxLevelScrollSpeed = m_fLevelScrollSpeed;
 
 		// set scene state to running
 		SceneManager.Instance.SceneState = eSceneState.RUNNING;

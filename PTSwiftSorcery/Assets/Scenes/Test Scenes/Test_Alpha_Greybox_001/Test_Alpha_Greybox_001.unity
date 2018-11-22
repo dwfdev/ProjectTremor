@@ -4086,6 +4086,7 @@ GameObject:
   - component: {fileID: 1391364002}
   - component: {fileID: 1391364006}
   - component: {fileID: 1391364005}
+  - component: {fileID: 1391364007}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4186,6 +4187,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
+--- !u!114 &1391364007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391364000}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb4d9bd051a71f48a18edd27bce7c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 1.5
+  intensity: 1
+  blurSize: 1
+  blurIterations: 2
+  fastBloomMaterial: {fileID: 2100000, guid: 221340b8b5ad10940ba1646f87e3770c, type: 2}
 --- !u!1 &1408053299
 GameObject:
   m_ObjectHideFlags: 0

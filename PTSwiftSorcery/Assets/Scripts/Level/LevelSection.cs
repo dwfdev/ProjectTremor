@@ -68,11 +68,17 @@ public class LevelSection : MonoBehaviour {
 			}
 		}
 
+		// if designer wants infinite attempts
 		if (m_nNumberOfAttempts != 0) {
 			// if player has run out of attempts
 			if (m_nCurrentSectionAttempts > m_nNumberOfAttempts) {
 				m_completionState = eCompletionState.FAILED;
 			}
+		}
+
+		// if designer wants no looping
+		if (m_nNumberOfAttempts == -1) {
+			m_completionState = eCompletionState.CLEARED;
 		}
 		
 		// if all enemies have been killed
@@ -100,14 +106,16 @@ public class LevelSection : MonoBehaviour {
 				}
 			}
 
-			// set scene state to boss fight
+			// if this is a boss fight
 			if (m_bIsBossFight) {
-				if (m_bStopScrollingOnBossFight) {
-					SceneManager.Instance.SceneState = eSceneState.BOSS_FIGHT_STATIONARY;
-				}
-				else {
-					SceneManager.Instance.SceneState = eSceneState.BOSS_FIGHT_SCROLLING;
-				}
+				// set scene state to BOSS_FIGHT
+				SceneManager.Instance.SceneState = eSceneState.BOSS_FIGHT;
+			}
+
+			// if LevelSection is non scrolling
+			if (m_bStopScrollingOnBossFight) {
+				LevelManager levelManager = FindObjectOfType<LevelManager>();
+				levelManager.m_fLevelScrollSpeed = 0f;
 			}
 		}
 
@@ -137,6 +145,13 @@ public class LevelSection : MonoBehaviour {
 					enemy.Deactivate();
 					enemy.GetComponent<UIHealthBar>().DestroyHealthBar();
 				}
+			}
+
+			// if this was a stationary level section
+			if (m_bStopScrollingOnBossFight) {
+				// continue scrolling
+				LevelManager levelManager = FindObjectOfType<LevelManager>();
+				levelManager.m_fLevelScrollSpeed = levelManager.MaxScrollSpeed;
 			}
 
 			foreach(EnemyActor enemy in m_enemiesList) {

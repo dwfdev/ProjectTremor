@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 
+[RequireComponent(typeof(FastMobileBloom))]
 public class CameraActor : MonoBehaviour {
 
 	[Header("Dynamic Camera")]
@@ -46,6 +47,9 @@ public class CameraActor : MonoBehaviour {
 			Debug.LogError("Tag is not MainCamera", gameObject);
 		}
 		
+		// set bloom to player setting
+		FastMobileBloom FMB = GetComponent<FastMobileBloom>();
+		FMB.enabled = SceneManager.Instance.BloomOn;
 	}
 	
 	// Update is called once per frame

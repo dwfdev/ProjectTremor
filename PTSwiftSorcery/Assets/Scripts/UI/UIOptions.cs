@@ -23,6 +23,9 @@ public class UIOptions : MonoBehaviour {
 	[Tooltip("Resolutions Dropdown")]
 	[SerializeField] private Dropdown m_resolutionsDropdown;
 
+	[Tooltip("Bloom Toggle")]
+	[SerializeField] private Toggle m_bloomToggle;
+
 	[Tooltip("Game Audio Mixer")]
 	[SerializeField] private AudioMixer m_audioMixer;
 
@@ -30,6 +33,8 @@ public class UIOptions : MonoBehaviour {
 
 		// initialise mouse sensitivity slider's value
 		m_mouseSensSlider.value = SceneManager.Instance.MouseSensitivity;
+
+		m_bloomToggle.isOn = SceneManager.Instance.BloomOn;
 
 		// initialise resolutions dropdown
 		Resolution[] resolutions = Screen.resolutions;
@@ -82,6 +87,12 @@ public class UIOptions : MonoBehaviour {
 
 		// change resolution
 		Screen.SetResolution(newRes.width, newRes.height, Screen.fullScreen);
+	}
+
+	public void OnBloomToggleChanged(bool isOn) {
+
+		// change bloom on
+		SceneManager.Instance.BloomOn = isOn;
 	}
 	
 	public void OnBackButtonClicked() {
