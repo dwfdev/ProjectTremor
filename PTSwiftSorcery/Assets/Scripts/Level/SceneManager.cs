@@ -203,7 +203,7 @@ public class SceneManager : MonoBehaviour {
 		}
 	}
 	
-	private float m_mouseSensitivity = 0.25f;
+	private float m_mouseSensitivity = 0.5f;
 	public float MouseSensitivity {
 		get {
 			return m_mouseSensitivity;
