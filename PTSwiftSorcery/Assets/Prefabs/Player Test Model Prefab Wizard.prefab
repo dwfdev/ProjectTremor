@@ -1468,7 +1468,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716443907520832}
-  m_LocalRotation: {x: -0.20534524, y: -0.7792508, z: -0.5222721, w: 0.27898613}
+  m_LocalRotation: {x: -0.20534527, y: -0.7792509, z: -0.52227217, w: 0.27898616}
   m_LocalPosition: {x: -0.12939999, y: -0.06891698, z: -0.084940374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2506,6 +2506,7 @@ MonoBehaviour:
   m_movementArea: {fileID: 0}
   m_bombActorPrefab: {fileID: 1590706385417856, guid: d1d38830e2243b042ba445a2923009ff,
     type: 2}
+  m_hitBoxIndicator: {fileID: 1959962529352688}
   m_nLives: 3
   m_lifeState: 0
   m_currentSection: {fileID: 0}

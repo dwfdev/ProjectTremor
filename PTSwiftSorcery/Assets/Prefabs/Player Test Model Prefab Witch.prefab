@@ -1990,6 +1990,7 @@ MonoBehaviour:
   m_movementArea: {fileID: 0}
   m_bombActorPrefab: {fileID: 1590706385417856, guid: d1d38830e2243b042ba445a2923009ff,
     type: 2}
+  m_hitBoxIndicator: {fileID: 1869574447453826}
   m_nLives: 3
   m_lifeState: 0
   m_currentSection: {fileID: 0}
