@@ -31,15 +31,18 @@ public class UIHealthBar : MonoBehaviour {
 		this.enabled = false;
 	}
 
+	void Start() {
+
+		// get EnemyActor
+		m_enemyActor = GetComponent<EnemyActor>();
+	}
+
 	// Use this for initialization
 	void StartHealthBar () {
 		
 		// instantiate health bar
 		m_healthBar = Instantiate(m_healthBarPrefab, FindObjectOfType<Canvas>().transform).GetComponent<Image>();
 		m_healthBarFilled = new List<Image>(m_healthBar.GetComponentsInChildren<Image>()).Find(img => img != m_healthBar);
-
-		// get EnemyActor
-		m_enemyActor = GetComponent<EnemyActor>();
 
 		// make sure health bar is higher than other ui elements in hierarchy
 		m_healthBar.transform.SetSiblingIndex(0);
