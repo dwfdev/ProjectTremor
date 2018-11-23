@@ -35,7 +35,8 @@ public class PickUpActor : MonoBehaviour {
 		if (other.tag == "Player") {
 			switch(m_type) {
 				case ePickUpType.SPELL_UPGRADE:
-					++other.gameObject.GetComponent<PlayerSpellManager>().m_nSpellLevel;
+					other.gameObject.GetComponent<PlayerSpellManager>().m_nSpellLevel++;
+					SceneManager.Instance.SpellLevel = other.gameObject.GetComponent<PlayerSpellManager>().m_nSpellLevel;
 					break;
 				case ePickUpType.SHIELD:
 					other.gameObject.GetComponent<PlayerActor>().m_lifeState = eLifeState.SHIELDED;

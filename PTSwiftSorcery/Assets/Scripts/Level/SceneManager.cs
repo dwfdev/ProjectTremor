@@ -223,6 +223,18 @@ public class SceneManager : MonoBehaviour {
 	}
 	#endregion
 
+	#region Player Stats
+	private int m_nSpellLevel;
+	public int SpellLevel {
+		get {
+			return m_nSpellLevel;
+		}
+		set {
+			m_nSpellLevel = value;
+		}
+	}
+	#endregion
+
 	void SceneStateChangedToRUNNING() {
 		
 		// change time scale and fixed delta time
