@@ -3551,19 +3551,19 @@ Prefab:
         type: 2}
       propertyPath: m_bulletPrefab
       value: 
-      objectReference: {fileID: 1235747390441638, guid: bc2ffd250055233409a18b65f99fca39,
+      objectReference: {fileID: 1102504844417164, guid: 9cf351e0589da074db15d5de04070930,
         type: 2}
     - target: {fileID: 114798344871505562, guid: 57da39e2433117e4b9300f5499905e91,
         type: 2}
       propertyPath: m_bulletPrefab
       value: 
-      objectReference: {fileID: 1235747390441638, guid: bc2ffd250055233409a18b65f99fca39,
+      objectReference: {fileID: 1102504844417164, guid: 9cf351e0589da074db15d5de04070930,
         type: 2}
     - target: {fileID: 114733010952263430, guid: 57da39e2433117e4b9300f5499905e91,
         type: 2}
       propertyPath: m_bulletPrefab
       value: 
-      objectReference: {fileID: 1235747390441638, guid: bc2ffd250055233409a18b65f99fca39,
+      objectReference: {fileID: 1102504844417164, guid: 9cf351e0589da074db15d5de04070930,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57da39e2433117e4b9300f5499905e91, type: 2}
@@ -4783,6 +4783,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0.89, z: 0}
+--- !u!114 &1339661526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1339661519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d42df5c2bc434a4ea28cfdcecf9218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+    type: 2}
+  m_fOffset: 2
 --- !u!1 &1388333666
 GameObject:
   m_ObjectHideFlags: 0
@@ -7805,7 +7819,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400044, guid: c55ee3f849cf30a469340d1075019662, type: 3}
   m_PrefabInternal: {fileID: 1204631564}
   m_GameObject: {fileID: 2138266621}
-  m_LocalRotation: {x: 0.35300112, y: -0.14900239, z: -0.58842295, w: 0.71200216}
+  m_LocalRotation: {x: 0.3530011, y: -0.14900237, z: -0.5884229, w: 0.7120021}
   m_LocalPosition: {x: 0.089042805, y: -0.15480487, z: 0.035100423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
