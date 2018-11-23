@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 54879255731451806}
   - component: {fileID: 114850636868403150}
   - component: {fileID: 114768714304547922}
+  - component: {fileID: 114485256283703686}
   m_Layer: 0
   m_Name: Player Test Model Prefab Witch
   m_TagString: Player
@@ -1985,6 +1986,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114485256283703686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487310804936804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fdb99529d51b84693fc04c82daf0bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_material: {fileID: 2100000, guid: 371b1d70a7ebdc64583a964e53963c1a, type: 2}
+  m_emissions:
+  - {fileID: 2800000, guid: 7e835a768fbba3042a4a8cb7471860ce, type: 3}
+  - {fileID: 2800000, guid: c9dc468d0dbdfe444aa302f830a51c10, type: 3}
+  - {fileID: 2800000, guid: 8a578cf25f720fb458ea0bcbcc2f1830, type: 3}
+  m_particleSystemStaff: {fileID: 198453143488300364}
+  m_particleSystemCircleMinorGlow: {fileID: 198664644101683438}
+  m_particleSystemCircle: {fileID: 198652127927442364}
+  m_colours:
+  - {r: 1, g: 0.39310342, b: 0, a: 1}
+  - {r: 1, g: 0.70547664, b: 0.5147059, a: 1}
+  - {r: 0, g: 0.5034485, b: 1, a: 1}
+  - {r: 0.44117647, g: 0.65314406, b: 1, a: 0}
+  - {r: 0.5294118, g: 0, b: 1, a: 1}
+  - {r: 0.92941177, g: 0.7372549, b: 1, a: 1}
 --- !u!114 &114748994204471086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6181,7 +6208,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1314759725
+  randomSeed: -749984003
   InitialModule:
     serializedVersion: 3
     enabled: 1
