@@ -73,7 +73,9 @@ public class EnemyHomingSpell : EnemySpellProjectile
 		//if currently homing, smoothly rotate towards player
 		if(m_bIsHoming)
 		{
-			Quaternion targetRotation = Quaternion.LookRotation(m_target.transform.position - transform.position);
+			Vector3 lookPos = m_target.transform.position - transform.position;
+			lookPos.y = 0;
+			Quaternion targetRotation = Quaternion.LookRotation(lookPos);
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
 		}
 

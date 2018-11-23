@@ -126,7 +126,9 @@ public class EnemyActor : MonoBehaviour
 			//If this enemy tracks player, turn towards them
 			if (m_bTrackPlayer)
 			{
-				Quaternion targetRotation = Quaternion.LookRotation(m_player.transform.position - transform.position);
+				Vector3 lookPos = m_player.transform.position - transform.position;
+				lookPos.y = 0;
+				Quaternion targetRotation = Quaternion.LookRotation(lookPos);
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, m_fRotationSpeed * Time.deltaTime);
 			}
 			//If enemy does not track player, and has rotation, rotate enemy clockwise at constant rate
