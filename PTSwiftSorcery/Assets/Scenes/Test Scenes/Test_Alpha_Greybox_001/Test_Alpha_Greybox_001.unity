@@ -336,6 +336,10 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100046, guid: 257587e2bba023049b67fbf77a86a466, type: 3}
   m_PrefabInternal: {fileID: 1144102870}
+--- !u!4 &142998223 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400044, guid: 257587e2bba023049b67fbf77a86a466, type: 3}
+  m_PrefabInternal: {fileID: 1144102870}
 --- !u!114 &142998224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3148,7 +3152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_lScore: 0
   m_fMultiplier: 0
-  m_pickupPrefab: {fileID: 1618678415637018, guid: 975b3343401cd0f40a4ee19d8bb9ce95,
+  m_pickupPrefab: {fileID: 1137240310305794, guid: 0300f7f07f093d146964551065abed89,
     type: 2}
   m_fPickupMoveSpeed: 1
   m_lMinScorePickupValue: 25
@@ -3493,7 +3497,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1339661521}
+    m_TransformParent: {fileID: 142998223}
     m_Modifications:
     - target: {fileID: 4537466894417134, guid: 57da39e2433117e4b9300f5499905e91, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3509,15 +3513,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4537466894417134, guid: 57da39e2433117e4b9300f5499905e91, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4537466894417134, guid: 57da39e2433117e4b9300f5499905e91, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4537466894417134, guid: 57da39e2433117e4b9300f5499905e91, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4537466894417134, guid: 57da39e2433117e4b9300f5499905e91, type: 2}
       propertyPath: m_LocalRotation.w
@@ -3531,7 +3535,7 @@ Prefab:
         type: 2}
       propertyPath: m_parent
       value: 
-      objectReference: {fileID: 1339661519}
+      objectReference: {fileID: 142998221}
     - target: {fileID: 114782454517238174, guid: 57da39e2433117e4b9300f5499905e91,
         type: 2}
       propertyPath: m_eBulletType
@@ -4709,10 +4713,6 @@ Transform:
 --- !u!1 &1339661519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 9146fdb9706e45549a821bb42387e1fc, type: 3}
-  m_PrefabInternal: {fileID: 163391870}
---- !u!4 &1339661521 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400002, guid: 9146fdb9706e45549a821bb42387e1fc, type: 3}
   m_PrefabInternal: {fileID: 163391870}
 --- !u!114 &1339661522
 MonoBehaviour:
