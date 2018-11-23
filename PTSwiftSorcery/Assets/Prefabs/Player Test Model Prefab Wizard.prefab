@@ -1487,7 +1487,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716443907520832}
-  m_LocalRotation: {x: -0.20534524, y: -0.7792508, z: -0.5222721, w: 0.27898613}
+  m_LocalRotation: {x: -0.20534527, y: -0.7792509, z: -0.52227217, w: 0.27898616}
   m_LocalPosition: {x: -0.12939999, y: -0.06891698, z: -0.084940374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2fa70a77785944280186a32fbe2464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_nDamage: 4
+  m_nDamage: 8
   m_spellType: 2
   m_lightningParticle: {fileID: 198310735475738838}
   m_perimiterParticle: {fileID: 198871687604377230}
@@ -2531,7 +2531,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7e835a768fbba3042a4a8cb7471860ce, type: 3}
   - {fileID: 2800000, guid: c9dc468d0dbdfe444aa302f830a51c10, type: 3}
   - {fileID: 2800000, guid: 8a578cf25f720fb458ea0bcbcc2f1830, type: 3}
-  m_particleSystem: {fileID: 198301685572673996}
+  m_particleSystemStaff: {fileID: 0}
+  m_particleSystemCircleMinorGlow: {fileID: 0}
+  m_particleSystemCircle: {fileID: 0}
   m_colours:
   - {r: 1, g: 0.47586206, b: 0, a: 1}
   - {r: 1, g: 0.653144, b: 0.33823532, a: 1}
@@ -2637,7 +2639,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.65
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135782798405402624
 SphereCollider:
@@ -13501,8 +13503,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 15
+      minMaxState: 0
+      scalar: 24
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -33680,7 +33682,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 19.9
+      scalar: 36
       minScalar: 1
       maxCurve:
         serializedVersion: 2
