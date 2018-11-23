@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitEffectTexture: {fileID: 2800000, guid: dbc6f5fd97eab9348a4aa7b8516a216c, type: 3}
+  m_hitEffectTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   m_fEffectDuration: 0.05
 --- !u!114 &142998225
 MonoBehaviour:
@@ -3014,7 +3014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitEffectTexture: {fileID: 2800000, guid: dbc6f5fd97eab9348a4aa7b8516a216c, type: 3}
+  m_hitEffectTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   m_fEffectDuration: 0.05
 --- !u!114 &1036753795
 MonoBehaviour:
@@ -4670,7 +4670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitEffectTexture: {fileID: 2800000, guid: dbc6f5fd97eab9348a4aa7b8516a216c, type: 3}
+  m_hitEffectTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   m_fEffectDuration: 0.05
 --- !u!54 &1339661524
 Rigidbody:
@@ -5117,7 +5117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitEffectTexture: {fileID: 2800000, guid: da3931e5460607648ba3ca4e750b9e43, type: 3}
+  m_hitEffectTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   m_fEffectDuration: 0.05
 --- !u!1 &1438953764
 GameObject:
@@ -6852,7 +6852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415051ae846e0d446910a7a407de6d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hitEffectTexture: {fileID: 2800000, guid: dbc6f5fd97eab9348a4aa7b8516a216c, type: 3}
+  m_hitEffectTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
   m_fEffectDuration: 0.05
 --- !u!1 &1849769656
 GameObject:
