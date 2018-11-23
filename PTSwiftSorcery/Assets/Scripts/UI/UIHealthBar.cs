@@ -25,12 +25,14 @@ public class UIHealthBar : MonoBehaviour {
 	private Image m_healthBar;
 	private Image m_healthBarFilled;
 
+	private bool m_bIsActive;
+
 	void Awake() {
 		this.enabled = false;
 	}
 
 	// Use this for initialization
-	void Start () {
+	void StartHealthBar () {
 		
 		// instantiate health bar
 		m_healthBar = Instantiate(m_healthBarPrefab, FindObjectOfType<Canvas>().transform).GetComponent<Image>();
@@ -41,15 +43,23 @@ public class UIHealthBar : MonoBehaviour {
 
 		// make sure health bar is higher than other ui elements in hierarchy
 		m_healthBar.transform.SetSiblingIndex(0);
+
+		m_bIsActive = true;
 	}
 	
 	void FixedUpdate () {
-		
-		// move the health bar to be slightly above gameObject on canvas
-		m_healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.forward * m_fOffset);
 
-		// fill bar according to enemies health
-		m_healthBarFilled.fillAmount = (float)m_enemyActor.m_nCurrentHealth / (float)m_enemyActor.m_nHealth;
+		if (m_enemyActor.m_bIsShooting && !m_bIsActive) {
+			StartHealthBar();
+		}
+		
+		if (m_bIsActive) {
+			// move the health bar to be slightly above gameObject on canvas
+			m_healthBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.forward * m_fOffset);
+
+			// fill bar according to enemies health
+			m_healthBarFilled.fillAmount = (float)m_enemyActor.m_nCurrentHealth / (float)m_enemyActor.m_nHealth;
+		}
 	}
 
 	public void DestroyHealthBar() {
