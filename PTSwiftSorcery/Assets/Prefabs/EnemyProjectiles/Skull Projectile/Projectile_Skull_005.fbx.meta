@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: 34392ef8b7b9ce74490e8dc4d658c659
+guid: 5b50694166df52f4c967b6cf1a42494b
+timeCreated: 1542943074
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: lambert19
     2300000: //RootNode
     3300000: //RootNode
     4300000: Projectile_Skull_001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -83,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
