@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: 6f36b171d27c0a5459d54cf543a5f336
+timeCreated: 1542939857
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BackL
+    100002: BackR
+    100004: BottomPiece1L
+    100006: BottomPiece1R
+    100008: BottomPiece2L
+    100010: BottomPiece2R
+    100012: BottomPiece3L
+    100014: BottomPiece3R
+    100016: BottomPieceMid
+    100018: LegBL
+    100020: LegBR
+    100022: LegFL
+    100024: LegFL_Block1
+    100026: LegFL_Block2
+    100028: LegFL_Block3
+    100030: LegFR
+    100032: LegFR_Block1
+    100034: LegFR_Block2
+    100036: LegFR_Block3
+    100038: LegsL
+    100040: LegsR
+    100042: Mid
+    100044: //RootNode
+    100046: Prop_Chair_001_BackR_Backing
+    100048: Prop_Chair_001_BackR_BackRBlock2
+    400000: BackL
+    400002: BackR
+    400004: BottomPiece1L
+    400006: BottomPiece1R
+    400008: BottomPiece2L
+    400010: BottomPiece2R
+    400012: BottomPiece3L
+    400014: BottomPiece3R
+    400016: BottomPieceMid
+    400018: LegBL
+    400020: LegBR
+    400022: LegFL
+    400024: LegFL_Block1
+    400026: LegFL_Block2
+    400028: LegFL_Block3
+    400030: LegFR
+    400032: LegFR_Block1
+    400034: LegFR_Block2
+    400036: LegFR_Block3
+    400038: LegsL
+    400040: LegsR
+    400042: Mid
+    400044: //RootNode
+    400046: Prop_Chair_001_BackR_Backing
+    400048: Prop_Chair_001_BackR_BackRBlock2
+    2100000: lambert1
+    2300000: BackL
+    2300002: BackR
+    2300004: BottomPiece1L
+    2300006: BottomPiece1R
+    2300008: BottomPiece3L
+    2300010: BottomPiece3R
+    2300012: BottomPieceMid
+    2300014: LegBL
+    2300016: LegBR
+    2300018: LegFL
+    2300020: LegFL_Block1
+    2300022: LegFL_Block2
+    2300024: LegFL_Block3
+    2300026: LegFR
+    2300028: LegFR_Block1
+    2300030: LegFR_Block2
+    2300032: LegFR_Block3
+    2300034: Mid
+    2300036: Prop_Chair_001_BackR_Backing
+    2300038: Prop_Chair_001_BackR_BackRBlock2
+    3300000: BackL
+    3300002: BackR
+    3300004: BottomPiece1L
+    3300006: BottomPiece1R
+    3300008: BottomPiece3L
+    3300010: BottomPiece3R
+    3300012: BottomPieceMid
+    3300014: LegBL
+    3300016: LegBR
+    3300018: LegFL
+    3300020: LegFL_Block1
+    3300022: LegFL_Block2
+    3300024: LegFL_Block3
+    3300026: LegFR
+    3300028: LegFR_Block1
+    3300030: LegFR_Block2
+    3300032: LegFR_Block3
+    3300034: Mid
+    3300036: Prop_Chair_001_BackR_Backing
+    3300038: Prop_Chair_001_BackR_BackRBlock2
+    4300000: BackR
+    4300002: BackL
+    4300004: Mid
+    4300006: Prop_Chair_001_BackR_Backing
+    4300008: Prop_Chair_001_BackR_BackRBlock2
+    4300010: LegFR
+    4300012: LegFR_Block1
+    4300014: LegBR
+    4300016: BottomPiece1R
+    4300018: LegFR_Block2
+    4300020: BottomPiece3R
+    4300022: LegFR_Block3
+    4300024: LegFL
+    4300026: LegFL_Block1
+    4300028: LegBL
+    4300030: BottomPiece1L
+    4300032: LegFL_Block2
+    4300034: BottomPiece3L
+    4300036: BottomPieceMid
+    4300038: LegFL_Block3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
