@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -380,6 +381,7 @@ public class SceneManager : MonoBehaviour {
 		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
 	}
 
+	[Obsolete("Use GetGameSceneByType method instead.")]
 	public sGameScene GetGameSceneWithName(string name) {
 
 		foreach (sGameScene scene in m_gameScenes) {
