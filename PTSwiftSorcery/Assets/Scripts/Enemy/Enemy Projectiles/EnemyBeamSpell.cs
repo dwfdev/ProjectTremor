@@ -37,6 +37,8 @@ public class EnemyBeamSpell : EnemySpellProjectile
 		//start out inactive
 		m_bActive = false;
 
+		transform.Rotate(Vector3.right, -90.0f);
+
 		#region Scale Beam Particle Systems
 		///<summary> Code by Denver Lacey ///</summary>
 
