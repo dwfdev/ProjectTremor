@@ -34,8 +34,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887827987618214}
-  m_LocalRotation: {x: 0.00000047683704, y: 3.4106049e-13, z: 0.0000007301568, w: -1}
-  m_LocalPosition: {x: 9.78, y: 8.57, z: 25.28}
+  m_LocalRotation: {x: 0.00000047683704, y: 8.100186e-13, z: 0.0000017434356, w: -1}
+  m_LocalPosition: {x: 14.38, y: 4.66, z: 325.11}
   m_LocalScale: {x: 0.5237165, y: 0.5237167, z: 0.5237167}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 346027358
+  randomSeed: 1988212226
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -503,7 +503,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.04
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -661,7 +661,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 80
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1003,9 +1003,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.6911765, g: 0.5313507, b: 0.11180794, a: 1}
-        key1: {r: 0.2647059, g: 0.23074517, b: 0.040873714, a: 1}
-        key2: {r: 0.46323532, g: 0.46323532, b: 0.46323532, a: 1}
+        key0: {r: 0, g: 0, b: 0, a: 1}
+        key1: {r: 0.45588237, g: 0.45014918, b: 0.44917822, a: 1}
+        key2: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
         key3: {r: 0.46323532, g: 0.46323532, b: 0.46323532, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1709,7 +1709,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -1834,7 +1834,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 1
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -1843,7 +1843,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3441,7 +3441,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.009
+  m_MaxParticleSize: 0.0095
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
