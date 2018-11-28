@@ -476,7 +476,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1405155034948978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4676235046605698}
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_bEnvironment: 0
   m_fMoveSpeed: 0
   m_eBulletType: 1
-  m_bulletPrefab: {fileID: 1333472805976614, guid: ea9461e56aaf666449c9d9452d3bd2b9,
+  m_bulletPrefab: {fileID: 1387468520410350, guid: 21884160e5babef469f6e6b70574b235,
     type: 2}
   m_fBeamActiveTimer: 0.5
   m_fBeamStayTimer: 0
