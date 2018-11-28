@@ -2,7 +2,7 @@
 ///		Script Manager:	Denver
 ///		Description:	Handles the functionality of the LevelSection.
 ///						Stores all enemies of its section and loops player.
-///		Date Modified:	25/10/2018
+///		Date Modified:	28/11/2018
 /// </summary>
 
 using System.Collections;
@@ -149,16 +149,23 @@ public class LevelSection : MonoBehaviour {
 			// section is failed
 			else if (m_completionState == eCompletionState.FAILED) {
 				foreach(EnemyActor enemy in m_enemiesList) {
-					enemy.Deactivate();
-					enemy.GetComponent<UIHealthBar>().DestroyHealthBar();
+					if (enemy.m_bIsActive) {
+						enemy.Deactivate();
+					}
 				}
 			}
 
-			foreach(EnemyActor enemy in m_enemiesList) {
-				Destroy(enemy.gameObject, 3f);
-			}
+			// section is cleared
+			else {
+				foreach(EnemyActor enemy in m_enemiesList) {
+					if (enemy.m_bIsActive) {
+						enemy.Deactivate();
+					}
+				}
 
-			Destroy(gameObject, 3f);
+				// and destroy section after a time
+				Destroy(gameObject, 3f);
+			}
 		}
 
 	}
