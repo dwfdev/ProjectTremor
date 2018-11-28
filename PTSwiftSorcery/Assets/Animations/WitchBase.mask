@@ -10,89 +10,83 @@ AvatarMask:
   m_Elements:
   - m_Path: 
     m_Weight: 1
-  - m_Path: Ctrl_World
+  - m_Path: Grp_World
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip
+  - m_Path: Grp_World/Ctrl_World
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Left_Collar/Ctrl_Left_Collar/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand/Book_001
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand/Book_001
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Right_Elbow
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Right_Elbow/Ctrl_Right_Elbow
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Right_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Right_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand/Ctrl_Right_Hand
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand/Ctrl_Right_Hand
+  - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Right_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand/Ctrl_Right_Hand/Staff_002
     m_Weight: 1
-  - m_Path: Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Right_Collar/Ctrl_Right_Collar/Grp_Right_Shoulder/Ctrl_Right_Shoulder/Grp_Group_Elbow/Ctrl_Right_Elbow/Grp_Right_Hand/Ctrl_Right_Hand/Staff_002
+  - m_Path: LP_Belt
     m_Weight: 1
-  - m_Path: Model
+  - m_Path: LP_Body
     m_Weight: 1
-  - m_Path: Model/Belt
+  - m_Path: LP_Boots
     m_Weight: 1
-  - m_Path: Model/Body
+  - m_Path: LP_Cuffs
     m_Weight: 1
-  - m_Path: Model/Boots
+  - m_Path: LP_Dress
     m_Weight: 1
-  - m_Path: Model/Cloak
+  - m_Path: LP_Hair
+    m_Weight: 1
+  - m_Path: LP_Hair_Left
+    m_Weight: 1
+  - m_Path: LP_Hair_Right
+    m_Weight: 1
+  - m_Path: LP_Hat
+    m_Weight: 1
+  - m_Path: LP_Loin
+    m_Weight: 1
+  - m_Path: LP_Potion
+    m_Weight: 1
+  - m_Path: LP_Scarf
     m_Weight: 0
-  - m_Path: Model/Coat
+  - m_Path: LP_Tails
     m_Weight: 0
-  - m_Path: Model/Hair
-    m_Weight: 0
-  - m_Path: Model/Hat
-    m_Weight: 1
-  - m_Path: Model/Pentagram
-    m_Weight: 1
-  - m_Path: Model/Scarf_Left
-    m_Weight: 0
-  - m_Path: Model/Scarf_Right
-    m_Weight: 0
-  - m_Path: Model/Skirt
-    m_Weight: 0
-  - m_Path: Model/Spiral
-    m_Weight: 0
-  - m_Path: Model/WaistBelt
-    m_Weight: 1
   - m_Path: Root
     m_Weight: 1
   - m_Path: Root/Jnt_Hip
     m_Weight: 1
-  - m_Path: Root/Jnt_Hip/Jnt_Cloak
+  - m_Path: Root/Jnt_Hip/Jnt_Dress
     m_Weight: 0
-  - m_Path: Root/Jnt_Hip/Jnt_Cloak_Left
-    m_Weight: 0
-  - m_Path: Root/Jnt_Hip/Jnt_Cloak_Right
+  - m_Path: Root/Jnt_Hip/Jnt_Left_Dress
     m_Weight: 0
   - m_Path: Root/Jnt_Hip/Jnt_Left_Leg
     m_Weight: 1
@@ -100,11 +94,17 @@ AvatarMask:
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Left_Leg/Jnt_Left_Knee/Jnt_Left_Foot
     m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Left_Leg/Jnt_Left_Knee/Jnt_Left_Foot/Jnt_Left_Toe
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Right_Dress
+    m_Weight: 0
   - m_Path: Root/Jnt_Hip/Jnt_Right_Leg
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Right_Leg/Jnt_Right_Knee
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Right_Leg/Jnt_Right_Knee/Jnt_Right_Foot
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Right_Leg/Jnt_Right_Knee/Jnt_Right_Foot/Jnt_Right_Toe
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Waist
     m_Weight: 1
@@ -117,6 +117,20 @@ AvatarMask:
   - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Knuckles
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Knuckles/Jnt_Left_Fingers
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Knuckles/Jnt_Left_Fingers/Jnt_Left_Fingers_Tip
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Knuckles/Jnt_Left_Index
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Knuckles/Jnt_Left_Index/Jnt_Left_Index_Tip
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Thumb
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Collar/Jnt_Left_Shoulder/Jnt_Left_Elbow/Jnt_Left_Hand/Jnt_Left_Thumb/Jnt_Left_Thumb_Tip
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Left_Scarf
     m_Weight: 0
@@ -131,6 +145,20 @@ AvatarMask:
   - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Knuckles
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Knuckles/Jnt_Right_Fingers
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Knuckles/Jnt_Right_Fingers/Jnt_Right_Fingers_Tip
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Knuckles/Jnt_Right_Index
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Knuckles/Jnt_Right_Index/Jnt_Right_Index_Tip
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Thumb
+    m_Weight: 1
+  - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Collar/Jnt_Right_Shoulder/Jnt_Right_Elbow/Jnt_Right_Hand/Jnt_Right_Thumb/Jnt_Right_Thumb_Tip
     m_Weight: 1
   - m_Path: Root/Jnt_Hip/Jnt_Waist/Jnt_Chest/Jnt_Right_Scarf
     m_Weight: 0

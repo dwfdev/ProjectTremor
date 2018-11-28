@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: a04a47c76d2f5184098b162ae0ae46b7
+timeCreated: 1543383983
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Jnt_Chest
+    100004: Jnt_Dress
+    100006: Jnt_Head
+    100008: Jnt_Hip
+    100010: Jnt_Left_Collar
+    100012: Jnt_Left_Dress
+    100014: Jnt_Left_Elbow
+    100016: Jnt_Left_Fingers
+    100018: Jnt_Left_Fingers_Tip
+    100020: Jnt_Left_Foot
+    100022: Jnt_Left_Hand
+    100024: Jnt_Left_Index
+    100026: Jnt_Left_Index_Tip
+    100028: Jnt_Left_Knee
+    100030: Jnt_Left_Knuckles
+    100032: Jnt_Left_Leg
+    100034: Jnt_Left_Scarf
+    100036: Jnt_Left_Shoulder
+    100038: Jnt_Left_Thumb
+    100040: Jnt_Left_Thumb_Tip
+    100042: Jnt_Left_Toe
+    100044: Jnt_Neck
+    100046: Jnt_Right_Collar
+    100048: Jnt_Right_Dress
+    100050: Jnt_Right_Elbow
+    100052: Jnt_Right_Fingers
+    100054: Jnt_Right_Fingers_Tip
+    100056: Jnt_Right_Foot
+    100058: Jnt_Right_Hand
+    100060: Jnt_Right_Index
+    100062: Jnt_Right_Index_Tip
+    100064: Jnt_Right_Knee
+    100066: Jnt_Right_Knuckles
+    100068: Jnt_Right_Leg
+    100070: Jnt_Right_Scarf
+    100072: Jnt_Right_Shoulder
+    100074: Jnt_Right_Thumb
+    100076: Jnt_Right_Thumb_Tip
+    100078: Jnt_Right_Toe
+    100080: Jnt_Waist
+    100082: LP_Belt
+    100084: LP_Boots
+    100086: LP_Cuffs
+    100088: LP_Dress
+    100090: LP_Evil_Body
+    100092: LP_Evil_Cuffs
+    100094: LP_Hair
+    100096: LP_Hair_Left
+    100098: LP_Hair_Right
+    100100: LP_Helm
+    100102: LP_Loin
+    100104: LP_Potion
+    100106: LP_Scarf
+    100108: LP_Tails
+    100110: Root
+    400000: //RootNode
+    400002: Jnt_Chest
+    400004: Jnt_Dress
+    400006: Jnt_Head
+    400008: Jnt_Hip
+    400010: Jnt_Left_Collar
+    400012: Jnt_Left_Dress
+    400014: Jnt_Left_Elbow
+    400016: Jnt_Left_Fingers
+    400018: Jnt_Left_Fingers_Tip
+    400020: Jnt_Left_Foot
+    400022: Jnt_Left_Hand
+    400024: Jnt_Left_Index
+    400026: Jnt_Left_Index_Tip
+    400028: Jnt_Left_Knee
+    400030: Jnt_Left_Knuckles
+    400032: Jnt_Left_Leg
+    400034: Jnt_Left_Scarf
+    400036: Jnt_Left_Shoulder
+    400038: Jnt_Left_Thumb
+    400040: Jnt_Left_Thumb_Tip
+    400042: Jnt_Left_Toe
+    400044: Jnt_Neck
+    400046: Jnt_Right_Collar
+    400048: Jnt_Right_Dress
+    400050: Jnt_Right_Elbow
+    400052: Jnt_Right_Fingers
+    400054: Jnt_Right_Fingers_Tip
+    400056: Jnt_Right_Foot
+    400058: Jnt_Right_Hand
+    400060: Jnt_Right_Index
+    400062: Jnt_Right_Index_Tip
+    400064: Jnt_Right_Knee
+    400066: Jnt_Right_Knuckles
+    400068: Jnt_Right_Leg
+    400070: Jnt_Right_Scarf
+    400072: Jnt_Right_Shoulder
+    400074: Jnt_Right_Thumb
+    400076: Jnt_Right_Thumb_Tip
+    400078: Jnt_Right_Toe
+    400080: Jnt_Waist
+    400082: LP_Belt
+    400084: LP_Boots
+    400086: LP_Cuffs
+    400088: LP_Dress
+    400090: LP_Evil_Body
+    400092: LP_Evil_Cuffs
+    400094: LP_Hair
+    400096: LP_Hair_Left
+    400098: LP_Hair_Right
+    400100: LP_Helm
+    400102: LP_Loin
+    400104: LP_Potion
+    400106: LP_Scarf
+    400108: LP_Tails
+    400110: Root
+    2100000: lambert1
+    2100002: Body_LP_initialShadingGroup1
+    4300000: LP_Helm
+    4300002: LP_Evil_Body
+    4300004: LP_Evil_Cuffs
+    4300006: LP_Cuffs
+    4300008: LP_Dress
+    4300010: LP_Loin
+    4300012: LP_Tails
+    4300014: LP_Scarf
+    4300016: LP_Belt
+    4300018: LP_Hair_Right
+    4300020: LP_Hair_Left
+    4300022: LP_Hair
+    4300024: LP_Boots
+    4300026: LP_Potion
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: LP_Belt
+    13700002: LP_Boots
+    13700004: LP_Cuffs
+    13700006: LP_Dress
+    13700008: LP_Evil_Body
+    13700010: LP_Evil_Cuffs
+    13700012: LP_Hair
+    13700014: LP_Hair_Left
+    13700016: LP_Hair_Right
+    13700018: LP_Helm
+    13700020: LP_Loin
+    13700022: LP_Potion
+    13700024: LP_Scarf
+    13700026: LP_Tails
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

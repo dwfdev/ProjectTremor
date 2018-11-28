@@ -5,7 +5,7 @@ AvatarMask:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: WitchCloak
+  m_Name: WitchCloak_Redux
   m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   m_Elements:
   - m_Path: 
@@ -71,9 +71,9 @@ AvatarMask:
   - m_Path: LP_Hair_Right
     m_Weight: 1
   - m_Path: LP_Hat
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: LP_Loin
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: LP_Potion
     m_Weight: 0
   - m_Path: LP_Scarf
@@ -81,7 +81,7 @@ AvatarMask:
   - m_Path: LP_Tails
     m_Weight: 1
   - m_Path: Root
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Root/Jnt_Hip
     m_Weight: 0
   - m_Path: Root/Jnt_Hip/Jnt_Dress
