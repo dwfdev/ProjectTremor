@@ -39,7 +39,7 @@ AvatarMask:
   - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand
     m_Weight: 1
   - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Left_Shoulder/Ctrl_Left_Shoulder/Grp_Left_Elbow/Ctrl_Left_Elbow/Grp_Left_Hand/Ctrl_Left_Hand/Book_001
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder
     m_Weight: 1
   - m_Path: Grp_World/Ctrl_World/Grp_Hip/Ctrl_Hip/Grp_Waist/Ctrl_Waist/Grp_Chest/Ctrl_Chest/Grp_Right_Shoulder/Ctrl_Right_Shoulder
