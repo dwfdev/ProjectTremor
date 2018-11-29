@@ -332,10 +332,10 @@ public class PlayerActor : MonoBehaviour {
 					else if(m_lifeState == eLifeState.NORMAL) {
 						// set life state to dying
 						m_lifeState = eLifeState.DYING;
-					}
 
-					// freeze frames
-					StartCoroutine(FreezeFrames(m_nNumOfFreezeFrames));
+						// freeze frames
+						StartCoroutine(FreezeFrames(m_nNumOfFreezeFrames));
+					}
 				}
 			}
 		}
