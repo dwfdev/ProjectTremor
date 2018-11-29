@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 114955179127657312}
   - component: {fileID: 114633681548348750}
   m_Layer: 0
-  m_Name: Player Test Model Prefab Witch
+  m_Name: LvlThree_Witch_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2661,8 +2661,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070028508089738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.472472, y: 2.025, z: 14.33}
+  m_LocalRotation: {x: 0.0066225096, y: 0.00007481379, z: 0.017299527, w: 0.99982846}
+  m_LocalPosition: {x: 0.688, y: 1.516, z: 13.789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4507971730746522}
@@ -2685,7 +2685,7 @@ Transform:
   - {fileID: 4824798202757840}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.75900006, y: 0.022000002, z: 1.983}
 --- !u!4 &4997627518593140
 Transform:
   m_ObjectHideFlags: 1
@@ -2975,8 +2975,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.6827586, b: 0, a: 1}
-  m_Intensity: 4.61
-  m_Range: 8.15
+  m_Intensity: 2
+  m_Range: 4.5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -24109,7 +24109,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1854703116
+  randomSeed: -180390993
   InitialModule:
     serializedVersion: 3
     enabled: 1
