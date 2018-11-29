@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rotate : MonoBehaviour {
 
 	[Tooltip("How fast this rotates")]
-	[SerializeField] private float m_fRotationSpeed;
+	public float m_fRotationSpeed;
 
 	// Update is called once per frame
 	void Update ()
