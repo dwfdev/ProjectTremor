@@ -26,6 +26,8 @@ public class UIMainMenu : MonoBehaviour {
 
 		// initialise toggle
 		m_toggle.isOn = SceneManager.Instance.IsWitch;
+
+		GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FastMobileBloom>().enabled = SceneManager.Instance.BloomOn;
 	}
 
 	public void OnStartPressed() {

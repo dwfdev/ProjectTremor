@@ -3449,6 +3449,7 @@ MonoBehaviour:
   m_mouseSensSlider: {fileID: 1227574765}
   m_resolutionsDropdown: {fileID: 855504969}
   m_bloomToggle: {fileID: 1676639024}
+  m_menuBloom: {fileID: 1690735750}
   m_audioMixer: {fileID: 24100000, guid: 6290262ee52c1ef4d9270507d95e355f, type: 2}
 --- !u!1 &1077522393
 GameObject:
@@ -6312,6 +6313,7 @@ GameObject:
   - component: {fileID: 1690735746}
   - component: {fileID: 1690735745}
   - component: {fileID: 1690735749}
+  - component: {fileID: 1690735750}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6463,6 +6465,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1690735750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690735744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb4d9bd051a71f48a18edd27bce7c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshold: 0.25
+  intensity: 0.5
+  blurSize: 0.96
+  blurIterations: 2
+  fastBloomMaterial: {fileID: 2100000, guid: 221340b8b5ad10940ba1646f87e3770c, type: 2}
 --- !u!1 &1696670314
 GameObject:
   m_ObjectHideFlags: 0

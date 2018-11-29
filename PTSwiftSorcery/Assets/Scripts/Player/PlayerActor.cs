@@ -318,7 +318,7 @@ public class PlayerActor : MonoBehaviour {
 			if(other.gameObject.GetComponent<EnemySpellProjectile>().GetActive()) {
 
 				// if player isn't invincible
-				if(m_lifeState != eLifeState.INVINCIBLE) {
+				if(m_lifeState != eLifeState.INVINCIBLE && m_lifeState != eLifeState.DYING) {
 
 					// shake camera
 					CameraActor cameraActor = FindObjectOfType<CameraActor>();

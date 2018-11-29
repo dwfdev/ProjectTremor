@@ -26,6 +26,9 @@ public class UIOptions : MonoBehaviour {
 	[Tooltip("Bloom Toggle")]
 	[SerializeField] private Toggle m_bloomToggle;
 
+	[Tooltip("Main Menu bloom")]
+	[SerializeField] private FastMobileBloom m_menuBloom;
+
 	[Tooltip("Game Audio Mixer")]
 	[SerializeField] private AudioMixer m_audioMixer;
 
@@ -93,6 +96,9 @@ public class UIOptions : MonoBehaviour {
 
 		// change bloom on
 		SceneManager.Instance.BloomOn = isOn;
+
+		// change menu bloom
+		m_menuBloom.enabled = isOn;
 	}
 	
 	public void OnBackButtonClicked() {
