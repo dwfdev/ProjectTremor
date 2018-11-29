@@ -4,6 +4,7 @@
 ///Handles enemy movement AI, health, and score value. 
 ///</summary>
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -96,6 +97,16 @@ public class EnemyActor : MonoBehaviour
 
 	[Tooltip("How much additional multiplier this enemy is worth")]
 	public float m_fMultiplier;
+
+	[Header("Death")]
+	[Tooltip("Fire Death Particle System")]
+	public GameObject m_fireDeathPS;
+
+	[Tooltip("Ice Death Particle System")]
+	public GameObject m_iceDeathPS;
+
+	[Tooltip("Lightning Death Particle System")]
+	public GameObject m_lightningDeathPS;
 
 	private ScoreManager m_ScoreManager;
 
@@ -236,6 +247,9 @@ public class EnemyActor : MonoBehaviour
 		if (GetComponent<UIHealthBar>()) {
 			GetComponent<UIHealthBar>().DestroyHealthBar();
 		}
+
+		StartDeathAnimation();
+
 		//Disable enemy
 		gameObject.SetActive(false);
 	}
@@ -254,6 +268,52 @@ public class EnemyActor : MonoBehaviour
 		//Disable enemy
 		gameObject.SetActive(false);
 	}
+
+	#region StartDeathAnimation
+	///<summary> Code by Denver Lacey ///</summary>
+
+	void StartDeathAnimation() {
+
+		// get reference to spell manager
+		PlayerSpellManager spellManager = FindObjectOfType<PlayerSpellManager>();
+
+		// instantiate death particle system based on current spell type
+		try {
+			switch (spellManager.m_eSpellType) {
+				case eSpellType.FIRE:
+					// instantiate new fire death animation
+					GameObject fireGO = Instantiate(m_fireDeathPS, transform.position, Quaternion.identity, transform.parent);
+
+					// destroy it once animation complete
+					Destroy(fireGO, fireGO.GetComponent<ParticleSystem>().main.duration);
+					break;
+				
+				case eSpellType.ICE:
+					// instantiate new ice death animation
+					GameObject iceGO = Instantiate(m_iceDeathPS, transform.position, Quaternion.identity, transform.parent);
+
+					// destroy it once animation complete
+					Destroy(iceGO, iceGO.GetComponent<ParticleSystem>().main.duration);
+					break;
+				
+				case eSpellType.LIGHTNING:
+					// instantiate new lightning death animation
+					GameObject lightningGO = Instantiate(m_lightningDeathPS, transform.position, Quaternion.identity, transform.parent);
+
+					// destroy it once animation complete
+					Destroy(lightningGO, lightningGO.GetComponent<ParticleSystem>().main.duration);
+					break;
+				
+				default:
+					Debug.LogError("Couldn't find spell type.", gameObject);
+					break;
+			}
+		}
+		catch (Exception e) {
+			Debug.LogError(e.Message);
+		}
+	}
+	#endregion
 
 	private void OnTriggerStay(Collider other)
 	{
