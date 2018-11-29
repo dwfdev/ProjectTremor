@@ -11,8 +11,11 @@ ModelImporter:
     400002: //RootNode
     2100000: RockPathTop
     2100002: RockPathSides
+    2100004: lambert1
     2300000: Environment_Rockpath_003
+    2300002: //RootNode
     3300000: Environment_Rockpath_003
+    3300002: //RootNode
     4300000: Environment_Rockpath_003
   externalObjects: {}
   materials:

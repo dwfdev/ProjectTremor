@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1fc973e7778016d46b7dfe63715e16eb
-timeCreated: 1543385105
+guid: 679cb3b84e799fc4c88b4e3dcfd65f1b
+timeCreated: 1541113978
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -13,33 +13,9 @@ ModelImporter:
     100010: Cape
     100012: Cuffs
     100014: Hat
-    100016: Jnt_Cape
-    100018: Jnt_Chest
-    100020: Jnt_Head
-    100022: Jnt_Hip
-    100024: Jnt_Left_Cloak
-    100026: Jnt_Left_Collar
-    100028: Jnt_Left_Elbow
-    100030: Jnt_Left_Foot
-    100032: Jnt_Left_Hand
-    100034: Jnt_Left_Knee
-    100036: Jnt_Left_Leg
-    100038: Jnt_Left_Shoulder
-    100040: Jnt_Neck
-    100042: Jnt_Right_Cloak
-    100044: Jnt_Right_Collar
-    100046: Jnt_Right_Elbow
-    100048: Jnt_Right_Foot
-    100050: Jnt_Right_Hand
-    100052: Jnt_Right_Knee
-    100054: Jnt_Right_Leg
-    100056: Jnt_Right_Shoulder
-    100058: Jnt_Waist
-    100060: Model
-    100062: Robe
-    100064: Root
-    100066: Scarf
-    100068: //RootNode
+    100016: Robe
+    100018: Scarf
+    100020: //RootNode
     400000: Beard
     400002: Belt
     400004: Body
@@ -48,56 +24,41 @@ ModelImporter:
     400010: Cape
     400012: Cuffs
     400014: Hat
-    400016: Jnt_Cape
-    400018: Jnt_Chest
-    400020: Jnt_Head
-    400022: Jnt_Hip
-    400024: Jnt_Left_Cloak
-    400026: Jnt_Left_Collar
-    400028: Jnt_Left_Elbow
-    400030: Jnt_Left_Foot
-    400032: Jnt_Left_Hand
-    400034: Jnt_Left_Knee
-    400036: Jnt_Left_Leg
-    400038: Jnt_Left_Shoulder
-    400040: Jnt_Neck
-    400042: Jnt_Right_Cloak
-    400044: Jnt_Right_Collar
-    400046: Jnt_Right_Elbow
-    400048: Jnt_Right_Foot
-    400050: Jnt_Right_Hand
-    400052: Jnt_Right_Knee
-    400054: Jnt_Right_Leg
-    400056: Jnt_Right_Shoulder
-    400058: Jnt_Waist
-    400060: Model
-    400062: Robe
-    400064: Root
-    400066: Scarf
-    400068: //RootNode
+    400016: Robe
+    400018: Scarf
+    400020: //RootNode
     2100000: Normal_Map
-    4300000: Cuffs
-    4300002: Cape
-    4300004: Robe
-    4300006: Beard
-    4300008: Boots
-    4300010: Buckle
-    4300012: Belt
-    4300014: Scarf
-    4300016: Body
-    4300018: Hat
-    7400000: Take 001
+    2300000: Beard
+    2300002: Belt
+    2300004: Body
+    2300006: Boots
+    2300008: Buckle
+    2300010: Cape
+    2300012: Cuffs
+    2300014: Hat
+    2300016: Robe
+    2300018: Scarf
+    3300000: Beard
+    3300002: Belt
+    3300004: Body
+    3300006: Boots
+    3300008: Buckle
+    3300010: Cape
+    3300012: Cuffs
+    3300014: Hat
+    3300016: Robe
+    3300018: Scarf
+    4300000: Hat
+    4300002: Body
+    4300004: Scarf
+    4300006: Belt
+    4300008: Buckle
+    4300010: Boots
+    4300012: Beard
+    4300014: Robe
+    4300016: Cape
+    4300018: Cuffs
     9500000: //RootNode
-    13700000: Beard
-    13700002: Belt
-    13700004: Body
-    13700006: Boots
-    13700008: Buckle
-    13700010: Cape
-    13700012: Cuffs
-    13700014: Hat
-    13700016: Robe
-    13700018: Scarf
   externalObjects: {}
   materials:
     importMaterials: 1
