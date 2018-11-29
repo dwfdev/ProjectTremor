@@ -114,6 +114,12 @@ public class ScoreManager : MonoBehaviour
 		m_fMultiplier += multiValue;
 	}
 
+	public void ResetScore()
+	{
+		m_fMultiplier = 1.0f;
+		m_lScore = 0;
+	}
+
 	public void DropScorePickup(long scoreValue, Transform transform)
 	{
 		//get score to drop
