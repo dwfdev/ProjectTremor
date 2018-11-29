@@ -167,6 +167,9 @@ public class PlayerActor : MonoBehaviour {
 		// get animator
 		m_animator = GetComponent<Animator>();
 
+		// turn off hit box indicator renderer
+		m_hitBoxIndicator.GetComponent<MeshRenderer>().enabled = false;
+
 		// set bomb count
 		m_nCurrentBombCount = m_nInitialBombCount;
 
