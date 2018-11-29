@@ -110,6 +110,7 @@ public class EnemyBulletPatternChild : MonoBehaviour
 			case eBulletType.BEAM:
 				newBullet.GetComponent<EnemyBeamSpell>().m_fBeamActiveTimer = m_fBeamActiveTimer;
 				newBullet.GetComponent<EnemyBeamSpell>().m_fBeamStayTimer = m_fBeamStayTimer;
+				newBullet.GetComponent<EnemyBeamSpell>().ScaleParticle();
 				break;
 			case eBulletType.BASIC_PROJECTILE:
 				newBullet.GetComponent<EnemyBasicSpell>().m_fLifespan = m_fLifespan;

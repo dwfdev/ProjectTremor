@@ -143,7 +143,7 @@ public class EnemyBulletPatternManager : MonoBehaviour
 			{
 				if(m_parent.GetComponent<EnemyActor>() != null)
 				{
-					if(m_parent.GetComponent<EnemyActor>().m_bIsActive)
+					if(m_parent.GetComponent<EnemyActor>().m_bIsShooting)
 					{
 						m_fCurrentTimer += Time.deltaTime;
 						if (m_fCurrentTimer >= m_fDelay)

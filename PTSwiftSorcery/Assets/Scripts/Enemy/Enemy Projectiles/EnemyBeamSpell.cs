@@ -39,6 +39,10 @@ public class EnemyBeamSpell : EnemySpellProjectile
 
 		transform.Rotate(Vector3.right, -90.0f);
 
+	}
+	
+	public void ScaleParticle()
+	{
 		#region Scale Beam Particle Systems
 		///<summary> Code by Denver Lacey ///</summary>
 
@@ -85,7 +89,6 @@ public class EnemyBeamSpell : EnemySpellProjectile
 		}
 		#endregion
 	}
-	
 	// Update is called once per frame
 	override protected void Update()
 	{
@@ -103,12 +106,10 @@ public class EnemyBeamSpell : EnemySpellProjectile
 			{
 				m_bActive = true;
 
-				// //get colour
-				// Color color = gameObject.GetComponent<Renderer>().material.color;
-				// //set colour alpha to opaque
-				// color.a = 1.0f;
-				// //set new colour
-				// gameObject.GetComponent<Renderer>().material.color = color;
+				//patched together fix that lets beams damage you if you were in the collider when it turns active
+				//this really shouldn't work but it does
+				gameObject.GetComponent<CapsuleCollider>().enabled = false;
+				gameObject.GetComponent<CapsuleCollider>().enabled = true;
 			}
 			else
 				Destroy(gameObject);
