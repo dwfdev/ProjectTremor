@@ -385,6 +385,9 @@ public class PlayerActor : MonoBehaviour {
 		if (m_nLives == 0) {
 			// player is dead
 			m_lifeState = eLifeState.DEAD;
+
+			// reset score
+			ScoreManager.Instance.ResetScore();
 		}
 		else {
 			// give player invinciblity

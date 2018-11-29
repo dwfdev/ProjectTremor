@@ -354,7 +354,7 @@ public class SceneManager : MonoBehaviour {
 		m_currentScene = newScene;
 
 		// load new scene
-		UnityEngine.SceneManagement.SceneManager.LoadScene(m_currentScene.index, loadSceneMode);
+		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(m_currentScene.index, loadSceneMode);
 	}
 
 	public void UnloadCurrentScene() {
