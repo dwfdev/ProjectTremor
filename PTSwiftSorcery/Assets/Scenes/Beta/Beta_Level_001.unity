@@ -3751,6 +3751,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &13573650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3915,6 +3918,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &19742991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4130,6 +4136,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &30959160
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13704,6 +13713,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &193993623
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14482,6 +14494,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &287311746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19478,6 +19493,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &354343784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22594,6 +22612,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &494843554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23519,6 +23540,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!23 &546499881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23706,6 +23730,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &555708974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24105,6 +24132,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &578321581
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24727,6 +24757,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &612379109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25061,6 +25094,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &630728452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30551,6 +30587,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &716653916
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31307,6 +31346,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &775497878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31614,7 +31656,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785325194
 MonoBehaviour:
@@ -33984,6 +34026,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &892673187
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34146,6 +34191,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &893796260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34833,6 +34881,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &946836019
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39695,6 +39746,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1019418345
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53759,6 +53813,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1215455310
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55243,6 +55300,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!23 &1290075413
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59077,6 +59137,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1318969542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59748,6 +59811,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1361796388
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60398,6 +60464,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!23 &1399248986
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61455,7 +61524,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425142868
 MonoBehaviour:
@@ -62938,6 +63007,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1496433788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -63302,6 +63374,9 @@ MonoBehaviour:
   m_lRawScore: 0
   m_lPickupScore: 0
   m_fMultiplier: 0
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
   m_Patterns:
   - {fileID: 648830786}
   - {fileID: 10038086}
@@ -63780,6 +63855,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1547762795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64776,6 +64854,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!23 &1615159971
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69150,6 +69231,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1676672151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -69433,6 +69517,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1681131222
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70455,6 +70542,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1742427144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74649,6 +74739,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1809650613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76007,6 +76100,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1877135674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77984,6 +78080,9 @@ MonoBehaviour:
   m_lRawScore: 100
   m_lPickupScore: 150
   m_fMultiplier: 0.1
+  m_fireDeathPS: {fileID: 0}
+  m_iceDeathPS: {fileID: 0}
+  m_lightningDeathPS: {fileID: 0}
 --- !u!54 &1966445936
 Rigidbody:
   m_ObjectHideFlags: 0
