@@ -34489,7 +34489,7 @@ MonoBehaviour:
   m_nHealthThresholds: b80b0000
   m_BossPhases:
   - trackPlayer: 1
-    rotationSpeed: 50
+    rotationSpeed: 2
     EnemyAIType: 2
     maxMovementSpeed: 400
     movementSmooth: 5
