@@ -1542,7 +1542,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716443907520832}
-  m_LocalRotation: {x: -0.20534524, y: -0.7792508, z: -0.5222721, w: 0.27898613}
+  m_LocalRotation: {x: -0.20534527, y: -0.7792509, z: -0.52227217, w: 0.27898616}
   m_LocalPosition: {x: -0.12939999, y: -0.06891698, z: -0.084940374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2614,13 +2614,13 @@ MonoBehaviour:
   m_nTier3LightningDamageAddition: 0
   m_nTier4LightningDamageAddition: 0
   m_lightningObject: {fileID: 1569410650705340}
-  m_fTier1LightningRadius: 5
-  m_fTier2LightningRadius: 6
-  m_fTier3LightningRadius: 7
-  m_fTier4LightningRadius: 8
+  m_fTier1LightningRadius: 4
+  m_fTier2LightningRadius: 5
+  m_fTier3LightningRadius: 6
+  m_fTier4LightningRadius: 7
   m_audioMixerGroup: {fileID: 24300002, guid: 6290262ee52c1ef4d9270507d95e355f, type: 2}
   m_fireAudioClip: {fileID: 8300000, guid: 3cf13eeb6ffad624d87fa6583be19609, type: 3}
-  m_fFireAudioClipVolume: 0.5
+  m_fFireAudioClipVolume: 0.2
   m_iceAudioClip: {fileID: 8300000, guid: 2605687f2ec714246b6506e7c7c79f9d, type: 3}
   m_fIceAudioClipVolume: 0.3
   m_nSpellLevel: 0

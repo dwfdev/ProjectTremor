@@ -3036,10 +3036,10 @@ MonoBehaviour:
   m_nTier3LightningDamageAddition: 0
   m_nTier4LightningDamageAddition: 0
   m_lightningObject: {fileID: 1056720624108084}
-  m_fTier1LightningRadius: 5
-  m_fTier2LightningRadius: 6
-  m_fTier3LightningRadius: 7
-  m_fTier4LightningRadius: 8
+  m_fTier1LightningRadius: 4
+  m_fTier2LightningRadius: 5
+  m_fTier3LightningRadius: 6
+  m_fTier4LightningRadius: 7
   m_audioMixerGroup: {fileID: 24300002, guid: 6290262ee52c1ef4d9270507d95e355f, type: 2}
   m_fireAudioClip: {fileID: 8300000, guid: 3cf13eeb6ffad624d87fa6583be19609, type: 3}
   m_fFireAudioClipVolume: 0.2

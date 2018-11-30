@@ -317,7 +317,7 @@ public class EnemyActor : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.tag == "LightningAttack")
+		if (other.tag == "LightningAttack" && m_bIsActive)
 		{
 			TakeDamage(other.GetComponent<LightningSpellProjectile>().m_nDamage);
 		}
@@ -326,7 +326,7 @@ public class EnemyActor : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	{
 		//Check if enemy has collided with player projectile
-		if (other.tag == "PlayerProjectile")
+		if (other.tag == "PlayerProjectile" && m_bIsActive)
 		{
 			TakeDamage(other.GetComponent<PlayerSpellProjectile>().m_nDamage);
 		}
