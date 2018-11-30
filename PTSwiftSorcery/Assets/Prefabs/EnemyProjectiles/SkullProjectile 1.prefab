@@ -132,7 +132,7 @@ MonoBehaviour:
   m_eBulletType: 2
   m_fMoveSpeed: 20
   m_bActive: 0
-  m_fMaxVelocity: 6
+  m_fMaxVelocity: 8
   m_fRotationSpeed: 1000
   m_fSpeedBurst: 10
   m_fHomeTimer: 5

@@ -48,6 +48,11 @@ public class UIMainMenu : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
+    public void OnCreditsPressed()
+    {
+        SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneByType(eSceneType.CREDITS), UnityEngine.SceneManagement.LoadSceneMode.Single);
+    }
+
 	public void OnQuitPressed() {
 		Application.Quit();
 	}
