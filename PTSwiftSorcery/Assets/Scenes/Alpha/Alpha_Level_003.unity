@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77877880
 MonoBehaviour:
@@ -706,9 +706,9 @@ MonoBehaviour:
   m_lifeSprite: {fileID: 21300000, guid: 78782fc9e70cd1b42b0aabea8523002b, type: 3}
   m_lostLifeSprite: {fileID: 21300002, guid: 78782fc9e70cd1b42b0aabea8523002b, type: 3}
   m_imageHolders:
-  - {fileID: 671592229}
-  - {fileID: 321421290}
   - {fileID: 1930618561}
+  - {fileID: 321421290}
+  - {fileID: 671592229}
   - {fileID: 1094722653}
   - {fileID: 1817275910}
 --- !u!114 &138227541
@@ -817,9 +817,9 @@ RectTransform:
   - {fileID: 1417822217}
   - {fileID: 224449324}
   - {fileID: 1763712046}
-  - {fileID: 671592231}
-  - {fileID: 321421292}
   - {fileID: 1930618563}
+  - {fileID: 321421292}
+  - {fileID: 671592231}
   - {fileID: 1094722652}
   - {fileID: 1817275909}
   - {fileID: 77877879}
@@ -3820,7 +3820,7 @@ GameObject:
   - component: {fileID: 671592230}
   - component: {fileID: 671592229}
   m_Layer: 5
-  m_Name: Heart_001
+  m_Name: Heart_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3870,7 +3870,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 138227546}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7438,7 +7438,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1372184336
 MonoBehaviour:
@@ -9644,6 +9644,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: b0a065f974934a44592790162f2361d5, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03f933874f18a5546a69142610b80eec, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0a065f974934a44592790162f2361d5, type: 3}
   m_IsPrefabParent: 0
@@ -10501,7 +10505,7 @@ GameObject:
   - component: {fileID: 1930618562}
   - component: {fileID: 1930618561}
   m_Layer: 5
-  m_Name: Heart_003
+  m_Name: Heart_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10551,7 +10555,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 138227546}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11817,7 +11821,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: -30}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123066744
 MonoBehaviour:
@@ -11875,6 +11879,7 @@ GameObject:
   - component: {fileID: 2135930308}
   - component: {fileID: 2135930307}
   - component: {fileID: 2135930305}
+  - component: {fileID: 2135930310}
   m_Layer: 0
   m_Name: Demon_MINIBOSS
   m_TagString: Enemy
@@ -11975,6 +11980,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2135930310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135930304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d42df5c2bc434a4ea28cfdcecf9218d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBarPrefab: {fileID: 1963151073734426, guid: 843baf1fb3c35dd44bc99fd51a6976e1,
+    type: 2}
+  m_fOffset: 1
 --- !u!4 &2136347330 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: d078302c71e1e4644ae352a0dc0f67d9, type: 3}
