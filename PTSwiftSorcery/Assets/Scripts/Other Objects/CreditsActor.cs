@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CreditsActor : MonoBehaviour {
 
-	void FixedUpdate() {
+	void Update() {
 
-		if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump")) {
+		if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1")) {
 			// load next scene
 			SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneByType(eSceneType.MAIN_MENU), UnityEngine.SceneManagement.LoadSceneMode.Single);
 		}
