@@ -2662,7 +2662,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070028508089738}
   m_LocalRotation: {x: 0.0066225096, y: 0.00007481379, z: 0.017299527, w: 0.99982846}
-  m_LocalPosition: {x: 0.688, y: 1.516, z: 13.789}
+  m_LocalPosition: {x: 503.77625, y: 302.5443, z: -590.6262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4507971730746522}
@@ -3036,10 +3036,10 @@ MonoBehaviour:
   m_nTier3LightningDamageAddition: 0
   m_nTier4LightningDamageAddition: 0
   m_lightningObject: {fileID: 1056720624108084}
-  m_fTier1LightningRadius: 5
-  m_fTier2LightningRadius: 6
-  m_fTier3LightningRadius: 7
-  m_fTier4LightningRadius: 8
+  m_fTier1LightningRadius: 4
+  m_fTier2LightningRadius: 5
+  m_fTier3LightningRadius: 6
+  m_fTier4LightningRadius: 7
   m_audioMixerGroup: {fileID: 24300002, guid: 6290262ee52c1ef4d9270507d95e355f, type: 2}
   m_fireAudioClip: {fileID: 8300000, guid: 3cf13eeb6ffad624d87fa6583be19609, type: 3}
   m_fFireAudioClipVolume: 0.2
@@ -3937,7 +3937,7 @@ ParticleSystem:
   moveWithTransform: 2
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -331099086
+  randomSeed: 740099604
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -1175,7 +1175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098775466097994}
   m_LocalRotation: {x: 0.006483906, y: 0.00794972, z: -0.0165972, w: 0.9998097}
-  m_LocalPosition: {x: 0.45755762, y: 1.4965968, z: 16.485615}
+  m_LocalPosition: {x: 507.5809, y: 302.7364, z: -591.60077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4107322683684574}
@@ -1512,7 +1512,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716443907520832}
-  m_LocalRotation: {x: -0.20534527, y: -0.7792509, z: -0.52227217, w: 0.27898616}
+  m_LocalRotation: {x: -0.20534524, y: -0.7792508, z: -0.5222721, w: 0.27898613}
   m_LocalPosition: {x: -0.12939999, y: -0.06891698, z: -0.084940374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2586,13 +2586,13 @@ MonoBehaviour:
   m_nTier3LightningDamageAddition: 0
   m_nTier4LightningDamageAddition: 0
   m_lightningObject: {fileID: 1569410650705340}
-  m_fTier1LightningRadius: 7
-  m_fTier2LightningRadius: 8
-  m_fTier3LightningRadius: 9
-  m_fTier4LightningRadius: 10
+  m_fTier1LightningRadius: 4
+  m_fTier2LightningRadius: 5
+  m_fTier3LightningRadius: 6
+  m_fTier4LightningRadius: 7
   m_audioMixerGroup: {fileID: 24300002, guid: 6290262ee52c1ef4d9270507d95e355f, type: 2}
   m_fireAudioClip: {fileID: 8300000, guid: 3cf13eeb6ffad624d87fa6583be19609, type: 3}
-  m_fFireAudioClipVolume: 0.5
+  m_fFireAudioClipVolume: 0.2
   m_iceAudioClip: {fileID: 8300000, guid: 2605687f2ec714246b6506e7c7c79f9d, type: 3}
   m_fIceAudioClipVolume: 0.3
   m_nSpellLevel: 0
@@ -6603,7 +6603,7 @@ ParticleSystem:
   moveWithTransform: 2
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1252587891
+  randomSeed: 219106393
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -37257,8 +37257,8 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c41f9d4451ee9ea4496885444809d4ec, type: 2}
-  - {fileID: 2100000, guid: c41f9d4451ee9ea4496885444809d4ec, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
