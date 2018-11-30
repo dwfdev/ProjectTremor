@@ -27,6 +27,7 @@ public class UIPauseMenu : MonoBehaviour {
 	}
 
 	public void OnQuitPressed() {
+		ScoreManager.Instance.ResetScore();
 		SceneManager.Instance.LoadScene(SceneManager.Instance.GetGameSceneByType(eSceneType.MAIN_MENU), UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 }
