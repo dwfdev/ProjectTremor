@@ -1175,7 +1175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098775466097994}
   m_LocalRotation: {x: 0.006483906, y: 0.00794972, z: -0.0165972, w: 0.9998097}
-  m_LocalPosition: {x: 507.5809, y: 302.7364, z: -591.60077}
+  m_LocalPosition: {x: 506.27573, y: 304.18945, z: -590.8317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4107322683684574}
@@ -2507,12 +2507,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7e835a768fbba3042a4a8cb7471860ce, type: 3}
   - {fileID: 2800000, guid: c9dc468d0dbdfe444aa302f830a51c10, type: 3}
   - {fileID: 2800000, guid: 8a578cf25f720fb458ea0bcbcc2f1830, type: 3}
-  m_particleSystemStaff: {fileID: 198542355523455000, guid: 0a7ffa602b6d413488383d125cff9cf4,
-    type: 2}
-  m_particleSystemCircleMinorGlow: {fileID: 198291846674903186, guid: e196994ce0d154544ad0253d0f92f445,
-    type: 2}
-  m_particleSystemCircle: {fileID: 198612012972011794, guid: e196994ce0d154544ad0253d0f92f445,
-    type: 2}
+  m_particleSystemStaff: {fileID: 198893957289959870}
+  m_particleSystemCircleMinorGlow: {fileID: 198251915456043416}
+  m_particleSystemCircle: {fileID: 198220045011455214}
   m_colours:
   - {r: 1, g: 0.47586206, b: 0, a: 1}
   - {r: 1, g: 0.653144, b: 0.33823532, a: 1}
@@ -33503,7 +33500,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1552785213
+  randomSeed: -934728007
   InitialModule:
     serializedVersion: 3
     enabled: 1
