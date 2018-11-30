@@ -158,6 +158,10 @@ public class EnemyActor : MonoBehaviour
 							m_player.transform.position.y + m_v3Offset.y * transform.localScale.y, 
 							m_player.transform.position.z + m_v3Offset.z * transform.localScale.z
 						);
+					GameObject playfield = GameObject.FindGameObjectWithTag("Playfield");
+
+					if (desiredPosition.z > playfield.transform.position.z + playfield.GetComponent<BoxCollider>().size.z / 1.5f)
+						desiredPosition.z = playfield.transform.position.z + playfield.GetComponent<BoxCollider>().size.z / 1.5f;
 					// smoothly move to that position
 					transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref m_v3Velocity, 1 / m_fMovementSmoothing, m_fMaxMovementSpeed * Time.deltaTime);
 					break;
